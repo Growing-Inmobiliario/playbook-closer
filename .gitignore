@@ -1,0 +1,4 @@
+# Solo se publica la página. Todo lo demás de la carpeta se queda en local.
+*
+!index.html
+!.gitignore
