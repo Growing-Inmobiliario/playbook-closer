@@ -1,4 +1,6 @@
-# Solo se publica la página. Todo lo demás de la carpeta se queda en local.
+# Solo se publica la web. Todo lo demás de la carpeta se queda en local.
 *
 !index.html
+!dia-*.html
+!diccionario.html
 !.gitignore

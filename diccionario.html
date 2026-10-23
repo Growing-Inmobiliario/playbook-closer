@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diccionario · Playbook del Closer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
+ --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+.sheet{position:relative;max-width:860px;margin:0 auto 36px;background:var(--paper);padding:52px 76px 40px;border:1px solid #e3e1db;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 48px rgba(0,0,0,.08)}
+.sheet p{margin:0 0 1.05em}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:inherit}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logolink{text-decoration:none;display:flex;flex-direction:column}
+.logo .g{font-family:var(--sans);font-weight:700;font-size:38px;line-height:1;letter-spacing:-1.2px}
+.logo .g sup{font-size:12px;font-weight:600;vertical-align:top;position:relative;top:4px;letter-spacing:0}
+.logo .i{font-family:var(--display);font-style:italic;font-weight:500;font-size:36px;line-height:1;margin-top:2px;letter-spacing:-.5px}
+.logo .tag{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fojas{font-family:var(--mono);text-align:right;line-height:1.3}
+.fojas .k{display:block;font-size:12px;letter-spacing:3px}
+.fojas .v{display:block;font-weight:700;font-size:16px;letter-spacing:2px}
+.rule{font-family:var(--mono);height:12px;overflow:hidden;white-space:nowrap;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.rule::before{content:"************************************************************************************************************"}
+.reg{font-family:var(--mono);display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;padding:10px 0}
+/* portada */
+.cover{font-family:var(--mono);font-size:15.5px;line-height:1.72}
+.cover p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.cover .head{padding-right:170px}
+.deedtitle{text-align:center;margin:44px 0 30px}
+.deedtitle h1{font-family:var(--mono);font-size:17px;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin:0;line-height:1.6}
+.deedtitle .dash{font-family:var(--mono);letter-spacing:0;margin:8px 0 4px}
+.deedtitle .de{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.deedtitle .party{font-family:var(--mono);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.stamp{position:absolute;right:46px;top:38px;width:132px;height:132px;color:var(--gold);transform:rotate(-12deg);opacity:.92;mix-blend-mode:multiply;font-family:var(--mono)}
+.stamp text{fill:currentColor}
+.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-family:var(--mono);font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px;border:0;width:100%;cursor:pointer}
+.bar:hover{background:#333}
+.bar.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bar.ghost:hover{background:var(--cream)}
+/* títulos */
+.deedtitle.small{margin:30px 0 22px}
+.deedtitle.small h2{font-family:var(--display);font-style:italic;font-weight:500;font-size:40px;line-height:1.15;margin:0;letter-spacing:-.3px}
+.deedtitle.small .dash{color:var(--gold);font-weight:700}
+h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
+h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+/* programa */
+.programa{list-style:none;padding:0;margin:0 0 10px}
+.programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
+.programa li:last-child{border-bottom:none}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .t{flex:1;font-size:17px;line-height:1.35}
+.programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
+.programa .st.done{color:var(--gold);font-weight:700}
+.programa a{text-decoration:none}
+.programa li.next .t{font-weight:700}
+.programa li.next .n::after{content:" ←";color:var(--gold)}
+.pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
+.pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+/* bloques */
+.bloquesheet{min-height:420px}
+.bloque{padding:60px 0 40px}
+.bloquelabel{font-family:var(--mono);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.bloquetitle{font-family:var(--display);font-style:italic;font-weight:500;font-size:64px;line-height:1;margin:0 0 28px;letter-spacing:-1px}
+.bloquedesc{font-size:18.5px;max-width:580px;line-height:1.65}
+/* listas */
+ul,ol{margin:0 0 1.1em;padding-left:30px}
+li{margin:0 0 .5em}
+ul{list-style:none;padding-left:26px}
+ul li{position:relative}
+ul li::before{content:"—";position:absolute;left:-26px;color:var(--gold);font-weight:700}
+ol li::marker{font-family:var(--mono);font-weight:700}
+/* cajas */
+.box,.diligencia,.repaso{border:3px double var(--ink);padding:18px 24px 8px;margin:18px 0 26px}
+.box p:last-child,.diligencia p:last-child{margin-bottom:10px}
+.boxlabel{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.box{text-align:center}
+.box p{text-align:center;font-size:19px;line-height:1.5}
+.box .boxlabel{text-align:center}
+.diligencia{border:1px solid var(--ink);background:var(--cream);padding:16px 24px 8px}
+.diligencia .boxlabel{color:#7a5a1a}
+.repaso{border:none;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 4px;margin:0 0 28px}
+.repaso ol{margin-bottom:8px}
+.frases{background:var(--ink);color:#fff;padding:24px 28px 16px;margin:30px 0 10px}
+.frases .boxlabel{color:#fff;font-size:12px;letter-spacing:4px;margin-bottom:14px}
+.frases ol{padding-left:30px;margin:0}
+.frases li{font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.45;margin-bottom:.7em}
+.frases li::marker{color:var(--gold)}
+.chain{border:1px solid var(--ink);padding:18px 20px;margin:14px 0 24px;text-align:center}
+.chain .step{font-family:var(--sans);font-weight:600;font-size:15.5px}
+.chain .arrow{color:var(--gold);font-weight:700;line-height:1.1;font-size:20px;font-family:Georgia,serif}
+blockquote{margin:12px 0 22px 18px;padding-left:18px;border-left:2px solid var(--gold)}
+blockquote p{font-style:italic;margin-bottom:.4em;font-size:17.5px}
+/* tablas */
+.tablewrap{overflow-x:auto;margin:14px 0 28px}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table.small{font-size:13px;line-height:1.4}
+th,td{padding:10px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #cfcac0}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:10px;vertical-align:bottom}
+table.small thead th{font-size:10px;letter-spacing:1px;white-space:nowrap}
+tbody th{font-weight:700;width:auto}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+/* pie */
+.foot{font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:14px;border-top:1px solid #cfcac0;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.foot .pn{font-weight:700;color:var(--ink);font-size:12px}
+.foot .up{text-decoration:none}
+/* examen */
+.exam{min-height:520px}
+.exam .intro{font-size:17px}
+.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
+.exam .meta b{color:var(--ink)}
+.game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
+.g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
+.g-top .streak{color:var(--gold);font-weight:700}
+.timer{height:6px;background:#e4e0d6;margin:0 0 22px;position:relative;overflow:hidden}
+.timer i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:100%}
+.timer.warn i{background:var(--bad)}
+.q{font-family:var(--sans);font-weight:600;font-size:21px;line-height:1.35;margin:0 0 20px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 16px}
+.opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.4;cursor:pointer;color:var(--ink)}
+.opt:hover{background:var(--cream)}
+.opt .k{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;flex:0 0 18px;padding-top:3px}
+.opt.ok{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt.bad{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.dim{opacity:.45}
+.opt:disabled{cursor:default}
+.why{background:var(--cream);border:1px solid var(--ink);padding:12px 16px;font-size:15.5px;margin:0 0 16px;line-height:1.5}
+.why .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.why .lbl.ok{color:#2e6b3a}
+.why .lbl.bad{color:var(--bad)}
+.why .ref{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:var(--display);font-style:italic;font-size:78px;line-height:1;margin:6px 0 2px}
+.score .big small{font-size:34px}
+.score .lbl{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.score .verdict{display:inline-block;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:4px;text-transform:uppercase;border:3px double var(--gold);color:var(--gold);padding:8px 18px;margin:14px 0 6px;transform:rotate(-3deg)}
+.score .verdict.no{border-color:var(--bad);color:var(--bad)}
+.score .pts{font-size:16px;margin:8px 0 2px}
+.score .best{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .bar{margin:0;flex:1 1 200px}
+.exam .start .bar{margin-top:10px}
+/* móvil */
+@media (max-width:720px){
+ body{padding:12px 8px 40px;font-size:16.5px}
+ .sheet{padding:34px 22px 28px;margin-bottom:18px}
+ .logo .g,.logo .i{font-size:30px}
+ .stamp{width:84px;height:84px;right:12px;top:10px}
+ .cover .head{padding-right:84px}
+ .logo .tag{letter-spacing:2px;font-size:10px}
+ .head{align-items:flex-start;flex-direction:column;gap:10px}
+ .fojas{text-align:left}
+ .deedtitle h1{font-size:14px;letter-spacing:3px}
+ .deedtitle.small h2{font-size:30px}
+ .bloquetitle{font-size:42px}
+ .cover p{text-align:left}
+ .reg{letter-spacing:1.5px;font-size:11px}
+ .programa li{flex-wrap:wrap}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .game{padding:18px 14px}
+ .q{font-size:18.5px}
+ .opt{font-size:15.5px;padding:10px 12px}
+ .score .big{font-size:60px}
+ .foot{flex-wrap:wrap;gap:8px}
+}
+@media print{
+ body{background:#fff;padding:0}
+ .sheet{box-shadow:none;border:none;margin:0;max-width:none;page-break-after:always;padding:36px 44px}
+ .foot .up,.bar,.exam{display:none}
+}
+</style>
+
+</head>
+<body>
+<section class="sheet" id="anexo">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">ANEXO</span><span class="v">Diccionario</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ANEXO</span><span>Consulta</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL DICCIONARIO</h2><div class="dash">——————</div></div>
+<p>Esto no se estudia, se consulta. Pero léetelo entero una vez, despacio.</p>
+<p><strong>Regla de oro:</strong> si en una llamada usas mal una de estas palabras, Rubén deja de verte como alguien que entiende su mundo. Si las usas bien, eres de los suyos.</p>
+<h3>Las cuatro confusiones que te van a delatar</h3>
+<ol>
+<li><strong>Noticia ≠ cita.</strong> Una noticia es alguien que quiere vender. La cita es cuando quedas con él.</li>
+<li><strong>Cita de captación ≠ visita.</strong> Captación es con el PROPIETARIO. Visita es con el COMPRADOR.</li>
+<li><strong>Encargo ≠ exclusiva.</strong> Toda exclusiva es un encargo. No todo encargo es exclusiva.</li>
+<li><strong>Arras ≠ escritura.</strong> Arras es el acuerdo privado y el 10%. Escritura es el notario y el resto.</li>
+</ol>
+<h3>Los términos</h3>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:30.0%"><col style="width:70.0%"></colgroup>
+<thead><tr><th>Término</th><th>Qué significa</th></tr></thead><tbody>
+<tr><th>Producto</th><td>Viviendas que tienes a la venta. «No tengo producto» = no tengo casas.</td></tr>
+<tr><th>Cartera</th><td>El conjunto de inmuebles que gestiona la agencia.</td></tr>
+<tr><th>Encargo</th><td>El contrato con el propietario para comercializar su inmueble.</td></tr>
+<tr><th>Exclusiva</th><td>Encargo donde solo tú puedes vender ese inmueble.</td></tr>
+<tr><th>Abierto</th><td>Encargo donde el propietario se lo da a varias agencias a la vez.</td></tr>
+<tr><th>Captar / captación</th><td>Conseguir que un propietario firme el encargo.</td></tr>
+<tr><th>Cita de captación</th><td>La reunión con el propietario, normalmente en su casa, donde se firma (o no).</td></tr>
+<tr><th>Noticia</th><td>Una persona que te ha dicho que quiere vender. Todavía no es cita.</td></tr>
+<tr><th>Honorarios / fee</th><td>La comisión. 2-5% del precio de venta.</td></tr>
+<tr><th>Propietario cualificado</th><td>El que está en tu zona + quiere vender en menos de 6 meses + quiere trabajar con intermediario. Los tres a la vez.</td></tr>
+<tr><th>Precio de mercado</th><td>El precio al que ese inmueble SE VENDE de verdad, comparado con lo vendido y lo publicado en la zona.</td></tr>
+<tr><th>Comparables / estudio de mercado</th><td>El análisis de inmuebles similares vendidos y publicados que justifica el precio.</td></tr>
+<tr><th>Sobrevalorado / fuera de precio</th><td>Publicado por encima de lo que el mercado paga. No se va a vender.</td></tr>
+<tr><th>Bajada de precio</th><td>Ajustar a la baja un inmueble que no se mueve. Se hace de forma gradual.</td></tr>
+<tr><th>Propuesta / oferta</th><td>Lo que el comprador ofrece pagar. Casi siempre por debajo del publicado.</td></tr>
+<tr><th>Reserva</th><td>Señal del comprador (≈2.000 €) para demostrar compromiso antes de llevar la propuesta.</td></tr>
+<tr><th>Arras</th><td>Contrato privado comprador-propietario. Adelanto de ≈10% del precio.</td></tr>
+<tr><th>Escritura / notaría</th><td>La firma ante notario. Ahí cambia la propiedad. ≈2 meses después de arras.</td></tr>
+<tr><th>Portales</th><td>Idealista, Fotocasa, etc. Donde se publican los inmuebles.</td></tr>
+<tr><th>Prospección</th><td>Buscar activamente propietarios: llamadas, puerta fría, base de datos.</td></tr>
+<tr><th>Puerta fría</th><td>Ir casa por casa a buscar propietarios.</td></tr>
+<tr><th>Visita</th><td>Enseñar el piso a un comprador. (Ojo: «visita» = comprador. «Cita de captación» = propietario.)</td></tr>
+<tr><th>Referido</th><td>Cliente que llega recomendado por alguien que ya vendió contigo.</td></tr>
+<tr><th>Lead / contacto</th><td>Persona que ha dejado sus datos. Puede ser propietario o comprador.</td></tr>
+<tr><th>CRM</th><td>El software donde se guardan contactos y seguimiento. La mayoría no lo usa bien o no lo usa.</td></tr>
+<tr><th>Tarifas comerciales</th><td>La actividad mínima que tiene que hacer cada persona del equipo (llamadas, citas, visitas). Es como funcionamos nosotros.</td></tr>
+<tr><th>Hoja de Ruta de Crecimiento</th><td>Las cinco etapas de Growing: Empezar, Estandarizar, Especializar, Expandir, Delegar.</td></tr>
+</tbody></table></div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn"></span><a href="diccionario.html" class="up">Diccionario</a></footer>
+</section>
+</body>
+</html>

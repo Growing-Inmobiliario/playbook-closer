@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Playbook del Closer Inmobiliario · Growing Inmobiliario</title>
-<meta name="description" content="Formación interna de Growing Inmobiliario: entender el sector y la mente del prospecto antes de la primera llamada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
  --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -19,9 +18,9 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif)
 strong{font-weight:700}
 em{font-style:italic}
 a{color:inherit}
-/* cabecera (adorno, en máquina) */
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
 .logo{display:flex;flex-direction:column;line-height:1}
+.logolink{text-decoration:none;display:flex;flex-direction:column}
 .logo .g{font-family:var(--sans);font-weight:700;font-size:38px;line-height:1;letter-spacing:-1.2px}
 .logo .g sup{font-size:12px;font-weight:600;vertical-align:top;position:relative;top:4px;letter-spacing:0}
 .logo .i{font-family:var(--display);font-style:italic;font-weight:500;font-size:36px;line-height:1;margin-top:2px;letter-spacing:-.5px}
@@ -32,7 +31,7 @@ a{color:inherit}
 .rule{font-family:var(--mono);height:12px;overflow:hidden;white-space:nowrap;letter-spacing:1px;font-weight:700;color:var(--ink)}
 .rule::before{content:"************************************************************************************************************"}
 .reg{font-family:var(--mono);display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;padding:10px 0}
-/* portada: la escritura */
+/* portada */
 .cover{font-family:var(--mono);font-size:15.5px;line-height:1.72}
 .cover p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .cover .head{padding-right:170px}
@@ -43,27 +42,34 @@ a{color:inherit}
 .deedtitle .party{font-family:var(--mono);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
 .stamp{position:absolute;right:46px;top:38px;width:132px;height:132px;color:var(--gold);transform:rotate(-12deg);opacity:.92;mix-blend-mode:multiply;font-family:var(--mono)}
 .stamp text{fill:currentColor}
-.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px}
+.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-family:var(--mono);font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px;border:0;width:100%;cursor:pointer}
 .bar:hover{background:#333}
-/* títulos de hoja (lectura) */
+.bar.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bar.ghost:hover{background:var(--cream)}
+/* títulos */
 .deedtitle.small{margin:30px 0 22px}
 .deedtitle.small h2{font-family:var(--display);font-style:italic;font-weight:500;font-size:40px;line-height:1.15;margin:0;letter-spacing:-.3px}
 .deedtitle.small .dash{color:var(--gold);font-weight:700}
 h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
 h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
-/* índice */
-.toc{list-style:none;padding:0;margin:0 0 10px}
-.toc li{display:flex;align-items:baseline;gap:12px;padding:7px 0;font-size:16px}
-.toc .l{font-family:var(--mono);flex:0 0 100px;letter-spacing:2px;font-size:11.5px;text-transform:uppercase}
-.toc .t{font-size:16px}
-.toc .dots{flex:1;border-bottom:1px dotted #999;position:relative;top:-5px;min-width:24px}
-.toc a{font-family:var(--mono);text-decoration:none;font-weight:700;font-size:14px}
-.toc .tocbloque{margin-top:10px;border-top:1px solid var(--line);padding-top:12px}
-.toc .tocbloque .t{font-family:var(--display);font-style:italic;font-size:20px}
+/* programa */
+.programa{list-style:none;padding:0;margin:0 0 10px}
+.programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
+.programa li:last-child{border-bottom:none}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .t{flex:1;font-size:17px;line-height:1.35}
+.programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
+.programa .st.done{color:var(--gold);font-weight:700}
+.programa a{text-decoration:none}
+.programa li.next .t{font-weight:700}
+.programa li.next .n::after{content:" ←";color:var(--gold)}
+.pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
+.pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
 .note{font-size:15px;color:var(--muted);margin-top:14px}
 /* bloques */
-.bloquesheet{min-height:520px}
-.bloque{padding:80px 0 60px}
+.bloquesheet{min-height:420px}
+.bloque{padding:60px 0 40px}
 .bloquelabel{font-family:var(--mono);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
 .bloquetitle{font-family:var(--display);font-style:italic;font-weight:500;font-size:64px;line-height:1;margin:0 0 28px;letter-spacing:-1px}
 .bloquedesc{font-size:18.5px;max-width:580px;line-height:1.65}
@@ -90,7 +96,6 @@ ol li::marker{font-family:var(--mono);font-weight:700}
 .frases ol{padding-left:30px;margin:0}
 .frases li{font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.45;margin-bottom:.7em}
 .frases li::marker{color:var(--gold)}
-/* cadenas y citas */
 .chain{border:1px solid var(--ink);padding:18px 20px;margin:14px 0 24px;text-align:center}
 .chain .step{font-family:var(--sans);font-weight:600;font-size:15.5px}
 .chain .arrow{color:var(--gold);font-weight:700;line-height:1.1;font-size:20px;font-family:Georgia,serif}
@@ -107,8 +112,44 @@ tbody th{font-weight:700;width:auto}
 tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 /* pie */
 .foot{font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:14px;border-top:1px solid #cfcac0;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.foot .pn{font-weight:700;color:var(--ink);font-size:13px}
+.foot .pn{font-weight:700;color:var(--ink);font-size:12px}
 .foot .up{text-decoration:none}
+/* examen */
+.exam{min-height:520px}
+.exam .intro{font-size:17px}
+.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
+.exam .meta b{color:var(--ink)}
+.game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
+.g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
+.g-top .streak{color:var(--gold);font-weight:700}
+.timer{height:6px;background:#e4e0d6;margin:0 0 22px;position:relative;overflow:hidden}
+.timer i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:100%}
+.timer.warn i{background:var(--bad)}
+.q{font-family:var(--sans);font-weight:600;font-size:21px;line-height:1.35;margin:0 0 20px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 16px}
+.opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.4;cursor:pointer;color:var(--ink)}
+.opt:hover{background:var(--cream)}
+.opt .k{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;flex:0 0 18px;padding-top:3px}
+.opt.ok{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt.bad{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.dim{opacity:.45}
+.opt:disabled{cursor:default}
+.why{background:var(--cream);border:1px solid var(--ink);padding:12px 16px;font-size:15.5px;margin:0 0 16px;line-height:1.5}
+.why .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.why .lbl.ok{color:#2e6b3a}
+.why .lbl.bad{color:var(--bad)}
+.why .ref{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:var(--display);font-style:italic;font-size:78px;line-height:1;margin:6px 0 2px}
+.score .big small{font-size:34px}
+.score .lbl{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.score .verdict{display:inline-block;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:4px;text-transform:uppercase;border:3px double var(--gold);color:var(--gold);padding:8px 18px;margin:14px 0 6px;transform:rotate(-3deg)}
+.score .verdict.no{border-color:var(--bad);color:var(--bad)}
+.score .pts{font-size:16px;margin:8px 0 2px}
+.score .best{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .bar{margin:0;flex:1 1 200px}
+.exam .start .bar{margin-top:10px}
 /* móvil */
 @media (max-width:720px){
  body{padding:12px 8px 40px;font-size:16.5px}
@@ -122,17 +163,23 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
  .deedtitle h1{font-size:14px;letter-spacing:3px}
  .deedtitle.small h2{font-size:30px}
  .bloquetitle{font-size:42px}
- .toc .l{flex-basis:76px}
  .cover p{text-align:left}
  .reg{letter-spacing:1.5px;font-size:11px}
+ .programa li{flex-wrap:wrap}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .game{padding:18px 14px}
+ .q{font-size:18.5px}
+ .opt{font-size:15.5px;padding:10px 12px}
+ .score .big{font-size:60px}
+ .foot{flex-wrap:wrap;gap:8px}
 }
 @media print{
  body{background:#fff;padding:0}
  .sheet{box-shadow:none;border:none;margin:0;max-width:none;page-break-after:always;padding:36px 44px}
- .foot .up{display:none}
- .bar{display:none}
+ .foot .up,.bar,.exam{display:none}
 }
 </style>
+
 </head>
 <body>
 <section class="sheet cover" id="portada">
@@ -145,885 +192,137 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 <text x="100" y="94" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="2">USO INTERNO</text>
 <text x="100" y="114" text-anchor="middle" font-size="11" letter-spacing="1.5">v2 · 10-2026</text>
 </svg>
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">2026.10</span></div></header>
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">2026.10</span></div></header>
 <div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>REG. FORM. Nº ———</span><span>ETAPAS: 11</span></div>
+<div class="reg"><span>REG. FORM. Nº ———</span><span>DÍAS: 10</span></div>
 <div class="rule" aria-hidden="true"></div>
 <div class="deedtitle"><h1>Playbook del Closer Inmobiliario</h1><div class="dash">——————</div><div class="de">de</div><div class="party">Growing Inmobiliario</div></div>
 <p class="deed">En España, a octubre de 2026, <strong>GROWING INMOBILIARIO</strong>, en adelante <strong>«la Casa»</strong>, hace entrega del presente manual de formación a quien suscribe, en adelante <strong>«el Closer»</strong>, con un único fin: que <strong>conozca a su prospecto como si fuera su mejor amigo</strong> antes de su primera llamada.</p>
-<p class="deed">A tal efecto, el presente manual se extiende en <strong>once etapas</strong>, una <strong>ficha del prospecto</strong> y un <strong>diccionario</strong> anexo, que el Closer se compromete a cursar a razón de una etapa por día, por escrito y sin prisa.</p>
-<a class="bar" href="#indice">Abrir el índice</a>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">1</span><span class="tot">de 17</span></footer>
+<p class="deed">A tal efecto, el presente manual se extiende en <strong>10 días</strong>, con su lectura y su examen cada uno, más un <strong>examen final</strong> y un <strong>diccionario</strong> anexo, que el Closer se compromete a cursar a razón de un día por día, sin saltarse ninguno y sin prisa.</p>
+<a class="bar" href="#programa">Abrir el programa</a>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn"></span><a href="diccionario.html" class="up">Diccionario</a></footer>
 </section>
-<section class="sheet" id="indice">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">2</span></div></header>
+<section class="sheet" id="programa">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">PROGRAMA</span><span class="v">10 días</span></div></header>
 <div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>Índice</h2><div class="dash">——————</div></div>
-<ol class="toc"><li><span class="l">ETAPA 0</span><span class="t">ANTES DE EMPEZAR</span><span class="dots"></span><a href="#etapa-0">3</a></li><li class="tocbloque"><span class="l">BLOQUE 1</span><span class="t">Su mundo</span><span class="dots"></span><a href="#bloque-1">4</a></li><li><span class="l">ETAPA 1</span><span class="t">EL JUEGO ES EL PRODUCTO</span><span class="dots"></span><a href="#etapa-1">5</a></li><li><span class="l">ETAPA 2</span><span class="t">LAS DOS CADENAS</span><span class="dots"></span><a href="#etapa-2">6</a></li><li><span class="l">ETAPA 3</span><span class="t">EL PRECIO: AHÍ ESTÁ LA GUERRA</span><span class="dots"></span><a href="#etapa-3">7</a></li><li><span class="l">ETAPA 4</span><span class="t">EL DINERO: CUÁNTO ENTRA Y, SOBRE TODO, CUÁNDO</span><span class="dots"></span><a href="#etapa-4">8</a></li><li class="tocbloque"><span class="l">BLOQUE 2</span><span class="t">Su cabeza</span><span class="dots"></span><a href="#bloque-2">9</a></li><li><span class="l">ETAPA 5</span><span class="t">ENSAMBLAR LA CABEZA DE RUBÉN</span><span class="dots"></span><a href="#etapa-5">10</a></li><li><span class="l">ETAPA 6</span><span class="t">EL CEMENTERIO: POR QUÉ TE VAN A METER EN EL MISMO CUBO</span><span class="dots"></span><a href="#etapa-6">11</a></li><li class="tocbloque"><span class="l">BLOQUE 3</span><span class="t">Tu diagnóstico</span><span class="dots"></span><a href="#bloque-3">12</a></li><li><span class="l">ETAPA 7</span><span class="t">LOS DOS MODELOS DE AGENCIA: AUTÓNOMOS VS ASALARIADOS</span><span class="dots"></span><a href="#etapa-7">13</a></li><li><span class="l">ETAPA 8</span><span class="t">LAS 5 ETAPAS: DÓNDE ESTÁ TU PROSPECTO</span><span class="dots"></span><a href="#etapa-8">14</a></li><li><span class="l">ETAPA 9</span><span class="t">LOS CUATRO CONCEPTOS QUE TE HACEN ENTENDER MEJOR SU NEGOCIO</span><span class="dots"></span><a href="#etapa-9">15</a></li><li><span class="l">ETAPA 10</span><span class="t">LOS PRIMEROS DIEZ MINUTOS</span><span class="dots"></span><a href="#etapa-10">16</a></li><li><span class="l">ANEXO</span><span class="t">EL DICCIONARIO</span><span class="dots"></span><a href="#anexo">17</a></li></ol>
-<div class="rule" aria-hidden="true"></div>
-<p class="note">Cómo se lee: una etapa al día. Cada una empieza con un repaso de la anterior y termina con tres frases que hay que saber de memoria. El examen de cada etapa va aparte, en el cuaderno de exámenes.</p>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">2</span><span class="tot">de 17</span></footer>
+<div class="deedtitle small"><h2>El programa</h2><div class="dash">——————</div></div>
+<p>Un día, una lectura y un examen. El examen es un juego de siete preguntas con reloj: se puede repetir las veces que haga falta, y de hecho conviene repetirlo. Tu progreso se guarda en este navegador.</p>
+<ol class="programa"><li class="pbloque">BLOQUE 1 · Su mundo</li><li data-day="1" data-n="7"><span class="n">Día 1</span><span class="t"><a href="dia-1.html">ANTES DE EMPEZAR + EL JUEGO ES EL PRODUCTO</a><small>Etapa 0 + Etapa 1 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="2" data-n="7"><span class="n">Día 2</span><span class="t"><a href="dia-2.html">LAS DOS CADENAS</a><small>Etapa 2 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="3" data-n="7"><span class="n">Día 3</span><span class="t"><a href="dia-3.html">EL PRECIO: AHÍ ESTÁ LA GUERRA</a><small>Etapa 3 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="4" data-n="7"><span class="n">Día 4</span><span class="t"><a href="dia-4.html">EL DINERO: CUÁNTO ENTRA Y, SOBRE TODO, CUÁNDO</a><small>Etapa 4 · lectura + examen</small></span><span class="st">Pendiente</span></li><li class="pbloque">BLOQUE 2 · Su cabeza</li><li data-day="5" data-n="7"><span class="n">Día 5</span><span class="t"><a href="dia-5.html">ENSAMBLAR LA CABEZA DE RUBÉN</a><small>Etapa 5 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="6" data-n="7"><span class="n">Día 6</span><span class="t"><a href="dia-6.html">EL CEMENTERIO: POR QUÉ TE VAN A METER EN EL MISMO CUBO</a><small>Etapa 6 · lectura + examen</small></span><span class="st">Pendiente</span></li><li class="pbloque">BLOQUE 3 · Tu diagnóstico</li><li data-day="7" data-n="7"><span class="n">Día 7</span><span class="t"><a href="dia-7.html">LOS DOS MODELOS DE AGENCIA: AUTÓNOMOS VS ASALARIADOS</a><small>Etapa 7 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="8" data-n="7"><span class="n">Día 8</span><span class="t"><a href="dia-8.html">LAS 5 ETAPAS: DÓNDE ESTÁ TU PROSPECTO</a><small>Etapa 8 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="9" data-n="7"><span class="n">Día 9</span><span class="t"><a href="dia-9.html">LOS CUATRO CONCEPTOS QUE TE HACEN ENTENDER MEJOR SU NEGOCIO</a><small>Etapa 9 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-day="10" data-n="7"><span class="n">Día 10</span><span class="t"><a href="dia-10.html">LOS PRIMEROS DIEZ MINUTOS</a><small>Etapa 10 · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-final><span class="n">Final</span><span class="t"><a href="dia-10.html#final">Examen final: todo el playbook</a><small>20 preguntas · 17 para entrar en llamadas</small></span><span class="st">Pendiente</span></li><li><span class="n">Anexo</span><span class="t"><a href="diccionario.html">El diccionario</a><small>Se consulta, no se estudia</small></span><span class="st"></span></li></ol>
+<p class="note">Cómo se lee: una etapa al día, no dos. Cada etapa empieza con un repaso de la anterior y termina con tres frases que hay que saber de memoria. El examen se hace el mismo día, después de leer.</p>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn"></span><a href="diccionario.html" class="up">Diccionario</a></footer>
 </section>
-<section class="sheet" id="etapa-0">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">3</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 0</span><span>FOJA 3</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>ANTES DE EMPEZAR</h2><div class="dash">——————</div></div>
-<h3>De qué va esto</h3>
-<p>Hay un libro que me encanta, <em>El Arte de la Guerra</em>, de Sun Tzu. Y de ahí saco una sola idea, que es la que sostiene todo este playbook:</p>
-<div class="box">
-<p><strong>Tienes que conocer a tu enemigo como si fuera tu mejor amigo.</strong></p>
-</div>
-<p>Tu «enemigo» no es un enemigo, obviamente. Es el dueño de inmobiliaria que se va a sentar delante de ti. Pero la regla es exactamente la misma: si no sabes qué piensa, qué siente, por qué se siente así, dónde le duele y qué quiere de verdad, <strong>no le vas a vender nada. Nada.</strong></p>
-<p>Así que este playbook no te enseña «el sector». Te enseña a una persona. El sector es el mundo en el que vive esa persona, y te lo vas a aprender para entenderle a él, no para aprobar un examen de inmobiliaria.</p>
-<p>Mi objetivo es muy claro: <strong>quiero que sepas lo que sueña, lo que piensa cuando está en su casa, lo que siente cuando vuelve de currar. Tienes que saberlo TODO.</strong></p>
-<h3>Un personaje que te va a acompañar</h3>
-<p>Se llama Rubén. 46 años, tiene una inmobiliaria en Valladolid con dos comerciales, lleva 11 años en el sector y factura 180.000 € al año. Vende bien, se le da bien la gente y ha sacado adelante un negocio él solo. Lo que no tiene es sistema.</p>
-<p>Rubén no existe, pero vas a hablar con cuarenta Rubenes este trimestre. Va a aparecer en todas las etapas.</p>
-<h3>Un aviso antes de empezar</h3>
-<p>Tú no vienes del inmobiliario. Perfecto. Eso no es un problema, es una ventaja: no traes los vicios del sector. Pero sí hay un problema real, y es este: <strong>el dueño de inmobiliaria que se sienta delante de ti lleva 15 años en esto y tú llevas tres semanas.</strong> Si no sabes de qué habla, lo huele en el minuto dos y has perdido la llamada antes de empezar.</p>
-<p>Por eso existe este playbook. Cuando lo termines, vas a saber de su negocio más que él. Suena arrogante. No lo es. En la Etapa 9 vas a entender por qué es literalmente cierto.</p>
-<h3>Una norma de casa: cómo hablamos de ellos</h3>
-<p>En este playbook vas a leer un diagnóstico muy duro del sector: que no miden, que no entrenan, que dependen de la suerte. Todo eso es verdad y lo vas a necesitar.</p>
-<p>Pero ojo. Son gente que ha montado un negocio desde cero y que mantiene a su familia con él. Lo que les falta no es capacidad: es estructura, método y números. Nadie se los ha dado, porque el sector nunca se los pidió.</p>
-<p><strong>Nuestro trabajo no es tener razón sobre ellos. Es que vean lo que no están viendo, y que quieran arreglarlo con nosotros.</strong></p>
-<h3>Esto no es un manual de consulta. Es una formación.</h3>
-<p>Cuatro reglas, y no te las saltes:</p>
-<ol>
-<li><strong>Una etapa al día. No dos.</strong> Si te lo lees entero de una sentada te vas a acordar del 10%. No tengas prisa: tienes que entrar en llamadas sabiendo, no habiendo leído.</li>
-<li><strong>Cada etapa empieza con un repaso</strong> de la anterior. Respóndelo en voz alta, sin mirar atrás. Si fallas una pregunta, vuelves solo a esa parte.</li>
-<li><strong>Cada etapa termina con tres frases.</strong> Esas tres frases son lo que tienes que poder soltar de memoria.</li>
-<li><strong>Los exámenes van aparte, en el cuaderno de exámenes.</strong> Cada etapa tiene el suyo: lo haces el mismo día, por escrito y sin mirar. El examen final son 30 preguntas y no se toca hasta haber terminado las once etapas.</li>
-</ol>
-<h3>El mapa del playbook</h3>
-<p>Tres bloques. Primero el mundo de Rubén, después su cabeza, y al final cómo le lees en una llamada.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:24.0%"><col style="width:18.0%"><col style="width:58.0%"></colgroup>
-<thead><tr><th>Bloque</th><th>Etapas</th><th>Qué construyes</th></tr></thead><tbody>
-<tr><th>Antes de empezar</th><td>Etapa 0</td><td>De qué va esto, Rubén y tu ficha en blanco.</td></tr>
-<tr><th>Bloque 1 · Su mundo</th><td>Etapas 1 a 4</td><td>El juego, las dos cadenas, el precio y la pasta. Cada etapa termina con lo que Rubén siente ahí.</td></tr>
-<tr><th>Bloque 2 · Su cabeza</th><td>Etapas 5 y 6</td><td>Las siete piezas de la cabeza de Rubén y el cementerio de empresas que le han quemado.</td></tr>
-<tr><th>Bloque 3 · Tu diagnóstico</th><td>Etapas 7 a 10</td><td>Cómo clasificarle, qué le duele según dónde está, y las siete preguntas de los primeros diez minutos.</td></tr>
-<tr><th>Anexo</th><td>Diccionario</td><td>Se consulta, no se estudia.</td></tr>
-</tbody></table></div>
-<h3>La ficha de Rubén</h3>
-<p>Cuando termines las diez etapas tienes que poder rellenar esta ficha en los primeros diez minutos de cualquier llamada. Cada etapa te da una o dos casillas. Léela ahora, aunque no entiendas ni la mitad: es a donde vamos.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:40.0%"><col style="width:36.0%"><col style="width:24.0%"></colgroup>
-<thead><tr><th>Casilla</th><th>Qué apuntas</th><th>Lo aprendes en</th></tr></thead><tbody>
-<tr><th>Equipo: cuántos son y si son autónomos o asalariados</th><td></td><td>Etapa 7</td></tr>
-<tr><th>Facturación mensual aproximada</th><td></td><td>Etapa 8</td></tr>
-<tr><th>Exclusivas de los dos últimos meses: ¿estables o a rachas?</th><td></td><td>Etapas 1 y 8</td></tr>
-<tr><th>¿Cobra en arras o en notaría?</th><td></td><td>Etapa 4</td></tr>
-<tr><th>Etapa de la Hoja de Ruta (1 a 5)</th><td></td><td>Etapa 8</td></tr>
-<tr><th>Qué cree que le pasa, con sus palabras</th><td></td><td>Etapas 5 y 6</td></tr>
-<tr><th>Qué le pasa de verdad</th><td></td><td>Etapas 3, 5 y 9</td></tr>
-<tr><th>Qué ha probado antes y cómo acabó</th><td></td><td>Etapa 6</td></tr>
-<tr><th>Cuánto tiempo y dinero puso la semana pasada en su problema</th><td></td><td>Etapa 9</td></tr>
-<tr><th>Qué le vendes y cómo lo posicionas</th><td></td><td>Etapas 6, 7 y 8</td></tr>
-</tbody></table></div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">3</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet bloquesheet" id="bloque-1">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">4</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="bloque"><div class="bloquelabel">BLOQUE 1</div><h2 class="bloquetitle">Su mundo</h2>
-<p class="bloquedesc">Cuatro etapas sobre cómo funciona el negocio de Rubén. No te las aprendes por cultura general: cada una te explica una emoción suya. Por eso todas acaban con el recuadro «Qué siente Rubén aquí». Cuando llegues a la Etapa 5, ya tendrás media cabeza montada.</p>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">4</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-1">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">5</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 1</span><span>FOJA 5</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL JUEGO ES EL PRODUCTO</h2><div class="dash">——————</div></div>
-<div class="box">
-<p><strong>Una inmobiliaria no vende casas. Vende casas que ha conseguido primero.</strong></p>
-<p>Léela otra vez. Ahí está todo el sector.</p>
-</div>
-<p>Imagina una frutería con el mejor escaparate del barrio, la mejor dependienta, la caja registradora más moderna y un cartel luminoso precioso.</p>
-<p><strong>No tiene fruta.</strong></p>
-<p>Eso es el 90% de las inmobiliarias de España. Web bonita, oficina en la calle principal, tarjetas con relieve. Y tres pisos en cartera. (Cartera son los pisos que tienen para gestionar y vender.)</p>
-<p>Tú no le vendes a Rubén un escaparate mejor. <strong>Le vendes fruta.</strong></p>
-<h3>Qué es «producto»</h3>
-<p><strong>Producto = viviendas a la venta.</strong></p>
-<p>Si una inmobiliaria tiene 40 pisos en cartera, tiene producto. Si tiene 3, no tiene negocio, tiene un hobby.</p>
-<h3>El juego real</h3>
-<p>El juego de una inmobiliaria es este: conseguir que <strong>un propietario</strong>, una persona que tiene una vivienda y está pensando en venderla, <strong>se la deje a ellos con un contrato</strong> para poder comercializarla y representarle en la venta.</p>
-<p>Una vez tienen ese contrato, publican el piso en portales (Idealista, Fotocasa), lo mueven, hacen visitas y buscan a alguien que lo compre.</p>
-<p><strong>Dos pasos. Primero consigues la casa. Luego la vendes.</strong></p>
-<h3>Por qué esto es LO difícil ahora mismo</h3>
-<p>Ahora mismo, en España, <strong>falta producto.</strong></p>
-<p>Las razones, resumidas: se ha construido muy poco durante muchos años, las leyes que han ido metiendo han limitado mucho el movimiento de inmuebles, y los precios están donde están. Resultado: hay zonas donde quedan muy pocos propietarios dispuestos a vender.</p>
-<p>Y eso cambia el juego entero. Cuando sobran casas, manda el que tiene compradores. <strong>Cuando faltan casas, manda el que tiene casas.</strong></p>
-<p>Ojo con esto: <strong>es la situación de MERCADO de hoy.</strong> En algún momento cambiará. Pero hoy, y durante todo el tiempo que tú vas a estar vendiendo, el cuello de botella del sector es conseguir propietarios que quieran vender.</p>
-<h3>El contrato tiene nombre: ENCARGO</h3>
-<p>Cuando un propietario firma, eso se llama <strong>encargo</strong>. Literalmente: te <strong>encarga</strong> algo. En este caso, gestionar la venta de su piso.</p>
-<p>Y hay dos tipos. Esta es la primera diferencia que tienes que llevar tatuada:</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:40.0%"><col style="width:30.0%"><col style="width:30.0%"></colgroup>
-<thead><tr><th></th><th>ENCARGO EN EXCLUSIVA</th><th>ENCARGO EN ABIERTO</th></tr></thead><tbody>
-<tr><th>Quién puede vender el piso</th><td>Solo yo</td><td>Yo y cualquier otra agencia</td></tr>
-<tr><th>Quién cobra la comisión</th><td>Yo, seguro</td><td>El que llegue primero</td></tr>
-<tr><th>El propietario está comprometido</th><td>Sí</td><td>No</td></tr>
-<tr><th>Vale la pena invertir en ese piso</th><td>Sí</td><td>Es una lotería</td></tr>
-</tbody></table></div>
-<p>Siempre, siempre, vamos a por la exclusiva. Es la única forma de tener el control sobre las comisiones que se van a cobrar.</p>
-<p>También lo vas a oír así: <strong>captación en exclusiva</strong> o <strong>captación en abierto</strong>.</p>
-<h3>Cuánto se cobra</h3>
-<p>Lo normal es cobrarle <strong>al propietario</strong> unos honorarios de entre el <strong>2% y el 5%</strong> del precio de venta. (En algunos casos también se le cobra algo al comprador, pero lo normal, y lo que a ti te importa, es el propietario.)</p>
-<div class="box">
-<div class="boxlabel">Ejemplo que te tienes que saber de memoria</div>
-<p>Piso de <strong>300.000 €</strong> · honorarios del <strong>5%</strong> → <strong>15.000 €</strong> de comisión.</p>
-</div>
-<p>Esa cifra explica el sector entero. Quince mil euros por una operación. Por eso en el inmobiliario se vive de puta madre sin haber montado nunca una estructura de empresa: las comisiones son tan grandes que siendo bueno comercialmente y hablando con gente ya se come.</p>
-<p>Y ojo, que esto no es un reproche. Es la causa de todo lo demás. <strong>Cuando un sector te deja ganar mucho sin obligarte a profesionalizarte, nadie se profesionaliza. No por falta de capacidad, sino porque no hace falta.</strong></p>
-<p>Acuérdate de esto en la Etapa 6. Es la raíz de todo lo demás.</p>
-<h3>Por qué el encargo en abierto es una trampa</h3>
-<p>Si Rubén trabaja en abierto, pasa esto: el mismo piso está publicado por seis agencias a la vez, con seis fotos distintas y a veces con seis precios distintos. El comprador lo ve repetido, piensa que algo raro pasa con ese piso, y el propietario no está comprometido con nadie.</p>
-<p>Rubén mete tiempo, fotos, visitas y anuncios en un piso que mañana puede vender otro.</p>
-<p>Y aquí está la primera puerta de venta que vas a usar mil veces: conseguir la exclusiva <strong>depende de cómo estructures la reunión delante del propietario.</strong> Es una venta. Exactamente igual que la tuya. El agente inmobiliario, cuando está delante del propietario, es un closer.</p>
-<p>Hay momentos en los que un abierto puede merecer la pena. Son excepciones: la norma es la exclusiva.</p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Rubén sabe mejor que nadie que el juego es conseguir casas. Lo que siente es que <strong>cada mes empieza de cero</strong>: si no entra producto, no hay nada que vender, y la cartera se le vacía sola a medida que vende. Esa presión por no quedarse sin casas no se le va nunca.</p>
-<p>Para tu ficha: su obsesión se llama «conseguir propietarios». Guárdatela, porque en la Etapa 5 vas a ver que esa obsesión es justo lo que le impide ver su problema de verdad.</p>
-</div>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 1</div>
-<ol><li>Una inmobiliaria no vende casas, vende casas que ha conseguido primero.</li><li>Falta producto. El que consigue propietarios, manda.</li><li>Siempre en exclusiva: así tienes todo el control sobre el producto.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">5</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-2">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">6</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 2</span><span>FOJA 6</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LAS DOS CADENAS</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué es un encargo?</li><li>¿Cuál es el rango de honorarios habitual?</li><li>¿Por qué el abierto es malo para la agencia?</li></ol>
-</div>
-<p>Aquí está el concepto que hace que el inmobiliario sea un sector <strong>peligroso</strong>. Súper importante que lo pilles, porque de aquí sale la mitad de las cosas que le vas a decir a Rubén.</p>
-<p><strong>El sector inmobiliario tiene DOS tipos de cliente potencial.</strong></p>
-<p>Primero tienes que captar la casa. Luego tienes que venderla.</p>
-<p>Primero necesitas leads que sean <strong>propietarios</strong>. Después necesitas leads que sean <strong>compradores</strong>.</p>
-<p>Eso significa que un dueño de inmobiliaria tiene que ser bueno en <strong>dos cosas distintas</strong>:</p>
-<ol>
-<li>Encontrar al propietario y convencerle.</li>
-<li>Conseguir vender la propiedad.</li>
-</ol>
-<p>Cualquier otro negocio tiene un embudo. El inmobiliario tiene dos, pegados uno detrás del otro.</p>
-<p>Un restaurante normal compra la verdura y la sirve. Una inmobiliaria <strong>tiene que cultivar la verdura y además servir las mesas.</strong> Dos oficios distintos, dos equipos distintos, dos conjuntos de habilidades. Y la mayoría es regular en los dos.</p>
-<h3>Y por eso el ciclo es largo</h3>
-<p>Desde que consigues al propietario hasta que la casa se vende pasan <strong>2 o 3 meses</strong>. Mínimo.</p>
-<p>Grábate esto: <strong>ellos no generan un euro hasta que no venden la propiedad.</strong> Da igual cuántas exclusivas tengan. Las exclusivas no pagan nóminas. Las ventas sí.</p>
-<p>Es una de las cosas más importantes de todo el playbook, porque explica su tensión de caja, su ansiedad, y por qué cuando les dices «12.000 €» se les abre un agujero en el estómago.</p>
-<h3>Cadena A — Captación (conseguir la casa)</h3>
-<div class="chain"><div class="step">[1] CONTACTO / CONVERSACIÓN con un propietario</div><div class="arrow">↓</div><div class="step">[2] NOTICIA · alguien que dice «sí, quiero vender»</div><div class="arrow">↓</div><div class="step">[3] CITA DE CAPTACIÓN AGENDADA · cita en su casa</div><div class="arrow">↓</div><div class="step">[4] CITA REALIZADA · se presentó de verdad</div><div class="arrow">↓</div><div class="step">[5] ENCARGO FIRMADO · exclusiva o abierto</div></div>
-<p>Los términos de esta cadena:</p>
-<ul>
-<li><strong>Noticia:</strong> una persona que quiere vender. Literalmente, «tengo una noticia: fulano vende». Si Rubén te dice <strong>«he tenido tres noticias esta semana»</strong>, te está diciendo que tres personas le han dicho que quieren vender. Una noticia no es una cita todavía.</li>
-<li><strong>Cita de captación:</strong> la cita <strong>con el propietario</strong>, normalmente presencial, en su casa. Es la reunión donde se juega la exclusiva. Es su llamada de cierre.</li>
-<li><strong>Captar:</strong> conseguir que firme. «He captado tres pisos este mes» = tres encargos firmados.</li>
-</ul>
-<p><strong>Ojo con el paso 3 → 4:</strong> no todas las citas agendadas se hacen. Se las cancelan, se las mueven, no les abren la puerta. Ese porcentaje tiene nombre y es oro: lo vas a ver en la Etapa 9.</p>
-<h3>Cadena B — Venta (vender la casa)</h3>
-<p>Una vez tienes el encargo, publicas el piso en portales, lo subes a redes, se lo mandas a tu base de contactos. Y arranca el segundo embudo, que es <strong>exactamente igual</strong> que el primero:</p>
-<div class="chain"><div class="step">[1] CONTACTO con un comprador interesado · deja sus datos</div><div class="arrow">↓</div><div class="step">[2] VISITA REALIZADA · ve el piso</div><div class="arrow">↓</div><div class="step">[3] PROPUESTA · «lo quiero, por X €»</div><div class="arrow">↓</div><div class="step">[4] RESERVA (≈2.000 €) · prueba de compromiso</div><div class="arrow">↓</div><div class="step">[5] PROPUESTA PRESENTADA AL PROPIETARIO</div><div class="arrow">↓</div><div class="step">[6] PROPIETARIO ACEPTA → VENTA</div></div>
-<p>Lo que tienes que entender de esta cadena:</p>
-<ul>
-<li>La <strong>propuesta</strong> casi siempre viene <strong>por debajo</strong> del precio publicado. El comprador quiere negociar. Es normal, no es una mala señal.</li>
-<li>Antes de llevarle la propuesta al propietario, el agente le pide al comprador una <strong>reserva de unos 2.000 €</strong>. ¿Para qué? Para medir si va en serio. Sin dinero encima de la mesa, una propuesta es una conversación de bar.</li>
-<li>Si el propietario acepta → <strong>hay venta</strong>.</li>
-</ul>
-<h3>Y después de la venta: ARRAS y NOTARÍA</h3>
-<p>La venta se cierra en dos actos:</p>
-<ol>
-<li><strong>ARRAS.</strong> El contrato privado entre comprador y propietario. El comprador pone un adelanto, normalmente el <strong>10%</strong> del precio. Piso de 200.000 € → <strong>20.000 € de arras.</strong> Esto puede pasar en <strong>una semana</strong> desde que se acepta la propuesta.</li>
-<li><strong>ESCRITURA / NOTARÍA.</strong> Se firma ante notario y la casa cambia de manos de verdad. Esto tarda, de normal, <strong>unos 2 meses más</strong>, sobre todo si el comprador necesita hipoteca, porque los bancos tardan eso en concederla.</li>
-</ol>
-<p>Guárdate esos dos conceptos. En la Etapa 4 se convierten en una de las cosas más potentes que le puedes decir a Rubén.</p>
-<h3>El mapa completo</h3>
-<p>Esto es lo que tienes que poder dibujar en una servilleta.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
-<thead><tr><th>PROPIETARIOS (Cadena A)</th><th>COMPRADORES (Cadena B)</th></tr></thead><tbody>
-<tr><th>1. Contacto</th><td>1. Contacto</td></tr>
-<tr><th>2. Noticia</th><td>2. Visita realizada</td></tr>
-<tr><th>3. Cita de captación agendada</th><td>3. Propuesta</td></tr>
-<tr><th>4. Cita realizada</th><td>4. Reserva (≈2.000 €)</td></tr>
-<tr><th>5. ENCARGO FIRMADO (exclusiva) → se publica y arranca la Cadena B</th><td>5. Propuesta presentada al propietario</td></tr>
-<tr><th></th><td>6. ACEPTADA = VENTA</td></tr>
-<tr><th></th><td>7. Arras (10%, ≈1 semana)</td></tr>
-<tr><th></th><td>8. Notaría (≈2 meses)</td></tr>
-</tbody></table></div>
-<p><strong>Esas son las métricas comerciales de una inmobiliaria.</strong> Son los números que hay que medir para saber si un agente está rindiendo o no.</p>
-<p>Y ahora la pregunta que te va a volar la cabeza, que es la misma que te voy a hacer yo:</p>
-<p><strong>¿Qué porcentaje de agencias crees que tiene estos números apuntados? ¿El 50%? ¿El 80%?</strong></p>
-<p>Por lo que vemos en nuestras llamadas: casi ninguna. Pon un 3%. No es un estudio, es lo que me sale después de cientos de conversaciones, pero es la cifra con la que trabajamos.</p>
-<p>El resto te los dirá por intuición y por sensaciones. «Pues yo creo que cierro bastante». «Hombre, de cada diez citas igual saco cuatro». Nada medido. Nada escrito.</p>
-<p>Guárdate esa cifra. En la Etapa 5 y en la Etapa 9 la usamos.</p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Entre que firma un encargo y cobra pasan meses, y entre medias ha puesto fotos, portales, visitas y tiempo. Lo que siente es <strong>tensión de caja</strong>: el negocio es una montaña rusa y nunca sabe cómo va a ser el mes que viene.</p>
-<p>Y como no mide, no sabe en qué paso de las dos cadenas se le escapan las operaciones. Solo sabe que «hay meses buenos y meses malos». Por eso una inversión de 12.000 € le aprieta el estómago antes de que acabes la frase.</p>
-</div>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 2</div>
-<ol><li>Dos embudos: primero la casa, después el comprador.</li><li>No cobran hasta que no venden. Las exclusivas no pagan nóminas.</li><li>Solo el 3% tiene estos números. El resto va por sensaciones.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">6</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-3">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">7</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 3</span><span>FOJA 7</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL PRECIO: AHÍ ESTÁ LA GUERRA</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué viene antes, la noticia o la cita de captación?</li><li>¿Qué es una reserva y para qué sirve?</li><li>¿Arras o notaría: qué va primero?</li></ol>
-</div>
-<p>Si en la Etapa 1 has entendido que el juego es conseguir producto, ahora viene el matiz que lo cambia todo:</p>
-<div class="box">
-<p><strong>No vale cualquier producto. Vale el producto que está en precio.</strong></p>
-</div>
-<h3>Qué es «precio de mercado»</h3>
-<p>Precio de mercado quiere decir que, <strong>comparado con todo lo que se ha vendido en esa zona y con todo lo que hay publicado hoy, un comprador lo vea como una oportunidad.</strong></p>
-<p>Según los metros cuadrados, el estado, la planta, el ascensor, la orientación... le toca un precio u otro. Exactamente igual que cualquier otro producto del mundo.</p>
-<p>Y aquí está el detalle que marca la diferencia: <strong>cuando un piso está en precio, se nota al momento.</strong> Empiezan a llover solicitudes de visita. Cuando está fuera de precio, silencio.</p>
-<p><strong>Un piso en precio se vende solo. Un piso fuera de precio no lo vende ni el mejor comercial de España.</strong></p>
-<h3>Por qué el propietario pone un precio falso</h3>
-<p>Esta es la parte que tienes que entender de verdad, porque es la raíz del dolor de Rubén.</p>
-<p><strong>El propietario no pone el precio por lo que se podría vender. Lo pone por lo que necesita para cuadrar sus cuentas.</strong></p>
-<p>Te lo enseño con números. Esto es una cita de captación real, repetida mil veces:</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:70.0%"><col style="width:30.0%"></colgroup>
-<tbody>
-<tr><td>El propietario quiere vender por</td><td><strong>300.000 €</strong></td></tr>
-<tr><td>Hipoteca pendiente</td><td>140.000 €</td></tr>
-<tr><td>Préstamo personal</td><td>20.000 €</td></tr>
-<tr><td>Entrada para la casa nueva</td><td>40.000 €</td></tr>
-<tr><td>Lo que «merece» por su casa</td><td>el resto</td></tr>
-<tr><td><strong>TOTAL que necesita</strong></td><td><strong>300.000 €</strong></td></tr>
-</tbody></table></div>
-<p>Lleva meses con ese número en la cabeza. Ha hecho planes con ese número. Ha mirado casas nuevas con ese número.</p>
-<p>Y tú, con el estudio comparativo en la mano, ves que <strong>ese piso se vende por 200.000 €.</strong> Cien mil euros de diferencia. Eso no es una negociación. <strong>Es romperle su realidad en la cara.</strong></p>
-<h3>Y encima, la competencia le envenena</h3>
-<p>Como hay poco producto en el mercado, las demás agencias están desesperadas por conseguir casas. Así que hacen lo más fácil del mundo:</p>
-<blockquote><p>«¿300.000? Claro que sí. Yo te lo intento por 300.000.»</p></blockquote>
-<p>Le regalan los oídos. Saben perfectamente que es imposible. Pero prefieren tener el piso en cartera y ya le bajarán el precio dentro de cuatro meses.</p>
-<p>Resultado: <strong>el propietario llega a ti con la cabeza envenenada por tres agencias.</strong> Y el que le dice la verdad, tú, es el malo de la película.</p>
-<p>Imagina que vas al médico y te dice que pesas 110 kilos y tienes que bajar 20. Y luego vas a otros tres médicos y los tres te dicen: «qué va, estás estupendo, no te preocupes». ¿A cuál vas a volver?</p>
-<p>Pues eso es exactamente lo que pasa en una cita de captación. El agente que capta en precio es el médico de los 20 kilos: dice la verdad y, aun así, tiene que conseguir que el propietario se quede con él. <strong>Por eso captar en precio es una habilidad comercial de nivel alto, no una charla agradable.</strong></p>
-<h3>La doble venta de la cita de captación</h3>
-<p>En esa reunión, el agente tiene que cerrar <strong>dos cosas a la vez</strong>:</p>
-<ol>
-<li><strong>Que me lo dé a mí en exclusiva.</strong></li>
-<li><strong>Que salgamos al precio que dice el mercado.</strong></li>
-</ol>
-<p>Si cierra solo la primera, tiene un piso que no se va a vender nunca. Trabaja gratis. Si cierra solo la segunda, el piso en precio se lo lleva otro.</p>
-<p><strong>Las dos. Siempre las dos.</strong></p>
-<h3>Lo que casi nadie hace</h3>
-<p>No he visto a nadie que tenga problema de captación y entrene. A nadie.</p>
-<p>La gente que capta mucho volumen, sí entrena. Los que no captan, no entrenan.</p>
-<p>Todos están demasiado metidos en la operativa y en las tareas del día a día. Se pasan el día arriba y abajo con el coche, de visita en visita, y no dedican ni una puta hora a sistematizar o a construir para su negocio. Nadie lleva estructura. No saben resolver objeciones. No tienen sistema. No miden nada. Siempre el mismo problema, siempre resuelto de la misma manera, siempre exactamente igual.</p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Cada semana le toca ser el malo que dice la verdad, mientras tres agencias le regalan los oídos al propietario. Lo que siente es <strong>impotencia</strong>, y con los años, la tentación de ceder: captar fuera de precio para no perder el piso, aunque sepa que no se va a vender.</p>
-<p>Y hay una segunda cosa, más importante para ti: como se pega esta guerra todos los días, <strong>se siente bueno comercialmente</strong>. Y muchas veces lo es. Por eso no ve el entrenamiento como una prioridad, y por eso si le atacas esa creencia sin tener su porcentaje de cierre delante, no te va a creer.</p>
-</div>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 3</div>
-<ol><li>El propietario no pone el precio del mercado, pone el precio de sus deudas.</li><li>Captar fuera de precio es trabajar gratis.</li><li>Se siente bueno vendiendo y no ve el entrenamiento como prioridad. Sin su % de cierre delante, no lo verá nunca.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">7</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-4">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">8</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 4</span><span>FOJA 8</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL DINERO: CUÁNTO ENTRA Y, SOBRE TODO, CUÁNDO</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Las dos cosas que hay que cerrar en una captación?</li><li>¿Por qué las otras agencias le dicen que sí a cualquier precio?</li><li>¿Qué pasa con un piso sobrevalorado?</li></ol>
-</div>
-<p>Esta etapa es corta y es de las que más te van a servir. Porque aquí hay una herida abierta que <strong>casi nadie en el sector sabe que tiene.</strong></p>
-<h3>Volvamos a Rubén</h3>
-<p>Rubén capta una exclusiva hoy, <strong>en octubre</strong>.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:25.0%"><col style="width:75.0%"></colgroup>
-<tbody>
-<tr><td><strong>Octubre</strong></td><td>Firma el encargo. Mete dinero en fotos, anuncios, portales, y su tiempo.</td></tr>
-<tr><td><strong>Noviembre</strong></td><td>Hace visitas. Sale una propuesta. Se acepta.</td></tr>
-<tr><td><strong>Diciembre</strong></td><td>Se firman las <strong>arras</strong>. El comprador pide hipoteca.</td></tr>
-<tr><td><strong>Enero / febrero</strong></td><td>El banco concede. <strong>Notaría.</strong></td></tr>
-</tbody></table></div>
-<p><strong>Rubén cobra en febrero.</strong> Todo el dinero y todo el tiempo que puso en octubre, lo recupera cuatro meses después.</p>
-<h3>El problema</h3>
-<p>La mayoría de inmobiliarias <strong>cobran sus honorarios en notaría.</strong> Es «lo que se hace».</p>
-<p>Eso significa que trabajan con cuatro meses de retraso entre que invierten y que ingresan. Y entonces pasa lo obvio:</p>
-<ul>
-<li>No tienen capital para reinvertir en captar más.</li>
-<li>No tienen fondos para aguantar un mes flojo.</li>
-<li>Y si encima administran mal la pasta, se quedan secos.</li>
-</ul>
-<p>Esto le pasa a muchísimas inmobiliarias. <strong>Y lo viven como «es que el sector es así».</strong></p>
-<h3>Lo que enseñamos nosotros</h3>
-<p><strong>Cobrar en arras.</strong></p>
-<p>Las arras pueden firmarse <strong>una semana</strong> después de que se acepte la propuesta. Es simplemente el acuerdo entre comprador y propietario, con ese 10% encima de la mesa.</p>
-<p>Si cobras ahí, pasas de ingresar a 4 meses vista a ingresar casi de inmediato. Y puedes reinvertir en captar más producto <strong>ya</strong>.</p>
-<p>Dos formas de hacerlo:</p>
-<ul>
-<li><strong>Cobrar todos los honorarios en arras.</strong> El fee completo sale del dinero de las arras y el propietario no recibe nada de ese adelanto.</li>
-<li><strong>Cobrar el 50% en arras y el resto en notaría.</strong> Más fácil de venderle al propietario.</li>
-</ul>
-<h3>El concepto de negocio que hay detrás</h3>
-<p>Esto no es un truco inmobiliario. Es una ley de cualquier negocio:</p>
-<div class="box">
-<p><strong>Mete la máxima cantidad de dinero posible, lo antes posible.</strong></p>
-</div>
-<p>Cuanto antes entra el dinero, antes lo vuelves a invertir en conseguir más producto. El que cobra en una semana le da diez vueltas al año. El que cobra en cuatro meses, tres.</p>
-<h3>Cómo usar esto en llamada (y cómo NO usarlo)</h3>
-<p><strong>NO</strong> se lo sueltes como una corrección: <em>«estás cobrando mal»</em>. Te pones por encima y se cierra.</p>
-<p><strong>SÍ</strong> úsalo como diagnóstico:</p>
-<blockquote><p>«Una pregunta, Rubén. Cuando cierras una operación, ¿tú cobras en arras o en notaría?»</p><p>«En notaría, como todo el mundo.»</p><p>«Vale. Entonces la exclusiva que captaste este mes, ¿la cobras en enero o en febrero?»</p></blockquote>
-<p>Y te callas.</p>
-<p>Acabas de hacer que vea un agujero que llevaba once años sin mirar. <strong>No le has dicho nada. Se lo ha dicho él.</strong></p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Rubén nunca se ha planteado cobrar en arras. Cobra en notaría porque «el sector es así». Lo que siente es que la falta de caja <strong>es normal, no un error suyo</strong>: no es un dolor consciente, es el paisaje.</p>
-<p>Eso es importante para ti: no puedes venderle la solución a un problema que él no sabe que tiene. Tienes que hacérselo ver con una pregunta, nunca con una corrección. Con esta etapa ya tienes las cuatro emociones del Bloque 1: presión por el producto, tensión de caja, impotencia con el precio y resignación con la pasta. En la siguiente las juntamos.</p>
-</div>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 4</div>
-<ol><li>Capta en octubre, cobra en febrero.</li><li>Las arras son en una semana. La notaría son dos meses.</li><li>Cuanto antes entra el dinero, más vueltas le das al año.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">8</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet bloquesheet" id="bloque-2">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">9</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="bloque"><div class="bloquelabel">BLOQUE 2</div><h2 class="bloquetitle">Su cabeza</h2>
-<p class="bloquedesc">Ya conoces el mundo de Rubén y has visto cuatro emociones suyas. Ahora montamos su cabeza entera, pieza a pieza, y después vemos el cementerio de empresas que le han quemado antes de que llegues tú. Estas dos etapas son el corazón del playbook.</p>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">9</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-5">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">10</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 5</span><span>FOJA 10</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>ENSAMBLAR LA CABEZA DE RUBÉN</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Capta en octubre y cobra cuándo?</li><li>¿Cuánto son las arras y cuándo se firman?</li><li>¿Qué dos cosas se cierran en una cita de captación?</li></ol>
-</div>
-<p>Esta es la etapa más importante de todo el playbook. Las cuatro anteriores eran el terreno. Esta es la persona.</p>
-<p>Y no partes de cero. En cada etapa del Bloque 1 has visto una emoción de Rubén: la presión por conseguir producto, la tensión de caja, la impotencia con el precio y la resignación con la pasta. Ahora vamos a montar la cabeza entera, pieza a pieza. Acuérdate de la idea de Sun Tzu: <strong>conocer a tu enemigo como si fuera tu mejor amigo.</strong></p>
-<h3>PIEZA 1 — El ego</h3>
-<p>Rubén es una persona que se metió en un negocio comercial, se le dio bien y empezó a ganar 5.000 o 10.000 € al mes. Más que casi toda la gente con la que se compara.</p>
-<p>Eso hace dos cosas:</p>
-<ul>
-<li><strong>Le confirma que es bueno en lo que hace.</strong> Y normalmente lo es: comercialmente es bueno de verdad, por eso ha llegado hasta aquí.</li>
-<li>Le da <strong>mucha seguridad en sí mismo.</strong> Es lo que más se repite en este perfil y tienes que contar con ello.</li>
-</ul>
-<p><strong>Qué significa para ti:</strong> tu autoridad tiene que estar ahí desde el primer segundo. Si entras pidiendo permiso, te come. Si entras como alguien que sabe más que él de su propio negocio, te escucha.</p>
-<h3>PIEZA 2 — Su ambición real (y no es la que te va a decir)</h3>
-<p>Aquí casi todo el mundo la caga.</p>
-<p>La gran mayoría de dueños de inmobiliaria <strong>no quieren ser millonarios.</strong> Tienen familia, tienen preocupaciones, son gente normal y corriente.</p>
-<p>Lo que quieren de verdad es:</p>
-<ul>
-<li><strong>Estabilidad en el negocio.</strong> Que deje de depender de la suerte.</li>
-<li>Ganar algo por encima de la media.</li>
-<li>Poder mantener a su familia sin angustia.</li>
-<li>Y, cada vez más, <strong>que el negocio funcione sin tener que estar él metido hasta el cuello.</strong></li>
-</ul>
-<p>Lo que NO están pensando es <em>«cómo me vuelvo una bestia, cómo me motivo al 100% y curro sábados y domingos»</em>.</p>
-<p>Existe un perfil que sí es así. Pero es la minoría. <strong>La mayoría lleva muchos años en el sector y lo que quiere es que el negocio trabaje más y él menos.</strong></p>
-<h3>PIEZA 3 — Quieren el camino más corto. Dáselo.</h3>
-<p>Ellos <strong>quieren creer que existe un camino más corto</strong> y que es el que les va a llevar a su objetivo.</p>
-<p>Y es importante que entiendas por qué, porque no es pereza. <strong>Llevan diez o quince años echando muchísimas horas. Lo que ya no quieren es más esfuerzo: quieren que el esfuerzo que ya ponen tenga retorno.</strong> Han trabajado un huevo. Lo que no han tenido nunca es un sistema.</p>
-<p>Y aquí va una instrucción directa:</p>
-<div class="box">
-<p><strong>Dales lo que quieren.</strong></p>
-<p>Si intentas llevártelos por la contraria, por la motivación, por la disciplina, por el esfuerzo, por «es que tienes que trabajar más», <strong>los pierdes.</strong></p>
-</div>
-<p>Excepción: si detectas a uno de los de verdad, con aspiraciones y visión grande, puedes jugar otro partido.</p>
-<p>Y ojo con esto, porque es una trampa en la que caen todos los closers nuevos: <strong>todos te van a decir que no tienen techo.</strong> Todos. «Yo quiero crecer sin límite». Es mentira en el 80% de los casos. No están dispuestos a poner el esfuerzo que eso requiere. No se lo discutas: simplemente no construyas la venta sobre esa frase.</p>
-<h3>PIEZA 4 — Sin datos, la culpa siempre acaba fuera</h3>
-<p>Como no miden prácticamente nada (acuérdate: <strong>el 3%</strong>), <strong>no tienen forma de saber dónde está su fallo real.</strong></p>
-<p>Y cuando una persona dirige algo sin datos delante, pasan dos cosas, siempre. Y le pasarían a cualquiera, a ti y a mí también:</p>
-<ol>
-<li><strong>Nunca va a coger la responsabilidad.</strong> Nunca es su culpa.</li>
-<li><strong>Va a ir a buscar el factor más sencillo</strong> que, si lo resolviera, le cambiaría el negocio entero.</li>
-</ol>
-<p>Casi nadie mira hacia dentro y dice «igual el problema es cómo vendo yo». Se mira hacia fuera: el mercado, los precios, la competencia, los portales, los leads.</p>
-<p>Y repito que esto no es un defecto del inmobiliario. Es lo que le pasa a cualquiera que dirige algo sin números delante. La diferencia es que tú vas a entrar en esa llamada con los números, y él no los tiene.</p>
-<p>Dato real: no he escuchado nunca, ni a un solo dueño de inmobiliaria, decirme que trabaja mal. Ni a uno.</p>
-<h3>PIEZA 5 — Por qué se siente el bueno de la película</h3>
-<p>Esto conecta directo con lo anterior y es precioso.</p>
-<p>Rubén va a citas de captación. Y en esas citas, los propietarios le hablan fatal de las otras inmobiliarias. Porque el sector arrastra una desconfianza de partida que muy pocos sectores tienen.</p>
-<p>Así que Rubén escucha, semana tras semana, lo mal que trabaja todo el mundo.</p>
-<p>Conclusión que saca: <strong>«yo soy de los buenos».</strong></p>
-<p>Y como además el sector entero tiene mala fama, él se siente el que viene a hacerlo bien.</p>
-<p>Resultado: <strong>todos piensan que son los mejores y que nadie lo hace bien.</strong> Y por eso casi nunca son críticos consigo mismos.</p>
-<p>De dónde viene esa desconfianza, por cierto: de que el sector no está regulado. No hace falta ni titulación ni colegiación para ejercer de agente inmobiliario. Eso ha dejado entrar a mucha gente sin ninguna preparación, y ha habido casos graves que han manchado la reputación de todos.</p>
-<p>Y aquí hay algo que tienes que tener muy presente: <strong>el que más sufre esa fama es precisamente el que sí trabaja bien.</strong> Rubén paga cada día la factura de gente que no tiene nada que ver con él. Por eso es uno de los sectores más difíciles que existen: su propio cliente potencial empieza desconfiando.</p>
-<h3>PIEZA 6 — Los referidos: la mentira más cara del sector</h3>
-<p>Aquí está el núcleo. Léelo dos veces.</p>
-<p>El <strong>90-95% de las inmobiliarias dependen de referidos.</strong> Gente que ya vendió con ellos le pasa el contacto a un amigo o a un conocido, y así entra el negocio.</p>
-<p>Y el problema de los referidos es que <strong>no tienen ninguna previsibilidad.</strong> Igual aparecen que no.</p>
-<p>Si construyes tu negocio sobre eso, lo estás construyendo sobre la suerte. Dependes del azar no ya para crecer, sino para sobrevivir.</p>
-<p>Pero el daño real de los referidos no es ese. Es este:</p>
-<p><strong>Un referido se cierra solo.</strong> Viene recomendado, viene con la confianza puesta, viene queriendo trabajar contigo.</p>
-<p>Así que Rubén cierra casi todos los referidos que le llegan.</p>
-<p>Y de ahí saca la conclusión equivocada de su vida: <strong>«yo cierro muy bien».</strong></p>
-<p>No necesariamente. Cierra lo más fácil que existe, y nunca ha podido comprobar qué pasa con lo difícil. Es como juzgar a un portero por los penaltis que le tiran flojos y al centro: no es que los pare, es que nadie le ha puesto a prueba todavía.</p>
-<h4>Y entonces prueban anuncios</h4>
-<p>Un día Rubén se anima y mete dinero en anuncios en redes para captar propietarios.</p>
-<p>Y espera que le lleguen igual de calentitos que un referido. Espera que lleguen pidiendo firmar el encargo.</p>
-<p>Lo que le llega es gente fría de cojones. Como en cualquier prospección en frío. Gente que ha visto un anuncio de 15 segundos. Hay que convencerles de que trabajen con él, en exclusiva, y al precio que dice el mercado. Y encima hay que caerles bien.</p>
-<p>Rubén se la pega. Y en vez de concluir «no sé vender a frío», concluye:</p>
-<blockquote><p>«Es que no me llegan propietarios buenos.»</p></blockquote>
-<p>Súper importante que esto se te quede, porque es lo que te va a decir el 90% de las personas con las que hables: <strong>«si yo consiguiera leads, mi negocio cambiaría».</strong></p>
-<h3>PIEZA 7 — Su fantasía: el propietario cualificado</h3>
-<p>Lo más dulce que existe en la cabeza de Rubén:</p>
-<p><strong>Un propietario que está en su zona, que quiere vender en menos de 6 meses, y que quiere trabajar con un intermediario.</strong></p>
-<p>Que quiera vender. Que quiera venderlo CON ÉL. Y que sea fácil de firmar.</p>
-<p>Si en una reunión le pintas eso, tienes toda su atención.</p>
-<p>Pero, y esto es lo que tú tienes que saber y él no, <strong>eso no es la realidad.</strong> Hagas lo que hagas, siempre va a costar conseguir propietarios. Siempre. Eso no se arregla con un formulario mejor.</p>
-<p>Aquí tienes la tensión central de todas tus llamadas:</p>
-<div class="box">
-<p><strong>Él quiere leads. Lo que necesita es saber cerrar.</strong></p>
-<p>Y tú no puedes venderle lo que necesita diciéndoselo a la cara. Lo vas a ver en la Etapa 6.</p>
-</div>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 5</div>
-<ol><li>No quieren ser millonarios. Quieren estabilidad y dejar de depender de la suerte.</li><li>Cierran referidos y creen que cierran bien. Nunca he oído a un dueño decir que trabaja mal.</li><li>Él quiere leads. Lo que necesita es saber cerrar.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">10</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-6">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">11</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 6</span><span>FOJA 11</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL CEMENTERIO: POR QUÉ TE VAN A METER EN EL MISMO CUBO</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué quieren de verdad la mayoría de dueños?</li><li>¿Por qué creen que cierran bien?</li><li>¿Qué frase te va a decir el 90% de las personas con las que hables?</li></ol>
-</div>
-<p>Esta etapa te explica por qué vas a recibir objeciones que no tienen nada que ver contigo. Y cómo no comértelas.</p>
-<h3>La secuencia que ya ha vivido</h3>
-<p>Rubén ya tiene la conclusión: «necesito propietarios que quieran vender».</p>
-<p>Y en el momento en que esa idea entra en su cabeza, el mundo entero se la refuerza. Le salen doscientos mil anuncios: «consigue exclusivas con nuestros leads», «leads inmobiliarios cualificados», «compra leads», «te generamos contactos».</p>
-<p>Entonces empieza a probar lo que él cree que es marketing inmobiliario.</p>
-<p>Y mira lo que hace exactamente: en vez de invertir en una consultoría o en formarse él, se va a lo más barato que encuentra:</p>
-<div class="box">
-<p><strong>500 € al mes de fee + 500 € de campañas</strong></p>
-</div>
-<p>¿Qué pasa con ese tipo de empresas? Que son empresas que no han resuelto ese problema ni en su propio negocio. Le dan números inflados para cerrarle. Le prometen la luna.</p>
-<p>Rubén se lo cree. Entra con la expectativa por las nubes. Y se come una realidad que no tiene nada que ver.</p>
-<p>¿Por qué? Porque no conocen el sector inmobiliario y no saben enseñar ni dirigir a nadie. Saben montar una campaña; no saben hacer que un negocio funcione. En este sector hay muy pocos jugadores de nivel, y esa es buena parte de la razón de que casi todo el que lo ha intentado haya acabado quemado.</p>
-<p>Y acuérdate de la Etapa 1: cuando las comisiones son tan grandes que con ser bueno comercialmente ya vives, nadie te obliga a aprender de márgenes, de embudos ni de métricas. Por eso Rubén no sabe distinguir a una empresa seria de un chiringuito. Nadie le ha enseñado a mirar.</p>
-<h3>El bucle (dibújatelo, porque es el patrón entero)</h3>
-<div class="chain"><div class="step">Prueba con la empresa A</div><div class="arrow">↓</div><div class="step">3 meses creyendo que «en algún momento arrancará»</div><div class="arrow">↓</div><div class="step">No funciona</div><div class="arrow">↓</div><div class="step">2-3 meses de descanso y frustración: «no vuelvo a probar»</div><div class="arrow">↓</div><div class="step">Sigue dependiendo de referidos → sigue el dolor</div><div class="arrow">↓</div><div class="step">Le aparece un anuncio nuevo → le toca el punto de dolor</div><div class="arrow">↓</div><div class="step">Prueba con la empresa B</div><div class="arrow">↓</div><div class="step">No funciona</div><div class="arrow">↓</div><div class="step">... y otra vez. Y otra vez.</div></div>
-<p>Rubén ha hecho este bucle dos, tres, cuatro veces. <strong>No llega virgen a tu llamada. Llega quemado.</strong></p>
-<h3>Y ahora entras tú</h3>
-<p>Entras tú, en una reunión, y le planteas lo mismo que los otros. Y encima se lo dices por 12.000 €. ¿Qué crees que va a pasar?</p>
-<p>Te mete en el mismo cubo. El cubo de «esto ya lo he probado y no funciona».</p>
-<p><strong>Y no es una objeción contra ti. Es una cicatriz.</strong></p>
-<h3>LA REGLA MÁS IMPORTANTE DE TODA TU VENTA</h3>
-<div class="box">
-<p><strong>Nunca te posiciones como una agencia de marketing.</strong></p>
-<p>Nunca digas que vas a hacerle marketing, ni campañas, ni «leads».</p>
-</div>
-<p>Lo que él quiere son conversaciones con propietarios que quieren vender, y eso es lo que le vas a dar. Pero no se lo vendes como leads: <strong>se lo entregas como un vehículo nuevo.</strong> Un sistema, no una campaña.</p>
-<p>Si te posicionas como leads, como campañas, como publicidad, eres la empresa C del bucle. Y te caen encima las objeciones de la A y de la B, que ni siquiera son tuyas.</p>
-<h3>Entonces, ¿qué hacemos?</h3>
-<p>Aquí está el equilibrio fino y tienes que entenderlo bien, porque solo parece contradictorio:</p>
-<p><strong>Hay que venderles lo que quieren, conversaciones con propietarios que quieren vender, pero con un posicionamiento distinto.</strong></p>
-<p>Lo que quieren es el deseo. El posicionamiento es cómo se lo entregas.</p>
-<p>No eres el que le da leads. Eres el que le construye un sistema para que su negocio deje de depender de la suerte: canales de captación que funcionan todos los días, un equipo que sabe cerrar, y números que le dicen dónde está fallando.</p>
-<h3>Y una cosa más sobre su nivel de conciencia</h3>
-<p>El nivel de conciencia empresarial de este sector es bajísimo.</p>
-<p>Y no porque la gente no valga. Porque el sector nunca se lo ha pedido. Les ha dejado llegar hasta aquí sin exigírselo.</p>
-<p>Esto no es un juicio, es una instrucción táctica. Significa:</p>
-<p><strong>No tienes que venderles grandes niveles de conciencia. Tienes que venderles lo que desean.</strong></p>
-<p>No intentes educarles en una primera llamada sobre la mentalidad de crecimiento que deberían tener, ni sobre medir sus números, ni sobre estructura de equipo, ni sobre atribución de marketing. No están ahí. Véndeles el deseo y entrégales el sistema.</p>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 6</div>
-<ol><li>No llega virgen a la llamada. Llega quemado por dos o tres empresas.</li><li>Si te posicionas como marketing, te comes las objeciones de los que vinieron antes.</li><li>Véndeles lo que desean, con un posicionamiento distinto.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">11</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet bloquesheet" id="bloque-3">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">12</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="bloque"><div class="bloquelabel">BLOQUE 3</div><h2 class="bloquetitle">Tu diagnóstico</h2>
-<p class="bloquedesc">Ya conoces el mundo de Rubén y su cabeza. Ahora toca clasificarle: con qué modelo de agencia trabaja, en qué etapa de crecimiento está y qué le duele exactamente. El bloque termina con las siete preguntas con las que rellenas su ficha en los primeros diez minutos de llamada.</p>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">12</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-7">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">13</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 7</span><span>FOJA 13</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LOS DOS MODELOS DE AGENCIA: AUTÓNOMOS VS ASALARIADOS</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Por qué Rubén no llega virgen a tu llamada?</li><li>¿Cuál es la regla más importante de toda tu venta?</li><li>¿Qué le vendes y cómo lo posicionas?</li></ol>
-</div>
-<p>Esto lo tienes que preguntar en los primeros minutos de toda llamada, porque cambia por completo con quién estás hablando y qué le puedes vender.</p>
-<p>Hay dos formatos de agencia inmobiliaria en España: la que funciona con <strong>AUTÓNOMOS</strong> y la que funciona con <strong>ASALARIADOS</strong>.</p>
-<h3>El modelo AUTÓNOMOS</h3>
-<p>En España, si tu gente es autónoma, en teoría no les puedes exigir. No les puedes marcar horarios, ni objetivos, ni dinámicas, ni directrices. No son tus empleados.</p>
-<p>¿Y qué pasa cuando no puedes exigir? <strong>Que no te queda otra que ir a por volumen.</strong></p>
-<p>Como no puedes hacer que una persona rinda, metes veinte y rezas para que una funcione. Así que entran agentes autónomos sin apenas filtro: gente sin experiencia, sin formación y sin compromiso real con el negocio, porque el modelo necesita números, no selección.</p>
-<p>Para nosotros ese modelo está roto. Y esto es una opinión de casa, no una verdad universal: hay agencias de autónomos que facturan una barbaridad y gente excelente trabajando en ellas. Pero estructuralmente:</p>
-<ul>
-<li>Entra gente sin filtro, porque el modelo te obliga a ir a volumen.</li>
-<li>La complejidad del negocio se dispara (más gente, más caos, más gestión).</li>
-<li>Y no lo puedes escalar. Es una realidad.</li>
-</ul>
-<p>Salvo que el dueño tenga unas habilidades de liderazgo muy por encima de la media y sepa motivar de verdad sin poder exigir, ese modelo lo tiene todo en contra para escalar.</p>
-<p><strong>Quién funciona así:</strong> las franquicias. RE/MAX, Century 21, ERA y similares. Son modelos de solo autónomos, y así les han formado siempre.</p>
-<h3>El modelo ASALARIADOS</h3>
-<p>Aquí sí puedes marcar directrices. Y por tanto puedes tener un equipo comercial de verdad, alineado. Y eso es lo que necesita cualquier empresa:</p>
-<p><strong>Control. Dirección. Que todo el mundo vaya alineado.</strong> Que todo el mundo meta unos inputs concretos, unas acciones, para lograr los objetivos comerciales.</p>
-<p>Con asalariados funciona exactamente igual que funcionamos nosotros: marcas las tarifas comerciales (la actividad mínima que tiene que hacer cada persona). Si la persona no cumple esas tarifas y no llega a los objetivos marcados, a la calle.</p>
-<p><strong>Quién funciona así:</strong> Tecnocasa y similares. Ahí puedes exigir muchísimo volumen. Y bajo nuestro punto de vista, es lo que mejor funciona.</p>
-<h3>Lo que esto significa para ti en la llamada</h3>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:34.0%"><col style="width:33.0%"><col style="width:33.0%"></colgroup>
-<thead><tr><th></th><th>AUTÓNOMOS</th><th>ASALARIADOS</th></tr></thead><tbody>
-<tr><th>¿Puedes exigir?</th><td>No</td><td>Sí</td></tr>
-<tr><th>¿Horarios y objetivos?</th><td>No</td><td>Sí</td></tr>
-<tr><th>Cómo resuelven el rendimiento</th><td>Metiendo volumen de gente</td><td>Entrenando y exigiendo</td></tr>
-<tr><th>Calidad del equipo</th><td>Baja, sin filtro</td><td>Seleccionada</td></tr>
-<tr><th>¿Escala?</th><td>Muy difícil</td><td>Sí</td></tr>
-<tr><th>Ejemplos</th><td>RE/MAX, Century 21, ERA</td><td>Tecnocasa</td></tr>
-</tbody></table></div>
-<p><strong>Nuestro mejor cliente es el de agentes asalariados.</strong> Porque podemos marcar dinámicas, podemos entrenar, podemos hacer que rindan muchísimo más. Ahí es donde nuestro método se despliega entero.</p>
-<p><strong>Y al de autónomos, ¿qué le vendemos?</strong> No le vendemos exigencia, porque no puede ejercerla. Le posicionamos en dos sitios:</p>
-<ul>
-<li><strong>El proceso de contratación.</strong> Perfeccionarlo para dejar de meter a cualquiera y empezar a pillar mejor talento. Si su modelo depende de que entren personas válidas, su palanca está en a quién deja entrar.</li>
-<li><strong>Los servicios que da a su equipo.</strong> En una agencia de autónomos, cada autónomo es una pequeña empresa dentro de la suya. El dueño no les dirige: les da servicio. Si él tiene los mejores sistemas para captar propietarios y propiedades, atrae a los mejores autónomos y hace rendir más a los que ya tiene. Su palanca es ser la agencia donde un buen autónomo quiere estar.</li>
-</ul>
-<h3>La pregunta que tienes que hacer siempre</h3>
-<blockquote><p>«¿Tu equipo es asalariado o son autónomos?»</p></blockquote>
-<p>Y según lo que te diga, ya sabes:</p>
-<ul>
-<li><strong>Asalariados</strong> → puedo hablarle de tarifas comerciales, objetivos, entrenamiento, despedir al que no rinde.</li>
-<li><strong>Autónomos</strong> → le hablo de selección de talento, de los servicios que da a su equipo y de cómo atraer a los buenos. No de exigir.</li>
-</ul>
-<p>Si le hablas de «marcar objetivos a tu equipo» a un dueño con 25 autónomos, te va a decir que no puede. Y tendrá razón. Y acabas de perder la autoridad.</p>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 7</div>
-<ol><li>Si no puedes exigir, vas a volumen. Y si vas a volumen, metes a cualquiera.</li><li>Nuestro mejor cliente es el de asalariados: ahí se puede entrenar y exigir.</li><li>Al de autónomos no le hables de exigir. Háblale de los servicios que da a su equipo y de cómo hacer rendir a los que ya tiene.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">13</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-8">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">14</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 8</span><span>FOJA 14</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LAS 5 ETAPAS: DÓNDE ESTÁ TU PROSPECTO</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué puedes exigirle a un autónomo?</li><li>¿Quién es nuestro mejor cliente y por qué?</li><li>¿Qué le vendes al dueño con autónomos?</li></ol>
-</div>
-<p>Ahora viene la herramienta más práctica de todo el playbook.</p>
-<p>Todas las agencias de España están en una de cinco etapas. Cada etapa tiene un problema distinto, un lenguaje distinto y una venta distinta. En cuanto sepas colocar a tu prospecto en su etapa, y se coloca con dos o tres preguntas, sabes exactamente qué le duele.</p>
-<p>Esto es nuestra <strong>Hoja de Ruta de Crecimiento</strong>. Es material de Growing. Apréndetela de memoria.</p>
-<h3>El mapa de un vistazo</h3>
-<div class="tablewrap"><table class="small">
-<colgroup><col style="width:22.0%"><col style="width:15.6%"><col style="width:15.6%"><col style="width:15.6%"><col style="width:15.6%"><col style="width:15.6%"></colgroup>
-<thead><tr><th></th><th>1 EMPEZAR</th><th>2 ESTANDARIZAR</th><th>3 ESPECIALIZAR</th><th>4 EXPANDIR</th><th>5 DELEGAR</th></tr></thead><tbody>
-<tr><th>% del sector</th><td>32% (~16.000)</td><td>37% (~18.500)</td><td>20% (~10.000)</td><td>9% (~4.500)</td><td>2% (~1.000)</td></tr>
-<tr><th>Su perfil</th><td>Solo o con 1 apoyo</td><td>Dueño + 1-2</td><td>Director comercial activo (4-8 pers.)</td><td>Director de operaciones (8-15 pers.)</td><td>Director estratégico (15+ pers.)</td></tr>
-<tr><th>Facturación</th><td>&lt;5k €/mes</td><td>5-20k €/mes</td><td>20-50k €/mes</td><td>50-120k €/mes</td><td>120k+ €/mes</td></tr>
-<tr><th>Cómo capta</th><td>Referidos y suerte</td><td>Él llama; a rachas</td><td>Canales estables, pero todo pasa por él</td><td>El equipo capta sin él en el día a día</td><td>El sistema capta sin él</td></tr>
-<tr><th>Se gradúa cuando</th><td>+5k €/mes recurrentes y un ritmo de prospección fijo y registrado</td><td>+20k €/mes estables, un canal que funciona cada mes y CRM en uso</td><td>+50k €/mes y cada rol funciona solo</td><td>+120k €/mes y aguanta 1 semana sin él</td><td>Funciona 2 semanas sin él</td></tr>
-</tbody></table></div>
-<p>Fíjate en que no hay ninguna fila de «exclusivas al mes». Es a propósito: el número de exclusivas depende tanto de la zona que no sirve para comparar agencias. Hay agencias facturando 300.000 € al año que no firman cuatro exclusivas al mes. <strong>La etapa se mide por facturación, por los sistemas que tiene dentro y por si las captaciones son estables o a rachas.</strong> Nunca por un número concreto de exclusivas.</p>
-<p>Y fíjate en otra cosa: <strong>el 69% del sector está en las etapas 1 y 2.</strong> Siete de cada diez llamadas que vas a hacer son con gente que todavía no tiene ni sistema de captación ni números. Ese es tu terreno.</p>
-<h3>ETAPA 1 — EMPEZAR</h3>
-<blockquote><p>«Estás solo. Sin presupuesto para ads. Tu única herramienta son el teléfono y el tiempo.»</p></blockquote>
-<ul>
-<li><strong>Dónde está:</strong> menos de 5.000 €/mes. Las captaciones que hay son de referidos o de chiripa.</li>
-<li><strong>Su problema real:</strong> no tiene ni guion ni sistema. Llama igual que las otras 20 agencias que ya llamaron. Consigue visitas por suerte.</li>
-<li><strong>Qué necesita:</strong> 30-50 llamadas al día entre su base de contactos del teléfono y particulares en frío. Objetivo único de la llamada: conseguir la cita, no el encargo. Aprender a valorar con datos, no con intuición. Registrar cada contacto.</li>
-<li><strong>Su error más caro:</strong> intentar montar sistemas, contratar gente o gastar en publicidad antes de entender cómo funciona el negocio.</li>
-<li><strong>Se gradúa cuando:</strong> factura más de 5.000 €/mes de forma recurrente y tiene un ritmo de prospección fijo y registrado. Las captaciones ya no dependen de la suerte, salgan de prospección manual o de una parte invertida en publicidad.</li>
-<li><strong>Cómo le hablas:</strong> quiere oír que le vas a dar leads, porque lleva el dolor de tantos rechazos: de momento no tiene marca y solo habla con prospectos fríos. Pero la mayoría no tiene pasta al inicio para invertir en campañas, así que lo que le enseñamos es disciplina comercial y a cerrar mejor.</li>
-</ul>
-<h3>ETAPA 2 — ESTANDARIZAR</h3>
-<blockquote><p>«Me levanto con muchas ganas de comerme el mundo, pero llega un momento en que ves todo esto y te frena. ¿Qué estoy haciendo mal?»</p></blockquote>
-<ul>
-<li><strong>Dónde está:</strong> 5-20k €/mes. Dueño con 1-2 personas. Capta, pero a rachas.</li>
-<li><strong>Su problema real:</strong> resultados erráticos sin saber por qué. Un mes 6 captaciones, el siguiente 2. La actividad existe; el sistema no. Todo depende de que él llame: si para de llamar, no entra nada.</li>
-<li><strong>Qué necesita:</strong> ritmo fijo de llamadas documentado, primeros anuncios en Meta (300-500 €/mes, objetivo 20+ contactos de propietarios), CRM conectado que responda a un lead nuevo en menos de 5 minutos, y saber cuánto le cuesta cada exclusiva por fuente.</li>
-<li><strong>Su error más caro:</strong> contratar gente rápido porque tiene más volumen, sobre un sistema que todavía es inestable. Más personas sobre caos = más caos y más coste fijo.</li>
-<li><strong>Se gradúa cuando:</strong> supera los 20.000 €/mes de forma estable, con un canal de captación que funciona todos los meses, el CRM en uso y sabiendo cuánto le cuesta cada exclusiva. Las captaciones ya no dependen de que él llame.</li>
-<li><strong>Cómo le hablas:</strong> es la etapa más poblada del sector (37%) y donde más vendemos. Aquí sí hay dinero para invertir y hay hambre. Su dolor es la inconsistencia, no el volumen. <strong>Vende previsibilidad.</strong></li>
-</ul>
-<h3>ETAPA 3 — ESPECIALIZAR</h3>
-<ul>
-<li><strong>Dónde está:</strong> 20-50k €/mes. Equipo de 4-8 personas.</li>
-<li><strong>Su problema real:</strong> todos hacen de todo. El agente capta, y acompaña compradores, y coge el teléfono, y sube anuncios. Nadie es bueno en nada. Y sobre todo: si él no está, no se capta. Sigue siendo imprescindible.</li>
-<li><strong>Qué necesita:</strong> roles separados por función. Un agente captador dedicado con guion propio y objetivos. Un agente de compradores separado. Un admin. Scripts documentados. Formación semanal por rol. Números por agente visibles para todos.</li>
-<li><strong>Su error más caro:</strong> volver a hacerlo todo él cuando la especialización tarda en dar fruto. Un captador nuevo necesita 4-8 semanas para cerrar de forma consistente.</li>
-<li><strong>Se gradúa cuando:</strong> supera los 50.000 €/mes y cada rol es autónomo: puede irse 3 días sin que caiga el volumen.</li>
-<li><strong>Cómo le hablas:</strong> aquí el dolor ya no son los leads. Es el equipo. Entrenamiento comercial, roles definidos, gente alineada con los objetivos. Es la etapa donde nuestro método de entrenamiento de comerciales vale oro.</li>
-</ul>
-<h3>ETAPA 4 — EXPANDIR</h3>
-<ul>
-<li><strong>Dónde está:</strong> 50-120k €/mes. 8-15 personas.</li>
-<li><strong>Su problema real:</strong> el sistema funciona, pero solo con él encima cada día. Nada está documentado: si el captador se va, se lleva el proceso. Cuando pasa algo raro, todo el mundo le llama a él.</li>
-<li><strong>Qué necesita:</strong> manuales escritos por departamento, onboarding del propietario con hitos definidos, responsable de marketing dedicado con presupuesto fijo, previsión financiera con reserva de 3 meses de gastos fijos, y un pipeline de contratación siempre activo (2-3 candidatos en evaluación aunque no haya urgencia).</li>
-<li><strong>Se gradúa cuando:</strong> supera los 120.000 €/mes y el negocio funciona igual durante una semana completa sin él, con los procesos documentados. Cada persona genera más de 10.000 €/mes para la agencia.</li>
-<li><strong>Cómo le hablas:</strong> aquí vendes estructura y documentación. El miedo que le mueve es la dependencia: «si mañana se me va fulano, se me cae el negocio».</li>
-</ul>
-<h3>ETAPA 5 — DELEGAR</h3>
-<ul>
-<li><strong>Dónde está:</strong> 120k+ €/mes. 15+ personas. Solo el 2% del sector.</li>
-<li><strong>Su problema real:</strong> sobre el papel tiene una agencia de verdad. Pero todo lo que se sale del guion sigue pasando por él. El agente que no sabe manejar a un propietario difícil. El de marketing que espera su aprobación. Él es el cuello de botella de todo.</li>
-<li><strong>Qué necesita:</strong> un manager que dirija el equipo sin consultarle. Un director de operaciones. Equipo de marketing con criterio propio documentado. No delegar tareas: delegar criterio.</li>
-<li><strong>Ha llegado cuando:</strong> la oficina funciona igual durante unas vacaciones de 2 semanas.</li>
-</ul>
-<p>La frase de esta etapa, y es una bala:</p>
-<div class="box">
-<p><strong>«Un negocio que depende de su dueño para funcionar no es un negocio. Es un trabajo de autónomo muy bien pagado.»</strong></p>
-</div>
-<h3>Cómo colocar a alguien en su etapa en 30 segundos</h3>
-<p>Tres preguntas:</p>
-<ol>
-<li><strong>«¿Cuánto facturáis al mes, más o menos?»</strong> → te da la etapa casi entera.</li>
-<li><strong>«¿Cuántas personas sois?»</strong> → te lo confirma.</li>
-<li><strong>«Si tú te vas una semana, ¿qué pasa?»</strong> → te separa la 3 de la 4 y de la 5.</li>
-</ol>
-<p>Y una cuarta que no coloca, pero diagnostica: <strong>«¿Cuántas exclusivas firmasteis el mes pasado? ¿Y el anterior?»</strong> No te importa el número: te importa si es estable o a rachas. El número depende de la zona y no te sirve para compararle con nadie. La estabilidad, sí.</p>
-<p>Y con eso ya sabes cuál es su problema antes de que él te lo cuente. <strong>Cuando se lo digas tú primero y aciertes, se te abre entero.</strong></p>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 8</div>
-<ol><li>Siete de cada diez agencias están en la 1 o la 2. Ese es tu terreno.</li><li>En las etapas 1 y 2 el dolor son los leads. De la 3 en adelante, el dolor es el equipo.</li><li>Un negocio que depende de su dueño no es un negocio, es un trabajo de autónomo muy bien pagado.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">14</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-9">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">15</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 9</span><span>FOJA 15</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LOS CUATRO CONCEPTOS QUE TE HACEN ENTENDER MEJOR SU NEGOCIO</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué porcentaje del sector está en las etapas 1 y 2?</li><li>¿Cuál es el dolor de la etapa 3 en adelante?</li><li>¿Las tres preguntas para colocar a alguien en su etapa?</li></ol>
-</div>
-<p>El objetivo de esta etapa es que entiendas tan bien cómo se construye un negocio que, como consultor, sepas llevar el suyo mejor que él. En el momento en que eso pasa, le quitas la razón sin levantar la voz. Esto es lo que te prometí en la Etapa 0.</p>
-<p>Cuatro conceptos. Solo cuatro.</p>
-<h3>CONCEPTO 1 — El cuello de botella</h3>
-<p>Un negocio solo puede crecer cuando tienes claro dónde estás fallando.</p>
-<p>El concepto más importante que existe en los negocios: <strong>enfócate únicamente en el fallo que, si lo solucionas, multiplicaría tu negocio.</strong> Uno. El único.</p>
-<p>Es dificilísimo, porque el día a día de la operativa te lleva a apagar fuegos distintos. Y como no lo tienen marcado, escrito y a la vista todos los días, no se enfocan en él.</p>
-<p>Y ojo con esto, que es la parte fina:</p>
-<p><strong>Cuanto más arriba de la cadena comercial soluciones el problema, más prospectos caen hacia abajo y más resultados sacas.</strong></p>
-<p>Ejemplo real de casa, para que lo veas. Ahora mismo en Growing tenemos un 47% de presentados: de cada 100 citas agendadas, 47 se presentan.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:20.0%"><col style="width:80.0%"></colgroup>
-<tbody>
-<tr><td><strong>Opción A</strong></td><td>Mejorar el CIERRE del 30% al 40%.</td></tr>
-<tr><td><strong>Opción B</strong></td><td>Mejorar los PRESENTADOS del 47% al 65%.</td></tr>
-</tbody></table></div>
-<p>¿Cuál abre más el grifo? <strong>La B.</strong> Porque está más arriba. Si arreglas arriba, bajan más prospectos a todas las fases de abajo. Si arreglas abajo, solo mejoras lo poco que llega.</p>
-<p><strong>Cómo lo usas con Rubén</strong>, y esta es una de las secuencias más potentes que vas a tener:</p>
-<blockquote><p>«Oye, mi principal problema es que no consigo prospectos.»</p><p>«Vale, vamos a verlo claro. La semana pasada, ¿cuánto tiempo real pusiste en resolver ese problema? ¿Cuántas horas dedicaste a conseguir conversaciones con propietarios? ¿Cuánto dinero metiste?»</p><p>(silencio)</p></blockquote>
-<p>Acabas de demostrarle, sin tocarle el ego, que no está poniendo ni tiempo, ni esfuerzo, ni foco en lo que él mismo dice que es su problema.</p>
-<p>Y esto funciona en todas las etapas de su cadena comercial:</p>
-<ul>
-<li>¿Muchas citas de captación y pocas firmas? → su problema es comercial: entrenar el cierre.</li>
-<li>¿Muchas citas agendadas y pocas realizadas? → su problema es la nutrición entre que agenda y que llega. Ese es el porcentaje que te dije en la Etapa 2 que era oro.</li>
-</ul>
-<h3>CONCEPTO 2 — Cobra cuanto antes</h3>
-<p>Ya lo viste en la Etapa 4:</p>
-<p><strong>Mete la máxima cantidad de dinero posible, lo antes posible.</strong></p>
-<p>Si te dice que cobra en notaría, no le obligues a cambiarlo en ese momento. Solo necesitas que vea que no tiene ese concepto claro. Cobrar antes = reinvertir antes en captar más producto.</p>
-<h3>CONCEPTO 3 — La métrica correcta no es el coste por lead</h3>
-<p>Aquí está el fallo más grande del sector en la parte de anuncios. Léelo despacio, porque esto te va a diferenciar de cualquier persona con la que haya hablado.</p>
-<p><strong>Todos miden el coste por lead. Y es la métrica equivocada.</strong></p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
-<tbody>
-<tr><td>Inversión</td><td>1.000 € en campañas</td></tr>
-<tr><td>Leads conseguidos</td><td>100</td></tr>
-<tr><td>Coste por lead</td><td>10 €</td></tr>
-</tbody></table></div>
-<p>«10 € por un propietario. Eso está muy bien, ¿no?»</p>
-<p>No. No lo sabes. Porque no sabes qué pasa con esos 100 leads.</p>
-<p>Las métricas que importan son dos:</p>
-<ul>
-<li><strong>El COSTE POR CITA DE CAPTACIÓN.</strong></li>
-<li><strong>El COSTE POR EXCLUSIVA CONSEGUIDA.</strong></li>
-</ul>
-<p>Porque esa es la media real de todas tus acciones comerciales. Mira la diferencia:</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
-<thead><tr><th>Opción A</th><th>Opción B</th></tr></thead><tbody>
-<tr><th>1.000 € → 100 leads</th><td>Cualifico más el formulario → 1.000 € → 30 leads</td></tr>
-<tr><th>Tengo que llamar a 100 personas</th><td>Son más cualificados, hago menos trabajo</td></tr>
-<tr><th>Parece mejor: más leads, más baratos</th><td>Parece peor, pero mi COSTE POR EXCLUSIVA puede ser más bajo</td></tr>
-</tbody></table></div>
-<h4>La ingeniería inversa, que es lo que te hace consultor</h4>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:60.0%"><col style="width:40.0%"></colgroup>
-<tbody>
-<tr><td>1.000 € invertidos</td><td>→ 2 exclusivas</td></tr>
-<tr><td>COSTE POR EXCLUSIVA</td><td>500 €</td></tr>
-<tr><td>De cada 2 exclusivas, normalmente vendo 1 (no todas se venden: muchas no están en precio o tardan en ajustarse)</td><td>1 venta</td></tr>
-<tr><td>Honorarios por exclusiva vendida</td><td>≈ 10.000 €</td></tr>
-<tr><td><strong>Cada 1.000 € que invierto</strong></td><td><strong>gano 10.000 €</strong></td></tr>
-</tbody></table></div>
-<p>→ ¿Qué tengo que hacer? <strong>METER MÁS DINERO.</strong></p>
-<p>Eso es todo. Pero no puedes tomar esa decisión si no tienes la métrica. Sin coste por exclusiva, meter más dinero en anuncios es apostar. Con la métrica, es matemática.</p>
-<p><strong>Las cifras que tienes que tener en la cabeza:</strong></p>
-<ul>
-<li>Recomendación estándar de inversión: <strong>50 € al día ≈ 1.500 € al mes.</strong></li>
-<li>Coste medio por exclusiva en el mercado: <strong>entre 300 y 700 €.</strong></li>
-</ul>
-<p>¿De qué depende que ese coste baje? <strong>De lo bueno que sea captando.</strong></p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
-<thead><tr><th>Es MALO captando</th><th>Es BUENO captando</th></tr></thead><tbody>
-<tr><th>Muchas citas, pocas exclusivas</th><td>Menos citas, más exclusivas</td></tr>
-<tr><th>Necesita más volumen</th><td>Invierte lo mismo y saca más</td></tr>
-<tr><th>Necesita invertir MUCHO más dinero</th><td>Sus costes BAJAN</td></tr>
-</tbody></table></div>
-<p>Y aquí se cierra el círculo del playbook entero:</p>
-<div class="box">
-<p>Su ego le lleva a decir que necesita más contactos. Pero si mejorase cómo cierra, conseguiría más exclusivas con los mismos contactos, todos sus costes bajarían y tendría que prospectar menos.</p>
-<p><strong>Por eso lo principal en lo que se tiene que enfocar todo el mundo es en entrenar a cerrar mejor.</strong></p>
-</div>
-<p>Y el dato demoledor: de la gente que mide el coste por cita de captación y por exclusiva... no es que sea el 3% de la Etapa 2. Es que no lo hace prácticamente nadie. Como mucho un 1%. En todo el sector.</p>
-<h3>CONCEPTO 4 — Revisión semanal, no mensual</h3>
-<p>Los números comerciales (contactos, noticias, citas, citas realizadas, exclusivas, propuestas, ventas) se revisan <strong>cada semana</strong>. El porcentaje de beneficio, cada mes.</p>
-<p>Si mides los números mes a mes, vas lento. Si los mides cada semana, vas mil veces más rápido.</p>
-<p>La razón es simple: si mides al mes, tardas 30 días en enterarte de que algo va mal y ya has perdido el mes. Si mides el lunes, el martes ya has corregido.</p>
-<p>Y ya sabes la realidad: nadie mide los números. Así que todo va a ciegas.</p>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 9</div>
-<ol><li>Enfócate solo en el fallo que, resuelto, multiplica el negocio. Y atácalo lo más arriba posible.</li><li>El coste por lead no significa nada. El coste por exclusiva lo significa todo.</li><li>Si mejoras cómo cierras, bajan todos tus costes. Y al mes vas lento: a la semana vas mil veces más rápido.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">15</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="etapa-10">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">16</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ETAPA 10</span><span>FOJA 16</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LOS PRIMEROS DIEZ MINUTOS</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿En qué único fallo hay que enfocarse?</li><li>¿Qué métrica importa de verdad en anuncios?</li><li>¿Cada cuánto se revisan los números comerciales?</li></ol>
-</div>
-<p>Esta etapa no añade nada nuevo. Junta lo que ya sabes en el orden en el que lo vas a usar.</p>
-<p>Vuelve a la Etapa 0 y mira la ficha de Rubén. Todo este playbook existe para que la rellenes en los primeros diez minutos de cualquier llamada. Y se rellena con siete preguntas que ya conoces.</p>
-<h3>Las siete preguntas</h3>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:36.0%"><col style="width:40.0%"><col style="width:24.0%"></colgroup>
-<thead><tr><th>Pregunta</th><th>Qué te dice</th><th>Casilla de la ficha</th></tr></thead><tbody>
-<tr><th>«¿Cuánto facturáis al mes, más o menos?»</th><td>Su etapa casi entera.</td><td>Facturación · Etapa</td></tr>
-<tr><th>«¿Cuántas personas sois? ¿Asalariados o autónomos?»</th><td>Confirma la etapa y decide qué le puedes vender.</td><td>Equipo</td></tr>
-<tr><th>«¿Cuántas exclusivas firmasteis el mes pasado? ¿Y el anterior?»</th><td>Si capta de forma estable o a rachas. El número en sí no te dice nada: depende de la zona.</td><td>Exclusivas</td></tr>
-<tr><th>«Si tú te vas una semana, ¿qué pasa?»</th><td>Separa la etapa 3 de la 4 y de la 5. Mide cuánto depende de él.</td><td>Etapa</td></tr>
-<tr><th>«Cuando cierras una operación, ¿cobras en arras o en notaría?»</th><td>Si vive con cuatro meses de retraso sin saberlo.</td><td>Arras / notaría</td></tr>
-<tr><th>«¿Qué has probado antes para conseguir propietarios? ¿Cómo acabó?»</th><td>Cuántas vueltas al bucle del cementerio lleva y qué cicatrices trae.</td><td>Qué ha probado</td></tr>
-<tr><th>«La semana pasada, ¿cuánto tiempo y dinero pusiste en resolver eso?»</th><td>Si de verdad está trabajando en lo que dice que es su problema.</td><td>Tiempo y dinero</td></tr>
-</tbody></table></div>
-<h3>El orden importa</h3>
-<ul>
-<li><strong>Primero los números.</strong> Facturación, personas, exclusivas de los dos últimos meses. No duelen, le gusta hablar de ellos, y a ti te colocan en su etapa sin que se dé cuenta.</li>
-<li><strong>Después la dependencia.</strong> «Si te vas una semana» le hace pensar. Es la primera pregunta que le incomoda un poco, y por eso va después de los números.</li>
-<li><strong>Luego arras o notaría.</strong> Es un diagnóstico, nunca una corrección. Preguntas y te callas.</li>
-<li><strong>El cementerio, con cuidado.</strong> Pregunta qué ha probado sin juzgar a las empresas anteriores. Lo que buscas es saber en qué cubo te va a meter, para no entrar en él.</li>
-<li><strong>Y la última, la del tiempo y el dinero.</strong> Es la que abre el agujero. Va al final porque necesitas que antes haya hablado de su problema con sus palabras.</li>
-</ul>
-<h3>Lo que NO haces en los primeros diez minutos</h3>
-<ul>
-<li>No le educas sobre métricas, estructura ni mentalidad. No está ahí.</li>
-<li>No dices «marketing», «campañas» ni «leads».</li>
-<li>No le discutes el «yo no tengo techo». Lo apuntas y no construyes sobre él.</li>
-<li>No le corriges cómo cobra. Se lo preguntas y dejas que lo vea él.</li>
-<li>No le hablas de exigir a su equipo si son autónomos.</li>
-</ul>
-<h3>Qué pasa cuando lo haces bien</h3>
-<p>Con las siete respuestas tienes la ficha entera: su etapa, su modelo, su dolor real y lo que él cree que le pasa. Y puedes decírselo antes de que te lo cuente.</p>
-<p><strong>Cuando se lo digas tú primero y aciertes, se te abre entero.</strong> Ahí es cuando sabes más de su negocio que él. No por arrogancia: porque tú tienes el mapa y él no.</p>
-<h3>Has terminado el playbook</h3>
-<p>Vuelve a la ficha de la Etapa 0 e intenta rellenarla con Rubén en la cabeza, sin mirar nada más. Si puedes, has terminado. Si hay una casilla que no sabes rellenar, esa es la etapa que tienes que repasar.</p>
-<p>El examen final está en el cuaderno de exámenes. 30 preguntas. Ahora sí se puede tocar.</p>
-<div class="frases">
-<div class="boxlabel">Las tres frases de la etapa 10</div>
-<ol><li>Siete preguntas, diez minutos, una ficha.</li><li>Los números primero: no duelen y te colocan en su etapa.</li><li>Cuando le dices su problema antes de que te lo cuente, se te abre entero.</li></ol>
-</div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">16</span><span class="tot">de 17</span></footer>
-</section>
-<section class="sheet" id="anexo">
-<header class="head"><div class="logo"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">17</span></div></header>
-<div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ANEXO</span><span>FOJA 17</span></div>
-<div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL DICCIONARIO</h2><div class="dash">——————</div></div>
-<p>Esto no se estudia, se consulta. Pero léetelo entero una vez, despacio.</p>
-<p><strong>Regla de oro:</strong> si en una llamada usas mal una de estas palabras, Rubén deja de verte como alguien que entiende su mundo. Si las usas bien, eres de los suyos.</p>
-<h3>Las cuatro confusiones que te van a delatar</h3>
-<ol>
-<li><strong>Noticia ≠ cita.</strong> Una noticia es alguien que quiere vender. La cita es cuando quedas con él.</li>
-<li><strong>Cita de captación ≠ visita.</strong> Captación es con el PROPIETARIO. Visita es con el COMPRADOR.</li>
-<li><strong>Encargo ≠ exclusiva.</strong> Toda exclusiva es un encargo. No todo encargo es exclusiva.</li>
-<li><strong>Arras ≠ escritura.</strong> Arras es el acuerdo privado y el 10%. Escritura es el notario y el resto.</li>
-</ol>
-<h3>Los términos</h3>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:30.0%"><col style="width:70.0%"></colgroup>
-<thead><tr><th>Término</th><th>Qué significa</th></tr></thead><tbody>
-<tr><th>Producto</th><td>Viviendas que tienes a la venta. «No tengo producto» = no tengo casas.</td></tr>
-<tr><th>Cartera</th><td>El conjunto de inmuebles que gestiona la agencia.</td></tr>
-<tr><th>Encargo</th><td>El contrato con el propietario para comercializar su inmueble.</td></tr>
-<tr><th>Exclusiva</th><td>Encargo donde solo tú puedes vender ese inmueble.</td></tr>
-<tr><th>Abierto</th><td>Encargo donde el propietario se lo da a varias agencias a la vez.</td></tr>
-<tr><th>Captar / captación</th><td>Conseguir que un propietario firme el encargo.</td></tr>
-<tr><th>Cita de captación</th><td>La reunión con el propietario, normalmente en su casa, donde se firma (o no).</td></tr>
-<tr><th>Noticia</th><td>Una persona que te ha dicho que quiere vender. Todavía no es cita.</td></tr>
-<tr><th>Honorarios / fee</th><td>La comisión. 2-5% del precio de venta.</td></tr>
-<tr><th>Propietario cualificado</th><td>El que está en tu zona + quiere vender en menos de 6 meses + quiere trabajar con intermediario. Los tres a la vez.</td></tr>
-<tr><th>Precio de mercado</th><td>El precio al que ese inmueble SE VENDE de verdad, comparado con lo vendido y lo publicado en la zona.</td></tr>
-<tr><th>Comparables / estudio de mercado</th><td>El análisis de inmuebles similares vendidos y publicados que justifica el precio.</td></tr>
-<tr><th>Sobrevalorado / fuera de precio</th><td>Publicado por encima de lo que el mercado paga. No se va a vender.</td></tr>
-<tr><th>Bajada de precio</th><td>Ajustar a la baja un inmueble que no se mueve. Se hace de forma gradual.</td></tr>
-<tr><th>Propuesta / oferta</th><td>Lo que el comprador ofrece pagar. Casi siempre por debajo del publicado.</td></tr>
-<tr><th>Reserva</th><td>Señal del comprador (≈2.000 €) para demostrar compromiso antes de llevar la propuesta.</td></tr>
-<tr><th>Arras</th><td>Contrato privado comprador-propietario. Adelanto de ≈10% del precio.</td></tr>
-<tr><th>Escritura / notaría</th><td>La firma ante notario. Ahí cambia la propiedad. ≈2 meses después de arras.</td></tr>
-<tr><th>Portales</th><td>Idealista, Fotocasa, etc. Donde se publican los inmuebles.</td></tr>
-<tr><th>Prospección</th><td>Buscar activamente propietarios: llamadas, puerta fría, base de datos.</td></tr>
-<tr><th>Puerta fría</th><td>Ir casa por casa a buscar propietarios.</td></tr>
-<tr><th>Visita</th><td>Enseñar el piso a un comprador. (Ojo: «visita» = comprador. «Cita de captación» = propietario.)</td></tr>
-<tr><th>Referido</th><td>Cliente que llega recomendado por alguien que ya vendió contigo.</td></tr>
-<tr><th>Lead / contacto</th><td>Persona que ha dejado sus datos. Puede ser propietario o comprador.</td></tr>
-<tr><th>CRM</th><td>El software donde se guardan contactos y seguimiento. La mayoría no lo usa bien o no lo usa.</td></tr>
-<tr><th>Tarifas comerciales</th><td>La actividad mínima que tiene que hacer cada persona del equipo (llamadas, citas, visitas). Es como funcionamos nosotros.</td></tr>
-<tr><th>Hoja de Ruta de Crecimiento</th><td>Las cinco etapas de Growing: Empezar, Estandarizar, Especializar, Expandir, Delegar.</td></tr>
-</tbody></table></div>
-<footer class="foot"><a href="#indice" class="up">Índice</a><span class="pn">17</span><span class="tot">de 17</span></footer>
-</section>
+<script>
+(function(){
+  const KEY='pbc_progress_v1';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+  function save(p){ try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){} }
+  function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  window.PBGame = function(opts){
+    const root=document.getElementById(opts.id);
+    const bank=opts.bank, N=Math.min(opts.n, bank.length), PASS=opts.pass, SECS=opts.secs, id=opts.key;
+    let qs=[], idx=0, hits=0, pts=0, streak=0, best=0, timer=null, t0=0, locked=false;
+
+    function prog(){ const p=load(); return p[id]||{best:0,bestPts:0,plays:0,done:false}; }
+    function setProg(fn){ const p=load(); p[id]=fn(p[id]||{best:0,bestPts:0,plays:0,done:false}); save(p); }
+
+    function start(){
+      const st=prog();
+      root.innerHTML=`<div class="start">
+        <div class="g-top"><span>${N} preguntas · ${SECS} segundos cada una</span><span>${PASS} de ${N} para aprobar</span></div>
+        <p>${opts.intro||''}</p>
+        <p class="best" style="font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">${st.plays? `Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}` : 'Todavía no has jugado'}</p>
+        <button class="bar">${st.plays?'Jugar otra vez':'Empezar'}</button>
+      </div>`;
+      root.querySelector('.bar').onclick=play;
+    }
+
+    function play(){
+      qs=shuffle(bank).slice(0,N).map(q=>({...q, opts: shuffle([q.ok].concat(q.bad)).slice(0,4)}));
+      // asegurar que la correcta está entre las 4
+      qs.forEach(q=>{ if(!q.opts.includes(q.ok)){ q.opts[3]=q.ok; q.opts=shuffle(q.opts);} });
+      idx=0; hits=0; pts=0; streak=0; ask();
+    }
+
+    function ask(){
+      locked=false;
+      const q=qs[idx];
+      const letters=['A','B','C','D'];
+      root.innerHTML=`<div class="g-top"><span>Pregunta ${idx+1} de ${N}</span><span class="streak">${streak>=2?'Racha '+streak:''}</span><span>${hits} aciertos</span></div>
+        <div class="timer"><i></i></div>
+        <div class="q">${esc(q.q)}</div>
+        <div class="opts">${q.opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${letters[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+        <div class="after"></div>`;
+      root.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q, q.opts[+b.dataset.i], b));
+      const bar=root.querySelector('.timer');
+      const fill=bar.querySelector('i');
+      t0=Date.now();
+      clearInterval(timer);
+      timer=setInterval(()=>{
+        const left=SECS-(Date.now()-t0)/1000;
+        fill.style.width=Math.max(0,left/SECS*100)+'%';
+        if(left<=3) bar.classList.add('warn');
+        if(left<=0 && !locked){ answer(q, null, null); }
+      }, 50);
+      window.scrollTo({top: root.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth'});
+    }
+
+    function answer(q, chosen, btn){
+      if(locked) return; locked=true; clearInterval(timer);
+      const left=Math.max(0, SECS-(Date.now()-t0)/1000);
+      const ok = chosen===q.ok;
+      root.querySelectorAll('.opt').forEach(b=>{
+        b.disabled=true;
+        const o=q.opts[+b.dataset.i];
+        if(o===q.ok) b.classList.add('ok');
+        else if(b===btn) b.classList.add('bad');
+        else b.classList.add('dim');
+      });
+      if(ok){ hits++; streak++; pts+=100+Math.round(left*5)+(streak>=3?20:0); } else { streak=0; }
+      const after=root.querySelector('.after');
+      after.innerHTML=`<div class="why"><span class="lbl ${ok?'ok':'bad'}">${ok?'Correcto':(chosen===null?'Tiempo agotado':'Fallo')}</span>${esc(q.why)}${q.ref?`<span class="ref">→ Volver a: ${esc(q.ref)}</span>`:''}</div>
+        <button class="bar">${idx+1<N?'Siguiente':'Ver resultado'}</button>`;
+      const next=after.querySelector('.bar');
+      next.onclick=()=>{ idx++; if(idx<N) ask(); else finish(); };
+      next.focus();
+      if(ok) setTimeout(()=>{ if(document.body.contains(next)) next.click(); }, 1400);
+    }
+
+    function finish(){
+      const passed=hits>=PASS;
+      setProg(p=>({ best: Math.max(p.best, hits), bestPts: Math.max(p.bestPts, pts), plays: p.plays+1, done: p.done||passed, last: new Date().toISOString().slice(0,10) }));
+      const st=prog();
+      root.innerHTML=`<div class="score">
+        <div class="lbl">Resultado</div>
+        <div class="big">${hits}<small> / ${N}</small></div>
+        <div class="verdict ${passed?'':'no'}">${passed?(opts.passLabel||'Día superado'):'Otra vez'}</div>
+        <div class="pts">${pts} puntos</div>
+        <div class="best">Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}</div>
+        <div class="btns"><button class="bar ghost">Jugar otra vez</button>${passed&&opts.nextHref?`<a class="bar" href="${opts.nextHref}">${opts.nextLabel||'Día siguiente'}</a>`:''}</div>
+      </div>`;
+      root.querySelector('.ghost').onclick=play;
+    }
+    start();
+  };
+
+  window.PBProgress = function(){
+    const p=load();
+    document.querySelectorAll('[data-day]').forEach(li=>{
+      const d=li.dataset.day, st=p['d'+d];
+      const el=li.querySelector('.st');
+      if(st&&st.done){ el.textContent='Hecho · mejor '+st.best+'/'+li.dataset.n; el.classList.add('done'); }
+      else if(st&&st.plays){ el.textContent='Jugado · mejor '+st.best+'/'+li.dataset.n; }
+      else el.textContent='Pendiente';
+    });
+    const first=[...document.querySelectorAll('[data-day]')].find(li=>!(p['d'+li.dataset.day]||{}).done);
+    if(first) first.classList.add('next');
+    const f=p['final'];
+    const fe=document.querySelector('[data-final] .st');
+    if(fe){ if(f&&f.done){ fe.textContent='Superado · mejor '+f.best+'/'+20; fe.classList.add('done'); } else if(f&&f.plays){ fe.textContent='Jugado · mejor '+f.best+'/'+20; } else fe.textContent='Pendiente'; }
+  };
+})();
+</script>
+<script>PBProgress();</script>
 </body>
 </html>

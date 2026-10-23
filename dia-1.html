@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Día 1 · ANTES DE EMPEZAR + EL JUEGO ES EL PRODUCTO · Playbook del Closer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
+ --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+.sheet{position:relative;max-width:860px;margin:0 auto 36px;background:var(--paper);padding:52px 76px 40px;border:1px solid #e3e1db;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 48px rgba(0,0,0,.08)}
+.sheet p{margin:0 0 1.05em}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:inherit}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logolink{text-decoration:none;display:flex;flex-direction:column}
+.logo .g{font-family:var(--sans);font-weight:700;font-size:38px;line-height:1;letter-spacing:-1.2px}
+.logo .g sup{font-size:12px;font-weight:600;vertical-align:top;position:relative;top:4px;letter-spacing:0}
+.logo .i{font-family:var(--display);font-style:italic;font-weight:500;font-size:36px;line-height:1;margin-top:2px;letter-spacing:-.5px}
+.logo .tag{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fojas{font-family:var(--mono);text-align:right;line-height:1.3}
+.fojas .k{display:block;font-size:12px;letter-spacing:3px}
+.fojas .v{display:block;font-weight:700;font-size:16px;letter-spacing:2px}
+.rule{font-family:var(--mono);height:12px;overflow:hidden;white-space:nowrap;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.rule::before{content:"************************************************************************************************************"}
+.reg{font-family:var(--mono);display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;padding:10px 0}
+/* portada */
+.cover{font-family:var(--mono);font-size:15.5px;line-height:1.72}
+.cover p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.cover .head{padding-right:170px}
+.deedtitle{text-align:center;margin:44px 0 30px}
+.deedtitle h1{font-family:var(--mono);font-size:17px;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin:0;line-height:1.6}
+.deedtitle .dash{font-family:var(--mono);letter-spacing:0;margin:8px 0 4px}
+.deedtitle .de{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.deedtitle .party{font-family:var(--mono);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.stamp{position:absolute;right:46px;top:38px;width:132px;height:132px;color:var(--gold);transform:rotate(-12deg);opacity:.92;mix-blend-mode:multiply;font-family:var(--mono)}
+.stamp text{fill:currentColor}
+.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-family:var(--mono);font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px;border:0;width:100%;cursor:pointer}
+.bar:hover{background:#333}
+.bar.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bar.ghost:hover{background:var(--cream)}
+/* títulos */
+.deedtitle.small{margin:30px 0 22px}
+.deedtitle.small h2{font-family:var(--display);font-style:italic;font-weight:500;font-size:40px;line-height:1.15;margin:0;letter-spacing:-.3px}
+.deedtitle.small .dash{color:var(--gold);font-weight:700}
+h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
+h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+/* programa */
+.programa{list-style:none;padding:0;margin:0 0 10px}
+.programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
+.programa li:last-child{border-bottom:none}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .t{flex:1;font-size:17px;line-height:1.35}
+.programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
+.programa .st.done{color:var(--gold);font-weight:700}
+.programa a{text-decoration:none}
+.programa li.next .t{font-weight:700}
+.programa li.next .n::after{content:" ←";color:var(--gold)}
+.pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
+.pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+/* bloques */
+.bloquesheet{min-height:420px}
+.bloque{padding:60px 0 40px}
+.bloquelabel{font-family:var(--mono);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.bloquetitle{font-family:var(--display);font-style:italic;font-weight:500;font-size:64px;line-height:1;margin:0 0 28px;letter-spacing:-1px}
+.bloquedesc{font-size:18.5px;max-width:580px;line-height:1.65}
+/* listas */
+ul,ol{margin:0 0 1.1em;padding-left:30px}
+li{margin:0 0 .5em}
+ul{list-style:none;padding-left:26px}
+ul li{position:relative}
+ul li::before{content:"—";position:absolute;left:-26px;color:var(--gold);font-weight:700}
+ol li::marker{font-family:var(--mono);font-weight:700}
+/* cajas */
+.box,.diligencia,.repaso{border:3px double var(--ink);padding:18px 24px 8px;margin:18px 0 26px}
+.box p:last-child,.diligencia p:last-child{margin-bottom:10px}
+.boxlabel{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.box{text-align:center}
+.box p{text-align:center;font-size:19px;line-height:1.5}
+.box .boxlabel{text-align:center}
+.diligencia{border:1px solid var(--ink);background:var(--cream);padding:16px 24px 8px}
+.diligencia .boxlabel{color:#7a5a1a}
+.repaso{border:none;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 4px;margin:0 0 28px}
+.repaso ol{margin-bottom:8px}
+.frases{background:var(--ink);color:#fff;padding:24px 28px 16px;margin:30px 0 10px}
+.frases .boxlabel{color:#fff;font-size:12px;letter-spacing:4px;margin-bottom:14px}
+.frases ol{padding-left:30px;margin:0}
+.frases li{font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.45;margin-bottom:.7em}
+.frases li::marker{color:var(--gold)}
+.chain{border:1px solid var(--ink);padding:18px 20px;margin:14px 0 24px;text-align:center}
+.chain .step{font-family:var(--sans);font-weight:600;font-size:15.5px}
+.chain .arrow{color:var(--gold);font-weight:700;line-height:1.1;font-size:20px;font-family:Georgia,serif}
+blockquote{margin:12px 0 22px 18px;padding-left:18px;border-left:2px solid var(--gold)}
+blockquote p{font-style:italic;margin-bottom:.4em;font-size:17.5px}
+/* tablas */
+.tablewrap{overflow-x:auto;margin:14px 0 28px}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table.small{font-size:13px;line-height:1.4}
+th,td{padding:10px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #cfcac0}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:10px;vertical-align:bottom}
+table.small thead th{font-size:10px;letter-spacing:1px;white-space:nowrap}
+tbody th{font-weight:700;width:auto}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+/* pie */
+.foot{font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:14px;border-top:1px solid #cfcac0;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.foot .pn{font-weight:700;color:var(--ink);font-size:12px}
+.foot .up{text-decoration:none}
+/* examen */
+.exam{min-height:520px}
+.exam .intro{font-size:17px}
+.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
+.exam .meta b{color:var(--ink)}
+.game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
+.g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
+.g-top .streak{color:var(--gold);font-weight:700}
+.timer{height:6px;background:#e4e0d6;margin:0 0 22px;position:relative;overflow:hidden}
+.timer i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:100%}
+.timer.warn i{background:var(--bad)}
+.q{font-family:var(--sans);font-weight:600;font-size:21px;line-height:1.35;margin:0 0 20px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 16px}
+.opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.4;cursor:pointer;color:var(--ink)}
+.opt:hover{background:var(--cream)}
+.opt .k{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;flex:0 0 18px;padding-top:3px}
+.opt.ok{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt.bad{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.dim{opacity:.45}
+.opt:disabled{cursor:default}
+.why{background:var(--cream);border:1px solid var(--ink);padding:12px 16px;font-size:15.5px;margin:0 0 16px;line-height:1.5}
+.why .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.why .lbl.ok{color:#2e6b3a}
+.why .lbl.bad{color:var(--bad)}
+.why .ref{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:var(--display);font-style:italic;font-size:78px;line-height:1;margin:6px 0 2px}
+.score .big small{font-size:34px}
+.score .lbl{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.score .verdict{display:inline-block;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:4px;text-transform:uppercase;border:3px double var(--gold);color:var(--gold);padding:8px 18px;margin:14px 0 6px;transform:rotate(-3deg)}
+.score .verdict.no{border-color:var(--bad);color:var(--bad)}
+.score .pts{font-size:16px;margin:8px 0 2px}
+.score .best{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .bar{margin:0;flex:1 1 200px}
+.exam .start .bar{margin-top:10px}
+/* móvil */
+@media (max-width:720px){
+ body{padding:12px 8px 40px;font-size:16.5px}
+ .sheet{padding:34px 22px 28px;margin-bottom:18px}
+ .logo .g,.logo .i{font-size:30px}
+ .stamp{width:84px;height:84px;right:12px;top:10px}
+ .cover .head{padding-right:84px}
+ .logo .tag{letter-spacing:2px;font-size:10px}
+ .head{align-items:flex-start;flex-direction:column;gap:10px}
+ .fojas{text-align:left}
+ .deedtitle h1{font-size:14px;letter-spacing:3px}
+ .deedtitle.small h2{font-size:30px}
+ .bloquetitle{font-size:42px}
+ .cover p{text-align:left}
+ .reg{letter-spacing:1.5px;font-size:11px}
+ .programa li{flex-wrap:wrap}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .game{padding:18px 14px}
+ .q{font-size:18.5px}
+ .opt{font-size:15.5px;padding:10px 12px}
+ .score .big{font-size:60px}
+ .foot{flex-wrap:wrap;gap:8px}
+}
+@media print{
+ body{background:#fff;padding:0}
+ .sheet{box-shadow:none;border:none;margin:0;max-width:none;page-break-after:always;padding:36px 44px}
+ .foot .up,.bar,.exam{display:none}
+}
+</style>
+
+</head>
+<body>
+<section class="sheet bloquesheet" id="bloque-1"><header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header><div class="rule" aria-hidden="true"></div><div class="bloque"><div class="bloquelabel">BLOQUE 1</div><h2 class="bloquetitle">Su mundo</h2>
+<p class="bloquedesc">Cuatro etapas sobre cómo funciona el negocio de Rubén. No te las aprendes por cultura general: cada una te explica una emoción suya. Por eso todas acaban con el recuadro «Qué siente Rubén aquí». Cuando llegues a la Etapa 5, ya tendrás media cabeza montada.</p>
+</div><footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 10</span><a href="dia-2.html" class="up">Día siguiente →</a></footer></section>
+<section class="sheet" id="etapa-0">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 0</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ANTES DE EMPEZAR</h2><div class="dash">——————</div></div>
+<h3>De qué va esto</h3>
+<p>Hay un libro que me encanta, <em>El Arte de la Guerra</em>, de Sun Tzu. Y de ahí saco una sola idea, que es la que sostiene todo este playbook:</p>
+<div class="box">
+<p><strong>Tienes que conocer a tu enemigo como si fuera tu mejor amigo.</strong></p>
+</div>
+<p>Tu «enemigo» no es un enemigo, obviamente. Es el dueño de inmobiliaria que se va a sentar delante de ti. Pero la regla es exactamente la misma: si no sabes qué piensa, qué siente, por qué se siente así, dónde le duele y qué quiere de verdad, <strong>no le vas a vender nada. Nada.</strong></p>
+<p>Así que este playbook no te enseña «el sector». Te enseña a una persona. El sector es el mundo en el que vive esa persona, y te lo vas a aprender para entenderle a él, no para aprobar un examen de inmobiliaria.</p>
+<p>Mi objetivo es muy claro: <strong>quiero que sepas lo que sueña, lo que piensa cuando está en su casa, lo que siente cuando vuelve de currar. Tienes que saberlo TODO.</strong></p>
+<h3>Un personaje que te va a acompañar</h3>
+<p>Se llama Rubén. 46 años, tiene una inmobiliaria en Valladolid con dos comerciales, lleva 11 años en el sector y factura 180.000 € al año. Vende bien, se le da bien la gente y ha sacado adelante un negocio él solo. Lo que no tiene es sistema.</p>
+<p>Rubén no existe, pero vas a hablar con cuarenta Rubenes este trimestre. Va a aparecer en todas las etapas.</p>
+<h3>Un aviso antes de empezar</h3>
+<p>Tú no vienes del inmobiliario. Perfecto. Eso no es un problema, es una ventaja: no traes los vicios del sector. Pero sí hay un problema real, y es este: <strong>el dueño de inmobiliaria que se sienta delante de ti lleva 15 años en esto y tú llevas tres semanas.</strong> Si no sabes de qué habla, lo huele en el minuto dos y has perdido la llamada antes de empezar.</p>
+<p>Por eso existe este playbook. Cuando lo termines, vas a saber de su negocio más que él. Suena arrogante. No lo es. En la Etapa 9 vas a entender por qué es literalmente cierto.</p>
+<h3>Una norma de casa: cómo hablamos de ellos</h3>
+<p>En este playbook vas a leer un diagnóstico muy duro del sector: que no miden, que no entrenan, que dependen de la suerte. Todo eso es verdad y lo vas a necesitar.</p>
+<p>Pero ojo. Son gente que ha montado un negocio desde cero y que mantiene a su familia con él. Lo que les falta no es capacidad: es estructura, método y números. Nadie se los ha dado, porque el sector nunca se los pidió.</p>
+<p><strong>Nuestro trabajo no es tener razón sobre ellos. Es que vean lo que no están viendo, y que quieran arreglarlo con nosotros.</strong></p>
+<h3>Esto no es un manual de consulta. Es una formación.</h3>
+<p>Cuatro reglas, y no te las saltes:</p>
+<ol>
+<li><strong>Una etapa al día. No dos.</strong> Si te lo lees entero de una sentada te vas a acordar del 10%. No tengas prisa: tienes que entrar en llamadas sabiendo, no habiendo leído.</li>
+<li><strong>Cada etapa empieza con un repaso</strong> de la anterior. Respóndelo en voz alta, sin mirar atrás. Si fallas una pregunta, vuelves solo a esa parte.</li>
+<li><strong>Cada etapa termina con tres frases.</strong> Esas tres frases son lo que tienes que poder soltar de memoria.</li>
+<li><strong>Los exámenes van aparte, en el cuaderno de exámenes.</strong> Cada etapa tiene el suyo: lo haces el mismo día, por escrito y sin mirar. El examen final son 30 preguntas y no se toca hasta haber terminado las once etapas.</li>
+</ol>
+<h3>El mapa del playbook</h3>
+<p>Tres bloques. Primero el mundo de Rubén, después su cabeza, y al final cómo le lees en una llamada.</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:24.0%"><col style="width:18.0%"><col style="width:58.0%"></colgroup>
+<thead><tr><th>Bloque</th><th>Etapas</th><th>Qué construyes</th></tr></thead><tbody>
+<tr><th>Antes de empezar</th><td>Etapa 0</td><td>De qué va esto, Rubén y tu ficha en blanco.</td></tr>
+<tr><th>Bloque 1 · Su mundo</th><td>Etapas 1 a 4</td><td>El juego, las dos cadenas, el precio y la pasta. Cada etapa termina con lo que Rubén siente ahí.</td></tr>
+<tr><th>Bloque 2 · Su cabeza</th><td>Etapas 5 y 6</td><td>Las siete piezas de la cabeza de Rubén y el cementerio de empresas que le han quemado.</td></tr>
+<tr><th>Bloque 3 · Tu diagnóstico</th><td>Etapas 7 a 10</td><td>Cómo clasificarle, qué le duele según dónde está, y las siete preguntas de los primeros diez minutos.</td></tr>
+<tr><th>Anexo</th><td>Diccionario</td><td>Se consulta, no se estudia.</td></tr>
+</tbody></table></div>
+<h3>La ficha de Rubén</h3>
+<p>Cuando termines las diez etapas tienes que poder rellenar esta ficha en los primeros diez minutos de cualquier llamada. Cada etapa te da una o dos casillas. Léela ahora, aunque no entiendas ni la mitad: es a donde vamos.</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:40.0%"><col style="width:36.0%"><col style="width:24.0%"></colgroup>
+<thead><tr><th>Casilla</th><th>Qué apuntas</th><th>Lo aprendes en</th></tr></thead><tbody>
+<tr><th>Equipo: cuántos son y si son autónomos o asalariados</th><td></td><td>Etapa 7</td></tr>
+<tr><th>Facturación mensual aproximada</th><td></td><td>Etapa 8</td></tr>
+<tr><th>Exclusivas de los dos últimos meses: ¿estables o a rachas?</th><td></td><td>Etapas 1 y 8</td></tr>
+<tr><th>¿Cobra en arras o en notaría?</th><td></td><td>Etapa 4</td></tr>
+<tr><th>Etapa de la Hoja de Ruta (1 a 5)</th><td></td><td>Etapa 8</td></tr>
+<tr><th>Qué cree que le pasa, con sus palabras</th><td></td><td>Etapas 5 y 6</td></tr>
+<tr><th>Qué le pasa de verdad</th><td></td><td>Etapas 3, 5 y 9</td></tr>
+<tr><th>Qué ha probado antes y cómo acabó</th><td></td><td>Etapa 6</td></tr>
+<tr><th>Cuánto tiempo y dinero puso la semana pasada en su problema</th><td></td><td>Etapa 9</td></tr>
+<tr><th>Qué le vendes y cómo lo posicionas</th><td></td><td>Etapas 6, 7 y 8</td></tr>
+</tbody></table></div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 10</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-1">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 1</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL JUEGO ES EL PRODUCTO</h2><div class="dash">——————</div></div>
+<div class="box">
+<p><strong>Una inmobiliaria no vende casas. Vende casas que ha conseguido primero.</strong></p>
+<p>Léela otra vez. Ahí está todo el sector.</p>
+</div>
+<p>Imagina una frutería con el mejor escaparate del barrio, la mejor dependienta, la caja registradora más moderna y un cartel luminoso precioso.</p>
+<p><strong>No tiene fruta.</strong></p>
+<p>Eso es el 90% de las inmobiliarias de España. Web bonita, oficina en la calle principal, tarjetas con relieve. Y tres pisos en cartera. (Cartera son los pisos que tienen para gestionar y vender.)</p>
+<p>Tú no le vendes a Rubén un escaparate mejor. <strong>Le vendes fruta.</strong></p>
+<h3>Qué es «producto»</h3>
+<p><strong>Producto = viviendas a la venta.</strong></p>
+<p>Si una inmobiliaria tiene 40 pisos en cartera, tiene producto. Si tiene 3, no tiene negocio, tiene un hobby.</p>
+<h3>El juego real</h3>
+<p>El juego de una inmobiliaria es este: conseguir que <strong>un propietario</strong>, una persona que tiene una vivienda y está pensando en venderla, <strong>se la deje a ellos con un contrato</strong> para poder comercializarla y representarle en la venta.</p>
+<p>Una vez tienen ese contrato, publican el piso en portales (Idealista, Fotocasa), lo mueven, hacen visitas y buscan a alguien que lo compre.</p>
+<p><strong>Dos pasos. Primero consigues la casa. Luego la vendes.</strong></p>
+<h3>Por qué esto es LO difícil ahora mismo</h3>
+<p>Ahora mismo, en España, <strong>falta producto.</strong></p>
+<p>Las razones, resumidas: se ha construido muy poco durante muchos años, las leyes que han ido metiendo han limitado mucho el movimiento de inmuebles, y los precios están donde están. Resultado: hay zonas donde quedan muy pocos propietarios dispuestos a vender.</p>
+<p>Y eso cambia el juego entero. Cuando sobran casas, manda el que tiene compradores. <strong>Cuando faltan casas, manda el que tiene casas.</strong></p>
+<p>Ojo con esto: <strong>es la situación de MERCADO de hoy.</strong> En algún momento cambiará. Pero hoy, y durante todo el tiempo que tú vas a estar vendiendo, el cuello de botella del sector es conseguir propietarios que quieran vender.</p>
+<h3>El contrato tiene nombre: ENCARGO</h3>
+<p>Cuando un propietario firma, eso se llama <strong>encargo</strong>. Literalmente: te <strong>encarga</strong> algo. En este caso, gestionar la venta de su piso.</p>
+<p>Y hay dos tipos. Esta es la primera diferencia que tienes que llevar tatuada:</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:40.0%"><col style="width:30.0%"><col style="width:30.0%"></colgroup>
+<thead><tr><th></th><th>ENCARGO EN EXCLUSIVA</th><th>ENCARGO EN ABIERTO</th></tr></thead><tbody>
+<tr><th>Quién puede vender el piso</th><td>Solo yo</td><td>Yo y cualquier otra agencia</td></tr>
+<tr><th>Quién cobra la comisión</th><td>Yo, seguro</td><td>El que llegue primero</td></tr>
+<tr><th>El propietario está comprometido</th><td>Sí</td><td>No</td></tr>
+<tr><th>Vale la pena invertir en ese piso</th><td>Sí</td><td>Es una lotería</td></tr>
+</tbody></table></div>
+<p>Siempre, siempre, vamos a por la exclusiva. Es la única forma de tener el control sobre las comisiones que se van a cobrar.</p>
+<p>También lo vas a oír así: <strong>captación en exclusiva</strong> o <strong>captación en abierto</strong>.</p>
+<h3>Cuánto se cobra</h3>
+<p>Lo normal es cobrarle <strong>al propietario</strong> unos honorarios de entre el <strong>2% y el 5%</strong> del precio de venta. (En algunos casos también se le cobra algo al comprador, pero lo normal, y lo que a ti te importa, es el propietario.)</p>
+<div class="box">
+<div class="boxlabel">Ejemplo que te tienes que saber de memoria</div>
+<p>Piso de <strong>300.000 €</strong> · honorarios del <strong>5%</strong> → <strong>15.000 €</strong> de comisión.</p>
+</div>
+<p>Esa cifra explica el sector entero. Quince mil euros por una operación. Por eso en el inmobiliario se vive de puta madre sin haber montado nunca una estructura de empresa: las comisiones son tan grandes que siendo bueno comercialmente y hablando con gente ya se come.</p>
+<p>Y ojo, que esto no es un reproche. Es la causa de todo lo demás. <strong>Cuando un sector te deja ganar mucho sin obligarte a profesionalizarte, nadie se profesionaliza. No por falta de capacidad, sino porque no hace falta.</strong></p>
+<p>Acuérdate de esto en la Etapa 6. Es la raíz de todo lo demás.</p>
+<h3>Por qué el encargo en abierto es una trampa</h3>
+<p>Si Rubén trabaja en abierto, pasa esto: el mismo piso está publicado por seis agencias a la vez, con seis fotos distintas y a veces con seis precios distintos. El comprador lo ve repetido, piensa que algo raro pasa con ese piso, y el propietario no está comprometido con nadie.</p>
+<p>Rubén mete tiempo, fotos, visitas y anuncios en un piso que mañana puede vender otro.</p>
+<p>Y aquí está la primera puerta de venta que vas a usar mil veces: conseguir la exclusiva <strong>depende de cómo estructures la reunión delante del propietario.</strong> Es una venta. Exactamente igual que la tuya. El agente inmobiliario, cuando está delante del propietario, es un closer.</p>
+<p>Hay momentos en los que un abierto puede merecer la pena. Son excepciones: la norma es la exclusiva.</p>
+<div class="diligencia">
+<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
+<p>Rubén sabe mejor que nadie que el juego es conseguir casas. Lo que siente es que <strong>cada mes empieza de cero</strong>: si no entra producto, no hay nada que vender, y la cartera se le vacía sola a medida que vende. Esa presión por no quedarse sin casas no se le va nunca.</p>
+<p>Para tu ficha: su obsesión se llama «conseguir propietarios». Guárdatela, porque en la Etapa 5 vas a ver que esa obsesión es justo lo que le impide ver su problema de verdad.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 1</div>
+<ol><li>Una inmobiliaria no vende casas, vende casas que ha conseguido primero.</li><li>Falta producto. El que consigue propietarios, manda.</li><li>Siempre en exclusiva: así tienes todo el control sobre el producto.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 10</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet exam" id="examen">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>Examen del día 1</span><span>14 preguntas en el banco</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>Examen del día 1</h2><div class="dash">——————</div></div>
+<p class="intro">Siete preguntas al azar de esta etapa, diez segundos para cada una. Con 6 aciertos el día queda superado. Puedes repetirlo las veces que quieras: cada partida saca preguntas distintas y en otro orden, y se guarda tu mejor marca. No es un examen, es entrenamiento: lo que quieres es contestar sin pensar.</p>
+<div class="game" id="game-1"></div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 10</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<script>
+(function(){
+  const KEY='pbc_progress_v1';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+  function save(p){ try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){} }
+  function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  window.PBGame = function(opts){
+    const root=document.getElementById(opts.id);
+    const bank=opts.bank, N=Math.min(opts.n, bank.length), PASS=opts.pass, SECS=opts.secs, id=opts.key;
+    let qs=[], idx=0, hits=0, pts=0, streak=0, best=0, timer=null, t0=0, locked=false;
+
+    function prog(){ const p=load(); return p[id]||{best:0,bestPts:0,plays:0,done:false}; }
+    function setProg(fn){ const p=load(); p[id]=fn(p[id]||{best:0,bestPts:0,plays:0,done:false}); save(p); }
+
+    function start(){
+      const st=prog();
+      root.innerHTML=`<div class="start">
+        <div class="g-top"><span>${N} preguntas · ${SECS} segundos cada una</span><span>${PASS} de ${N} para aprobar</span></div>
+        <p>${opts.intro||''}</p>
+        <p class="best" style="font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">${st.plays? `Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}` : 'Todavía no has jugado'}</p>
+        <button class="bar">${st.plays?'Jugar otra vez':'Empezar'}</button>
+      </div>`;
+      root.querySelector('.bar').onclick=play;
+    }
+
+    function play(){
+      qs=shuffle(bank).slice(0,N).map(q=>({...q, opts: shuffle([q.ok].concat(q.bad)).slice(0,4)}));
+      // asegurar que la correcta está entre las 4
+      qs.forEach(q=>{ if(!q.opts.includes(q.ok)){ q.opts[3]=q.ok; q.opts=shuffle(q.opts);} });
+      idx=0; hits=0; pts=0; streak=0; ask();
+    }
+
+    function ask(){
+      locked=false;
+      const q=qs[idx];
+      const letters=['A','B','C','D'];
+      root.innerHTML=`<div class="g-top"><span>Pregunta ${idx+1} de ${N}</span><span class="streak">${streak>=2?'Racha '+streak:''}</span><span>${hits} aciertos</span></div>
+        <div class="timer"><i></i></div>
+        <div class="q">${esc(q.q)}</div>
+        <div class="opts">${q.opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${letters[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+        <div class="after"></div>`;
+      root.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q, q.opts[+b.dataset.i], b));
+      const bar=root.querySelector('.timer');
+      const fill=bar.querySelector('i');
+      t0=Date.now();
+      clearInterval(timer);
+      timer=setInterval(()=>{
+        const left=SECS-(Date.now()-t0)/1000;
+        fill.style.width=Math.max(0,left/SECS*100)+'%';
+        if(left<=3) bar.classList.add('warn');
+        if(left<=0 && !locked){ answer(q, null, null); }
+      }, 50);
+      window.scrollTo({top: root.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth'});
+    }
+
+    function answer(q, chosen, btn){
+      if(locked) return; locked=true; clearInterval(timer);
+      const left=Math.max(0, SECS-(Date.now()-t0)/1000);
+      const ok = chosen===q.ok;
+      root.querySelectorAll('.opt').forEach(b=>{
+        b.disabled=true;
+        const o=q.opts[+b.dataset.i];
+        if(o===q.ok) b.classList.add('ok');
+        else if(b===btn) b.classList.add('bad');
+        else b.classList.add('dim');
+      });
+      if(ok){ hits++; streak++; pts+=100+Math.round(left*5)+(streak>=3?20:0); } else { streak=0; }
+      const after=root.querySelector('.after');
+      after.innerHTML=`<div class="why"><span class="lbl ${ok?'ok':'bad'}">${ok?'Correcto':(chosen===null?'Tiempo agotado':'Fallo')}</span>${esc(q.why)}${q.ref?`<span class="ref">→ Volver a: ${esc(q.ref)}</span>`:''}</div>
+        <button class="bar">${idx+1<N?'Siguiente':'Ver resultado'}</button>`;
+      const next=after.querySelector('.bar');
+      next.onclick=()=>{ idx++; if(idx<N) ask(); else finish(); };
+      next.focus();
+      if(ok) setTimeout(()=>{ if(document.body.contains(next)) next.click(); }, 1400);
+    }
+
+    function finish(){
+      const passed=hits>=PASS;
+      setProg(p=>({ best: Math.max(p.best, hits), bestPts: Math.max(p.bestPts, pts), plays: p.plays+1, done: p.done||passed, last: new Date().toISOString().slice(0,10) }));
+      const st=prog();
+      root.innerHTML=`<div class="score">
+        <div class="lbl">Resultado</div>
+        <div class="big">${hits}<small> / ${N}</small></div>
+        <div class="verdict ${passed?'':'no'}">${passed?(opts.passLabel||'Día superado'):'Otra vez'}</div>
+        <div class="pts">${pts} puntos</div>
+        <div class="best">Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}</div>
+        <div class="btns"><button class="bar ghost">Jugar otra vez</button>${passed&&opts.nextHref?`<a class="bar" href="${opts.nextHref}">${opts.nextLabel||'Día siguiente'}</a>`:''}</div>
+      </div>`;
+      root.querySelector('.ghost').onclick=play;
+    }
+    start();
+  };
+
+  window.PBProgress = function(){
+    const p=load();
+    document.querySelectorAll('[data-day]').forEach(li=>{
+      const d=li.dataset.day, st=p['d'+d];
+      const el=li.querySelector('.st');
+      if(st&&st.done){ el.textContent='Hecho · mejor '+st.best+'/'+li.dataset.n; el.classList.add('done'); }
+      else if(st&&st.plays){ el.textContent='Jugado · mejor '+st.best+'/'+li.dataset.n; }
+      else el.textContent='Pendiente';
+    });
+    const first=[...document.querySelectorAll('[data-day]')].find(li=>!(p['d'+li.dataset.day]||{}).done);
+    if(first) first.classList.add('next');
+    const f=p['final'];
+    const fe=document.querySelector('[data-final] .st');
+    if(fe){ if(f&&f.done){ fe.textContent='Superado · mejor '+f.best+'/'+20; fe.classList.add('done'); } else if(f&&f.plays){ fe.textContent='Jugado · mejor '+f.best+'/'+20; } else fe.textContent='Pendiente'; }
+  };
+})();
+</script>
+<script>PBGame({id:'game-1', key:'d1', bank:[{"q": "¿Qué vende de verdad una inmobiliaria?", "ok": "Casas que ha conseguido primero", "bad": ["Casas que le piden los compradores", "Servicios de valoración", "Visitas a pisos"], "why": "Una inmobiliaria no vende casas: vende casas que ha conseguido primero. Sin producto no hay nada que vender.", "ref": "Etapa 1 · El juego real"}, {"q": "¿Qué es \"producto\" en el inmobiliario?", "ok": "Viviendas a la venta en cartera", "bad": ["Compradores con hipoteca aprobada", "Leads que han dejado sus datos", "El presupuesto de anuncios"], "why": "Producto = viviendas a la venta. Si tiene 40 pisos tiene producto; si tiene 3, tiene un hobby.", "ref": "Etapa 1 · Qué es \"producto\""}, {"q": "Hoy en España, ¿quién manda en el mercado?", "ok": "El que tiene casas, porque falta producto", "bad": ["El que tiene compradores, porque sobran casas", "El que tiene más oficinas", "El que invierte más en portales"], "why": "Cuando faltan casas, manda el que tiene casas. Es la situación de mercado de hoy, y puede cambiar.", "ref": "Etapa 1 · Por qué esto es LO difícil ahora mismo"}, {"q": "¿Cómo se llama el contrato que firma el propietario con la agencia?", "ok": "Encargo", "bad": ["Reserva", "Arras", "Escritura"], "why": "Cuando un propietario firma, eso se llama encargo: te encarga la venta de su piso.", "ref": "Etapa 1 · El contrato tiene nombre"}, {"q": "En un encargo en abierto, ¿quién cobra la comisión?", "ok": "La agencia que llegue primero", "bad": ["Todas las agencias a partes iguales", "Solo la agencia que firmó primero", "El propietario decide al final"], "why": "En abierto, el piso lo venden varias agencias a la vez y cobra la que llegue primero. Es una lotería.", "ref": "Etapa 1 · El contrato tiene nombre"}, {"q": "¿Por qué perseguimos siempre la exclusiva?", "ok": "Porque da el control sobre el producto y la comisión", "bad": ["Porque es obligatoria por ley", "Porque el propietario paga más", "Porque se vende más rápido en portales"], "why": "Con exclusiva solo tú puedes vender ese piso: tienes el control sobre el producto y sobre lo que se va a cobrar.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "Honorarios habituales que se cobran al propietario:", "ok": "Entre el 2% y el 5% del precio de venta", "bad": ["Entre el 0,5% y el 1%", "Entre el 8% y el 10%", "Una cuota fija mensual"], "why": "Lo normal es cobrarle al propietario entre el 2% y el 5% del precio de venta.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "Piso de 300.000 € con honorarios del 5%. ¿Comisión?", "ok": "15.000 €", "bad": ["1.500 €", "30.000 €", "5.000 €"], "why": "300.000 × 5% = 15.000 €. Es la cifra que explica el sector entero.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "¿Por qué casi nadie se profesionaliza en el sector?", "ok": "Porque las comisiones permiten vivir bien sin estructura", "bad": ["Porque no tienen capacidad", "Porque la ley lo impide", "Porque los portales lo hacen todo"], "why": "Cuando un sector te deja ganar mucho sin obligarte a profesionalizarte, nadie se profesionaliza. No por falta de capacidad: porque no hace falta.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "¿Qué le pasa a un piso publicado por seis agencias en abierto?", "ok": "El comprador lo ve repetido y sospecha que algo raro pasa", "bad": ["Se vende seis veces más rápido", "El propietario cobra seis comisiones", "Sube de precio en los portales"], "why": "Seis fotos distintas, a veces seis precios: el comprador piensa que algo raro pasa y el propietario no está comprometido con nadie.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "¿Qué es el agente inmobiliario cuando está delante del propietario?", "ok": "Un closer: conseguir la exclusiva es una venta", "bad": ["Un tasador", "Un administrador de fincas", "Un fotógrafo"], "why": "Conseguir la exclusiva depende de cómo estructures la reunión. Es una venta, igual que la tuya.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "¿Cuál es la idea de Sun Tzu que sostiene el playbook?", "ok": "Conocer a tu enemigo como si fuera tu mejor amigo", "bad": ["Atacar siempre primero", "No negociar nunca el precio", "Ganar sin luchar"], "why": "Si no sabes qué piensa, qué siente y qué quiere de verdad, no le vas a vender nada.", "ref": "Etapa 0 · De qué va esto"}, {"q": "Rubén, el personaje del playbook, tiene de todo menos una cosa. ¿Cuál?", "ok": "Sistema", "bad": ["Habilidad comercial", "Experiencia en el sector", "Un negocio rentable"], "why": "Vende bien, se le da bien la gente y ha sacado un negocio adelante. Lo que no tiene es sistema.", "ref": "Etapa 0 · Un personaje que te va a acompañar"}, {"q": "¿Cuál es nuestro trabajo con los dueños de inmobiliaria?", "ok": "Que vean lo que no están viendo y quieran arreglarlo con nosotros", "bad": ["Demostrarles que trabajan mal", "Enseñarles a usar los portales", "Convencerles de trabajar más horas"], "why": "Nuestro trabajo no es tener razón sobre ellos. Es que vean lo que no están viendo.", "ref": "Etapa 0 · Una norma de casa"}], n:7, pass:6, secs:10, nextHref:"dia-2.html"});</script>
+
+</body>
+</html>

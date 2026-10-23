@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Día 7 · LOS DOS MODELOS DE AGENCIA: AUTÓNOMOS VS ASALARIADOS · Playbook del Closer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
+ --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+.sheet{position:relative;max-width:860px;margin:0 auto 36px;background:var(--paper);padding:52px 76px 40px;border:1px solid #e3e1db;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 48px rgba(0,0,0,.08)}
+.sheet p{margin:0 0 1.05em}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:inherit}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logolink{text-decoration:none;display:flex;flex-direction:column}
+.logo .g{font-family:var(--sans);font-weight:700;font-size:38px;line-height:1;letter-spacing:-1.2px}
+.logo .g sup{font-size:12px;font-weight:600;vertical-align:top;position:relative;top:4px;letter-spacing:0}
+.logo .i{font-family:var(--display);font-style:italic;font-weight:500;font-size:36px;line-height:1;margin-top:2px;letter-spacing:-.5px}
+.logo .tag{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fojas{font-family:var(--mono);text-align:right;line-height:1.3}
+.fojas .k{display:block;font-size:12px;letter-spacing:3px}
+.fojas .v{display:block;font-weight:700;font-size:16px;letter-spacing:2px}
+.rule{font-family:var(--mono);height:12px;overflow:hidden;white-space:nowrap;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.rule::before{content:"************************************************************************************************************"}
+.reg{font-family:var(--mono);display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;padding:10px 0}
+/* portada */
+.cover{font-family:var(--mono);font-size:15.5px;line-height:1.72}
+.cover p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.cover .head{padding-right:170px}
+.deedtitle{text-align:center;margin:44px 0 30px}
+.deedtitle h1{font-family:var(--mono);font-size:17px;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin:0;line-height:1.6}
+.deedtitle .dash{font-family:var(--mono);letter-spacing:0;margin:8px 0 4px}
+.deedtitle .de{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.deedtitle .party{font-family:var(--mono);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.stamp{position:absolute;right:46px;top:38px;width:132px;height:132px;color:var(--gold);transform:rotate(-12deg);opacity:.92;mix-blend-mode:multiply;font-family:var(--mono)}
+.stamp text{fill:currentColor}
+.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-family:var(--mono);font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px;border:0;width:100%;cursor:pointer}
+.bar:hover{background:#333}
+.bar.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bar.ghost:hover{background:var(--cream)}
+/* títulos */
+.deedtitle.small{margin:30px 0 22px}
+.deedtitle.small h2{font-family:var(--display);font-style:italic;font-weight:500;font-size:40px;line-height:1.15;margin:0;letter-spacing:-.3px}
+.deedtitle.small .dash{color:var(--gold);font-weight:700}
+h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
+h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+/* programa */
+.programa{list-style:none;padding:0;margin:0 0 10px}
+.programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
+.programa li:last-child{border-bottom:none}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .t{flex:1;font-size:17px;line-height:1.35}
+.programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
+.programa .st.done{color:var(--gold);font-weight:700}
+.programa a{text-decoration:none}
+.programa li.next .t{font-weight:700}
+.programa li.next .n::after{content:" ←";color:var(--gold)}
+.pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
+.pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+/* bloques */
+.bloquesheet{min-height:420px}
+.bloque{padding:60px 0 40px}
+.bloquelabel{font-family:var(--mono);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.bloquetitle{font-family:var(--display);font-style:italic;font-weight:500;font-size:64px;line-height:1;margin:0 0 28px;letter-spacing:-1px}
+.bloquedesc{font-size:18.5px;max-width:580px;line-height:1.65}
+/* listas */
+ul,ol{margin:0 0 1.1em;padding-left:30px}
+li{margin:0 0 .5em}
+ul{list-style:none;padding-left:26px}
+ul li{position:relative}
+ul li::before{content:"—";position:absolute;left:-26px;color:var(--gold);font-weight:700}
+ol li::marker{font-family:var(--mono);font-weight:700}
+/* cajas */
+.box,.diligencia,.repaso{border:3px double var(--ink);padding:18px 24px 8px;margin:18px 0 26px}
+.box p:last-child,.diligencia p:last-child{margin-bottom:10px}
+.boxlabel{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.box{text-align:center}
+.box p{text-align:center;font-size:19px;line-height:1.5}
+.box .boxlabel{text-align:center}
+.diligencia{border:1px solid var(--ink);background:var(--cream);padding:16px 24px 8px}
+.diligencia .boxlabel{color:#7a5a1a}
+.repaso{border:none;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 4px;margin:0 0 28px}
+.repaso ol{margin-bottom:8px}
+.frases{background:var(--ink);color:#fff;padding:24px 28px 16px;margin:30px 0 10px}
+.frases .boxlabel{color:#fff;font-size:12px;letter-spacing:4px;margin-bottom:14px}
+.frases ol{padding-left:30px;margin:0}
+.frases li{font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.45;margin-bottom:.7em}
+.frases li::marker{color:var(--gold)}
+.chain{border:1px solid var(--ink);padding:18px 20px;margin:14px 0 24px;text-align:center}
+.chain .step{font-family:var(--sans);font-weight:600;font-size:15.5px}
+.chain .arrow{color:var(--gold);font-weight:700;line-height:1.1;font-size:20px;font-family:Georgia,serif}
+blockquote{margin:12px 0 22px 18px;padding-left:18px;border-left:2px solid var(--gold)}
+blockquote p{font-style:italic;margin-bottom:.4em;font-size:17.5px}
+/* tablas */
+.tablewrap{overflow-x:auto;margin:14px 0 28px}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table.small{font-size:13px;line-height:1.4}
+th,td{padding:10px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #cfcac0}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:10px;vertical-align:bottom}
+table.small thead th{font-size:10px;letter-spacing:1px;white-space:nowrap}
+tbody th{font-weight:700;width:auto}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+/* pie */
+.foot{font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:14px;border-top:1px solid #cfcac0;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.foot .pn{font-weight:700;color:var(--ink);font-size:12px}
+.foot .up{text-decoration:none}
+/* examen */
+.exam{min-height:520px}
+.exam .intro{font-size:17px}
+.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
+.exam .meta b{color:var(--ink)}
+.game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
+.g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
+.g-top .streak{color:var(--gold);font-weight:700}
+.timer{height:6px;background:#e4e0d6;margin:0 0 22px;position:relative;overflow:hidden}
+.timer i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:100%}
+.timer.warn i{background:var(--bad)}
+.q{font-family:var(--sans);font-weight:600;font-size:21px;line-height:1.35;margin:0 0 20px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 16px}
+.opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.4;cursor:pointer;color:var(--ink)}
+.opt:hover{background:var(--cream)}
+.opt .k{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;flex:0 0 18px;padding-top:3px}
+.opt.ok{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt.bad{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.dim{opacity:.45}
+.opt:disabled{cursor:default}
+.why{background:var(--cream);border:1px solid var(--ink);padding:12px 16px;font-size:15.5px;margin:0 0 16px;line-height:1.5}
+.why .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.why .lbl.ok{color:#2e6b3a}
+.why .lbl.bad{color:var(--bad)}
+.why .ref{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:var(--display);font-style:italic;font-size:78px;line-height:1;margin:6px 0 2px}
+.score .big small{font-size:34px}
+.score .lbl{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.score .verdict{display:inline-block;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:4px;text-transform:uppercase;border:3px double var(--gold);color:var(--gold);padding:8px 18px;margin:14px 0 6px;transform:rotate(-3deg)}
+.score .verdict.no{border-color:var(--bad);color:var(--bad)}
+.score .pts{font-size:16px;margin:8px 0 2px}
+.score .best{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .bar{margin:0;flex:1 1 200px}
+.exam .start .bar{margin-top:10px}
+/* móvil */
+@media (max-width:720px){
+ body{padding:12px 8px 40px;font-size:16.5px}
+ .sheet{padding:34px 22px 28px;margin-bottom:18px}
+ .logo .g,.logo .i{font-size:30px}
+ .stamp{width:84px;height:84px;right:12px;top:10px}
+ .cover .head{padding-right:84px}
+ .logo .tag{letter-spacing:2px;font-size:10px}
+ .head{align-items:flex-start;flex-direction:column;gap:10px}
+ .fojas{text-align:left}
+ .deedtitle h1{font-size:14px;letter-spacing:3px}
+ .deedtitle.small h2{font-size:30px}
+ .bloquetitle{font-size:42px}
+ .cover p{text-align:left}
+ .reg{letter-spacing:1.5px;font-size:11px}
+ .programa li{flex-wrap:wrap}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .game{padding:18px 14px}
+ .q{font-size:18.5px}
+ .opt{font-size:15.5px;padding:10px 12px}
+ .score .big{font-size:60px}
+ .foot{flex-wrap:wrap;gap:8px}
+}
+@media print{
+ body{background:#fff;padding:0}
+ .sheet{box-shadow:none;border:none;margin:0;max-width:none;page-break-after:always;padding:36px 44px}
+ .foot .up,.bar,.exam{display:none}
+}
+</style>
+
+</head>
+<body>
+<section class="sheet bloquesheet" id="bloque-3"><header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">7</span></div></header><div class="rule" aria-hidden="true"></div><div class="bloque"><div class="bloquelabel">BLOQUE 3</div><h2 class="bloquetitle">Tu diagnóstico</h2>
+<p class="bloquedesc">Ya conoces el mundo de Rubén y su cabeza. Ahora toca clasificarle: con qué modelo de agencia trabaja, en qué etapa de crecimiento está y qué le duele exactamente. El bloque termina con las siete preguntas con las que rellenas su ficha en los primeros diez minutos de llamada.</p>
+</div><footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 7 de 10</span><a href="dia-8.html" class="up">Día siguiente →</a></footer></section>
+<section class="sheet" id="etapa-7">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">7</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 7</span><span>Día 7</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>LOS DOS MODELOS DE AGENCIA: AUTÓNOMOS VS ASALARIADOS</h2><div class="dash">——————</div></div>
+<div class="repaso">
+<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
+<ol><li>¿Por qué Rubén no llega virgen a tu llamada?</li><li>¿Cuál es la regla más importante de toda tu venta?</li><li>¿Qué le vendes y cómo lo posicionas?</li></ol>
+</div>
+<p>Esto lo tienes que preguntar en los primeros minutos de toda llamada, porque cambia por completo con quién estás hablando y qué le puedes vender.</p>
+<p>Hay dos formatos de agencia inmobiliaria en España: la que funciona con <strong>AUTÓNOMOS</strong> y la que funciona con <strong>ASALARIADOS</strong>.</p>
+<h3>El modelo AUTÓNOMOS</h3>
+<p>En España, si tu gente es autónoma, en teoría no les puedes exigir. No les puedes marcar horarios, ni objetivos, ni dinámicas, ni directrices. No son tus empleados.</p>
+<p>¿Y qué pasa cuando no puedes exigir? <strong>Que no te queda otra que ir a por volumen.</strong></p>
+<p>Como no puedes hacer que una persona rinda, metes veinte y rezas para que una funcione. Así que entran agentes autónomos sin apenas filtro: gente sin experiencia, sin formación y sin compromiso real con el negocio, porque el modelo necesita números, no selección.</p>
+<p>Para nosotros ese modelo está roto. Y esto es una opinión de casa, no una verdad universal: hay agencias de autónomos que facturan una barbaridad y gente excelente trabajando en ellas. Pero estructuralmente:</p>
+<ul>
+<li>Entra gente sin filtro, porque el modelo te obliga a ir a volumen.</li>
+<li>La complejidad del negocio se dispara (más gente, más caos, más gestión).</li>
+<li>Y no lo puedes escalar. Es una realidad.</li>
+</ul>
+<p>Salvo que el dueño tenga unas habilidades de liderazgo muy por encima de la media y sepa motivar de verdad sin poder exigir, ese modelo lo tiene todo en contra para escalar.</p>
+<p><strong>Quién funciona así:</strong> las franquicias. RE/MAX, Century 21, ERA y similares. Son modelos de solo autónomos, y así les han formado siempre.</p>
+<h3>El modelo ASALARIADOS</h3>
+<p>Aquí sí puedes marcar directrices. Y por tanto puedes tener un equipo comercial de verdad, alineado. Y eso es lo que necesita cualquier empresa:</p>
+<p><strong>Control. Dirección. Que todo el mundo vaya alineado.</strong> Que todo el mundo meta unos inputs concretos, unas acciones, para lograr los objetivos comerciales.</p>
+<p>Con asalariados funciona exactamente igual que funcionamos nosotros: marcas las tarifas comerciales (la actividad mínima que tiene que hacer cada persona). Si la persona no cumple esas tarifas y no llega a los objetivos marcados, a la calle.</p>
+<p><strong>Quién funciona así:</strong> Tecnocasa y similares. Ahí puedes exigir muchísimo volumen. Y bajo nuestro punto de vista, es lo que mejor funciona.</p>
+<h3>Lo que esto significa para ti en la llamada</h3>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:34.0%"><col style="width:33.0%"><col style="width:33.0%"></colgroup>
+<thead><tr><th></th><th>AUTÓNOMOS</th><th>ASALARIADOS</th></tr></thead><tbody>
+<tr><th>¿Puedes exigir?</th><td>No</td><td>Sí</td></tr>
+<tr><th>¿Horarios y objetivos?</th><td>No</td><td>Sí</td></tr>
+<tr><th>Cómo resuelven el rendimiento</th><td>Metiendo volumen de gente</td><td>Entrenando y exigiendo</td></tr>
+<tr><th>Calidad del equipo</th><td>Baja, sin filtro</td><td>Seleccionada</td></tr>
+<tr><th>¿Escala?</th><td>Muy difícil</td><td>Sí</td></tr>
+<tr><th>Ejemplos</th><td>RE/MAX, Century 21, ERA</td><td>Tecnocasa</td></tr>
+</tbody></table></div>
+<p><strong>Nuestro mejor cliente es el de agentes asalariados.</strong> Porque podemos marcar dinámicas, podemos entrenar, podemos hacer que rindan muchísimo más. Ahí es donde nuestro método se despliega entero.</p>
+<p><strong>Y al de autónomos, ¿qué le vendemos?</strong> No le vendemos exigencia, porque no puede ejercerla. Le posicionamos en dos sitios:</p>
+<ul>
+<li><strong>El proceso de contratación.</strong> Perfeccionarlo para dejar de meter a cualquiera y empezar a pillar mejor talento. Si su modelo depende de que entren personas válidas, su palanca está en a quién deja entrar.</li>
+<li><strong>Los servicios que da a su equipo.</strong> En una agencia de autónomos, cada autónomo es una pequeña empresa dentro de la suya. El dueño no les dirige: les da servicio. Si él tiene los mejores sistemas para captar propietarios y propiedades, atrae a los mejores autónomos y hace rendir más a los que ya tiene. Su palanca es ser la agencia donde un buen autónomo quiere estar.</li>
+</ul>
+<h3>La pregunta que tienes que hacer siempre</h3>
+<blockquote><p>«¿Tu equipo es asalariado o son autónomos?»</p></blockquote>
+<p>Y según lo que te diga, ya sabes:</p>
+<ul>
+<li><strong>Asalariados</strong> → puedo hablarle de tarifas comerciales, objetivos, entrenamiento, despedir al que no rinde.</li>
+<li><strong>Autónomos</strong> → le hablo de selección de talento, de los servicios que da a su equipo y de cómo atraer a los buenos. No de exigir.</li>
+</ul>
+<p>Si le hablas de «marcar objetivos a tu equipo» a un dueño con 25 autónomos, te va a decir que no puede. Y tendrá razón. Y acabas de perder la autoridad.</p>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 7</div>
+<ol><li>Si no puedes exigir, vas a volumen. Y si vas a volumen, metes a cualquiera.</li><li>Nuestro mejor cliente es el de asalariados: ahí se puede entrenar y exigir.</li><li>Al de autónomos no le hables de exigir. Háblale de los servicios que da a su equipo y de cómo hacer rendir a los que ya tiene.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 7 de 10</span><a href="dia-8.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet exam" id="examen">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">7</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>Examen del día 7</span><span>10 preguntas en el banco</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>Examen del día 7</h2><div class="dash">——————</div></div>
+<p class="intro">Siete preguntas al azar de esta etapa, diez segundos para cada una. Con 6 aciertos el día queda superado. Puedes repetirlo las veces que quieras: cada partida saca preguntas distintas y en otro orden, y se guarda tu mejor marca. No es un examen, es entrenamiento: lo que quieres es contestar sin pensar.</p>
+<div class="game" id="game-7"></div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 7 de 10</span><a href="dia-8.html" class="up">Día siguiente →</a></footer>
+</section>
+<script>
+(function(){
+  const KEY='pbc_progress_v1';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+  function save(p){ try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){} }
+  function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  window.PBGame = function(opts){
+    const root=document.getElementById(opts.id);
+    const bank=opts.bank, N=Math.min(opts.n, bank.length), PASS=opts.pass, SECS=opts.secs, id=opts.key;
+    let qs=[], idx=0, hits=0, pts=0, streak=0, best=0, timer=null, t0=0, locked=false;
+
+    function prog(){ const p=load(); return p[id]||{best:0,bestPts:0,plays:0,done:false}; }
+    function setProg(fn){ const p=load(); p[id]=fn(p[id]||{best:0,bestPts:0,plays:0,done:false}); save(p); }
+
+    function start(){
+      const st=prog();
+      root.innerHTML=`<div class="start">
+        <div class="g-top"><span>${N} preguntas · ${SECS} segundos cada una</span><span>${PASS} de ${N} para aprobar</span></div>
+        <p>${opts.intro||''}</p>
+        <p class="best" style="font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">${st.plays? `Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}` : 'Todavía no has jugado'}</p>
+        <button class="bar">${st.plays?'Jugar otra vez':'Empezar'}</button>
+      </div>`;
+      root.querySelector('.bar').onclick=play;
+    }
+
+    function play(){
+      qs=shuffle(bank).slice(0,N).map(q=>({...q, opts: shuffle([q.ok].concat(q.bad)).slice(0,4)}));
+      // asegurar que la correcta está entre las 4
+      qs.forEach(q=>{ if(!q.opts.includes(q.ok)){ q.opts[3]=q.ok; q.opts=shuffle(q.opts);} });
+      idx=0; hits=0; pts=0; streak=0; ask();
+    }
+
+    function ask(){
+      locked=false;
+      const q=qs[idx];
+      const letters=['A','B','C','D'];
+      root.innerHTML=`<div class="g-top"><span>Pregunta ${idx+1} de ${N}</span><span class="streak">${streak>=2?'Racha '+streak:''}</span><span>${hits} aciertos</span></div>
+        <div class="timer"><i></i></div>
+        <div class="q">${esc(q.q)}</div>
+        <div class="opts">${q.opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${letters[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+        <div class="after"></div>`;
+      root.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q, q.opts[+b.dataset.i], b));
+      const bar=root.querySelector('.timer');
+      const fill=bar.querySelector('i');
+      t0=Date.now();
+      clearInterval(timer);
+      timer=setInterval(()=>{
+        const left=SECS-(Date.now()-t0)/1000;
+        fill.style.width=Math.max(0,left/SECS*100)+'%';
+        if(left<=3) bar.classList.add('warn');
+        if(left<=0 && !locked){ answer(q, null, null); }
+      }, 50);
+      window.scrollTo({top: root.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth'});
+    }
+
+    function answer(q, chosen, btn){
+      if(locked) return; locked=true; clearInterval(timer);
+      const left=Math.max(0, SECS-(Date.now()-t0)/1000);
+      const ok = chosen===q.ok;
+      root.querySelectorAll('.opt').forEach(b=>{
+        b.disabled=true;
+        const o=q.opts[+b.dataset.i];
+        if(o===q.ok) b.classList.add('ok');
+        else if(b===btn) b.classList.add('bad');
+        else b.classList.add('dim');
+      });
+      if(ok){ hits++; streak++; pts+=100+Math.round(left*5)+(streak>=3?20:0); } else { streak=0; }
+      const after=root.querySelector('.after');
+      after.innerHTML=`<div class="why"><span class="lbl ${ok?'ok':'bad'}">${ok?'Correcto':(chosen===null?'Tiempo agotado':'Fallo')}</span>${esc(q.why)}${q.ref?`<span class="ref">→ Volver a: ${esc(q.ref)}</span>`:''}</div>
+        <button class="bar">${idx+1<N?'Siguiente':'Ver resultado'}</button>`;
+      const next=after.querySelector('.bar');
+      next.onclick=()=>{ idx++; if(idx<N) ask(); else finish(); };
+      next.focus();
+      if(ok) setTimeout(()=>{ if(document.body.contains(next)) next.click(); }, 1400);
+    }
+
+    function finish(){
+      const passed=hits>=PASS;
+      setProg(p=>({ best: Math.max(p.best, hits), bestPts: Math.max(p.bestPts, pts), plays: p.plays+1, done: p.done||passed, last: new Date().toISOString().slice(0,10) }));
+      const st=prog();
+      root.innerHTML=`<div class="score">
+        <div class="lbl">Resultado</div>
+        <div class="big">${hits}<small> / ${N}</small></div>
+        <div class="verdict ${passed?'':'no'}">${passed?(opts.passLabel||'Día superado'):'Otra vez'}</div>
+        <div class="pts">${pts} puntos</div>
+        <div class="best">Mejor marca: ${st.best}/${N} · ${st.bestPts} puntos · ${st.plays} partida${st.plays>1?'s':''}</div>
+        <div class="btns"><button class="bar ghost">Jugar otra vez</button>${passed&&opts.nextHref?`<a class="bar" href="${opts.nextHref}">${opts.nextLabel||'Día siguiente'}</a>`:''}</div>
+      </div>`;
+      root.querySelector('.ghost').onclick=play;
+    }
+    start();
+  };
+
+  window.PBProgress = function(){
+    const p=load();
+    document.querySelectorAll('[data-day]').forEach(li=>{
+      const d=li.dataset.day, st=p['d'+d];
+      const el=li.querySelector('.st');
+      if(st&&st.done){ el.textContent='Hecho · mejor '+st.best+'/'+li.dataset.n; el.classList.add('done'); }
+      else if(st&&st.plays){ el.textContent='Jugado · mejor '+st.best+'/'+li.dataset.n; }
+      else el.textContent='Pendiente';
+    });
+    const first=[...document.querySelectorAll('[data-day]')].find(li=>!(p['d'+li.dataset.day]||{}).done);
+    if(first) first.classList.add('next');
+    const f=p['final'];
+    const fe=document.querySelector('[data-final] .st');
+    if(fe){ if(f&&f.done){ fe.textContent='Superado · mejor '+f.best+'/'+20; fe.classList.add('done'); } else if(f&&f.plays){ fe.textContent='Jugado · mejor '+f.best+'/'+20; } else fe.textContent='Pendiente'; }
+  };
+})();
+</script>
+<script>PBGame({id:'game-7', key:'d7', bank:[{"q": "¿Qué le puedes exigir a un agente autónomo?", "ok": "En teoría, nada: ni horarios, ni objetivos, ni directrices", "bad": ["Horarios y objetivos", "Solo objetivos", "Lo mismo que a un asalariado"], "why": "No son tus empleados. Y cuando no puedes exigir, no te queda otra que ir a por volumen.", "ref": "Etapa 7 · El modelo autónomos"}, {"q": "¿Qué pasa cuando no puedes exigir?", "ok": "Vas a volumen: metes veinte y rezas para que una funcione", "bad": ["Pagas más", "Entrenas más", "Cierras la oficina"], "why": "Como no puedes hacer que una persona rinda, metes a muchos sin filtro. El modelo necesita números, no selección.", "ref": "Etapa 7 · El modelo autónomos"}, {"q": "¿Quién funciona con autónomos?", "ok": "Las franquicias: RE/MAX, Century 21, ERA", "bad": ["Tecnocasa", "Las agencias de barrio", "Los portales"], "why": "Son modelos de solo autónomos, y así les han formado siempre.", "ref": "Etapa 7 · El modelo autónomos"}, {"q": "¿Quién funciona con asalariados?", "ok": "Tecnocasa y similares", "bad": ["RE/MAX", "Century 21", "ERA"], "why": "Con asalariados puedes marcar tarifas comerciales, exigir volumen y echar al que no rinde. Es lo que mejor funciona.", "ref": "Etapa 7 · El modelo asalariados"}, {"q": "¿Qué son las \"tarifas comerciales\"?", "ok": "La actividad mínima que tiene que hacer cada persona del equipo", "bad": ["El porcentaje de honorarios", "El sueldo base", "El precio de los portales"], "why": "Marcas la actividad mínima de cada persona. Si no cumple y no llega a objetivos, a la calle. Es como funcionamos nosotros.", "ref": "Etapa 7 · El modelo asalariados"}, {"q": "¿Cuál es nuestro mejor cliente?", "ok": "El de agentes asalariados", "bad": ["El de autónomos", "El de franquicia", "El que trabaja solo"], "why": "Podemos marcar dinámicas, entrenar y hacer que rindan muchísimo más. Ahí nuestro método se despliega entero.", "ref": "Etapa 7 · Lo que esto significa para ti"}, {"q": "¿Qué le vendes al dueño con autónomos?", "ok": "Mejorar la selección de talento y los servicios que da a su equipo", "bad": ["Exigir objetivos a su equipo", "Despedir al que no rinde", "Horarios fijos"], "why": "No puede exigir. Su palanca es a quién deja entrar y ser la agencia donde un buen autónomo quiere estar.", "ref": "Etapa 7 · Lo que esto significa para ti"}, {"q": "¿Qué pasa si hablas de \"marcar objetivos a tu equipo\" a un dueño con 25 autónomos?", "ok": "Te dice que no puede, tiene razón, y pierdes la autoridad", "bad": ["Te contrata", "Te pide más detalles", "Te pasa con su director comercial"], "why": "Y tendrá razón. Por eso preguntas siempre primero si son asalariados o autónomos.", "ref": "Etapa 7 · La pregunta que tienes que hacer siempre"}, {"q": "La pregunta que haces siempre en los primeros minutos:", "ok": "\"¿Tu equipo es asalariado o son autónomos?\"", "bad": ["\"¿Cuántos portales usas?\"", "\"¿Cuánto cobras de honorarios?\"", "\"¿Tienes web?\""], "why": "Cambia por completo con quién hablas y qué le puedes vender.", "ref": "Etapa 7 · La pregunta que tienes que hacer siempre"}, {"q": "Para nosotros, el modelo de autónomos está roto porque...", "ok": "Entra gente sin filtro, la complejidad se dispara y no escala", "bad": ["Pagan poco", "No usan CRM", "No tienen oficina"], "why": "Es una opinión de casa: hay agencias de autónomos que facturan una barbaridad. Pero estructuralmente lo tiene todo en contra para escalar.", "ref": "Etapa 7 · El modelo autónomos"}], n:7, pass:6, secs:10, nextHref:"dia-8.html"});</script>
+
+</body>
+</html>
