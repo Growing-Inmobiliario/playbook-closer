@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diccionario · Playbook del Closer</title>
+<title>El diccionario · Growing Inmobiliario</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;--term:#7a5a1a;
  --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -18,6 +18,9 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif)
 strong{font-weight:700}
 em{font-style:italic}
 a{color:inherit}
+a.term{color:var(--term);text-decoration:none;border-bottom:1px dotted var(--gold);font-weight:600}
+a.term:hover{background:var(--cream)}
+.frases a.term{color:#fff;border-color:#aaa}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
 .logo{display:flex;flex-direction:column;line-height:1}
 .logolink{text-decoration:none;display:flex;flex-direction:column}
@@ -52,11 +55,17 @@ a{color:inherit}
 .deedtitle.small .dash{color:var(--gold);font-weight:700}
 h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
 h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+h4.term{font-size:19px;font-weight:700;margin:30px 0 6px;padding-top:14px;border-top:1px solid #d7d2c6;color:var(--term)}
+p.ejemplo{font-style:italic;color:#555;margin:0 0 1.2em 18px;padding-left:14px;border-left:2px solid var(--gold);font-size:16px}
+.alfa{columns:2;column-gap:40px;list-style:none;padding:0;margin:0}
+.alfa li{break-inside:avoid;margin:0 0 .35em;padding-left:0}
+.alfa li::before{content:none}
+.alfa a{text-decoration:none;color:var(--term);font-weight:600}
 /* programa */
 .programa{list-style:none;padding:0;margin:0 0 10px}
 .programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
 .programa li:last-child{border-bottom:none}
-.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 92px}
 .programa .t{flex:1;font-size:17px;line-height:1.35}
 .programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
@@ -64,6 +73,7 @@ h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
 .programa a{text-decoration:none}
 .programa li.next .t{font-weight:700}
 .programa li.next .n::after{content:" ←";color:var(--gold)}
+.cover .programa .t{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:1px}
 .pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
 .pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
 .note{font-size:15px;color:var(--muted);margin-top:14px}
@@ -117,8 +127,6 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 /* examen */
 .exam{min-height:520px}
 .exam .intro{font-size:17px}
-.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
-.exam .meta b{color:var(--ink)}
 .game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
 .g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
 .g-top .streak{color:var(--gold);font-weight:700}
@@ -166,7 +174,8 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
  .cover p{text-align:left}
  .reg{letter-spacing:1.5px;font-size:11px}
  .programa li{flex-wrap:wrap}
- .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:106px}
+ .alfa{columns:1}
  .game{padding:18px 14px}
  .q{font-size:18.5px}
  .opt{font-size:15.5px;padding:10px 12px}
@@ -179,17 +188,38 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
  .foot .up,.bar,.exam{display:none}
 }
 </style>
-
 </head>
 <body>
-<section class="sheet" id="anexo">
-<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">ANEXO</span><span class="v">Diccionario</span></div></header>
+<section class="sheet cover" id="portada">
+<svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+<defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+<circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="3"/>
+<circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<circle cx="100" cy="100" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text font-size="13.5" letter-spacing="2.6" font-weight="700"><textPath href="#ring">GROWING INMOBILIARIO · FORMACIÓN INTERNA · RAMP-UP DEL CLOSER ·</textPath></text>
+<text x="100" y="94" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="2">USO INTERNO</text>
+<text x="100" y="114" text-anchor="middle" font-size="11" letter-spacing="1.5">v2 · 10-2026</text>
+</svg>
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">v1</span></div></header>
 <div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>ANEXO</span><span>Consulta</span></div>
+<div class="reg"><span>GROWING INMOBILIARIO · FORMACIÓN INTERNA</span><span>v1 · octubre 2026</span></div>
 <div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL DICCIONARIO</h2><div class="dash">——————</div></div>
-<p>Esto no se estudia, se consulta. Pero léetelo entero una vez, despacio.</p>
-<p><strong>Regla de oro:</strong> si en una llamada usas mal una de estas palabras, Rubén deja de verte como alguien que entiende su mundo. Si las usas bien, eres de los suyos.</p>
+<div class="deedtitle"><h1>El diccionario</h1><div class="dash">——————</div><div class="de">de</div><div class="party">Growing Inmobiliario</div></div>
+<p class="deed">En España, a octubre de 2026, <strong>GROWING INMOBILIARIO</strong>, en adelante <strong>«la Casa»</strong>, hace entrega del presente documento a quien suscribe, en adelante <strong>«el Closer»</strong>, con un único fin: <strong>Todas las palabras del sector, explicadas para alguien que no viene de él. Y para alguien que sí.</strong></p>
+<p class="deed">SE CONSULTA, NO SE ESTUDIA · LAS PALABRAS MARCADAS EN LOS PLAYBOOKS LLEVAN AQUÍ</p>
+<ol class="programa"><li><span class="n">ETAPA 0</span><span class="t"><a href="#etapa-0">CÓMO SE USA</a></span><span class="st">Foja 2</span></li><li><span class="n">SECCIÓN 1</span><span class="t"><a href="#seccion-1">LAS PERSONAS</a></span><span class="st">Foja 3</span></li><li><span class="n">SECCIÓN 2</span><span class="t"><a href="#seccion-2">EL PRODUCTO Y EL CONTRATO</a></span><span class="st">Foja 4</span></li><li><span class="n">SECCIÓN 3</span><span class="t"><a href="#seccion-3">CAPTAR: CONSEGUIR LA CASA</a></span><span class="st">Foja 5</span></li><li><span class="n">SECCIÓN 4</span><span class="t"><a href="#seccion-4">VENDER: DESDE LA CASA HASTA EL DINERO</a></span><span class="st">Foja 6</span></li><li><span class="n">SECCIÓN 5</span><span class="t"><a href="#seccion-5">MARKETING Y FUENTES</a></span><span class="st">Foja 7</span></li><li><span class="n">SECCIÓN 6</span><span class="t"><a href="#seccion-6">EL NEGOCIO Y EL EQUIPO</a></span><span class="st">Foja 8</span></li><li><span class="n">SECCIÓN 7</span><span class="t"><a href="#seccion-7">NUESTRA JERGA</a></span><span class="st">Foja 9</span></li><li><span class="n">ÍNDICE</span><span class="t"><a href="#alfabetico">Todas las palabras, de la A a la Z</a></span><span class="st">Foja 10</span></li></ol>
+<a class="bar" href="#etapa-0">Empezar a leer</a>
+<footer class="foot"><span></span><span class="pn">Foja 1 de 10</span><span></span></footer>
+</section>
+<section class="sheet" id="etapa-0">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">2</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 0</span><span>Foja 2</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>CÓMO SE USA</h2><div class="dash">——————</div></div>
+<p>Esto no se estudia. Se consulta. Pero léetelo entero una vez, despacio, antes de abrir el Playbook 1.</p>
+<p>En los playbooks, cada palabra que necesita explicación va <strong>marcada en otro color</strong>. Si haces clic, llegas aquí, a su definición. Si estás leyendo en papel, buscas la palabra en este documento. Están agrupadas por temas, y dentro de cada tema van en el orden en el que te las vas a encontrar.</p>
+<p><strong>La regla de oro:</strong> si en una llamada usas mal una de estas palabras, el dueño deja de verte como alguien que entiende su mundo. Si las usas bien, eres de los suyos. Por eso cada término lleva un ejemplo de cómo se oye en una frase real.</p>
 <h3>Las cuatro confusiones que te van a delatar</h3>
 <ol>
 <li><strong>Noticia ≠ cita.</strong> Una noticia es alguien que quiere vender. La cita es cuando quedas con él.</li>
@@ -197,39 +227,297 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 <li><strong>Encargo ≠ exclusiva.</strong> Toda exclusiva es un encargo. No todo encargo es exclusiva.</li>
 <li><strong>Arras ≠ escritura.</strong> Arras es el acuerdo privado y el 10%. Escritura es el notario y el resto.</li>
 </ol>
-<h3>Los términos</h3>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:30.0%"><col style="width:70.0%"></colgroup>
-<thead><tr><th>Término</th><th>Qué significa</th></tr></thead><tbody>
-<tr><th>Producto</th><td>Viviendas que tienes a la venta. «No tengo producto» = no tengo casas.</td></tr>
-<tr><th>Cartera</th><td>El conjunto de inmuebles que gestiona la agencia.</td></tr>
-<tr><th>Encargo</th><td>El contrato con el propietario para comercializar su inmueble.</td></tr>
-<tr><th>Exclusiva</th><td>Encargo donde solo tú puedes vender ese inmueble.</td></tr>
-<tr><th>Abierto</th><td>Encargo donde el propietario se lo da a varias agencias a la vez.</td></tr>
-<tr><th>Captar / captación</th><td>Conseguir que un propietario firme el encargo.</td></tr>
-<tr><th>Cita de captación</th><td>La reunión con el propietario, normalmente en su casa, donde se firma (o no).</td></tr>
-<tr><th>Noticia</th><td>Una persona que te ha dicho que quiere vender. Todavía no es cita.</td></tr>
-<tr><th>Honorarios / fee</th><td>La comisión. 2-5% del precio de venta.</td></tr>
-<tr><th>Propietario cualificado</th><td>El que está en tu zona + quiere vender en menos de 6 meses + quiere trabajar con intermediario. Los tres a la vez.</td></tr>
-<tr><th>Precio de mercado</th><td>El precio al que ese inmueble SE VENDE de verdad, comparado con lo vendido y lo publicado en la zona.</td></tr>
-<tr><th>Comparables / estudio de mercado</th><td>El análisis de inmuebles similares vendidos y publicados que justifica el precio.</td></tr>
-<tr><th>Sobrevalorado / fuera de precio</th><td>Publicado por encima de lo que el mercado paga. No se va a vender.</td></tr>
-<tr><th>Bajada de precio</th><td>Ajustar a la baja un inmueble que no se mueve. Se hace de forma gradual.</td></tr>
-<tr><th>Propuesta / oferta</th><td>Lo que el comprador ofrece pagar. Casi siempre por debajo del publicado.</td></tr>
-<tr><th>Reserva</th><td>Señal del comprador (≈2.000 €) para demostrar compromiso antes de llevar la propuesta.</td></tr>
-<tr><th>Arras</th><td>Contrato privado comprador-propietario. Adelanto de ≈10% del precio.</td></tr>
-<tr><th>Escritura / notaría</th><td>La firma ante notario. Ahí cambia la propiedad. ≈2 meses después de arras.</td></tr>
-<tr><th>Portales</th><td>Idealista, Fotocasa, etc. Donde se publican los inmuebles.</td></tr>
-<tr><th>Prospección</th><td>Buscar activamente propietarios: llamadas, puerta fría, base de datos.</td></tr>
-<tr><th>Puerta fría</th><td>Ir casa por casa a buscar propietarios.</td></tr>
-<tr><th>Visita</th><td>Enseñar el piso a un comprador. (Ojo: «visita» = comprador. «Cita de captación» = propietario.)</td></tr>
-<tr><th>Referido</th><td>Cliente que llega recomendado por alguien que ya vendió contigo.</td></tr>
-<tr><th>Lead / contacto</th><td>Persona que ha dejado sus datos. Puede ser propietario o comprador.</td></tr>
-<tr><th>CRM</th><td>El software donde se guardan contactos y seguimiento. La mayoría no lo usa bien o no lo usa.</td></tr>
-<tr><th>Tarifas comerciales</th><td>La actividad mínima que tiene que hacer cada persona del equipo (llamadas, citas, visitas). Es como funcionamos nosotros.</td></tr>
-<tr><th>Hoja de Ruta de Crecimiento</th><td>Las cinco etapas de Growing: Empezar, Estandarizar, Especializar, Expandir, Delegar.</td></tr>
-</tbody></table></div>
-<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn"></span><a href="diccionario.html" class="up">Diccionario</a></footer>
+<footer class="foot"><a href="#portada" class="up">Portada</a><span class="pn">Foja 2 de 10</span><a href="#seccion-1" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-1">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">3</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 1</span><span>Foja 3</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>LAS PERSONAS</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-propietario">Propietario</h4>
+<p>La persona que tiene una vivienda y está pensando en venderla. Es el primer cliente de una inmobiliaria, y el más difícil de conseguir: sin propietarios no hay casas, y sin casas no hay nada que vender. Cuando en este material decimos «cliente potencial» sin más, casi siempre hablamos del propietario.</p>
+<p class="ejemplo">Ejemplo: «Esta semana he hablado con cuarenta propietarios y he agendado dos citas.»</p>
+<h4 class="term" id="t-comprador">Comprador</h4>
+<p>La persona que busca casa. Es el segundo cliente de la inmobiliaria: entra en juego cuando ya hay una casa que vender. Conseguir compradores es mucho más fácil que conseguir propietarios, porque los compradores van a buscar activamente a los portales.</p>
+<p class="ejemplo">Ejemplo: «Tengo tres compradores interesados en el piso de la calle Mayor.»</p>
+<h4 class="term" id="t-agente-inmobiliario">Agente inmobiliario</h4>
+<p>La persona que, dentro de una inmobiliaria, habla con propietarios y compradores, hace citas, enseña pisos y cierra operaciones. En España también se le llama asesor, comercial o consultor. No hace falta ningún título para serlo.</p>
+<p class="ejemplo">Ejemplo: «Somos tres asesores y el dueño.»</p>
+<h4 class="term" id="t-captador">Captador</h4>
+<p>El agente especializado en conseguir casas: habla con propietarios, hace citas de captación y firma encargos. En una inmobiliaria bien montada, el captador no enseña pisos a compradores; solo capta. En la mayoría, el mismo agente lo hace todo.</p>
+<p class="ejemplo">Ejemplo: «Tengo un captador dedicado y dos agentes de compradores.»</p>
+<h4 class="term" id="t-dueno-de-inmobiliaria">Dueño de inmobiliaria</h4>
+<p>La persona que ha montado la agencia y la dirige. Normalmente empezó como agente, se le dio bien, y acabó con un negocio a su cargo sin haber aprendido nunca a dirigir uno. Es con quien tú vas a hablar en cada llamada.</p>
+<p class="ejemplo">Ejemplo: «El dueño lleva once años en el sector y sigue haciendo captaciones él mismo.»</p>
+<h4 class="term" id="t-lead">Lead</h4>
+<p>Una persona que ha dejado sus datos, por un anuncio, un formulario o una llamada. Puede ser propietario o comprador. Un lead no es nada todavía: es alguien con quien se puede hablar. Que valga algo depende de lo que pase después.</p>
+<p class="ejemplo">Ejemplo: «La campaña ha traído 80 leads, pero solo 4 querían vender de verdad.»</p>
+<h4 class="term" id="t-referido">Referido</h4>
+<p>Un cliente que llega recomendado por alguien que ya trabajó con la inmobiliaria. Es el cliente más fácil de cerrar que existe, porque viene con la confianza puesta. Y es la fuente de la que depende el 90% de las inmobiliarias, con el problema de que no se controla: igual llegan que no.</p>
+<p class="ejemplo">Ejemplo: «Casi todo lo que capto me llega por referidos.»</p>
+<h4>Propietario cualificado</h4>
+<p>El propietario que cumple tres cosas a la vez: está en tu zona, quiere vender en menos de seis meses y quiere trabajar con una inmobiliaria. Es lo que todo dueño sueña con que le llegue hecho. En la realidad, hay que conseguirlo.</p>
+<p class="ejemplo">Ejemplo: «Quiero que me mandes propietarios cualificados, no curiosos.»</p>
+<h4 class="term" id="t-prospecto">Prospecto</h4>
+<p>Palabra nuestra, de ventas. Es la persona con la que vas a hablar para venderle: en tu caso, el dueño de inmobiliaria. Para él, su prospecto es el propietario. Ojo con no mezclar las dos cosas en una llamada.</p>
+<p class="ejemplo">Ejemplo: «Tengo cinco prospectos agendados esta tarde.»</p>
+<h4 class="term" id="t-closer">Closer</h4>
+<p>Palabra nuestra. El comercial que se sienta en la llamada de venta con el prospecto y cierra. Tú. Y también, aunque él no lo llame así, el agente que está en la cita de captación delante del propietario: en ese momento, es un closer.</p>
+<p class="ejemplo">Ejemplo: «El agente, delante del propietario, es un closer.»</p>
+<footer class="foot"><a href="#etapa-0" class="up">← Anterior</a><span class="pn">Foja 3 de 10</span><a href="#seccion-2" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-2">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">4</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 2</span><span>Foja 4</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL PRODUCTO Y EL CONTRATO</h2><div class="dash">——————</div></div>
+<h4>Producto</h4>
+<p>Las viviendas que una inmobiliaria tiene a la venta. Es la palabra que usa el sector para hablar de lo que vende. Si una agencia tiene 40 pisos, tiene producto. Si tiene 3, no tiene negocio, tiene un hobby. Cuando un dueño dice «no tengo producto», está diciendo que no tiene casas que vender.</p>
+<p class="ejemplo">Ejemplo: «Ahora mismo mi problema es que no tengo producto.»</p>
+<h4>Cartera</h4>
+<p>El conjunto de inmuebles que gestiona una inmobiliaria en un momento dado. «Tener en cartera» una casa es tenerla firmada y a la venta. La cartera se vacía sola a medida que se vende, y por eso hay que estar captando siempre.</p>
+<p class="ejemplo">Ejemplo: «Tenemos veintidós pisos en cartera, la mitad en exclusiva.»</p>
+<h4 class="term" id="t-encargo">Encargo</h4>
+<p>El contrato que firma el propietario con la inmobiliaria para que le venda la casa. Literalmente: le encarga la venta. Es lo que convierte una noticia en producto. Hay dos tipos: en exclusiva o en abierto.</p>
+<p class="ejemplo">Ejemplo: «Firmamos el encargo el martes y el jueves ya estaba publicado.»</p>
+<h4 class="term" id="t-exclusiva">Exclusiva</h4>
+<p>El encargo en el que solo esa inmobiliaria puede vender la casa durante un tiempo pactado. El propietario se compromete, la agencia controla el precio, las fotos y la comunicación, y cobra seguro si se vende. Es lo que toda inmobiliaria seria persigue. «Captar una exclusiva» es firmar uno de estos.</p>
+<p class="ejemplo">Ejemplo: «Este mes hemos captado seis exclusivas.»</p>
+<h4 class="term" id="t-abierto">Abierto</h4>
+<p>El encargo en el que el propietario le da la casa a varias agencias a la vez, y cobra la que venda primero. Para la agencia es una lotería: invierte tiempo y dinero en algo que mañana puede vender otro. Para el comprador, ver el mismo piso seis veces con seis precios le hace sospechar.</p>
+<p class="ejemplo">Ejemplo: «Lo tengo en abierto con otras tres agencias.»</p>
+<h4 class="term" id="t-honorarios">Honorarios</h4>
+<p>Lo que cobra la inmobiliaria por vender una casa. En España, normalmente entre el 2% y el 5% del precio de venta, y se le cobra al propietario. En una casa de 300.000 € al 5%, son 15.000 €. Es la cifra que explica el sector: con comisiones así se puede vivir muy bien sin tener empresa.</p>
+<p class="ejemplo">Ejemplo: «Mis honorarios son el 4% más IVA.»</p>
+<h4 class="term" id="t-las-dos-bandas">Las dos bandas</h4>
+<p>Cobrar honorarios al propietario y también al comprador en la misma operación. Lo hacen las inmobiliarias que dan servicio al comprador (le buscan casa, le acompañan, le gestionan la hipoteca). Por el mismo trabajo, cobran el doble.</p>
+<p class="ejemplo">Ejemplo: «Cobramos las dos bandas: un 3% al vendedor y un 3% al comprador.»</p>
+<footer class="foot"><a href="#seccion-1" class="up">← Anterior</a><span class="pn">Foja 4 de 10</span><a href="#seccion-3" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-3">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">5</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 3</span><span>Foja 5</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>CAPTAR: CONSEGUIR LA CASA</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-captar">Captar</h4>
+<p>Conseguir que un propietario firme el encargo. Es la primera mitad del negocio y la más difícil. «He captado tres pisos» significa tres encargos firmados. «La captación» es todo el proceso: desde que buscas propietarios hasta que firman.</p>
+<p class="ejemplo">Ejemplo: «Este mes la captación ha ido floja: solo dos.»</p>
+<h4 class="term" id="t-prospeccion">Prospección</h4>
+<p>Buscar propietarios activamente, en vez de esperar a que lleguen. Llamadas, puerta a puerta, mensajes, contactar con la base de datos. Es la actividad diaria que separa a las inmobiliarias que rueda de las que dependen de la suerte.</p>
+<p class="ejemplo">Ejemplo: «Dedico dos horas cada mañana a prospección.»</p>
+<h4 class="term" id="t-prospeccion-en-frio">Prospección en frío</h4>
+<p>Contactar con gente que no te conoce de nada y no ha pedido hablar contigo. Es lo más duro y lo que casi nadie quiere hacer, y también lo único que depende solo de ti. Lo contrario es un referido o un lead que ha dejado sus datos.</p>
+<p class="ejemplo">Ejemplo: «Con la llamada en frío, de cada cien te cuelgan noventa.»</p>
+<h4>Puerta fría</h4>
+<p>Prospección en frío, pero en persona: ir casa por casa, portal por portal, hablando con vecinos para encontrar quién quiere vender. Muy habitual en el sector, sobre todo en agencias de barrio.</p>
+<p class="ejemplo">Ejemplo: «Los lunes hacemos puerta fría en la zona norte.»</p>
+<h4 class="term" id="t-base-de-contactos">Base de contactos</h4>
+<p>Toda la gente que una inmobiliaria ya conoce: la agenda del teléfono, clientes antiguos, gente que visitó pisos y no compró, solicitudes de hace años. Es la fuente más barata de propietarios y compradores, y la que más abandonada suele estar.</p>
+<p class="ejemplo">Ejemplo: «Tengo mil contactos en el CRM y no he llamado a ninguno en un año.»</p>
+<h4 class="term" id="t-noticia">Noticia</h4>
+<p>Alguien que ha dicho que quiere vender. Literalmente, «tengo una noticia: fulano vende». Es el primer paso de la cadena: todavía no es una cita ni un encargo, es una pista. Si un dueño dice «he tenido tres noticias esta semana», te está diciendo que tres personas le han dicho que quieren vender.</p>
+<p class="ejemplo">Ejemplo: «Una vecina me ha dado una noticia: su cuñado vende el ático.»</p>
+<h4 class="term" id="t-cita-de-captacion">Cita de captación</h4>
+<p>La reunión con el propietario, normalmente en su casa, donde se juega la exclusiva y el precio. Es la llamada de cierre del agente. Todo lo de antes (prospectar, noticias, agendar) existe para llegar aquí.</p>
+<p class="ejemplo">Ejemplo: «Mañana tengo dos citas de captación por la tarde.»</p>
+<h4 class="term" id="t-cita-agendada">Cita agendada</h4>
+<p>Una cita de captación con día y hora. Se agenda por teléfono, después de una noticia. Una cita agendada no es una cita hecha: una parte se cancela, se mueve o no abre la puerta.</p>
+<p class="ejemplo">Ejemplo: «De diez citas agendadas, se me hacen seis.»</p>
+<h4 class="term" id="t-cita-realizada">Cita realizada</h4>
+<p>La cita de captación que se ha hecho de verdad: el agente ha ido y el propietario estaba. El porcentaje de agendadas que se realizan se llama «presentados», y es uno de los números más importantes del negocio, porque cada cita que se cae es trabajo tirado.</p>
+<p class="ejemplo">Ejemplo: «Tenemos un 60% de presentados, queremos llegar al 75.»</p>
+<h4 class="term" id="t-nutricion">Nutrición</h4>
+<p>Todo lo que pasa entre que se agenda una cita y se hace: recordatorios por WhatsApp o correo, mensajes con casos parecidos, una llamada el día antes. Sirve para que el propietario no cancele. En las inmobiliarias que rueda está automatizado.</p>
+<p class="ejemplo">Ejemplo: «Le mandamos dos recordatorios y un caso de éxito, y se presentó.»</p>
+<h4 class="term" id="t-casos-de-exito">Casos de éxito</h4>
+<p>Operaciones ya cerradas que se enseñan a un propietario para darle confianza: una casa parecida a la suya, en su zona, vendida en tanto tiempo a tal precio. Se usan en la nutrición y en la propia cita.</p>
+<p class="ejemplo">Ejemplo: «Le enseñé tres casos de éxito de su misma calle.»</p>
+<h4 class="term" id="t-guion">Guion</h4>
+<p>Lo que hay que decir, escrito. El guion de la llamada en frío, el de la cita de captación, el de los mensajes de seguimiento. Que esté escrito es lo que permite que todo el equipo lo haga igual, que se pueda medir y mejorar, y que no se pierda cuando alguien se va.</p>
+<p class="ejemplo">Ejemplo: «Tenemos guion para la llamada, pero para la cita cada uno va a su aire.»</p>
+<h4 class="term" id="t-doble-venta">Doble venta</h4>
+<p>Lo que hay que cerrar en una cita de captación: que el propietario te dé la casa en exclusiva y que acepte salir al precio de mercado. Las dos a la vez. Solo la exclusiva es un piso que no se vende; solo el precio es un piso que se lleva otra agencia.</p>
+<p class="ejemplo">Ejemplo: «Cerró la exclusiva pero no el precio. Media venta.»</p>
+<h4 class="term" id="t-precio-de-mercado">Precio de mercado</h4>
+<p>El precio al que una casa se vende de verdad, comparando con lo que se ha vendido y lo que está publicado en la zona. Una casa «en precio» se nota a la semana: llueven visitas. Una fuera de precio, silencio.</p>
+<p class="ejemplo">Ejemplo: «Está en precio: en cinco días tengo ocho visitas.»</p>
+<h4 class="term" id="t-fuera-de-precio">Fuera de precio</h4>
+<p>Publicado por encima de lo que el mercado paga. Pasa porque el propietario no pone el precio de su casa, pone el precio de sus deudas y sus planes. Una casa fuera de precio no la vende ni el mejor comercial de España.</p>
+<p class="ejemplo">Ejemplo: «Lo tiene sobrevalorado en cien mil euros.»</p>
+<h4 class="term" id="t-estudio-de-mercado">Estudio de mercado</h4>
+<p>El análisis de casas parecidas, vendidas y publicadas en la zona, que justifica el precio que propone el agente. Es la herramienta con la que se le dice la verdad al propietario en la cita. «Valorar» una casa es hacer esto.</p>
+<p class="ejemplo">Ejemplo: «Llevo el estudio de mercado impreso a todas las citas.»</p>
+<h4 class="term" id="t-bajada-de-precio">Bajada de precio</h4>
+<p>Ajustar a la baja una casa que no se mueve. Se hace de forma gradual y es una conversación difícil con el propietario, porque le envenenaron con un precio que nunca fue real. Las inmobiliarias que captan en precio desde el principio casi no la necesitan.</p>
+<p class="ejemplo">Ejemplo: «Llevamos tres bajadas de precio y sigue sin visitas.»</p>
+<footer class="foot"><a href="#seccion-2" class="up">← Anterior</a><span class="pn">Foja 5 de 10</span><a href="#seccion-4" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-4">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">6</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 4</span><span>Foja 6</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>VENDER: DESDE LA CASA HASTA EL DINERO</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-visita">Visita</h4>
+<p>Enseñar la casa a un comprador. Ojo: «visita» es siempre con el comprador. Con el propietario es «cita de captación». Confundirlo en una llamada te delata al segundo.</p>
+<p class="ejemplo">Ejemplo: «Este fin de semana tengo seis visitas en el piso de Delicias.»</p>
+<h4 class="term" id="t-propuesta">Propuesta</h4>
+<p>Lo que el comprador ofrece pagar por la casa. Casi siempre viene por debajo del precio publicado, porque quiere negociar. Es normal, no es mala señal. El agente la presenta al propietario, que la acepta o no.</p>
+<p class="ejemplo">Ejemplo: «Ha entrado una propuesta de 190.000 por el de 200.»</p>
+<h4 class="term" id="t-reserva">Reserva</h4>
+<p>Una cantidad, unos 2.000 €, que el comprador entrega antes de que su propuesta llegue al propietario. Sirve para una cosa: demostrar que va en serio. Sin dinero encima de la mesa, una propuesta es una conversación de bar.</p>
+<p class="ejemplo">Ejemplo: «No le presento la propuesta al propietario hasta que no deje la reserva.»</p>
+<h4 class="term" id="t-arras">Arras</h4>
+<p>El contrato privado entre comprador y propietario, una vez aceptada la propuesta. El comprador adelanta normalmente el 10% del precio. Puede firmarse una semana después de aceptar la propuesta, y es el momento en el que una inmobiliaria bien llevada cobra sus honorarios.</p>
+<p class="ejemplo">Ejemplo: «Firmamos arras el viernes: 20.000 € de señal sobre 200.000.»</p>
+<h4 class="term" id="t-escritura">Escritura</h4>
+<p>La firma ante notario con la que la casa cambia de dueño de verdad. Suele llegar unos dos meses después de las arras, porque el comprador necesita que el banco le conceda la hipoteca. La mayoría de inmobiliarias cobra aquí, cuatro meses después de haber empezado a trabajar.</p>
+<p class="ejemplo">Ejemplo: «Escrituramos el 15 y cobramos el 15.»</p>
+<h4>Cobrar en arras</h4>
+<p>Cobrar los honorarios cuando se firman las arras, no en la escritura. Pasa de ingresar a cuatro meses vista a ingresar en una semana, y permite reinvertir ese dinero en captar más. Se puede cobrar todo en arras, o la mitad en arras y la mitad en notaría. Es una de las cosas que enseñamos.</p>
+<p class="ejemplo">Ejemplo: «Desde que cobramos en arras, la caja ya no es un problema.»</p>
+<h4>Hipoteca</h4>
+<p>El préstamo del banco con el que la mayoría de compradores paga la casa. Es lo que hace que entre arras y escritura pasen dos meses: el banco tarda eso en concederla. Si el comprador no la consigue, la operación se cae.</p>
+<p class="ejemplo">Ejemplo: «El comprador está esperando la hipoteca, escrituramos en enero.»</p>
+<h4 class="term" id="t-entrega-del-servicio">Entrega del servicio</h4>
+<p>Todo lo que pasa desde que la exclusiva está firmada hasta que la casa se vende: publicar, hacer visitas, presentar propuestas, acompañar hasta notaría. En una inmobiliaria bien montada lo hace un departamento distinto del que capta.</p>
+<p class="ejemplo">Ejemplo: «En cuanto firmo la exclusiva, la paso al departamento de entrega.»</p>
+<h4 class="term" id="t-portales">Portales</h4>
+<p>Las webs donde se publican las casas en venta y donde los compradores buscan: Idealista, Fotocasa y similares. Son el principal canal para conseguir compradores, y las inmobiliarias pagan por tener sus anuncios bien posicionados.</p>
+<p class="ejemplo">Ejemplo: «Me gasto 1.200 € al mes en Idealista.»</p>
+<h4 class="term" id="t-tour">Tour</h4>
+<p>El vídeo de una casa, grabado para enseñarla en redes sociales o en portales. Sirve para atraer compradores y para que lleguen a la visita sabiendo ya lo que van a ver.</p>
+<p class="ejemplo">Ejemplo: «Subimos el tour a Instagram y en dos días teníamos diez visitas.»</p>
+<h4>Base de compradores</h4>
+<p>La parte de la base de datos con gente que busca casa: los que visitaron y no compraron, los que preguntaron por un piso parecido, los que dejaron sus datos hace meses. Es donde está el dinero de la venta, y lo que casi todas las agencias dejan abandonado.</p>
+<p class="ejemplo">Ejemplo: «Antes de publicar el piso, llamamos a toda la base de compradores.»</p>
+<footer class="foot"><a href="#seccion-3" class="up">← Anterior</a><span class="pn">Foja 6 de 10</span><a href="#seccion-5" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-5">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">7</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 5</span><span>Foja 7</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>MARKETING Y FUENTES</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-fuente">Fuente</h4>
+<p>De dónde salen los propietarios (o los compradores): llamada en frío, puerta fría, anuncios, contenido, el CRM, la base de contactos, referidos. Una inmobiliaria pequeña vive de una fuente. Una que rueda tiene todas encendidas.</p>
+<p class="ejemplo">Ejemplo: «Mi única fuente ahora mismo son los referidos.»</p>
+<h4 class="term" id="t-anuncios">Anuncios</h4>
+<p>Publicidad pagada en redes sociales (Instagram, Facebook, que son de Meta) para que el propietario que está pensando en vender deje sus datos en un formulario. Es la fuente que más gente prueba y peor usa, porque los leads que llegan son fríos y hay que saber trabajarlos.</p>
+<p class="ejemplo">Ejemplo: «Metí 500 € en anuncios y no saqué ni una cita.»</p>
+<h4 class="term" id="t-contenido-organico">Contenido orgánico</h4>
+<p>Subir vídeos y publicaciones a redes sin pagar: la zona, consejos para vender, operaciones cerradas. No trae citas directas, pero hace que cuando llame la inmobiliaria, el propietario ya la conozca. Lo graba el dueño, y lo tiene que hacer constantemente.</p>
+<p class="ejemplo">Ejemplo: «Subo dos vídeos a la semana, orgánico, sin pagar nada.»</p>
+<h4>Formulario</h4>
+<p>Lo que rellena un propietario o comprador para dejar sus datos después de ver un anuncio. Cuanto más pide el formulario (zona, plazo para vender, si quiere agencia), menos leads entran, pero mejores. Es una decisión, no un detalle.</p>
+<p class="ejemplo">Ejemplo: «Cualificamos más el formulario y pasamos de 100 leads a 30, pero mucho mejores.»</p>
+<h4>CRM</h4>
+<p>El programa donde se guardan todos los contactos y todo lo que ha pasado con cada uno: llamadas, citas, visitas, notas. Es la memoria del negocio. La mayoría de inmobiliarias no lo usa, o lo usa como una agenda. Bien usado, responde a un lead nuevo en cinco minutos y no deja que nadie se olvide.</p>
+<p class="ejemplo">Ejemplo: «Tenemos CRM, pero lo rellena cada uno cuando se acuerda.»</p>
+<h4 class="term" id="t-automatizacion">Automatización</h4>
+<p>Que una cosa pase sola, sin que una persona tenga que acordarse: el recordatorio de la cita, el mensaje con el caso de éxito, la respuesta al lead nuevo. Se configura una vez en el CRM y funciona para siempre.</p>
+<p class="ejemplo">Ejemplo: «Los recordatorios salen automáticos el día antes y dos horas antes.»</p>
+<footer class="foot"><a href="#seccion-4" class="up">← Anterior</a><span class="pn">Foja 7 de 10</span><a href="#seccion-6" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-6">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">8</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 6</span><span>Foja 8</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL NEGOCIO Y EL EQUIPO</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-estacion">Estación</h4>
+<p>Palabra nuestra. Cada una de las seis partes en las que dividimos una inmobiliaria: atracción, conversión, entrega del servicio, medición, contratación y expansión, delegación. Siempre en ese orden, y cada una solo funciona si la anterior está hecha.</p>
+<p class="ejemplo">Ejemplo: «Este dueño tiene la estación de atracción medio montada y la de medición, cero.»</p>
+<h4 class="term" id="t-embudo">Embudo</h4>
+<p>La secuencia de pasos por la que pasa un cliente, con el número que hay en cada paso: contactos, citas agendadas, realizadas, exclusivas, ventas. Se llama embudo porque en cada paso se queda gente por el camino. Una inmobiliaria tiene dos: el del propietario y el del comprador.</p>
+<p class="ejemplo">Ejemplo: «Si miras el embudo, el problema está entre agendadas y realizadas.»</p>
+<h4 class="term" id="t-conversion">Conversión</h4>
+<p>Qué parte de los que entran en un paso del embudo pasan al siguiente. De contactos a citas, de citas a exclusivas. Mejorar la conversión arriba del embudo es lo que más resultados da, porque todo lo de abajo recibe más.</p>
+<p class="ejemplo">Ejemplo: «Nuestra conversión de cita a exclusiva es del 30%.»</p>
+<h4 class="term" id="t-metricas-comerciales">Métricas comerciales</h4>
+<p>Los números del embudo, apuntados: contactos, noticias, citas agendadas, realizadas, exclusivas, propuestas, ventas. Son lo que permite saber si un agente rinde y dónde falla. Casi ninguna inmobiliaria los tiene. Las que rueda, los miran cada semana.</p>
+<p class="ejemplo">Ejemplo: «No tengo las métricas, voy un poco por sensaciones.»</p>
+<h4 class="term" id="t-tarifa-comercial">Tarifa comercial</h4>
+<p>La actividad mínima que tiene que hacer cada persona del equipo cada día: tantas conversaciones, tantas citas agendadas. No es un objetivo: es el mínimo para estar en el equipo. Solo se puede exigir a asalariados. Es como funcionamos nosotros.</p>
+<p class="ejemplo">Ejemplo: «La tarifa comercial son 60 conversaciones y 3 citas al día.»</p>
+<h4>Cuello de botella</h4>
+<p>El único punto del negocio que, si se arregla, lo multiplica todo. Siempre hay uno, y casi nunca es el que el dueño cree. Encontrarlo con números y atacarlo solo a él, lo más arriba posible del embudo, es la base de cómo trabajamos.</p>
+<p class="ejemplo">Ejemplo: «Su cuello de botella no son los leads, es que de cada diez citas firma una.»</p>
+<h4 class="term" id="t-coste-por-lead">Coste por lead</h4>
+<p>Cuánto cuesta cada cosa cuando se invierte en anuncios. El coste por lead es lo que mide todo el mundo y no sirve para nada. Los que importan son el coste por cita de captación y el coste por exclusiva, porque son los que dicen si meter más dinero es matemática o es apostar.</p>
+<p class="ejemplo">Ejemplo: «Me cuesta 10 € el lead, pero 600 € cada exclusiva.»</p>
+<h4 class="term" id="t-revision-semanal">Revisión semanal</h4>
+<p>Mirar los números comerciales cada semana, no cada mes. Si mides al mes, tardas treinta días en ver que algo va mal y ya has perdido el mes. Si mides el lunes, el martes ya has corregido.</p>
+<p class="ejemplo">Ejemplo: «Los lunes a las nueve revisamos los números de la semana.»</p>
+<h4 class="term" id="t-autonomos">Autónomos</h4>
+<p>Los dos modelos de equipo. Con autónomos, el agente no es empleado: no se le pueden exigir horarios ni objetivos, así que la agencia va a volumen de gente. Con asalariados, sí se puede exigir, entrenar y echar al que no rinde. Es la primera pregunta que haces en una llamada, porque cambia todo lo que puedes vender.</p>
+<p class="ejemplo">Ejemplo: «Somos veinte, todos autónomos.»</p>
+<h4 class="term" id="t-franquicia">Franquicia</h4>
+<p>Una marca de inmobiliarias que vende el derecho a abrir oficinas con su nombre y su método: RE/MAX, Century 21, ERA, Tecnocasa. Las tres primeras funcionan con autónomos; Tecnocasa, con asalariados.</p>
+<p class="ejemplo">Ejemplo: «Antes estaba en una franquicia y ahora tengo la mía.»</p>
+<h4 class="term" id="t-departamento">Departamento</h4>
+<p>Cada parte de la inmobiliaria con una función y un responsable: comercial (captación y entrega), marketing, contratación, legal, contabilidad. Que existan como departamentos y no como «cosas que hace el dueño» es lo que permite que el negocio funcione sin él.</p>
+<p class="ejemplo">Ejemplo: «No tengo departamentos: marketing lo hago yo los domingos.»</p>
+<h4 class="term" id="t-director-de-oficina">Director de oficina</h4>
+<p>La persona que lleva la inmobiliaria sin consultar al dueño: dirige al equipo, mira los números, resuelve lo que se sale del guion. Es la última pieza de una inmobiliaria perfecta, y lo que permite al dueño salir de la operativa.</p>
+<p class="ejemplo">Ejemplo: «Desde que tengo director de oficina, voy dos días a la semana.»</p>
+<h4>Delegar criterio</h4>
+<p>No delegar tareas («llama a este»), sino decisiones («tú decides a quién llamar y por qué»). Es la diferencia entre tener ayudantes y tener un equipo que funciona sin ti. Solo se puede hacer cuando los procesos y los números están claros.</p>
+<p class="ejemplo">Ejemplo: «A mi director le delego criterio: no me consulta, me informa.»</p>
+<h4>Onboarding</h4>
+<p>Cómo entra alguien nuevo: qué lee, qué practica y en cuánto tiempo tiene que estar rindiendo. En una inmobiliaria bien montada está escrito y no depende del dueño. Tu Ramp-Up es nuestro onboarding.</p>
+<p class="ejemplo">Ejemplo: «Un captador nuevo tarda cuatro semanas en llegar a tarifa.»</p>
+<h4 class="term" id="t-escalar">Escalar</h4>
+<p>Crecer sin que el negocio se rompa: más gente, más oficinas, más volumen, con los mismos procesos. Solo escala lo que está escrito y medido. Un negocio que depende de su dueño no escala.</p>
+<p class="ejemplo">Ejemplo: «Con autónomos sin filtro no se puede escalar.»</p>
+<h4 class="term" id="t-hoja-de-ruta-de-crecimiento">Hoja de Ruta de Crecimiento</h4>
+<p>Material nuestro. Las cinco etapas por las que pasa cualquier inmobiliaria: Empezar, Estandarizar, Especializar, Expandir, Delegar. Cada una tiene un problema, un lenguaje y una venta distintos. Se coloca a un dueño en su etapa con tres preguntas.</p>
+<p class="ejemplo">Ejemplo: «Está en Estandarizar: factura 12.000 al mes y capta a rachas.»</p>
+<footer class="foot"><a href="#seccion-5" class="up">← Anterior</a><span class="pn">Foja 8 de 10</span><a href="#seccion-7" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="seccion-7">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">9</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>SECCIÓN 7</span><span>Foja 9</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>NUESTRA JERGA</h2><div class="dash">——————</div></div>
+<h4 class="term" id="t-growing">Growing</h4>
+<p>Growing Inmobiliario. Lo que hacemos: ayudar a dueños de inmobiliaria a montar las estaciones que les faltan, con sistema de captación, entrenamiento comercial y números. En los playbooks, cuando leas «nosotros», es esto.</p>
+<p class="ejemplo">Ejemplo: «En Growing medimos el coste por exclusiva, no el coste por lead.»</p>
+<h4 class="term" id="t-playbook">Playbook</h4>
+<p>Cada uno de los documentos de formación que vas a leer. El Playbook 1 es la inmobiliaria perfecta. El Playbook 2 es la realidad y la cabeza del dueño. No son manuales de consulta: se leen en orden, con examen al final.</p>
+<p class="ejemplo">Ejemplo: «Hoy toca el Playbook 1 entero.»</p>
+<h4>Ramp-Up</h4>
+<p>Tu primer mes. Las cuatro semanas de formación con horario de media hora en media hora, desde el primer lunes hasta la certificación. Lo que estás haciendo ahora.</p>
+<p class="ejemplo">Ejemplo: «Estoy en la segunda semana del Ramp-Up.»</p>
+<h4>Examen del día</h4>
+<p>El juego de preguntas con reloj que cierra cada día de formación: diez preguntas al azar, diez segundos cada una. Se repite las veces que haga falta. No es un examen, es entrenamiento: lo que quieres es contestar sin pensar.</p>
+<p class="ejemplo">Ejemplo: «Me he sacado un 9 de 10 en el examen del día a la tercera.»</p>
+<h4>Role play</h4>
+<p>Una llamada simulada: un compañero o tu responsable hace de dueño de inmobiliaria y tú vendes. Se graba y se repasa. Hay role plays de práctica y tests de role play con nota.</p>
+<p class="ejemplo">Ejemplo: «Esta tarde tengo role play con David haciendo de dueño de franquicia.»</p>
+<h4 class="term" id="t-shadow">Shadow</h4>
+<p>Sentarte al lado de un closer en llamadas reales, solo a escuchar y tomar notas. Sin hablar. Es la forma más rápida de ver cómo suena lo que estás estudiando.</p>
+<p class="ejemplo">Ejemplo: «Mañana hago shadow con Pol toda la mañana.»</p>
+<h4>Rubén</h4>
+<p>El personaje del Playbook 2. Un dueño de inmobiliaria inventado, 46 años, Valladolid, 180.000 € al año, dos comerciales, once años en el sector y ningún sistema. No existe, pero vas a hablar con cuarenta Rubenes este trimestre.</p>
+<p class="ejemplo">Ejemplo: «Este de hoy era un Rubén de manual.»</p>
+<h4 class="term" id="t-la-ficha">La ficha</h4>
+<p>Las diez casillas que tienes que poder rellenar sobre un dueño en los primeros diez minutos de llamada: equipo, facturación, exclusivas, cómo cobra, etapa, qué cree que le pasa, qué le pasa de verdad, qué ha probado, cuánto esfuerzo pone, qué le vendes. Está en el Playbook 2.</p>
+<p class="ejemplo">Ejemplo: «Me faltaba una casilla de la ficha: no le pregunté cómo cobra.»</p>
+<footer class="foot"><a href="#seccion-6" class="up">← Anterior</a><span class="pn">Foja 9 de 10</span><a href="#alfabetico" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="alfabetico">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">10</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>Índice</span><span>Foja 10</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>De la A a la Z</h2><div class="dash">——————</div></div>
+<ul class="alfa"><li><a href="#t-abierto">Abierto</a></li><li><a href="#t-agente-inmobiliario">Agente inmobiliario</a></li><li><a href="#t-anuncios">Anuncios</a></li><li><a href="#t-arras">Arras</a></li><li><a href="#t-automatizacion">Automatización</a></li><li><a href="#t-autonomos">Autónomos</a></li><li><a href="#t-bajada-de-precio">Bajada de precio</a></li><li><a href="#t-base-de-contactos">Base de contactos</a></li><li><a href="#t-captador">Captador</a></li><li><a href="#t-captar">Captar</a></li><li><a href="#t-casos-de-exito">Casos de éxito</a></li><li><a href="#t-cita-agendada">Cita agendada</a></li><li><a href="#t-cita-de-captacion">Cita de captación</a></li><li><a href="#t-cita-realizada">Cita realizada</a></li><li><a href="#t-closer">Closer</a></li><li><a href="#t-comprador">Comprador</a></li><li><a href="#t-contenido-organico">Contenido orgánico</a></li><li><a href="#t-conversion">Conversión</a></li><li><a href="#t-coste-por-lead">Coste por lead</a></li><li><a href="#t-departamento">Departamento</a></li><li><a href="#t-director-de-oficina">Director de oficina</a></li><li><a href="#t-doble-venta">Doble venta</a></li><li><a href="#t-dueno-de-inmobiliaria">Dueño de inmobiliaria</a></li><li><a href="#t-embudo">Embudo</a></li><li><a href="#t-encargo">Encargo</a></li><li><a href="#t-entrega-del-servicio">Entrega del servicio</a></li><li><a href="#t-escalar">Escalar</a></li><li><a href="#t-escritura">Escritura</a></li><li><a href="#t-estacion">Estación</a></li><li><a href="#t-estudio-de-mercado">Estudio de mercado</a></li><li><a href="#t-exclusiva">Exclusiva</a></li><li><a href="#t-franquicia">Franquicia</a></li><li><a href="#t-fuente">Fuente</a></li><li><a href="#t-fuera-de-precio">Fuera de precio</a></li><li><a href="#t-growing">Growing</a></li><li><a href="#t-guion">Guion</a></li><li><a href="#t-hoja-de-ruta-de-crecimiento">Hoja de Ruta de Crecimiento</a></li><li><a href="#t-honorarios">Honorarios</a></li><li><a href="#t-la-ficha">La ficha</a></li><li><a href="#t-las-dos-bandas">Las dos bandas</a></li><li><a href="#t-lead">Lead</a></li><li><a href="#t-metricas-comerciales">Métricas comerciales</a></li><li><a href="#t-noticia">Noticia</a></li><li><a href="#t-nutricion">Nutrición</a></li><li><a href="#t-playbook">Playbook</a></li><li><a href="#t-portales">Portales</a></li><li><a href="#t-precio-de-mercado">Precio de mercado</a></li><li><a href="#t-propietario">Propietario</a></li><li><a href="#t-propuesta">Propuesta</a></li><li><a href="#t-prospeccion">Prospección</a></li><li><a href="#t-prospeccion-en-frio">Prospección en frío</a></li><li><a href="#t-prospecto">Prospecto</a></li><li><a href="#t-referido">Referido</a></li><li><a href="#t-reserva">Reserva</a></li><li><a href="#t-revision-semanal">Revisión semanal</a></li><li><a href="#t-shadow">Shadow</a></li><li><a href="#t-tarifa-comercial">Tarifa comercial</a></li><li><a href="#t-tour">Tour</a></li><li><a href="#t-visita">Visita</a></li></ul>
+<footer class="foot"><a href="#seccion-7" class="up">← Anterior</a><span class="pn">Foja 10 de 10</span><a href="index.html" class="up">Programa</a></footer>
 </section>
 </body>
 </html>

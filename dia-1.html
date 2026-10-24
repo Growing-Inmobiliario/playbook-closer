@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Día 1 · ANTES DE EMPEZAR + EL JUEGO ES EL PRODUCTO + LAS DOS CADENAS · Playbook del Closer</title>
+<title>Día 1 · Playbook 1 · La inmobiliaria perfecta · Growing Inmobiliario</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;--term:#7a5a1a;
  --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -18,6 +18,9 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif)
 strong{font-weight:700}
 em{font-style:italic}
 a{color:inherit}
+a.term{color:var(--term);text-decoration:none;border-bottom:1px dotted var(--gold);font-weight:600}
+a.term:hover{background:var(--cream)}
+.frases a.term{color:#fff;border-color:#aaa}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
 .logo{display:flex;flex-direction:column;line-height:1}
 .logolink{text-decoration:none;display:flex;flex-direction:column}
@@ -52,11 +55,17 @@ a{color:inherit}
 .deedtitle.small .dash{color:var(--gold);font-weight:700}
 h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
 h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+h4.term{font-size:19px;font-weight:700;margin:30px 0 6px;padding-top:14px;border-top:1px solid #d7d2c6;color:var(--term)}
+p.ejemplo{font-style:italic;color:#555;margin:0 0 1.2em 18px;padding-left:14px;border-left:2px solid var(--gold);font-size:16px}
+.alfa{columns:2;column-gap:40px;list-style:none;padding:0;margin:0}
+.alfa li{break-inside:avoid;margin:0 0 .35em;padding-left:0}
+.alfa li::before{content:none}
+.alfa a{text-decoration:none;color:var(--term);font-weight:600}
 /* programa */
 .programa{list-style:none;padding:0;margin:0 0 10px}
 .programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
 .programa li:last-child{border-bottom:none}
-.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 64px}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 92px}
 .programa .t{flex:1;font-size:17px;line-height:1.35}
 .programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
@@ -64,6 +73,7 @@ h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
 .programa a{text-decoration:none}
 .programa li.next .t{font-weight:700}
 .programa li.next .n::after{content:" ←";color:var(--gold)}
+.cover .programa .t{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:1px}
 .pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
 .pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
 .note{font-size:15px;color:var(--muted);margin-top:14px}
@@ -117,8 +127,6 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 /* examen */
 .exam{min-height:520px}
 .exam .intro{font-size:17px}
-.exam .meta{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 22px}
-.exam .meta b{color:var(--ink)}
 .game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
 .g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
 .g-top .streak{color:var(--gold);font-weight:700}
@@ -166,7 +174,8 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
  .cover p{text-align:left}
  .reg{letter-spacing:1.5px;font-size:11px}
  .programa li{flex-wrap:wrap}
- .programa .st{flex-basis:100%;text-align:left;padding-left:78px}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:106px}
+ .alfa{columns:1}
  .game{padding:18px 14px}
  .q{font-size:18.5px}
  .opt{font-size:15.5px;padding:10px 12px}
@@ -179,227 +188,387 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
  .foot .up,.bar,.exam{display:none}
 }
 </style>
-
 </head>
 <body>
-<section class="sheet bloquesheet" id="bloque-1"><header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header><div class="rule" aria-hidden="true"></div><div class="bloque"><div class="bloquelabel">BLOQUE 1</div><h2 class="bloquetitle">Su mundo</h2>
-<p class="bloquedesc">Cuatro etapas sobre cómo funciona el negocio de Rubén. No te las aprendes por cultura general: cada una te explica una emoción suya. Por eso todas acaban con el recuadro «Qué siente Rubén aquí». Cuando llegues a la Etapa 5, ya tendrás media cabeza montada.</p>
-</div><footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 5</span><a href="dia-2.html" class="up">Día siguiente →</a></footer></section>
+<section class="sheet cover" id="portada">
+<svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+<defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+<circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="3"/>
+<circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<circle cx="100" cy="100" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text font-size="13.5" letter-spacing="2.6" font-weight="700"><textPath href="#ring">GROWING INMOBILIARIO · FORMACIÓN INTERNA · RAMP-UP DEL CLOSER ·</textPath></text>
+<text x="100" y="94" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="2">USO INTERNO</text>
+<text x="100" y="114" text-anchor="middle" font-size="11" letter-spacing="1.5">v2 · 10-2026</text>
+</svg>
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">Día 1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>GROWING INMOBILIARIO · FORMACIÓN INTERNA</span><span>v1 · octubre 2026</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle"><h1>Playbook 1 · La inmobiliaria perfecta</h1><div class="dash">——————</div><div class="de">de</div><div class="party">Growing Inmobiliario</div></div>
+<p class="deed">En España, a octubre de 2026, <strong>GROWING INMOBILIARIO</strong>, en adelante <strong>«la Casa»</strong>, hace entrega del presente playbook a quien suscribe, en adelante <strong>«el Closer»</strong>, con un único fin: <strong>Cómo se ve una inmobiliaria que rueda. Antes de ver la realidad.</strong></p>
+<p class="deed">LOS NÚMEROS · SEIS ESTACIONES · EL MAPA ENTERO</p>
+<ol class="programa"><li><span class="n">ETAPA 0</span><span class="t"><a href="#etapa-0">CÓMO SE LEE ESTO</a></span><span class="st"></span></li><li><span class="n">ETAPA 1</span><span class="t"><a href="#etapa-1">LOS NÚMEROS: QUÉ HACE FALTA PARA FACTURAR 150.000 AL MES</a></span><span class="st"></span></li><li><span class="n">ETAPA 2</span><span class="t"><a href="#etapa-2">ESTACIÓN 1: ATRACCIÓN</a></span><span class="st"></span></li><li><span class="n">ETAPA 3</span><span class="t"><a href="#etapa-3">ESTACIÓN 2: CONVERSIÓN</a></span><span class="st"></span></li><li><span class="n">ETAPA 4</span><span class="t"><a href="#etapa-4">ESTACIÓN 3: ENTREGA DEL SERVICIO</a></span><span class="st"></span></li><li><span class="n">ETAPA 5</span><span class="t"><a href="#etapa-5">ESTACIÓN 4: MEDICIÓN</a></span><span class="st"></span></li><li><span class="n">ETAPA 6</span><span class="t"><a href="#etapa-6">ESTACIÓN 5: CONTRATACIÓN Y EXPANSIÓN</a></span><span class="st"></span></li><li><span class="n">ETAPA 7</span><span class="t"><a href="#etapa-7">ESTACIÓN 6: DELEGACIÓN</a></span><span class="st"></span></li><li><span class="n">ETAPA 8</span><span class="t"><a href="#etapa-8">EL MAPA ENTERO</a></span><span class="st"></span></li><li><span class="n">Examen</span><span class="t"><a href="#examen">El examen del día</a></span><span class="st"></span></li></ol>
+<a class="bar" href="#etapa-0">Empezar a leer</a>
+<footer class="foot"><span></span><span class="pn"></span><span></span></footer>
+</section>
 <section class="sheet" id="etapa-0">
 <header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
 <div class="rule" aria-hidden="true"></div>
 <div class="reg"><span>ETAPA 0</span><span>Día 1</span></div>
 <div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>ANTES DE EMPEZAR</h2><div class="dash">——————</div></div>
-<h3>De qué va esto</h3>
-<p>Hay un libro que me encanta, <em>El Arte de la Guerra</em>, de Sun Tzu. Y de ahí saco una sola idea, que es la que sostiene todo este playbook:</p>
-<div class="box">
-<p><strong>Tienes que conocer a tu enemigo como si fuera tu mejor amigo.</strong></p>
+<div class="deedtitle small"><h2>CÓMO SE LEE ESTO</h2><div class="dash">——————</div></div>
+<p>Este <a class="term" href="diccionario.html#t-playbook">playbook</a> va de la inmobiliaria que el <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> con el que vas a hablar querría tener, y no sabe cómo se monta.</p>
+<p>Aquí vas a ver cómo funciona una inmobiliaria que rueda: una que factura 150.000 € al mes, con un equipo que sabe lo que tiene que hacer cada día y un dueño que mira números en vez de apagar fuegos. No es una inmobiliaria concreta. Es cómo debería verse cualquiera que funcione bien.</p>
+<p><strong>¿Por qué te hago estudiar la perfecta antes que la real?</strong> Porque solo puedes ver lo que le falta a alguien si sabes cómo se ve lo completo. Cuando tengas este mapa en la cabeza, cada cosa que te cuente un dueño en una llamada la vas a colocar en su sitio: «esto es un fallo de atracción», «esto es que no mide», «esto es que no tiene <a class="term" href="diccionario.html#t-entrega-del-servicio">departamento de entrega</a>». Y vas a saber qué viene detrás antes de que te lo diga.</p>
+<h3>Ponte en la piel del dueño</h3>
+<p>Para que lo entiendas de verdad, este playbook está escrito en primera persona. Tú eres el dueño de esta inmobiliaria. Cuando leas «yo decido», «mi equipo», «mis números», eres tú. Así, cuando después hables con un dueño, no vas a recitar teoría: vas a hablar de tu negocio.</p>
+<h3>Las seis estaciones</h3>
+<p>Una inmobiliaria perfecta se construye en seis <a class="term" href="diccionario.html#t-estacion">estaciones</a>, siempre en este orden. No se puede saltar ninguna, y cada una solo funciona si la anterior está hecha.</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:8.0%"><col style="width:28.0%"><col style="width:64.0%"></colgroup>
+<thead><tr><th>#</th><th>Estación</th><th>De qué va</th></tr></thead><tbody>
+<tr><th>1</th><td>Atracción</td><td>Conseguir <a class="term" href="diccionario.html#t-propietario">propietarios</a>: que entren <a class="term" href="diccionario.html#t-noticia">noticias</a> y <a class="term" href="diccionario.html#t-cita-de-captacion">citas de captación</a> todos los días.</td></tr>
+<tr><th>2</th><td><a class="term" href="diccionario.html#t-conversion">Conversión</a></td><td>Que las citas se realicen y salgan de ellas <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a> <a class="term" href="diccionario.html#t-precio-de-mercado">en precio</a>.</td></tr>
+<tr><th>3</th><td>Entrega del servicio</td><td>Vender <a class="term" href="diccionario.html#t-growing">la casa</a>. Y cobrar por <a class="term" href="diccionario.html#t-las-dos-bandas">las dos bandas</a>.</td></tr>
+<tr><th>4</th><td>Medición</td><td>Saber dónde falla el equipo con números, no con sensaciones.</td></tr>
+<tr><th>5</th><td>Contratación y expansión</td><td>Meter a más gente solo cuando el sistema ya rueda a tope.</td></tr>
+<tr><th>6</th><td>Delegación</td><td>Un <a class="term" href="diccionario.html#t-director-de-oficina">director de oficina</a>, y yo fuera de la operativa.</td></tr>
+</tbody></table></div>
+<p>Pero antes de las estaciones hay algo más importante: <a class="term" href="diccionario.html#t-metricas-comerciales">los números</a>. Porque sin saber lo que necesito, no sé qué construir.</p>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 0</div>
+<ol><li>La perfecta primero. La realidad, cuando sepas con qué compararla.</li><li>En este playbook el dueño eres tú.</li><li>Seis estaciones, siempre en orden. Y antes, los números.</li></ol>
 </div>
-<p>Tu «enemigo» no es un enemigo, obviamente. Es el dueño de inmobiliaria que se va a sentar delante de ti. Pero la regla es exactamente la misma: si no sabes qué piensa, qué siente, por qué se siente así, dónde le duele y qué quiere de verdad, <strong>no le vas a vender nada. Nada.</strong></p>
-<p>Así que este playbook no te enseña «el sector». Te enseña a una persona. El sector es el mundo en el que vive esa persona, y te lo vas a aprender para entenderle a él, no para aprobar un examen de inmobiliaria.</p>
-<p>Mi objetivo es muy claro: <strong>quiero que sepas lo que sueña, lo que piensa cuando está en su casa, lo que siente cuando vuelve de currar. Tienes que saberlo TODO.</strong></p>
-<h3>Un personaje que te va a acompañar</h3>
-<p>Se llama Rubén. 46 años, tiene una inmobiliaria en Valladolid con dos comerciales, lleva 11 años en el sector y factura 180.000 € al año. Vende bien, se le da bien la gente y ha sacado adelante un negocio él solo. Lo que no tiene es sistema.</p>
-<p>Rubén no existe, pero vas a hablar con cuarenta Rubenes este trimestre. Va a aparecer en todas las etapas.</p>
-<h3>Un aviso antes de empezar</h3>
-<p>Tú no vienes del inmobiliario. Perfecto. Eso no es un problema, es una ventaja: no traes los vicios del sector. Pero sí hay un problema real, y es este: <strong>el dueño de inmobiliaria que se sienta delante de ti lleva 15 años en esto y tú llevas tres semanas.</strong> Si no sabes de qué habla, lo huele en el minuto dos y has perdido la llamada antes de empezar.</p>
-<p>Por eso existe este playbook. Cuando lo termines, vas a saber de su negocio más que él. Suena arrogante. No lo es. En la Etapa 9 vas a entender por qué es literalmente cierto.</p>
-<h3>Una norma de casa: cómo hablamos de ellos</h3>
-<p>En este playbook vas a leer un diagnóstico muy duro del sector: que no miden, que no entrenan, que dependen de la suerte. Todo eso es verdad y lo vas a necesitar.</p>
-<p>Pero ojo. Son gente que ha montado un negocio desde cero y que mantiene a su familia con él. Lo que les falta no es capacidad: es estructura, método y números. Nadie se los ha dado, porque el sector nunca se los pidió.</p>
-<p><strong>Nuestro trabajo no es tener razón sobre ellos. Es que vean lo que no están viendo, y que quieran arreglarlo con nosotros.</strong></p>
-<h3>Esto no es un manual de consulta. Es una formación.</h3>
-<p>Cuatro reglas, y no te las saltes:</p>
-<ol>
-<li><strong>Las etapas del día, y nada más.</strong> Son dos al día, una semana entera. Si te lo lees todo de una sentada te vas a acordar del 10%. No tengas prisa: tienes que entrar en llamadas sabiendo, no habiendo leído.</li>
-<li><strong>Cada etapa empieza con un repaso</strong> de la anterior. Respóndelo en voz alta, sin mirar atrás. Si fallas una pregunta, vuelves solo a esa parte.</li>
-<li><strong>Cada etapa termina con tres frases.</strong> Esas tres frases son lo que tienes que poder soltar de memoria.</li>
-<li><strong>Cada día termina con un examen.</strong> Es un juego de diez preguntas con reloj: lo haces el mismo día, después de leer, y lo repites hasta clavarlo. El examen final es la semana siguiente, cuando ya has pasado por todo.</li>
-</ol>
-<h3>El mapa del playbook</h3>
-<p>Tres bloques. Primero el mundo de Rubén, después su cabeza, y al final cómo le lees en una llamada.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:24.0%"><col style="width:18.0%"><col style="width:58.0%"></colgroup>
-<thead><tr><th>Bloque</th><th>Etapas</th><th>Qué construyes</th></tr></thead><tbody>
-<tr><th>Antes de empezar</th><td>Etapa 0</td><td>De qué va esto, Rubén y tu ficha en blanco.</td></tr>
-<tr><th>Bloque 1 · Su mundo</th><td>Etapas 1 a 4</td><td>El juego, las dos cadenas, el precio y la pasta. Cada etapa termina con lo que Rubén siente ahí.</td></tr>
-<tr><th>Bloque 2 · Su cabeza</th><td>Etapas 5 y 6</td><td>Las siete piezas de la cabeza de Rubén y el cementerio de empresas que le han quemado.</td></tr>
-<tr><th>Bloque 3 · Tu diagnóstico</th><td>Etapas 7 a 10</td><td>Cómo clasificarle, qué le duele según dónde está, y las siete preguntas de los primeros diez minutos.</td></tr>
-<tr><th>Anexo</th><td>Diccionario</td><td>Se consulta, no se estudia.</td></tr>
-</tbody></table></div>
-<h3>La ficha de Rubén</h3>
-<p>Cuando termines las diez etapas tienes que poder rellenar esta ficha en los primeros diez minutos de cualquier llamada. Cada etapa te da una o dos casillas. Léela ahora, aunque no entiendas ni la mitad: es a donde vamos.</p>
-<div class="tablewrap"><table class="">
-<colgroup><col style="width:40.0%"><col style="width:36.0%"><col style="width:24.0%"></colgroup>
-<thead><tr><th>Casilla</th><th>Qué apuntas</th><th>Lo aprendes en</th></tr></thead><tbody>
-<tr><th>Equipo: cuántos son y si son autónomos o asalariados</th><td></td><td>Etapa 7</td></tr>
-<tr><th>Facturación mensual aproximada</th><td></td><td>Etapa 8</td></tr>
-<tr><th>Exclusivas de los dos últimos meses: ¿estables o a rachas?</th><td></td><td>Etapas 1 y 8</td></tr>
-<tr><th>¿Cobra en arras o en notaría?</th><td></td><td>Etapa 4</td></tr>
-<tr><th>Etapa de la Hoja de Ruta (1 a 5)</th><td></td><td>Etapa 8</td></tr>
-<tr><th>Qué cree que le pasa, con sus palabras</th><td></td><td>Etapas 5 y 6</td></tr>
-<tr><th>Qué le pasa de verdad</th><td></td><td>Etapas 3, 5 y 9</td></tr>
-<tr><th>Qué ha probado antes y cómo acabó</th><td></td><td>Etapa 6</td></tr>
-<tr><th>Cuánto tiempo y dinero puso la semana pasada en su problema</th><td></td><td>Etapa 9</td></tr>
-<tr><th>Qué le vendes y cómo lo posicionas</th><td></td><td>Etapas 6, 7 y 8</td></tr>
-</tbody></table></div>
-<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 5</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
 </section>
 <section class="sheet" id="etapa-1">
 <header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
 <div class="rule" aria-hidden="true"></div>
 <div class="reg"><span>ETAPA 1</span><span>Día 1</span></div>
 <div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>EL JUEGO ES EL PRODUCTO</h2><div class="dash">——————</div></div>
-<div class="box">
-<p><strong>Una inmobiliaria no vende casas. Vende casas que ha conseguido primero.</strong></p>
-<p>Léela otra vez. Ahí está todo el sector.</p>
-</div>
-<p>Imagina una frutería con el mejor escaparate del barrio, la mejor dependienta, la caja registradora más moderna y un cartel luminoso precioso.</p>
-<p><strong>No tiene fruta.</strong></p>
-<p>Eso es el 90% de las inmobiliarias de España. Web bonita, oficina en la calle principal, tarjetas con relieve. Y tres pisos en cartera. (Cartera son los pisos que tienen para gestionar y vender.)</p>
-<p>Tú no le vendes a Rubén un escaparate mejor. <strong>Le vendes fruta.</strong></p>
-<h3>Qué es «producto»</h3>
-<p><strong>Producto = viviendas a la venta.</strong></p>
-<p>Si una inmobiliaria tiene 40 pisos en cartera, tiene producto. Si tiene 3, no tiene negocio, tiene un hobby.</p>
-<h3>El juego real</h3>
-<p>El juego de una inmobiliaria es este: conseguir que <strong>un propietario</strong>, una persona que tiene una vivienda y está pensando en venderla, <strong>se la deje a ellos con un contrato</strong> para poder comercializarla y representarle en la venta.</p>
-<p>Una vez tienen ese contrato, publican el piso en portales (Idealista, Fotocasa), lo mueven, hacen visitas y buscan a alguien que lo compre.</p>
-<p><strong>Dos pasos. Primero consigues la casa. Luego la vendes.</strong></p>
-<h3>Por qué esto es LO difícil ahora mismo</h3>
-<p>Ahora mismo, en España, <strong>falta producto.</strong></p>
-<p>Las razones, resumidas: se ha construido muy poco durante muchos años, las leyes que han ido metiendo han limitado mucho el movimiento de inmuebles, y los precios están donde están. Resultado: hay zonas donde quedan muy pocos propietarios dispuestos a vender.</p>
-<p>Y eso cambia el juego entero. Cuando sobran casas, manda el que tiene compradores. <strong>Cuando faltan casas, manda el que tiene casas.</strong></p>
-<p>Ojo con esto: <strong>es la situación de MERCADO de hoy.</strong> En algún momento cambiará. Pero hoy, y durante todo el tiempo que tú vas a estar vendiendo, el cuello de botella del sector es conseguir propietarios que quieran vender.</p>
-<h3>El contrato tiene nombre: ENCARGO</h3>
-<p>Cuando un propietario firma, eso se llama <strong>encargo</strong>. Literalmente: te <strong>encarga</strong> algo. En este caso, gestionar la venta de su piso.</p>
-<p>Y hay dos tipos. Esta es la primera diferencia que tienes que llevar tatuada:</p>
+<div class="deedtitle small"><h2>LOS NÚMEROS: QUÉ HACE FALTA PARA FACTURAR 150.000 AL MES</h2><div class="dash">——————</div></div>
+<p>Lo primero que hace un <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> que sabe lo que hace no es contratar, ni poner <a class="term" href="diccionario.html#t-anuncios">anuncios</a>, ni abrir oficina. Es calcular hacia atrás.</p>
+<p>Quiero facturar <strong>150.000 € al mes</strong>. Son <strong>1.800.000 € al año</strong>. ¿Qué tengo que hacer cada día para que eso pase? Vamos a verlo.</p>
+<h3>El embudo hacia atrás</h3>
+<p>Para el ejercicio, cada venta me deja <strong>10.000 € de <a class="term" href="diccionario.html#t-honorarios">comisión</a></strong>. Y pongo los porcentajes de una inmobiliaria que funciona bien, sin ser un fenómeno:</p>
+<ul>
+<li>De las <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a> que capto, vendo el <strong>75%</strong>. El resto no se vende, o tarda en ajustarse de precio.</li>
+<li>De las <a class="term" href="diccionario.html#t-cita-de-captacion">citas de captación</a> que se realizan, firmo el <strong>30%</strong>.</li>
+<li>De las citas que agendo, se realizan el <strong>60%</strong>. El resto se cancela, se mueve o no abre la puerta.</li>
+<li>De los <a class="term" href="diccionario.html#t-propietario">propietarios</a> con los que hablo, agendo cita con el <strong>5%</strong>.</li>
+</ul>
+<p>Con eso, el <a class="term" href="diccionario.html#t-embudo">embudo</a> entero:</p>
 <div class="tablewrap"><table class="">
-<colgroup><col style="width:40.0%"><col style="width:30.0%"><col style="width:30.0%"></colgroup>
-<thead><tr><th></th><th>ENCARGO EN EXCLUSIVA</th><th>ENCARGO EN ABIERTO</th></tr></thead><tbody>
-<tr><th>Quién puede vender el piso</th><td>Solo yo</td><td>Yo y cualquier otra agencia</td></tr>
-<tr><th>Quién cobra la comisión</th><td>Yo, seguro</td><td>El que llegue primero</td></tr>
-<tr><th>El propietario está comprometido</th><td>Sí</td><td>No</td></tr>
-<tr><th>Vale la pena invertir en ese piso</th><td>Sí</td><td>Es una lotería</td></tr>
+<colgroup><col style="width:36.0%"><col style="width:22.0%"><col style="width:14.0%"><col style="width:14.0%"><col style="width:14.0%"></colgroup>
+<thead><tr><th>Paso</th><th><a class="term" href="diccionario.html#t-conversion">Conversión</a></th><th>Al año</th><th>Al mes</th><th>Al día</th></tr></thead><tbody>
+<tr><th>Contactos con propietarios</th><td></td><td>26.667</td><td>2.222</td><td>101</td></tr>
+<tr><th>Citas de <a class="term" href="diccionario.html#t-captar">captación</a> agendadas</th><td>5% de los contactos</td><td>1.333</td><td>111</td><td>5</td></tr>
+<tr><th><a class="term" href="diccionario.html#t-cita-realizada">Citas realizadas</a></th><td>60% de las agendadas</td><td>800</td><td>67</td><td>3</td></tr>
+<tr><th>Exclusivas firmadas</th><td>30% de las realizadas</td><td>240</td><td>20</td><td>1</td></tr>
+<tr><th>Ventas</th><td>75% de las exclusivas</td><td>180</td><td>15</td><td>3 o 4 por semana</td></tr>
+<tr><th>Facturación</th><td>10.000 € por venta</td><td>1.800.000 €</td><td>150.000 €</td><td>6.800 €</td></tr>
 </tbody></table></div>
-<p>Siempre, siempre, vamos a por la exclusiva. Es la única forma de tener el control sobre las comisiones que se van a cobrar.</p>
-<p>También lo vas a oír así: <strong>captación en exclusiva</strong> o <strong>captación en abierto</strong>.</p>
-<h3>Cuánto se cobra</h3>
-<p>Lo normal es cobrarle <strong>al propietario</strong> unos honorarios de entre el <strong>2% y el 5%</strong> del precio de venta. (En algunos casos también se le cobra algo al comprador, pero lo normal, y lo que a ti te importa, es el propietario.)</p>
+<p>Léelo de abajo arriba. Para facturar 150.000 € al mes necesito 15 ventas. Para 15 ventas necesito 20 exclusivas. Para 20 exclusivas necesito 67 citas realizadas. Para 67 realizadas necesito <a class="term" href="diccionario.html#t-cita-agendada">agendar</a> 111. Y para agendar 111, tengo que hablar con <strong>2.222 propietarios al mes. Unos cien al día.</strong></p>
+<h3>Los básicos</h3>
+<p>Aquí está la clave de todo el <a class="term" href="diccionario.html#t-playbook">playbook</a>, y la vas a repetir mil veces:</p>
 <div class="box">
-<div class="boxlabel">Ejemplo que te tienes que saber de memoria</div>
-<p>Piso de <strong>300.000 €</strong> · honorarios del <strong>5%</strong> → <strong>15.000 €</strong> de comisión.</p>
+<p><strong>Los básicos son dos: cuántos propietarios consigo hablar al día, y cuántas citas agendo al día.</strong></p>
+<p>Todo lo demás es consecuencia de los protocolos que vienen después.</p>
 </div>
-<p>Esa cifra explica el sector entero. Quince mil euros por una operación. Por eso en el inmobiliario se vive de puta madre sin haber montado nunca una estructura de empresa: las comisiones son tan grandes que siendo bueno comercialmente y hablando con gente ya se come.</p>
-<p>Y ojo, que esto no es un reproche. Es la causa de todo lo demás. <strong>Cuando un sector te deja ganar mucho sin obligarte a profesionalizarte, nadie se profesionaliza. No por falta de capacidad, sino porque no hace falta.</strong></p>
-<p>Acuérdate de esto en la Etapa 6. Es la raíz de todo lo demás.</p>
-<h3>Por qué el encargo en abierto es una trampa</h3>
-<p>Si Rubén trabaja en abierto, pasa esto: el mismo piso está publicado por seis agencias a la vez, con seis fotos distintas y a veces con seis precios distintos. El comprador lo ve repetido, piensa que algo raro pasa con ese piso, y el propietario no está comprometido con nadie.</p>
-<p>Rubén mete tiempo, fotos, visitas y anuncios en un piso que mañana puede vender otro.</p>
-<p>Y aquí está la primera puerta de venta que vas a usar mil veces: conseguir la exclusiva <strong>depende de cómo estructures la reunión delante del propietario.</strong> Es una venta. Exactamente igual que la tuya. El agente inmobiliario, cuando está delante del propietario, es un closer.</p>
-<p>Hay momentos en los que un abierto puede merecer la pena. Son excepciones: la norma es la exclusiva.</p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Rubén sabe mejor que nadie que el juego es conseguir casas. Lo que siente es que <strong>cada mes empieza de cero</strong>: si no entra producto, no hay nada que vender, y la cartera se le vacía sola a medida que vende. Esa presión por no quedarse sin casas no se le va nunca.</p>
-<p>Para tu ficha: su obsesión se llama «conseguir propietarios». Guárdatela, porque en la Etapa 5 vas a ver que esa obsesión es justo lo que le impide ver su problema de verdad.</p>
-</div>
+<p>Cien conversaciones y cinco citas agendadas al día. Si eso entra, el resto de la inmobiliaria tiene con qué trabajar. Si eso no entra, da igual lo bueno que sea mi equipo cerrando: no hay nada que cerrar.</p>
+<p>Por eso el dueño perfecto mira esos dos números cada mañana. No la facturación, que llega cuatro meses tarde. Los básicos.</p>
+<h3>Dónde está la palanca</h3>
+<p>Mira lo que pasa si muevo un solo porcentaje:</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:25.0%"><col style="width:25.0%"></colgroup>
+<thead><tr><th>Si mejoro...</th><th>Citas realizadas que necesito</th><th>Contactos que necesito</th></tr></thead><tbody>
+<tr><th>Nada (el embudo de arriba)</th><td>800</td><td>26.667</td></tr>
+<tr><th>El cierre en cita, del 30% al 40%</th><td>600</td><td>20.000</td></tr>
+<tr><th>Los presentados, del 60% al 75%</th><td>800</td><td>21.333</td></tr>
+<tr><th>Las dos cosas</th><td>600</td><td>16.000</td></tr>
+</tbody></table></div>
+<p>Si mi equipo cierra mejor en la cita, necesito un 25% menos de todo lo de arriba para la misma facturación. Si además consigo que se presenten más, casi la mitad de contactos. <strong>Cada punto que gano arriba del embudo me ahorra miles de llamadas abajo.</strong> Por eso entreno a mi equipo todas las mañanas, y lo verás en la <a class="term" href="diccionario.html#t-estacion">estación</a> 2.</p>
+<h3>Con esto diseño la inmobiliaria</h3>
+<p>Ahora ya sé qué necesito: 100 conversaciones al día, 5 citas agendadas al día, 67 citas realizadas al mes, 20 exclusivas al mes. Con estos números sé cuánta gente necesito, en qué, y qué tiene que hacer cada uno cada día. A partir de aquí se construye todo lo demás.</p>
 <div class="frases">
 <div class="boxlabel">Las tres frases de la etapa 1</div>
-<ol><li>Una inmobiliaria no vende casas, vende casas que ha conseguido primero.</li><li>Falta producto. El que consigue propietarios, manda.</li><li>Siempre en exclusiva: así tienes todo el control sobre el producto.</li></ol>
+<ol><li>150.000 al mes son 15 ventas, 20 exclusivas, 67 citas realizadas, 111 agendadas y 2.222 conversaciones.</li><li>Los básicos: cuántos propietarios hablo al día y cuántas citas agendo al día.</li><li>Cada punto que gano arriba del embudo me ahorra miles de llamadas abajo.</li></ol>
 </div>
-<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 5</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
 </section>
 <section class="sheet" id="etapa-2">
 <header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
 <div class="rule" aria-hidden="true"></div>
 <div class="reg"><span>ETAPA 2</span><span>Día 1</span></div>
 <div class="rule" aria-hidden="true"></div>
-<div class="deedtitle small"><h2>LAS DOS CADENAS</h2><div class="dash">——————</div></div>
-<div class="repaso">
-<div class="boxlabel">Repaso rápido · responde en voz alta antes de seguir</div>
-<ol><li>¿Qué es un encargo?</li><li>¿Cuál es el rango de honorarios habitual?</li><li>¿Por qué el abierto es malo para la agencia?</li></ol>
-</div>
-<p>Aquí está el concepto que hace que el inmobiliario sea un sector <strong>peligroso</strong>. Súper importante que lo pilles, porque de aquí sale la mitad de las cosas que le vas a decir a Rubén.</p>
-<p><strong>El sector inmobiliario tiene DOS tipos de cliente potencial.</strong></p>
-<p>Primero tienes que captar la casa. Luego tienes que venderla.</p>
-<p>Primero necesitas leads que sean <strong>propietarios</strong>. Después necesitas leads que sean <strong>compradores</strong>.</p>
-<p>Eso significa que un dueño de inmobiliaria tiene que ser bueno en <strong>dos cosas distintas</strong>:</p>
-<ol>
-<li>Encontrar al propietario y convencerle.</li>
-<li>Conseguir vender la propiedad.</li>
-</ol>
-<p>Cualquier otro negocio tiene un embudo. El inmobiliario tiene dos, pegados uno detrás del otro.</p>
-<p>Un restaurante normal compra la verdura y la sirve. Una inmobiliaria <strong>tiene que cultivar la verdura y además servir las mesas.</strong> Dos oficios distintos, dos equipos distintos, dos conjuntos de habilidades. Y la mayoría es regular en los dos.</p>
-<h3>Y por eso el ciclo es largo</h3>
-<p>Desde que consigues al propietario hasta que la casa se vende pasan <strong>2 o 3 meses</strong>. Mínimo.</p>
-<p>Grábate esto: <strong>ellos no generan un euro hasta que no venden la propiedad.</strong> Da igual cuántas exclusivas tengan. Las exclusivas no pagan nóminas. Las ventas sí.</p>
-<p>Es una de las cosas más importantes de todo el playbook, porque explica su tensión de caja, su ansiedad, y por qué cuando les dices «12.000 €» se les abre un agujero en el estómago.</p>
-<h3>Cadena A — Captación (conseguir la casa)</h3>
-<div class="chain"><div class="step">[1] CONTACTO / CONVERSACIÓN con un propietario</div><div class="arrow">↓</div><div class="step">[2] NOTICIA · alguien que dice «sí, quiero vender»</div><div class="arrow">↓</div><div class="step">[3] CITA DE CAPTACIÓN AGENDADA · cita en su casa</div><div class="arrow">↓</div><div class="step">[4] CITA REALIZADA · se presentó de verdad</div><div class="arrow">↓</div><div class="step">[5] ENCARGO FIRMADO · exclusiva o abierto</div></div>
-<p>Los términos de esta cadena:</p>
-<ul>
-<li><strong>Noticia:</strong> una persona que quiere vender. Literalmente, «tengo una noticia: fulano vende». Si Rubén te dice <strong>«he tenido tres noticias esta semana»</strong>, te está diciendo que tres personas le han dicho que quieren vender. Una noticia no es una cita todavía.</li>
-<li><strong>Cita de captación:</strong> la cita <strong>con el propietario</strong>, normalmente presencial, en su casa. Es la reunión donde se juega la exclusiva. Es su llamada de cierre.</li>
-<li><strong>Captar:</strong> conseguir que firme. «He captado tres pisos este mes» = tres encargos firmados.</li>
-</ul>
-<p><strong>Ojo con el paso 3 → 4:</strong> no todas las citas agendadas se hacen. Se las cancelan, se las mueven, no les abren la puerta. Ese porcentaje tiene nombre y es oro: lo vas a ver en la Etapa 9.</p>
-<h3>Cadena B — Venta (vender la casa)</h3>
-<p>Una vez tienes el encargo, publicas el piso en portales, lo subes a redes, se lo mandas a tu base de contactos. Y arranca el segundo embudo, que es <strong>exactamente igual</strong> que el primero:</p>
-<div class="chain"><div class="step">[1] CONTACTO con un comprador interesado · deja sus datos</div><div class="arrow">↓</div><div class="step">[2] VISITA REALIZADA · ve el piso</div><div class="arrow">↓</div><div class="step">[3] PROPUESTA · «lo quiero, por X €»</div><div class="arrow">↓</div><div class="step">[4] RESERVA (≈2.000 €) · prueba de compromiso</div><div class="arrow">↓</div><div class="step">[5] PROPUESTA PRESENTADA AL PROPIETARIO</div><div class="arrow">↓</div><div class="step">[6] PROPIETARIO ACEPTA → VENTA</div></div>
-<p>Lo que tienes que entender de esta cadena:</p>
-<ul>
-<li>La <strong>propuesta</strong> casi siempre viene <strong>por debajo</strong> del precio publicado. El comprador quiere negociar. Es normal, no es una mala señal.</li>
-<li>Antes de llevarle la propuesta al propietario, el agente le pide al comprador una <strong>reserva de unos 2.000 €</strong>. ¿Para qué? Para medir si va en serio. Sin dinero encima de la mesa, una propuesta es una conversación de bar.</li>
-<li>Si el propietario acepta → <strong>hay venta</strong>.</li>
-</ul>
-<h3>Y después de la venta: ARRAS y NOTARÍA</h3>
-<p>La venta se cierra en dos actos:</p>
-<ol>
-<li><strong>ARRAS.</strong> El contrato privado entre comprador y propietario. El comprador pone un adelanto, normalmente el <strong>10%</strong> del precio. Piso de 200.000 € → <strong>20.000 € de arras.</strong> Esto puede pasar en <strong>una semana</strong> desde que se acepta la propuesta.</li>
-<li><strong>ESCRITURA / NOTARÍA.</strong> Se firma ante notario y la casa cambia de manos de verdad. Esto tarda, de normal, <strong>unos 2 meses más</strong>, sobre todo si el comprador necesita hipoteca, porque los bancos tardan eso en concederla.</li>
-</ol>
-<p>Guárdate esos dos conceptos. En la Etapa 4 se convierten en una de las cosas más potentes que le puedes decir a Rubén.</p>
-<h3>El mapa completo</h3>
-<p>Esto es lo que tienes que poder dibujar en una servilleta.</p>
+<div class="deedtitle small"><h2>ESTACIÓN 1: ATRACCIÓN</h2><div class="dash">——————</div></div>
+<p>Ya sé que necesito 111 <a class="term" href="diccionario.html#t-cita-de-captacion">citas de captación</a> agendadas al mes. La <a class="term" href="diccionario.html#t-estacion">estación</a> de atracción es cómo las consigo.</p>
+<h3>Las fuentes</h3>
+<p>Para conseguir mi primer cliente potencial, el <a class="term" href="diccionario.html#t-propietario">propietario</a>, tengo cinco <a class="term" href="diccionario.html#t-fuente">fuentes</a> de donde sacar <a class="term" href="diccionario.html#t-noticia">noticias</a>:</p>
 <div class="tablewrap"><table class="">
-<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
-<thead><tr><th>PROPIETARIOS (Cadena A)</th><th>COMPRADORES (Cadena B)</th></tr></thead><tbody>
-<tr><th>1. Contacto</th><td>1. Contacto</td></tr>
-<tr><th>2. Noticia</th><td>2. Visita realizada</td></tr>
-<tr><th>3. Cita de captación agendada</th><td>3. Propuesta</td></tr>
-<tr><th>4. Cita realizada</th><td>4. Reserva (≈2.000 €)</td></tr>
-<tr><th>5. ENCARGO FIRMADO (exclusiva) → se publica y arranca la Cadena B</th><td>5. Propuesta presentada al propietario</td></tr>
-<tr><th></th><td>6. ACEPTADA = VENTA</td></tr>
-<tr><th></th><td>7. Arras (10%, ≈1 semana)</td></tr>
-<tr><th></th><td>8. Notaría (≈2 meses)</td></tr>
+<colgroup><col style="width:30.0%"><col style="width:70.0%"></colgroup>
+<thead><tr><th>Fuente</th><th>Qué es</th></tr></thead><tbody>
+<tr><th><a class="term" href="diccionario.html#t-prospeccion-en-frio">Prospección en frío</a></th><td>Llamadas en frío y puerta fría. Gente que no me conoce de nada.</td></tr>
+<tr><th>Redes sociales de pago</th><td><a class="term" href="diccionario.html#t-anuncios">Anuncios</a> para que el propietario que está pensando en vender deje sus datos.</td></tr>
+<tr><th><a class="term" href="diccionario.html#t-contenido-organico">Contenido orgánico</a></th><td>Subir contenido sin pagar: vídeos, la zona, operaciones cerradas. Para que me conozcan y me tengan en la cabeza.</td></tr>
+<tr><th>Mi CRM</th><td>Todo lo que ya tengo: solicitudes de <a class="term" href="diccionario.html#t-comprador">compradores</a> anteriores, gente que visitó y no compró, transacciones pasadas. Muchos de ellos hoy son propietarios que quieren vender.</td></tr>
+<tr><th>Mi <a class="term" href="diccionario.html#t-base-de-contactos">base de contactos</a></th><td>La agenda del teléfono. Amigos, conocidos, clientes antiguos, proveedores. Hay que llamarla.</td></tr>
 </tbody></table></div>
-<p><strong>Esas son las métricas comerciales de una inmobiliaria.</strong> Son los números que hay que medir para saber si un agente está rindiendo o no.</p>
-<p>Y ahora la pregunta que te va a volar la cabeza, que es la misma que te voy a hacer yo:</p>
-<p><strong>¿Qué porcentaje de agencias crees que tiene estos números apuntados? ¿El 50%? ¿El 80%?</strong></p>
-<p>Por lo que vemos en nuestras llamadas: casi ninguna. Pon un 3%. No es un estudio, es lo que me sale después de cientos de conversaciones, pero es la cifra con la que trabajamos.</p>
-<p>El resto te los dirá por intuición y por sensaciones. «Pues yo creo que cierro bastante». «Hombre, de cada diez citas igual saco cuatro». Nada medido. Nada escrito.</p>
-<p>Guárdate esa cifra. En la Etapa 5 y en la Etapa 9 la usamos.</p>
-<div class="diligencia">
-<div class="boxlabel">Diligencia · Qué siente Rubén aquí</div>
-<p>Entre que firma un encargo y cobra pasan meses, y entre medias ha puesto fotos, portales, visitas y tiempo. Lo que siente es <strong>tensión de caja</strong>: el negocio es una montaña rusa y nunca sabe cómo va a ser el mes que viene.</p>
-<p>Y como no mide, no sabe en qué paso de las dos cadenas se le escapan las operaciones. Solo sabe que «hay meses buenos y meses malos». Por eso una inversión de 12.000 € le aprieta el estómago antes de que acabes la frase.</p>
+<p>Una inmobiliaria pequeña elige una fuente y reza. <strong>Una inmobiliaria que rueda las tiene todas encendidas a la vez:</strong> anuncios corriendo, contenido saliendo constantemente, alguien haciendo llamadas en frío y alguien llamando a la base. Porque con una sola fuente no se llega a cien conversaciones al día.</p>
+<h3>Quién hace qué</h3>
+<p>Para llegar a ese volumen, en mi inmobiliaria hay:</p>
+<ul>
+<li><strong>Personas haciendo llamadas.</strong> A la base de contactos, al CRM y en frío. Es un trabajo, no una tarea que se hace «cuando hay un hueco».</li>
+<li><strong>Una persona gestionando los anuncios.</strong> Que los lanza, los mide y los ajusta cada semana.</li>
+<li><strong>Yo grabando contenido constantemente.</strong> Para que la inmobiliaria esté viva y el propietario, cuando le llegue la llamada, ya me haya visto.</li>
+</ul>
+<p>Y todo apunta al mismo sitio: que cada día entren cinco <a class="term" href="diccionario.html#t-cita-agendada">citas agendadas</a>.</p>
+<h3>Los guiones: todo está escrito</h3>
+<p>Aquí está la diferencia entre una inmobiliaria y un grupo de gente que vende pisos. En la perfecta, <strong>todo lo comercial tiene <a class="term" href="diccionario.html#t-guion">guion</a> y protocolo</strong>:</p>
+<ul>
+<li>El guion de la llamada en frío.</li>
+<li>El guion de la llamada a la base de contactos.</li>
+<li>Los anuncios: qué se dice, a quién, con qué formulario.</li>
+<li>Los mensajes de <a class="term" href="diccionario.html#t-nutricion">seguimiento</a>: qué envío, cuándo, por dónde.</li>
+<li>La estructura del seguimiento entero: qué pasa con una noticia que hoy no quiere cita.</li>
+</ul>
+<p>¿Por qué me obsesiono con tenerlo todo escrito? Por dos razones:</p>
+<ol>
+<li><strong>Porque la gente rota.</strong> Si se me va la persona que llamaba, el guion sigue en mi inmobiliaria. La siguiente lo coge y a los tres días está llamando igual de bien. El conocimiento es de la empresa, no de la persona.</li>
+<li><strong>Porque solo lo que está escrito se puede medir y mejorar.</strong> Si cada uno llama como le sale, no sé qué funciona. Si todos usan el mismo guion y mido, sé si estoy cerca o lejos de mi objetivo, y sé qué cambiar.</li>
+</ol>
+<h3>El ajuste semanal</h3>
+<p>Como tengo <a class="term" href="diccionario.html#t-metricas-comerciales">los números</a>, cada semana sé dónde estoy. Y cada semana le digo a mi equipo exactamente qué hacer:</p>
+<blockquote><p>«Esta semana hemos agendado 19 citas y necesitamos 26. Estamos fuera. La semana que viene subimos presupuesto en anuncios, saco dos vídeos más y el equipo de llamadas pasa de 80 a 100 conversaciones al día.»</p></blockquote>
+<p>Eso es todo. Si no llego a las citas, subo volumen: más presupuesto, más contenido, más llamadas. No hay otra forma de moverse hacia el objetivo. No es magia, es volumen con guion y con números.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta estación</div>
+<p>Cinco fuentes encendidas. Personas llamando, una persona en anuncios, el <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> grabando. Guiones para todo. Y dos números cada mañana: conversaciones y citas agendadas.</p>
 </div>
 <div class="frases">
 <div class="boxlabel">Las tres frases de la etapa 2</div>
-<ol><li>Dos embudos: primero la casa, después el comprador.</li><li>No cobran hasta que no venden. Las exclusivas no pagan nóminas.</li><li>Solo el 3% tiene estos números. El resto va por sensaciones.</li></ol>
+<ol><li>Una que rueda tiene las cinco fuentes encendidas. Con una sola no se llega.</li><li>Todo lo comercial está escrito: guiones, anuncios, mensajes, seguimiento. Porque la gente rota y porque solo lo escrito se mide.</li><li>Si no llego a las citas, subo volumen. No hay otra.</li></ol>
 </div>
-<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 5</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-3">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 3</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTACIÓN 2: CONVERSIÓN</h2><div class="dash">——————</div></div>
+<p>Tengo 111 <a class="term" href="diccionario.html#t-cita-agendada">citas agendadas</a> al mes. La <a class="term" href="diccionario.html#t-estacion">estación</a> de <a class="term" href="diccionario.html#t-conversion">conversión</a> es convertirlas en 20 <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a> <a class="term" href="diccionario.html#t-precio-de-mercado">en precio</a>. Y tiene dos partes que casi nadie separa: lo que pasa <strong>antes</strong> de la <a class="term" href="diccionario.html#t-cita-de-captacion">cita</a> y lo que pasa <strong>en</strong> la cita.</p>
+<h3>Antes de la cita: que se presenten</h3>
+<p>De cada 100 citas que agendo, se realizan 60. Las otras 40 se cancelan, se mueven o no abren la puerta. Y cada cita que se cae es una conversación de cien que he tirado a la basura.</p>
+<p>Por eso en mi inmobiliaria, desde que se agenda la cita hasta que llego a <a class="term" href="diccionario.html#t-growing">la casa</a>, hay un protocolo <a class="term" href="diccionario.html#t-automatizacion">automático</a>:</p>
+<ul>
+<li><strong><a class="term" href="diccionario.html#t-nutricion">Recordatorios</a> automatizados</strong> por WhatsApp y por correo. No depende de que el <a class="term" href="diccionario.html#t-agente-inmobiliario">asesor</a> se acuerde.</li>
+<li><strong>En esos recordatorios van <a class="term" href="diccionario.html#t-casos-de-exito">casos de éxito</a>:</strong> propiedades parecidas a la suya, en su zona, que hemos vendido. Con el tiempo que tardamos y el precio.</li>
+</ul>
+<p>¿Por qué casos de éxito y no un simple «le recuerdo la cita de mañana»? Porque si el <a class="term" href="diccionario.html#t-propietario">propietario</a> ve que hemos vendido muchas propiedades como la suya, en situaciones como la suya, <strong>sube su certeza de que somos la empresa correcta</strong>. Y si tiene más ganas de la reunión, me cancela menos. Más <a class="term" href="diccionario.html#t-cita-realizada">presentados</a>, el mismo trabajo de atracción.</p>
+<p>Acuérdate de la tabla de la palanca: subir los presentados del 60% al 75% me ahorra más de cinco mil contactos al año. Eso lo hace un WhatsApp bien escrito.</p>
+<h3>En la cita: conseguir la propiedad en precio</h3>
+<p>Ya estoy en la casa. Aquí se juega todo, y en mi inmobiliaria no se improvisa.</p>
+<p><strong>Todas las mañanas entreno con mi equipo.</strong> Antes de salir a la calle, media hora: el <a class="term" href="diccionario.html#t-guion">guion</a> de la cita, las objeciones de ayer, un role play. Todos los días. No cuando hay tiempo.</p>
+<p><strong>Las citas de <a class="term" href="diccionario.html#t-captar">captación</a> se graban y se repasan.</strong> Con el equipo. Qué hizo bien, dónde perdió al propietario, qué objeción no supo resolver. Así el que capta mal aprende del que capta bien, y nadie repite el mismo error dos semanas seguidas.</p>
+<p><strong>Hay un guion de cita de captación</strong>, con la estructura de <a class="term" href="diccionario.html#t-doble-venta">la doble venta</a>: que me lo dé en exclusiva y que salgamos al precio que dice el mercado. Las dos. Siempre las dos.</p>
+<p>El resultado es que tengo un equipo entrenadísimo. En todo momento saben exactamente qué tienen que hacer, cómo hacerlo y cómo resolver cualquier objeción. Y eso se nota en el número: donde otros firman el 20% de las citas, yo firmo el 30%, y voy a por el 40%.</p>
+<h3>La cadena de consecuencias</h3>
+<p>Mira lo que pasa cuando esta estación funciona, porque es la que mueve todo lo demás:</p>
+<div class="chain"><div class="step">Equipo entrenado cada mañana</div><div class="arrow">↓</div><div class="step">Más citas firmadas, en exclusiva y en precio</div><div class="arrow">↓</div><div class="step">Tengo el control del producto</div><div class="arrow">↓</div><div class="step">Las casas en precio se venden más rápido: el <a class="term" href="diccionario.html#t-comprador">comprador</a> las ve como oportunidad</div><div class="arrow">↓</div><div class="step">Cobro antes</div><div class="arrow">↓</div><div class="step">Y como cobro en <a class="term" href="diccionario.html#t-arras">arras</a>, no en <a class="term" href="diccionario.html#t-escritura">escritura</a>, el dinero entra en una semana, no en cuatro meses</div><div class="arrow">↓</div><div class="step">Ese dinero lo reinvierto: más <a class="term" href="diccionario.html#t-anuncios">anuncios</a>, más comerciales, más crecimiento</div></div>
+<p>Fíjate en el penúltimo paso. <strong>Cobro en arras.</strong> No en notaría. Es la diferencia entre tener el dinero para reinvertir ahora y tenerlo dentro de cuatro meses. En la perfecta, los <a class="term" href="diccionario.html#t-honorarios">honorarios</a> se cobran cuando se firman las arras, y eso está en el contrato de <a class="term" href="diccionario.html#t-encargo">encargo</a> y en el guion de la cita desde el primer día.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta estación</div>
+<p>Recordatorios automáticos con casos de éxito. Entrenamiento todas las mañanas. Citas grabadas y repasadas. Un guion de cita con la doble venta. Y cobrar en arras.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 3</div>
+<ol><li>Antes de la cita: recordatorios automáticos con casos de éxito, para que se presenten.</li><li>En la cita: equipo entrenado cada mañana, citas grabadas y un guion con la doble venta.</li><li>Casa en precio, se vende rápido. Cobro en arras, reinvierto. Esa es la <a class="term" href="diccionario.html#t-embudo">cadena</a>.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-4">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 4</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTACIÓN 3: ENTREGA DEL SERVICIO</h2><div class="dash">——————</div></div>
+<p>Tengo la <a class="term" href="diccionario.html#t-exclusiva">exclusiva</a> firmada, <a class="term" href="diccionario.html#t-precio-de-mercado">en precio</a>. Ahora hay que vender <a class="term" href="diccionario.html#t-growing">la casa</a>. Y en mi inmobiliaria, en ese momento, cambia de manos.</p>
+<h3>Dos departamentos</h3>
+<p>En la perfecta hay <strong>dos <a class="term" href="diccionario.html#t-departamento">departamentos</a></strong>: el de <a class="term" href="diccionario.html#t-captar">captación</a>, que consigue la casa, y el de entrega del servicio, que la vende. En cuanto la exclusiva está firmada, el <a class="term" href="diccionario.html#t-captador">captador</a> le pasa toda la información al de entrega: la casa, el <a class="term" href="diccionario.html#t-propietario">propietario</a>, el precio acordado, lo que se habló en la <a class="term" href="diccionario.html#t-cita-de-captacion">cita</a>. Y a partir de ahí, el <a class="term" href="diccionario.html#t-entrega-del-servicio">departamento de entrega</a> tiene sus procesos claros: cómo se publica, cómo se hacen las <a class="term" href="diccionario.html#t-visita">visitas</a>, cómo se hace el <a class="term" href="diccionario.html#t-nutricion">seguimiento</a> del propietario, cómo se presenta una <a class="term" href="diccionario.html#t-propuesta">propuesta</a>.</p>
+<p>¿Por qué separarlo? Porque captar y vender son dos oficios distintos, y el que lo hace todo no es bueno en ninguno. El captador tiene que estar en la calle consiguiendo las 20 exclusivas del mes, no enseñando pisos. Y el de entrega tiene que estar vendiendo, no prospectando.</p>
+<h3>El comprador: mi segundo cliente</h3>
+<p>Y aquí viene algo que las inmobiliarias normales no hacen. Al tener un departamento de entrega, <strong>puedo ofrecerle servicio también al <a class="term" href="diccionario.html#t-comprador">comprador</a></strong>. Y eso significa que por la misma operación <strong>cobro <a class="term" href="diccionario.html#t-las-dos-bandas">las dos bandas</a></strong>.</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:25.0%"><col style="width:25.0%"></colgroup>
+<thead><tr><th></th><th>Inmobiliaria normal</th><th>La perfecta</th></tr></thead><tbody>
+<tr><th><a class="term" href="diccionario.html#t-honorarios">Honorarios</a> al propietario</th><td>3%</td><td>3%</td></tr>
+<tr><th>Honorarios al comprador</th><td>0</td><td>3%</td></tr>
+<tr><th>Por la misma operación</th><td>3%</td><td>6%</td></tr>
+</tbody></table></div>
+<p>Por el mismo trabajo estoy cobrando el doble. Con menos operaciones gano más dinero. Y hay más: como tengo un departamento que trabaja para el comprador, <strong>no solo vendo mis inmuebles, también puedo vender los de la competencia</strong>. Si mi comprador quiere una casa que tiene otra agencia, se la consigo y cobro mi parte. Es un win por todos los lados.</p>
+<h3>Atraer compradores</h3>
+<p>El comprador es mi segundo cliente potencial, y tiene su propia <a class="term" href="diccionario.html#t-estacion">estación</a> de atracción:</p>
+<ul>
+<li><strong><a class="term" href="diccionario.html#t-portales">Portales inmobiliarios</a>.</strong> Idealista, Fotocasa. Invierto mucho, y cuanto más, mejor: es donde está el comprador buscando.</li>
+<li><strong><a class="term" href="diccionario.html#t-anuncios">Anuncios</a> en redes sociales</strong> de cada inmueble.</li>
+<li><strong><a class="term" href="diccionario.html#t-tour">Tours</a> en redes:</strong> el vídeo de la casa, subido y movido.</li>
+<li><strong>Mi <a class="term" href="diccionario.html#t-base-de-contactos">base de datos</a> del CRM.</strong> Toda la gente que hizo visitas conmigo y no compró, que sigue pendiente de comprar, que preguntó por una casa parecida.</li>
+</ul>
+<p>Y aquí tienes la frase que tienes que grabarte: <strong>ahí es donde está el dinero.</strong> En la base. En las personas que ya me conocen, que ya visitaron, que siguen buscando. Por eso en mi inmobiliaria el equipo mantiene un volumen constante de llamadas a la base de compradores, todos los días. No se deja abandonada. Una base abandonada son ventas que se lleva otro.</p>
+<h3>Los números de esta estación</h3>
+<p>De 20 exclusivas al mes, vendo 15. Cada venta, una semana después de aceptar la propuesta, firma <a class="term" href="diccionario.html#t-arras">arras</a> y yo cobro. Y como cobro por las dos bandas, mis 15 ventas valen lo que a otro le valdrían 30.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta estación</div>
+<p>Un departamento de entrega separado del de captación, con el traspaso de información escrito. Servicio al comprador y honorarios por las dos bandas. Portales, anuncios, tours. Y la base de compradores llamada todos los días.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 4</div>
+<ol><li>Captar y vender son dos oficios. En la perfecta, dos departamentos.</li><li>Servicio al comprador: cobro las dos bandas y vendo también los pisos de la competencia.</li><li>La base de compradores es donde está el dinero. No se deja abandonada.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-5">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 5</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTACIÓN 4: MEDICIÓN</h2><div class="dash">——————</div></div>
+<p>Tengo las tres primeras <a class="term" href="diccionario.html#t-estacion">estaciones</a> montadas. Ahora viene lo que las mantiene vivas: saber dónde falla mi equipo. Y solo hay una forma de saberlo.</p>
+<h3>Solo me muevo por números</h3>
+<p>En mi inmobiliaria, todo el mundo reporta con números. Cuántas conversaciones ha tenido hoy, cuántas citas ha agendado, cuántas ha realizado, cuántas ha firmado. Cada persona, cada día. Y yo miro eso, no otra cosa.</p>
+<p>Como tengo <a class="term" href="diccionario.html#t-metricas-comerciales">los números</a>, veo si el equipo está metiendo el volumen que les pido o no. Y cuando algo no sale, sé exactamente dónde:</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:45.0%"><col style="width:55.0%"></colgroup>
+<thead><tr><th>Lo que veo</th><th>Lo que significa</th></tr></thead><tbody>
+<tr><th>Pocas conversaciones</th><td>No están llamando. Es un problema de actividad.</td></tr>
+<tr><th>Muchas conversaciones, pocas <a class="term" href="diccionario.html#t-cita-agendada">citas agendadas</a></th><td>El <a class="term" href="diccionario.html#t-guion">guion</a> de llamada falla, o no lo usan.</td></tr>
+<tr><th>Muchas agendadas, pocas realizadas</th><td>Falla la <a class="term" href="diccionario.html#t-nutricion">nutrición</a> entre agendar y llegar.</td></tr>
+<tr><th>Muchas realizadas, pocas firmadas</th><td>Es comercial: hay que entrenar la <a class="term" href="diccionario.html#t-cita-de-captacion">cita</a>.</td></tr>
+<tr><th>Muchas <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a>, pocas ventas</th><td>Captamos <a class="term" href="diccionario.html#t-fuera-de-precio">fuera de precio</a>, o la entrega no funciona.</td></tr>
+</tbody></table></div>
+<p><strong>Actúo en base a los datos, no a las emociones.</strong> En lugar de moverme por lo que creo que necesito, me muevo por lo que sé que está fallando. Es la única forma de operar que tengo. Si no, estoy adivinando, y adivinando se pierden meses.</p>
+<h3>Las tarifas comerciales</h3>
+<p>Para que esto funcione, cada persona de mi equipo tiene una <strong><a class="term" href="diccionario.html#t-tarifa-comercial">tarifa comercial</a></strong>: la actividad mínima que tiene que hacer cada día. Tantas conversaciones, tantas citas agendadas. No es un objetivo aspiracional: es el mínimo para estar en el equipo.</p>
+<p>Y como tengo guiones y tengo números, cuando alguien no llega sé si es que no hace la actividad o es que la hace mal. Y en cada caso la solución es distinta.</p>
+<h3>Cada semana, no cada mes</h3>
+<p>Los números comerciales se revisan <strong>cada semana</strong>. El beneficio, cada mes. Si mido al mes, tardo treinta días en enterarme de que algo va mal y ya he perdido el mes. Si mido el lunes, el martes ya he corregido.</p>
+<p>Y de esa <a class="term" href="diccionario.html#t-revision-semanal">revisión semanal</a> sale el ajuste de la estación 1: subir volumen, cambiar un guion, entrenar una objeción. El bucle entero de la inmobiliaria se cierra aquí.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta estación</div>
+<p>Números por persona y por día. Tarifas comerciales. Revisión semanal. Y un <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> que decide con datos, no con sensaciones.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 5</div>
+<ol><li>Todo el mundo reporta con números, cada día. Yo solo miro eso.</li><li>Cada fallo del <a class="term" href="diccionario.html#t-embudo">embudo</a> tiene un sitio y una solución distinta. Sin números, no sé cuál.</li><li>Al mes vas lento. A la semana corriges al día siguiente.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-6">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 6</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTACIÓN 5: CONTRATACIÓN Y EXPANSIÓN</h2><div class="dash">——————</div></div>
+<p>Hay un momento en que la inmobiliaria pide más gente. Y la diferencia entre la perfecta y las demás está en cuándo.</p>
+<h3>Solo cuando estoy a tope</h3>
+<p>En mi inmobiliaria contrato <strong>cuando estoy a máximos de volumen y lo tengo todo controlado</strong>. Es decir, cuando:</p>
+<ul>
+<li>Los procesos están establecidos y escritos.</li>
+<li>La gente está siguiendo <a class="term" href="diccionario.html#t-metricas-comerciales">los números</a> y llegando a sus tarifas.</li>
+<li>Todo el mundo está contento y hay buena cultura de equipo.</li>
+<li>Y aun así, no damos abasto: hay más citas de las que podemos hacer, más casas de las que podemos vender.</li>
+</ul>
+<p>Entonces, y solo entonces, meto a otra persona. Porque una persona nueva sobre un sistema que funciona rinde desde la segunda semana: tiene <a class="term" href="diccionario.html#t-guion">guion</a>, tiene tarifa, tiene a quién copiar. Una persona nueva sobre el caos es más caos y más coste fijo.</p>
+<h3>Cómo entra alguien nuevo</h3>
+<p>Como todo está escrito, el onboarding no depende de mí:</p>
+<ol>
+<li>Primera semana: los guiones, de memoria. Escucha citas grabadas. Sale a <a class="term" href="diccionario.html#t-shadow">shadow</a> con un <a class="term" href="diccionario.html#t-captador">captador</a>.</li>
+<li>Segunda semana: sale a citas acompañado. Se graban. Se repasan.</li>
+<li>Tercera semana: <a class="term" href="diccionario.html#t-tarifa-comercial">tarifa comercial</a> completa. Números como todos.</li>
+</ol>
+<p>Y el filtro es duro, porque mi modelo no necesita volumen de gente: necesita gente que haga el volumen.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta <a class="term" href="diccionario.html#t-estacion">estación</a></div>
+<p>Contratar solo a máximos de volumen con todo controlado. Un onboarding escrito que no dependa del <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a>. Filtro duro: gente que haga el volumen, no volumen de gente.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 6</div>
+<ol><li>Contrato cuando estoy a tope y todo está controlado. Nunca antes.</li><li>Una persona nueva sobre un sistema rinde en dos semanas. Sobre el caos, es más caos.</li><li>Gente que haga el volumen, no volumen de gente.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-7">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 7</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTACIÓN 6: DELEGACIÓN</h2><div class="dash">——————</div></div>
+<p>La última <a class="term" href="diccionario.html#t-estacion">estación</a> es la que casi nadie alcanza. Y es la que convierte un trabajo muy bien pagado en un negocio.</p>
+<h3>Cuándo llega</h3>
+<p>Cuando tengo todos los protocolos claros. Cuando la gente está rindiendo de puta madre. Cuando estamos consiguiendo el volumen que queremos y las <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a> que necesitamos, mes tras mes. Ahí es cuando me planteo lo último: <strong>un <a class="term" href="diccionario.html#t-director-de-oficina">director de oficina</a>, y yo fuera de la operativa.</strong></p>
+<h3>Cómo se ve</h3>
+<p>Para cada <a class="term" href="diccionario.html#t-departamento">departamento</a> hay una persona o un responsable, con sus procesos:</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:35.0%"><col style="width:65.0%"></colgroup>
+<thead><tr><th>Departamento</th><th>De qué se encarga</th></tr></thead><tbody>
+<tr><th>Comercial</th><td><a class="term" href="diccionario.html#t-captar">Captación</a> y entrega. <a class="term" href="diccionario.html#t-metricas-comerciales">Los números</a> de cada día.</td></tr>
+<tr><th>Marketing</th><td><a class="term" href="diccionario.html#t-anuncios">Anuncios</a>, <a class="term" href="diccionario.html#t-contenido-organico">contenido</a>, <a class="term" href="diccionario.html#t-portales">portales</a>. Las <a class="term" href="diccionario.html#t-fuente">fuentes</a> encendidas.</td></tr>
+<tr><th>Contratación y recursos humanos</th><td>Que entre gente válida y se forme con el sistema.</td></tr>
+<tr><th>Legal</th><td><a class="term" href="diccionario.html#t-encargo">Encargos</a>, <a class="term" href="diccionario.html#t-arras">arras</a>, escrituras. Que nada se pare por un papel.</td></tr>
+<tr><th>Contabilidad</th><td>Que el dinero entre cuando toca y se reinvierta donde toca.</td></tr>
+</tbody></table></div>
+<p>Y por encima, un director de oficina que lleva todo esto sin consultarme. No le delego tareas: le delego criterio. Lo que se sale del <a class="term" href="diccionario.html#t-guion">guion</a> lo resuelve él, con los mismos números que miraría yo.</p>
+<h3>Y entonces, ¿qué hago yo?</h3>
+<p>Replicarlo. Una vez la oficina funciona sin mí, con sus procesos, sus números y su director, lo que tengo es un sistema. Y un sistema se puede abrir en otra ciudad.</p>
+<p>Esa es la inmobiliaria perfecta: no la que más factura, sino la que funciona igual esté yo o no esté.</p>
+<div class="box">
+<div class="boxlabel">Lo que necesita esta estación</div>
+<p>Todos los procesos claros. Un responsable por departamento. Un director de oficina con criterio, no con tareas. Y un <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> que ya no está en la operativa.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 7</div>
+<ol><li>Un negocio que depende de su dueño no es un negocio. La perfecta funciona sin él.</li><li>No delego tareas, delego criterio.</li><li>Cuando la oficina rueda sola, la replico.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+</section>
+<section class="sheet" id="etapa-8">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>ETAPA 8</span><span>Día 1</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL MAPA ENTERO</h2><div class="dash">——————</div></div>
+<p>Esto es lo que tienes que poder dibujar en una servilleta: <a class="term" href="diccionario.html#t-estacion">las seis estaciones</a>, qué necesita cada una y qué se mide en cada una.</p>
+<div class="tablewrap"><table class="small">
+<colgroup><col style="width:20.0%"><col style="width:32.0%"><col style="width:24.0%"><col style="width:24.0%"></colgroup>
+<thead><tr><th>Estación</th><th>Qué tiene la perfecta</th><th>Quién</th><th>Qué se mide</th></tr></thead><tbody>
+<tr><th>1 · Atracción</th><td>Cinco <a class="term" href="diccionario.html#t-fuente">fuentes</a> encendidas. <a class="term" href="diccionario.html#t-guion">Guiones</a> de llamada, <a class="term" href="diccionario.html#t-anuncios">anuncios</a> y <a class="term" href="diccionario.html#t-nutricion">seguimiento</a>. Ajuste <a class="term" href="diccionario.html#t-revision-semanal">semanal</a> de volumen.</td><td>Personas llamando, una en anuncios, el <a class="term" href="diccionario.html#t-dueno-de-inmobiliaria">dueño</a> grabando</td><td>Conversaciones al día, <a class="term" href="diccionario.html#t-cita-agendada">citas agendadas</a> al día</td></tr>
+<tr><th>2 · <a class="term" href="diccionario.html#t-conversion">Conversión</a></th><td>Recordatorios automáticos con <a class="term" href="diccionario.html#t-casos-de-exito">casos de éxito</a>. Entreno cada mañana. Citas grabadas. Guion con <a class="term" href="diccionario.html#t-doble-venta">la doble venta</a>. Cobro en <a class="term" href="diccionario.html#t-arras">arras</a>.</td><td>Los <a class="term" href="diccionario.html#t-captador">captadores</a></td><td><a class="term" href="diccionario.html#t-cita-realizada">Presentados</a>, <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a> firmadas, % <a class="term" href="diccionario.html#t-precio-de-mercado">en precio</a></td></tr>
+<tr><th>3 · Entrega</th><td><a class="term" href="diccionario.html#t-departamento">Departamento</a> separado con traspaso escrito. Servicio al comprador, <a class="term" href="diccionario.html#t-las-dos-bandas">dos bandas</a>. <a class="term" href="diccionario.html#t-portales">Portales</a>, redes, <a class="term" href="diccionario.html#t-tour">tours</a>. Base de <a class="term" href="diccionario.html#t-comprador">compradores</a> viva.</td><td>El <a class="term" href="diccionario.html#t-entrega-del-servicio">departamento de entrega</a></td><td><a class="term" href="diccionario.html#t-visita">Visitas</a>, propuestas, ventas, días hasta arras</td></tr>
+<tr><th>4 · Medición</th><td>Números por persona y día. <a class="term" href="diccionario.html#t-tarifa-comercial">Tarifas comerciales</a>. Revisión semanal.</td><td>El dueño, con el equipo</td><td>Todo lo anterior, cada semana</td></tr>
+<tr><th>5 · Contratación</th><td>Solo a máximos de volumen. Onboarding escrito. Filtro duro.</td><td>Recursos humanos</td><td>Semanas hasta que el nuevo llega a tarifa</td></tr>
+<tr><th>6 · Delegación</th><td>Un responsable por departamento. <a class="term" href="diccionario.html#t-director-de-oficina">Director de oficina</a> con criterio.</td><td>El director de oficina</td><td>Que todo siga igual sin el dueño</td></tr>
+</tbody></table></div>
+<h3>Los números, otra vez</h3>
+<p>Porque es lo primero que tienes que tener en la cabeza cuando hables con un dueño:</p>
+<div class="chain"><div class="step">2.222 conversaciones con <a class="term" href="diccionario.html#t-propietario">propietarios</a> al mes · 100 al día</div><div class="arrow">↓</div><div class="step">111 <a class="term" href="diccionario.html#t-cita-de-captacion">citas de captación</a> agendadas · 5 al día</div><div class="arrow">↓</div><div class="step">67 citas realizadas · el 60%</div><div class="arrow">↓</div><div class="step">20 exclusivas firmadas · el 30%</div><div class="arrow">↓</div><div class="step">15 ventas · el 75%</div><div class="arrow">↓</div><div class="step">150.000 € al mes · 10.000 € por venta</div></div>
+<h3>Lo que viene después</h3>
+<p>Ya sabes cómo se ve una inmobiliaria perfecta. Ahora toca lo duro: ver cómo son de verdad las que te vas a encontrar. Cuántas de estas estaciones tienen montadas, cuáles les faltan, y por qué no las han montado nunca. Eso es el <a class="term" href="diccionario.html#t-playbook">Playbook</a> 2. Y cuando lo leas, cada cosa que falle la vas a colocar en este mapa.</p>
+<div class="frases">
+<div class="boxlabel">Las tres frases de la etapa 8</div>
+<ol><li>Seis estaciones, un mapa. Cada fallo de un dueño cae en una de ellas.</li><li>Los básicos siempre primero: conversaciones y citas agendadas al día.</li><li>Esto es lo perfecto. Lo que te vas a encontrar es lo siguiente.</li></ol>
+</div>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
 </section>
 <section class="sheet exam" id="examen">
 <header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">DÍA</span><span class="v">1</span></div></header>
 <div class="rule" aria-hidden="true"></div>
-<div class="reg"><span>Examen del día 1</span><span>26 preguntas en el banco</span></div>
+<div class="reg"><span>Examen del día 1</span><span>40 preguntas en el banco</span></div>
 <div class="rule" aria-hidden="true"></div>
 <div class="deedtitle small"><h2>Examen del día 1</h2><div class="dash">——————</div></div>
 <p class="intro">10 preguntas al azar de lo que has leído hoy, 10 segundos para cada una. Con 8 aciertos el día queda superado. Puedes repetirlo las veces que quieras: cada partida saca preguntas distintas y en otro orden, y se guarda tu mejor marca. No es un examen, es entrenamiento: lo que quieres es contestar sin pensar.</p>
 <div class="game" id="game-1"></div>
-<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 5</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
+<footer class="foot"><a href="index.html" class="up">Programa</a><span class="pn">Día 1 de 2</span><a href="dia-2.html" class="up">Día siguiente →</a></footer>
 </section>
 <script>
 (function(){
@@ -412,7 +581,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
   window.PBGame = function(opts){
     const root=document.getElementById(opts.id);
     const bank=opts.bank, N=Math.min(opts.n, bank.length), PASS=opts.pass, SECS=opts.secs, id=opts.key;
-    let qs=[], idx=0, hits=0, pts=0, streak=0, best=0, timer=null, t0=0, locked=false;
+    let qs=[], idx=0, hits=0, pts=0, streak=0, timer=null, t0=0, locked=false;
 
     function prog(){ const p=load(); return p[id]||{best:0,bestPts:0,plays:0,done:false}; }
     function setProg(fn){ const p=load(); p[id]=fn(p[id]||{best:0,bestPts:0,plays:0,done:false}); save(p); }
@@ -430,7 +599,6 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 
     function play(){
       qs=shuffle(bank).slice(0,N).map(q=>({...q, opts: shuffle([q.ok].concat(q.bad)).slice(0,4)}));
-      // asegurar que la correcta está entre las 4
       qs.forEach(q=>{ if(!q.opts.includes(q.ok)){ q.opts[3]=q.ok; q.opts=shuffle(q.opts);} });
       idx=0; hits=0; pts=0; streak=0; ask();
     }
@@ -513,7 +681,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
   };
 })();
 </script>
-<script>PBGame({id:'game-1', key:'d1', bank:[{"q": "¿Qué vende de verdad una inmobiliaria?", "ok": "Casas que ha conseguido primero", "bad": ["Casas que le piden los compradores", "Servicios de valoración", "Visitas a pisos"], "why": "Una inmobiliaria no vende casas: vende casas que ha conseguido primero. Sin producto no hay nada que vender.", "ref": "Etapa 1 · El juego real"}, {"q": "¿Qué es \"producto\" en el inmobiliario?", "ok": "Viviendas a la venta en cartera", "bad": ["Compradores con hipoteca aprobada", "Leads que han dejado sus datos", "El presupuesto de anuncios"], "why": "Producto = viviendas a la venta. Si tiene 40 pisos tiene producto; si tiene 3, tiene un hobby.", "ref": "Etapa 1 · Qué es \"producto\""}, {"q": "Hoy en España, ¿quién manda en el mercado?", "ok": "El que tiene casas, porque falta producto", "bad": ["El que tiene compradores, porque sobran casas", "El que tiene más oficinas", "El que invierte más en portales"], "why": "Cuando faltan casas, manda el que tiene casas. Es la situación de mercado de hoy, y puede cambiar.", "ref": "Etapa 1 · Por qué esto es LO difícil ahora mismo"}, {"q": "¿Cómo se llama el contrato que firma el propietario con la agencia?", "ok": "Encargo", "bad": ["Reserva", "Arras", "Escritura"], "why": "Cuando un propietario firma, eso se llama encargo: te encarga la venta de su piso.", "ref": "Etapa 1 · El contrato tiene nombre"}, {"q": "En un encargo en abierto, ¿quién cobra la comisión?", "ok": "La agencia que llegue primero", "bad": ["Todas las agencias a partes iguales", "Solo la agencia que firmó primero", "El propietario decide al final"], "why": "En abierto, el piso lo venden varias agencias a la vez y cobra la que llegue primero. Es una lotería.", "ref": "Etapa 1 · El contrato tiene nombre"}, {"q": "¿Por qué perseguimos siempre la exclusiva?", "ok": "Porque da el control sobre el producto y la comisión", "bad": ["Porque es obligatoria por ley", "Porque el propietario paga más", "Porque se vende más rápido en portales"], "why": "Con exclusiva solo tú puedes vender ese piso: tienes el control sobre el producto y sobre lo que se va a cobrar.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "Honorarios habituales que se cobran al propietario:", "ok": "Entre el 2% y el 5% del precio de venta", "bad": ["Entre el 0,5% y el 1%", "Entre el 8% y el 10%", "Una cuota fija mensual"], "why": "Lo normal es cobrarle al propietario entre el 2% y el 5% del precio de venta.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "Piso de 300.000 € con honorarios del 5%. ¿Comisión?", "ok": "15.000 €", "bad": ["1.500 €", "30.000 €", "5.000 €"], "why": "300.000 × 5% = 15.000 €. Es la cifra que explica el sector entero.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "¿Por qué casi nadie se profesionaliza en el sector?", "ok": "Porque las comisiones permiten vivir bien sin estructura", "bad": ["Porque no tienen capacidad", "Porque la ley lo impide", "Porque los portales lo hacen todo"], "why": "Cuando un sector te deja ganar mucho sin obligarte a profesionalizarte, nadie se profesionaliza. No por falta de capacidad: porque no hace falta.", "ref": "Etapa 1 · Cuánto se cobra"}, {"q": "¿Qué le pasa a un piso publicado por seis agencias en abierto?", "ok": "El comprador lo ve repetido y sospecha que algo raro pasa", "bad": ["Se vende seis veces más rápido", "El propietario cobra seis comisiones", "Sube de precio en los portales"], "why": "Seis fotos distintas, a veces seis precios: el comprador piensa que algo raro pasa y el propietario no está comprometido con nadie.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "¿Qué es el agente inmobiliario cuando está delante del propietario?", "ok": "Un closer: conseguir la exclusiva es una venta", "bad": ["Un tasador", "Un administrador de fincas", "Un fotógrafo"], "why": "Conseguir la exclusiva depende de cómo estructures la reunión. Es una venta, igual que la tuya.", "ref": "Etapa 1 · Por qué el encargo en abierto es una trampa"}, {"q": "¿Cuál es la idea de Sun Tzu que sostiene el playbook?", "ok": "Conocer a tu enemigo como si fuera tu mejor amigo", "bad": ["Atacar siempre primero", "No negociar nunca el precio", "Ganar sin luchar"], "why": "Si no sabes qué piensa, qué siente y qué quiere de verdad, no le vas a vender nada.", "ref": "Etapa 0 · De qué va esto"}, {"q": "Rubén, el personaje del playbook, tiene de todo menos una cosa. ¿Cuál?", "ok": "Sistema", "bad": ["Habilidad comercial", "Experiencia en el sector", "Un negocio rentable"], "why": "Vende bien, se le da bien la gente y ha sacado un negocio adelante. Lo que no tiene es sistema.", "ref": "Etapa 0 · Un personaje que te va a acompañar"}, {"q": "¿Cuál es nuestro trabajo con los dueños de inmobiliaria?", "ok": "Que vean lo que no están viendo y quieran arreglarlo con nosotros", "bad": ["Demostrarles que trabajan mal", "Enseñarles a usar los portales", "Convencerles de trabajar más horas"], "why": "Nuestro trabajo no es tener razón sobre ellos. Es que vean lo que no están viendo.", "ref": "Etapa 0 · Una norma de casa"}, {"q": "¿Cuántos tipos de cliente potencial tiene el sector inmobiliario?", "ok": "Dos: propietarios y compradores", "bad": ["Uno: el comprador", "Uno: el propietario", "Tres: propietario, comprador y banco"], "why": "Primero necesitas leads que sean propietarios. Después, leads que sean compradores. Dos embudos pegados.", "ref": "Etapa 2 · Las dos cadenas"}, {"q": "¿Qué es una \"noticia\"?", "ok": "Alguien que ha dicho que quiere vender, sin cita todavía", "bad": ["Una cita de captación ya agendada", "Un piso publicado en Idealista", "Un comprador que deja sus datos"], "why": "Noticia: \"tengo una noticia, fulano vende\". Todavía no es una cita.", "ref": "Etapa 2 · Cadena A"}, {"q": "¿Qué es la cita de captación?", "ok": "La reunión con el propietario, normalmente en su casa, donde se juega la exclusiva", "bad": ["La visita de un comprador al piso", "La firma en notaría", "Una llamada en frío a una base de datos"], "why": "Es su llamada de cierre: con el propietario, en su casa, donde se firma (o no).", "ref": "Etapa 2 · Cadena A"}, {"q": "Orden correcto de la cadena de captación:", "ok": "Contacto → Noticia → Cita agendada → Cita realizada → Encargo firmado", "bad": ["Noticia → Contacto → Encargo → Cita → Visita", "Contacto → Visita → Propuesta → Reserva → Venta", "Cita → Contacto → Noticia → Encargo"], "why": "Contacto, noticia, cita de captación agendada, cita realizada, encargo firmado. Cinco pasos.", "ref": "Etapa 2 · Cadena A"}, {"q": "¿Para qué sirve la reserva de unos 2.000 € del comprador?", "ok": "Para medir si va en serio antes de llevar la propuesta al propietario", "bad": ["Para pagar las fotos del piso", "Para reservar la fecha de notaría", "Es la comisión de la agencia"], "why": "Sin dinero encima de la mesa, una propuesta es una conversación de bar.", "ref": "Etapa 2 · Cadena B"}, {"q": "Piso de 350.000 €. ¿Cuánto son las arras, de normal?", "ok": "35.000 €", "bad": ["3.500 €", "70.000 €", "2.000 €"], "why": "Las arras son normalmente el 10% del precio: 350.000 × 10% = 35.000 €.", "ref": "Etapa 2 · Arras y notaría"}, {"q": "¿Cuánto tarda la notaría desde las arras, y por qué?", "ok": "Unos 2 meses, sobre todo por la hipoteca del comprador", "bad": ["Una semana, es solo una firma", "Seis meses, por el registro", "Un día, si hay reserva"], "why": "Los bancos tardan unos dos meses en conceder la hipoteca. Por eso la notaría se va a dos meses más.", "ref": "Etapa 2 · Arras y notaría"}, {"q": "¿Cuándo genera dinero de verdad una inmobiliaria?", "ok": "Cuando vende la propiedad, no cuando firma la exclusiva", "bad": ["Cuando firma la exclusiva", "Cuando publica el piso en portales", "Cuando consigue una noticia"], "why": "Las exclusivas no pagan nóminas. Las ventas sí.", "ref": "Etapa 2 · Y por eso el ciclo es largo"}, {"q": "La propuesta del comprador casi siempre viene...", "ok": "Por debajo del precio publicado, y es normal", "bad": ["Por encima del precio publicado", "Exactamente al precio publicado", "Sin precio, para negociar en notaría"], "why": "El comprador quiere negociar. No es una mala señal.", "ref": "Etapa 2 · Cadena B"}, {"q": "¿Qué porcentaje de agencias tiene apuntadas sus métricas comerciales?", "ok": "Alrededor de un 3%", "bad": ["Alrededor del 50%", "Alrededor del 80%", "Prácticamente todas"], "why": "Por lo que vemos en nuestras llamadas, casi ninguna. Pon un 3%. El resto va por sensaciones.", "ref": "Etapa 2 · El mapa completo"}, {"q": "\"Visita\" y \"cita de captación\" se diferencian en...", "ok": "La visita es con el comprador; la captación, con el propietario", "bad": ["La visita es por teléfono; la captación, presencial", "Son lo mismo", "La visita es con el notario"], "why": "Visita = comprador ve el piso. Cita de captación = reunión con el propietario.", "ref": "Etapa 2 · Cadena B"}, {"q": "¿Qué paso de la cadena de captación se pierde por cancelaciones y plantones?", "ok": "De cita agendada a cita realizada", "bad": ["De contacto a noticia", "De encargo a publicación", "De reserva a arras"], "why": "No todas las citas agendadas se hacen: se cancelan, se mueven, no abren la puerta. Ese porcentaje es oro.", "ref": "Etapa 2 · Cadena A"}], n:10, pass:8, secs:10, nextHref:"dia-2.html"});</script>
+<script>PBGame({id:'game-1', key:'d1', bank:[{"q": "¿Qué es \"producto\" en el inmobiliario?", "ok": "Viviendas a la venta en cartera", "bad": ["Compradores con hipoteca aprobada", "Leads que han dejado sus datos", "El presupuesto de anuncios"], "why": "Producto = viviendas a la venta. Si tiene 40 pisos tiene producto; si tiene 3, tiene un hobby.", "ref": "Diccionario · Producto"}, {"q": "¿Cómo se llama el contrato que firma el propietario con la agencia?", "ok": "Encargo", "bad": ["Reserva", "Arras", "Escritura"], "why": "Cuando un propietario firma, eso se llama encargo: le encarga la venta de su piso.", "ref": "Diccionario · Encargo"}, {"q": "En un encargo en abierto, ¿quién cobra la comisión?", "ok": "La agencia que venda primero", "bad": ["Todas las agencias a partes iguales", "Solo la agencia que firmó primero", "El propietario decide al final"], "why": "En abierto, varias agencias venden el mismo piso y cobra la que llegue primero. Es una lotería.", "ref": "Diccionario · Abierto"}, {"q": "Piso de 300.000 € con honorarios del 5%. ¿Comisión?", "ok": "15.000 €", "bad": ["1.500 €", "30.000 €", "5.000 €"], "why": "300.000 × 5% = 15.000 €. Es la cifra que explica el sector entero.", "ref": "Diccionario · Honorarios"}, {"q": "¿Qué es una \"noticia\"?", "ok": "Alguien que ha dicho que quiere vender, sin cita todavía", "bad": ["Una cita de captación ya agendada", "Un piso publicado en Idealista", "Un comprador que deja sus datos"], "why": "Noticia: \"tengo una noticia, fulano vende\". Todavía no es una cita.", "ref": "Diccionario · Noticia"}, {"q": "\"Visita\" y \"cita de captación\" se diferencian en...", "ok": "La visita es con el comprador; la captación, con el propietario", "bad": ["La visita es por teléfono; la captación, presencial", "Son lo mismo", "La visita es con el notario"], "why": "Visita = comprador ve el piso. Cita de captación = reunión con el propietario.", "ref": "Diccionario · Visita"}, {"q": "¿Para qué sirve la reserva de unos 2.000 € del comprador?", "ok": "Para demostrar que va en serio antes de presentar la propuesta", "bad": ["Para pagar las fotos del piso", "Para reservar la fecha de notaría", "Es la comisión de la agencia"], "why": "Sin dinero encima de la mesa, una propuesta es una conversación de bar.", "ref": "Diccionario · Reserva"}, {"q": "Piso de 350.000 €. ¿Cuánto son las arras, de normal?", "ok": "35.000 €", "bad": ["3.500 €", "70.000 €", "2.000 €"], "why": "Las arras son normalmente el 10% del precio: 35.000 €.", "ref": "Diccionario · Arras"}, {"q": "¿Cuánto tarda la notaría desde las arras, y por qué?", "ok": "Unos 2 meses, por la hipoteca del comprador", "bad": ["Una semana, es solo una firma", "Seis meses, por el registro", "Un día, si hay reserva"], "why": "Los bancos tardan unos dos meses en conceder la hipoteca.", "ref": "Diccionario · Escritura"}, {"q": "¿Qué es un referido?", "ok": "Un cliente que llega recomendado por alguien que ya trabajó con la agencia", "bad": ["Un lead que ha rellenado un formulario", "Un comprador con hipoteca aprobada", "Un propietario de la competencia"], "why": "Es el cliente más fácil de cerrar, porque viene con la confianza puesta. Y no se controla: igual llega que no.", "ref": "Diccionario · Referido"}, {"q": "¿Qué es un \"propietario cualificado\"?", "ok": "En su zona, quiere vender en menos de 6 meses y quiere trabajar con agencia", "bad": ["Cualquiera que deje sus datos", "Uno que ya ha vendido antes", "Uno con el piso en precio"], "why": "Las tres cosas a la vez. Es lo que todo dueño sueña con que le llegue hecho.", "ref": "Diccionario · Propietario cualificado"}, {"q": "¿Qué son las \"tarifas comerciales\"?", "ok": "La actividad mínima que tiene que hacer cada persona del equipo cada día", "bad": ["El porcentaje de honorarios", "El sueldo base", "El precio de los portales"], "why": "Tantas conversaciones, tantas citas al día. No es un objetivo: es el mínimo para estar en el equipo.", "ref": "Diccionario · Tarifa comercial"}, {"q": "\"Cobrar las dos bandas\" significa...", "ok": "Cobrar honorarios al propietario y también al comprador en la misma operación", "bad": ["Cobrar la mitad en arras y la mitad en notaría", "Cobrar a dos agencias por un piso en abierto", "Cobrar la comisión dos veces al propietario"], "why": "Lo hacen las agencias que dan servicio al comprador. Por el mismo trabajo, el doble.", "ref": "Diccionario · Las dos bandas"}, {"q": "¿Qué son los \"presentados\"?", "ok": "El porcentaje de citas agendadas que se realizan de verdad", "bad": ["Los propietarios que han dejado sus datos", "Las propuestas que acepta el propietario", "Los compradores que visitan un piso"], "why": "Cada cita agendada que se cae es trabajo tirado. Por eso es uno de los números más importantes.", "ref": "Diccionario · Cita realizada"}, {"q": "Para facturar 150.000 € al mes con 10.000 € por venta, ¿cuántas ventas hacen falta al mes?", "ok": "15", "bad": ["10", "25", "150"], "why": "150.000 / 10.000 = 15 ventas al mes, 180 al año.", "ref": "Playbook 1 · Etapa 1 · El embudo hacia atrás"}, {"q": "Si se vende el 75% de las exclusivas, ¿cuántas exclusivas al mes hacen falta para 15 ventas?", "ok": "20", "bad": ["15", "30", "45"], "why": "15 / 0,75 = 20 exclusivas al mes, 240 al año.", "ref": "Playbook 1 · Etapa 1 · El embudo hacia atrás"}, {"q": "¿Con cuántos propietarios hay que hablar al día para que salga el embudo de 150.000 €/mes?", "ok": "Unos 100", "bad": ["Unos 20", "Unos 500", "Unos 5"], "why": "2.222 conversaciones al mes, unas cien al día. Con una sola fuente no se llega.", "ref": "Playbook 1 · Etapa 1 · El embudo hacia atrás"}, {"q": "¿Cuántas citas de captación hay que agendar al día en ese embudo?", "ok": "5", "bad": ["1", "20", "50"], "why": "111 al mes, cinco al día. Es la métrica que el dueño mira cada mañana.", "ref": "Playbook 1 · Etapa 1 · Los básicos"}, {"q": "¿Cuáles son \"los básicos\" de una inmobiliaria?", "ok": "Cuántos propietarios hablo al día y cuántas citas agendo al día", "bad": ["Cuántos pisos tengo publicados y cuántas visitas hago", "La facturación y el beneficio", "Cuántos agentes tengo y cuánto cobran"], "why": "Todo lo demás es consecuencia de los protocolos que vienen después.", "ref": "Playbook 1 · Etapa 1 · Los básicos"}, {"q": "Si el cierre en cita sube del 30% al 40%, ¿qué pasa con los contactos que necesito?", "ok": "Bajan un 25%: de 26.667 a 20.000 al año", "bad": ["Suben, porque hay más citas", "No cambian", "Se duplican"], "why": "Cada punto que gano arriba del embudo me ahorra miles de llamadas abajo.", "ref": "Playbook 1 · Etapa 1 · Dónde está la palanca"}, {"q": "¿Cuántas fuentes de propietarios tiene encendidas a la vez una inmobiliaria que rueda?", "ok": "Todas: anuncios, contenido, llamadas en frío, la base y el CRM", "bad": ["Una, la que mejor le funcione", "Solo referidos", "Solo anuncios"], "why": "Con una sola fuente no se llega a cien conversaciones al día.", "ref": "Playbook 1 · Etapa 2 · Las fuentes"}, {"q": "¿Por qué la inmobiliaria perfecta tiene todo lo comercial escrito en guiones?", "ok": "Porque la gente rota y porque solo lo escrito se puede medir y mejorar", "bad": ["Porque lo exige la ley", "Para que el dueño no tenga que llamar", "Porque los portales lo piden"], "why": "Si se va la persona que llamaba, el guion sigue en la empresa. Y si todos llaman igual, sé qué funciona.", "ref": "Playbook 1 · Etapa 2 · Los guiones"}, {"q": "Esta semana has agendado 19 citas y necesitabas 26. ¿Qué hace el dueño perfecto la semana siguiente?", "ok": "Sube volumen: más presupuesto, más contenido, más llamadas", "bad": ["Baja el precio de los pisos", "Contrata a otro agente", "Espera a ver si mejora"], "why": "Si no llego a las citas, subo volumen. No hay otra forma de moverse hacia el objetivo.", "ref": "Playbook 1 · Etapa 2 · El ajuste semanal"}, {"q": "¿Quién graba contenido en la inmobiliaria perfecta?", "ok": "El dueño, constantemente", "bad": ["Una agencia externa", "Nadie, el contenido no trae citas", "El captador en sus ratos libres"], "why": "Para que la inmobiliaria esté viva y el propietario, cuando le llegue la llamada, ya la haya visto.", "ref": "Playbook 1 · Etapa 2 · Quién hace qué"}, {"q": "¿Qué envía la perfecta en los recordatorios de cita?", "ok": "Casos de éxito de propiedades parecidas a la suya", "bad": ["Solo la hora de la cita", "Una tasación gratuita", "Un descuento en los honorarios"], "why": "Si el propietario ve que hemos vendido casas como la suya, sube su certeza y cancela menos.", "ref": "Playbook 1 · Etapa 3 · Antes de la cita"}, {"q": "¿Cada cuánto entrena el equipo de la inmobiliaria perfecta?", "ok": "Todas las mañanas, antes de salir a la calle", "bad": ["Una vez al mes", "Cuando hay un hueco", "Solo cuando entra alguien nuevo"], "why": "Media hora: el guion, las objeciones de ayer, un role play. Todos los días.", "ref": "Playbook 1 · Etapa 3 · En la cita"}, {"q": "¿Qué se hace con las citas de captación en la perfecta?", "ok": "Se graban y se repasan con el equipo", "bad": ["Se hacen por teléfono para ahorrar tiempo", "Las hace siempre el dueño", "No se registran"], "why": "Así el que capta mal aprende del que capta bien, y nadie repite el mismo error dos semanas seguidas.", "ref": "Playbook 1 · Etapa 3 · En la cita"}, {"q": "Casa en precio → se vende rápido → cobro en arras → ... ¿qué viene después?", "ok": "Reinvierto en más anuncios, más comerciales, más crecimiento", "bad": ["Bajo los honorarios", "Espero a la escritura", "Contrato a un director"], "why": "Esa es la cadena: cobrar antes es poder reinvertir antes.", "ref": "Playbook 1 · Etapa 3 · La cadena de consecuencias"}, {"q": "¿Por qué la perfecta separa captación y entrega en dos departamentos?", "ok": "Porque son dos oficios distintos y el que lo hace todo no es bueno en ninguno", "bad": ["Porque lo exige la franquicia", "Para pagar menos a los agentes", "Porque el CRM lo pide"], "why": "El captador tiene que estar en la calle consiguiendo exclusivas, no enseñando pisos.", "ref": "Playbook 1 · Etapa 4 · Dos departamentos"}, {"q": "¿Dónde \"está el dinero\" de la venta, según el Playbook 1?", "ok": "En la base de compradores: gente que ya visitó y sigue buscando", "bad": ["En los portales", "En los anuncios de redes", "En la puerta fría"], "why": "Por eso el equipo llama a la base de compradores todos los días. Una base abandonada son ventas que se lleva otro.", "ref": "Playbook 1 · Etapa 4 · Atraer compradores"}, {"q": "Con servicio al comprador, ¿qué más puede hacer la agencia?", "ok": "Vender también los pisos de la competencia", "bad": ["Cobrar más al propietario", "Dejar de publicar en portales", "Captar sin exclusiva"], "why": "Si mi comprador quiere una casa de otra agencia, se la consigo y cobro mi parte.", "ref": "Playbook 1 · Etapa 4 · El comprador"}, {"q": "Muchas citas agendadas y pocas realizadas. ¿Qué falla?", "ok": "La nutrición entre agendar y llegar", "bad": ["El cierre", "Los anuncios", "El precio de los pisos"], "why": "Cada fallo del embudo tiene un sitio y una solución distinta. Sin números no sé cuál.", "ref": "Playbook 1 · Etapa 5 · Solo me muevo por números"}, {"q": "Muchas citas realizadas y pocas firmadas. ¿Qué falla?", "ok": "Es comercial: hay que entrenar la cita", "bad": ["La nutrición", "Las fuentes", "La base de compradores"], "why": "Si llega a muchas citas y firma pocas, el problema está en cómo cierra.", "ref": "Playbook 1 · Etapa 5 · Solo me muevo por números"}, {"q": "¿Cada cuánto se revisan los números comerciales en la perfecta?", "ok": "Cada semana; el beneficio, cada mes", "bad": ["Cada mes", "Cada trimestre", "Cuando algo va mal"], "why": "Si mides al mes tardas treinta días en ver que algo va mal. Si mides el lunes, el martes ya has corregido.", "ref": "Playbook 1 · Etapa 5 · Cada semana, no cada mes"}, {"q": "¿Cuándo contrata la inmobiliaria perfecta?", "ok": "Cuando está a máximos de volumen con todo controlado y aun así no da abasto", "bad": ["Cuando tiene un mes bueno", "Cuando se le va alguien", "Al principio, para crecer rápido"], "why": "Una persona nueva sobre un sistema rinde en dos semanas. Sobre el caos, es más caos y más coste fijo.", "ref": "Playbook 1 · Etapa 6 · Solo cuando estoy a tope"}, {"q": "\"Gente que haga el volumen, no volumen de gente.\" ¿Qué significa?", "ok": "Filtro duro: pocos que cumplan la tarifa, no muchos sin filtro", "bad": ["Contratar a muchos para que alguno funcione", "Contratar solo autónomos", "No contratar nunca"], "why": "Mi modelo no necesita volumen de gente: necesita gente que haga el volumen.", "ref": "Playbook 1 · Etapa 6"}, {"q": "¿Qué delega el dueño perfecto al director de oficina?", "ok": "Criterio, no tareas", "bad": ["Solo las llamadas", "Solo el marketing", "Nada, lo supervisa todo"], "why": "Lo que se sale del guion lo resuelve él, con los mismos números que miraría yo.", "ref": "Playbook 1 · Etapa 7 · Cómo se ve"}, {"q": "¿Qué hace el dueño cuando la oficina funciona sin él?", "ok": "Replicarla en otra ciudad", "bad": ["Volver a captar", "Vender la agencia", "Subir los honorarios"], "why": "Una oficina que funciona sola es un sistema. Y un sistema se puede abrir en otra ciudad.", "ref": "Playbook 1 · Etapa 7 · Y entonces, ¿qué hago yo?"}, {"q": "¿Cuál es el orden de las seis estaciones?", "ok": "Atracción, conversión, entrega, medición, contratación, delegación", "bad": ["Contratación, atracción, conversión, entrega, medición, delegación", "Medición, atracción, conversión, entrega, delegación, contratación", "Atracción, entrega, conversión, medición, delegación, contratación"], "why": "Siempre en ese orden, y cada una solo funciona si la anterior está hecha.", "ref": "Playbook 1 · Etapa 8 · El mapa entero"}, {"q": "¿Qué se mide en la estación de atracción?", "ok": "Conversaciones al día y citas agendadas al día", "bad": ["Ventas y facturación", "Visitas y propuestas", "Semanas hasta que el nuevo llega a tarifa"], "why": "Son los básicos. Todo lo demás es consecuencia.", "ref": "Playbook 1 · Etapa 8 · El mapa entero"}], n:10, pass:8, secs:10, nextHref:"dia-2.html"});</script>
 
 </body>
 </html>
