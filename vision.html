@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visión, misión y valores · Growing Inmobiliario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--paper:#fff;--ground:#efede8;--muted:#6b6b6b;--line:#111;--gold:#b7975a;--cream:#faf7f0;--bad:#9b2c2c;--term:#7a5a1a;
+ --mono:"Courier Prime","Courier New",Courier,monospace;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Outfit","Helvetica Neue",Arial,sans-serif;--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+.sheet{position:relative;max-width:860px;margin:0 auto 36px;background:var(--paper);padding:52px 76px 40px;border:1px solid #e3e1db;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 48px rgba(0,0,0,.08)}
+.sheet p{margin:0 0 1.05em}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:inherit}
+a.term{color:var(--term);text-decoration:none;border-bottom:1px dotted var(--gold);font-weight:600}
+a.term:hover{background:var(--cream)}
+.frases a.term{color:#fff;border-color:#aaa}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logolink{text-decoration:none;display:flex;flex-direction:column}
+.logo .g{font-family:var(--sans);font-weight:700;font-size:38px;line-height:1;letter-spacing:-1.2px}
+.logo .g sup{font-size:12px;font-weight:600;vertical-align:top;position:relative;top:4px;letter-spacing:0}
+.logo .i{font-family:var(--display);font-style:italic;font-weight:500;font-size:36px;line-height:1;margin-top:2px;letter-spacing:-.5px}
+.logo .tag{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fojas{font-family:var(--mono);text-align:right;line-height:1.3}
+.fojas .k{display:block;font-size:12px;letter-spacing:3px}
+.fojas .v{display:block;font-weight:700;font-size:16px;letter-spacing:2px}
+.rule{font-family:var(--mono);height:12px;overflow:hidden;white-space:nowrap;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.rule::before{content:"************************************************************************************************************"}
+.reg{font-family:var(--mono);display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;padding:10px 0}
+/* portada */
+.cover{font-family:var(--mono);font-size:15.5px;line-height:1.72}
+.cover p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.cover .head{padding-right:170px}
+.deedtitle{text-align:center;margin:44px 0 30px}
+.deedtitle h1{font-family:var(--mono);font-size:17px;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin:0;line-height:1.6}
+.deedtitle .dash{font-family:var(--mono);letter-spacing:0;margin:8px 0 4px}
+.deedtitle .de{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.deedtitle .party{font-family:var(--mono);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.stamp{position:absolute;right:46px;top:38px;width:132px;height:132px;color:var(--gold);transform:rotate(-12deg);opacity:.92;mix-blend-mode:multiply;font-family:var(--mono)}
+.stamp text{fill:currentColor}
+.bar{display:block;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-family:var(--mono);font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:18px;margin:28px 0 8px;font-size:14px;border:0;width:100%;cursor:pointer}
+.bar:hover{background:#333}
+.bar.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bar.ghost:hover{background:var(--cream)}
+/* títulos */
+.deedtitle.small{margin:30px 0 22px}
+.deedtitle.small h2{font-family:var(--display);font-style:italic;font-weight:500;font-size:40px;line-height:1.15;margin:0;letter-spacing:-.3px}
+.deedtitle.small .dash{color:var(--gold);font-weight:700}
+h3{font-family:var(--sans);font-size:20px;font-weight:700;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line);line-height:1.3}
+h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:24px 0 8px}
+h4.term{font-size:19px;font-weight:700;margin:30px 0 6px;padding-top:14px;border-top:1px solid #d7d2c6;color:var(--term)}
+p.ejemplo{font-style:italic;color:#555;margin:0 0 1.2em 18px;padding-left:14px;border-left:2px solid var(--gold);font-size:16px}
+.alfa{columns:2;column-gap:40px;list-style:none;padding:0;margin:0}
+.alfa li{break-inside:avoid;margin:0 0 .35em;padding-left:0}
+.alfa li::before{content:none}
+.alfa a{text-decoration:none;color:var(--term);font-weight:600}
+/* programa */
+.programa{list-style:none;padding:0;margin:0 0 10px}
+.programa li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dotted #bbb}
+.programa li:last-child{border-bottom:none}
+.programa .n{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;flex:0 0 92px}
+.programa .t{flex:1;font-size:17px;line-height:1.35}
+.programa .t small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
+.programa .st.done{color:var(--gold);font-weight:700}
+.programa a{text-decoration:none}
+.programa .t a::after{content:" →";color:var(--gold);font-weight:700}
+.programa .t a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.cover .programa .t a::after{content:none}
+.programa li.next .t{font-weight:700}
+.programa li.next .n::after{content:" ←";color:var(--gold)}
+.cover .programa .t{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.pbloque{font-family:var(--display);font-style:italic;font-size:22px;margin:26px 0 4px;padding-top:14px;border-top:1px solid var(--ink)}
+.pbloque:first-child{border-top:none;padding-top:0;margin-top:6px}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+/* bloques */
+.bloquesheet{min-height:420px}
+.bloque{padding:60px 0 40px}
+.bloquelabel{font-family:var(--mono);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.bloquetitle{font-family:var(--display);font-style:italic;font-weight:500;font-size:64px;line-height:1;margin:0 0 28px;letter-spacing:-1px}
+.bloquedesc{font-size:18.5px;max-width:580px;line-height:1.65}
+/* listas */
+ul,ol{margin:0 0 1.1em;padding-left:30px}
+li{margin:0 0 .5em}
+ul{list-style:none;padding-left:26px}
+ul li{position:relative}
+ul li::before{content:"—";position:absolute;left:-26px;color:var(--gold);font-weight:700}
+ol li::marker{font-family:var(--mono);font-weight:700}
+/* cajas */
+.box,.diligencia,.repaso{border:3px double var(--ink);padding:18px 24px 8px;margin:18px 0 26px}
+.box p:last-child,.diligencia p:last-child{margin-bottom:10px}
+.boxlabel{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.box{text-align:center}
+.box p{text-align:center;font-size:19px;line-height:1.5}
+.box .boxlabel{text-align:center}
+.diligencia{border:1px solid var(--ink);background:var(--cream);padding:16px 24px 8px}
+.diligencia .boxlabel{color:#7a5a1a}
+.repaso{border:none;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 4px;margin:0 0 28px}
+.repaso ol{margin-bottom:8px}
+.frases{background:var(--ink);color:#fff;padding:24px 28px 16px;margin:30px 0 10px}
+.frases .boxlabel{color:#fff;font-size:12px;letter-spacing:4px;margin-bottom:14px}
+.frases ol{padding-left:30px;margin:0}
+.frases li{font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.45;margin-bottom:.7em}
+.frases li::marker{color:var(--gold)}
+.chain{border:1px solid var(--ink);padding:18px 20px;margin:14px 0 24px;text-align:center}
+.chain .step{font-family:var(--sans);font-weight:600;font-size:15.5px}
+.chain .arrow{color:var(--gold);font-weight:700;line-height:1.1;font-size:20px;font-family:Georgia,serif}
+blockquote{margin:12px 0 22px 18px;padding-left:18px;border-left:2px solid var(--gold)}
+blockquote p{font-style:italic;margin-bottom:.4em;font-size:17.5px}
+/* tablas */
+.tablewrap{overflow-x:auto;margin:14px 0 28px}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table.small{font-size:13px;line-height:1.4}
+th,td{padding:10px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #cfcac0}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:10px;vertical-align:bottom}
+table.small thead th{font-size:10px;letter-spacing:1px;white-space:nowrap}
+tbody th{font-weight:700;width:auto}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+/* pie */
+.foot{font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:14px;border-top:1px solid #cfcac0;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.foot .pn{font-weight:700;color:var(--ink);font-size:12px}
+.foot .up{text-decoration:none}
+/* examen */
+.exam{min-height:520px}
+.exam .intro{font-size:17px}
+.game{border:3px double var(--ink);padding:26px 28px;margin:10px 0 20px;min-height:300px}
+.g-top{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:10px}
+.g-top .streak{color:var(--gold);font-weight:700}
+.timer{height:6px;background:#e4e0d6;margin:0 0 22px;position:relative;overflow:hidden}
+.timer i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:100%}
+.timer.warn i{background:var(--bad)}
+.q{font-family:var(--sans);font-weight:600;font-size:21px;line-height:1.35;margin:0 0 20px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:0 0 16px}
+.opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);padding:12px 16px;font:inherit;font-size:16.5px;line-height:1.4;cursor:pointer;color:var(--ink)}
+.opt:hover{background:var(--cream)}
+.opt .k{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;flex:0 0 18px;padding-top:3px}
+.opt.ok{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt.bad{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.dim{opacity:.45}
+.opt:disabled{cursor:default}
+.why{background:var(--cream);border:1px solid var(--ink);padding:12px 16px;font-size:15.5px;margin:0 0 16px;line-height:1.5}
+.why .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px}
+.why .lbl.ok{color:#2e6b3a}
+.why .lbl.bad{color:var(--bad)}
+.why .ref{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:var(--display);font-style:italic;font-size:78px;line-height:1;margin:6px 0 2px}
+.score .big small{font-size:34px}
+.score .lbl{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.score .verdict{display:inline-block;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:4px;text-transform:uppercase;border:3px double var(--gold);color:var(--gold);padding:8px 18px;margin:14px 0 6px;transform:rotate(-3deg)}
+.score .verdict.no{border-color:var(--bad);color:var(--bad)}
+.score .pts{font-size:16px;margin:8px 0 2px}
+.score .best{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .bar{margin:0;flex:1 1 200px}
+.exam .start .bar{margin-top:10px}
+/* móvil */
+@media (max-width:720px){
+ body{padding:12px 8px 40px;font-size:16.5px}
+ .sheet{padding:34px 22px 28px;margin-bottom:18px}
+ .logo .g,.logo .i{font-size:30px}
+ .stamp{width:84px;height:84px;right:12px;top:10px}
+ .cover .head{padding-right:84px}
+ .logo .tag{letter-spacing:2px;font-size:10px}
+ .head{align-items:flex-start;flex-direction:column;gap:10px}
+ .fojas{text-align:left}
+ .deedtitle h1{font-size:14px;letter-spacing:3px}
+ .deedtitle.small h2{font-size:30px}
+ .bloquetitle{font-size:42px}
+ .cover p{text-align:left}
+ .reg{letter-spacing:1.5px;font-size:11px}
+ .programa li{flex-wrap:wrap}
+ .programa .st{flex-basis:100%;text-align:left;padding-left:106px}
+ .alfa{columns:1}
+ .game{padding:18px 14px}
+ .q{font-size:18.5px}
+ .opt{font-size:15.5px;padding:10px 12px}
+ .score .big{font-size:60px}
+ .foot{flex-wrap:wrap;gap:8px}
+}
+@media print{
+ body{background:#fff;padding:0}
+ .sheet{box-shadow:none;border:none;margin:0;max-width:none;page-break-after:always;padding:36px 44px}
+ .foot .up,.bar,.exam{display:none}
+}
+</style>
+</head>
+<body>
+<section class="sheet cover" id="portada">
+<svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+<defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+<circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="3"/>
+<circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<circle cx="100" cy="100" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text font-size="13.5" letter-spacing="2.6" font-weight="700"><textPath href="#ring">GROWING INMOBILIARIO · FORMACIÓN INTERNA · RAMP-UP DEL CLOSER ·</textPath></text>
+<text x="100" y="94" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="2">USO INTERNO</text>
+<text x="100" y="114" text-anchor="middle" font-size="11" letter-spacing="1.5">v2 · 10-2026</text>
+</svg>
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJAS</span><span class="v">v1</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>GROWING INMOBILIARIO · FORMACIÓN INTERNA</span><span>v1 · octubre 2026</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle"><h1>Visión, misión y valores</h1><div class="dash">——————</div><div class="de">de</div><div class="party">Growing Inmobiliario</div></div>
+<p class="deed">En España, a octubre de 2026, <strong>GROWING INMOBILIARIO</strong>, en adelante <strong>«la Casa»</strong>, hace entrega del presente documento a quien suscribe, en adelante <strong>«el Closer»</strong>, con un único fin: <strong>Por qué existe Growing, para quién trabajamos y cómo jugamos.</strong></p>
+<p class="deed">VISIÓN · MISIÓN · CLIENTE · PRINCIPIOS · VALORES · MÍNIMOS</p>
+<ol class="programa"><li><span class="n">VISIÓN</span><span class="t"><a href="#vision">POR QUÉ EXISTIMOS</a></span><span class="st">Foja 2</span></li><li><span class="n">CLIENTE</span><span class="t"><a href="#cliente">PARA QUIÉN ES Y PARA QUIÉN NO</a></span><span class="st">Foja 3</span></li><li><span class="n">PRINCIPIOS</span><span class="t"><a href="#principios">CÓMO JUGAMOS</a></span><span class="st">Foja 4</span></li><li><span class="n">VALORES</span><span class="t"><a href="#valores">CINCO VALORES. NO NEGOCIABLES.</a></span><span class="st">Foja 5</span></li><li><span class="n">VALOR 1</span><span class="t"><a href="#valor-1">ESTÁNDARES ALTOS</a></span><span class="st">Foja 6</span></li><li><span class="n">VALOR 2</span><span class="t"><a href="#valor-2">TODO O NADA</a></span><span class="st">Foja 7</span></li><li><span class="n">VALOR 3</span><span class="t"><a href="#valor-3">EL CLIENTE PRIMERO</a></span><span class="st">Foja 8</span></li><li><span class="n">VALOR 4</span><span class="t"><a href="#valor-4">LA VELOCIDAD ES REY</a></span><span class="st">Foja 9</span></li><li><span class="n">VALOR 5</span><span class="t"><a href="#valor-5">APRENDIZAJE CONTINUO</a></span><span class="st">Foja 10</span></li><li><span class="n">MÍNIMOS</span><span class="t"><a href="#minimos">COMPORTAMIENTOS NO NEGOCIABLES</a></span><span class="st">Foja 11</span></li></ol>
+<a class="bar" href="#vision">Empezar a leer</a>
+<footer class="foot"><span></span><span class="pn">Foja 1 de 11</span><span></span></footer>
+</section>
+<section class="sheet" id="vision">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">2</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VISIÓN</span><span>Foja 2</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>POR QUÉ EXISTIMOS</h2><div class="dash">——————</div></div>
+<div class="box">
+<div class="boxlabel">Visión</div>
+<p><strong>Que <a class="term" href="diccionario.html#t-escalar">escalar</a> una inmobiliaria sea simple, predecible y disfrutable.</strong></p>
+</div>
+<div class="box">
+<div class="boxlabel">Misión</div>
+<p><strong>Transformar la <a class="term" href="diccionario.html#t-captar">captación</a> <a class="term" href="diccionario.html#t-exclusiva">en exclusiva</a> en un sistema predecible, medible y replicable.</strong></p>
+</div>
+<h3>El manifiesto</h3>
+<p>El sector inmobiliario está lleno de <strong>captación inestable, caos operativo y dependencia de la suerte.</strong></p>
+<p>En <a class="term" href="diccionario.html#t-growing">Growing</a> creemos que una inmobiliaria no debería crecer «a base de empujar», sino con un <strong>sistema.</strong></p>
+<p>Nuestro objetivo es que el cliente gane <strong>control, claridad y paz mental</strong>, mientras escala resultados.</p>
+<h3>La promesa de valor, en una frase</h3>
+<div class="box">
+<p>Creamos el sistema para que una inmobiliaria gane <strong>control</strong>: más <strong>exclusivas</strong>, mejor <a class="term" href="diccionario.html#t-conversion">conversión</a> y una operación que escala con procesos, <a class="term" href="diccionario.html#t-metricas-comerciales">métricas</a> y equipo.</p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases</div>
+<ol><li>Que escalar una inmobiliaria sea simple, predecible y disfrutable.</li><li>La captación en exclusiva convertida en un sistema predecible, medible y replicable.</li><li>Control, claridad y paz mental para el cliente, mientras escala.</li></ol>
+</div>
+<footer class="foot"><a href="#portada" class="up">Portada</a><span class="pn">Foja 2 de 11</span><a href="#cliente" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="cliente">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">3</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>CLIENTE</span><span>Foja 3</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>PARA QUIÉN ES Y PARA QUIÉN NO</h2><div class="dash">——————</div></div>
+<h3>Para quién es: el cliente ideal</h3>
+<p><a class="term" href="diccionario.html#t-growing">Growing</a> es para inmobiliarias que:</p>
+<ul>
+<li>Quieren <strong><a class="term" href="diccionario.html#t-captar">captar</a> <a class="term" href="diccionario.html#t-exclusiva">exclusivas</a></strong> de forma constante, no «cuando suena la flauta».</li>
+<li>Están dispuestas a <strong>medir, ejecutar y mejorar</strong> semanalmente.</li>
+<li>Quieren un negocio <strong>ordenado</strong>, con procesos, CRM y <a class="term" href="diccionario.html#t-nutricion">seguimiento</a> real.</li>
+<li>Buscan un sistema <strong>replicable</strong>, que no dependa de una sola persona «estrella».</li>
+<li>Priorizan la <strong>calidad</strong> del servicio y la reputación a largo plazo.</li>
+</ul>
+<h3>Para quién NO es</h3>
+<p>Growing NO es para inmobiliarias que:</p>
+<ul>
+<li>Buscan <strong>milagros</strong> sin ejecutar.</li>
+<li>No quieren medir, reportar o seguir un proceso.</li>
+<li>Quieren «hacer lo de siempre» y solo cambiar la publicidad.</li>
+<li>Cambian de estrategia cada semana sin dar tiempo al sistema.</li>
+<li>Esperan que el equipo de Growing «les lleve el negocio» sin implicación.</li>
+</ul>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Es para quien...</th><th>No es para quien...</th></tr></thead><tbody>
+<tr><th>Quiere captar exclusivas de forma constante</th><td>Busca milagros sin ejecutar</td></tr>
+<tr><th>Mide, ejecuta y mejora cada semana</th><td>No quiere medir ni seguir un proceso</td></tr>
+<tr><th>Quiere procesos, CRM y seguimiento real</th><td>Quiere lo de siempre, cambiando solo la publicidad</td></tr>
+<tr><th>Busca un sistema replicable</th><td>Cambia de estrategia cada semana</td></tr>
+<tr><th>Prioriza calidad y reputación</th><td>Espera que le lleven el negocio</td></tr>
+</tbody></table></div>
+<div class="frases">
+<div class="boxlabel">Las tres frases</div>
+<ol><li>Es para quien quiere captar exclusivas de forma constante y está dispuesto a medir.</li><li>No es para quien busca milagros sin ejecutar.</li><li>Un sistema necesita tiempo e implicación. Sin eso, no hay sistema.</li></ol>
+</div>
+<footer class="foot"><a href="#vision" class="up">← Anterior</a><span class="pn">Foja 3 de 11</span><a href="#principios" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="principios">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">4</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>PRINCIPIOS</span><span>Foja 4</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>CÓMO JUGAMOS</h2><div class="dash">——————</div></div>
+<h3>Los siete principios operativos</h3>
+<ol>
+<li><strong>Si no se mide, no existe.</strong></li>
+<li><strong>Proceso &gt; talento.</strong> El sistema gana a la improvisación.</li>
+<li><strong>Simple &gt; complejo.</strong> Lo que no se entiende, no se ejecuta.</li>
+<li><strong>Rapidez con estándar.</strong> Velocidad sí, chapuza no.</li>
+<li><strong>Feedback directo, ego fuera.</strong> El objetivo es mejorar, no quedar bien.</li>
+<li><strong>Documentar para <a class="term" href="diccionario.html#t-escalar">escalar</a>.</strong> Lo que se repite, se convierte en SOP.</li>
+<li><strong>Calidad en cada punto de <a class="term" href="diccionario.html#t-lead">contacto</a>.</strong> Un detalle mal hecho cuesta confianza.</li>
+</ol>
+<div class="frases">
+<div class="boxlabel">Las tres frases</div>
+<ol><li>Si no se mide, no existe.</li><li>Proceso gana a talento. Simple gana a complejo.</li><li>Feedback directo, ego fuera. Lo que se repite, se documenta.</li></ol>
+</div>
+<footer class="foot"><a href="#cliente" class="up">← Anterior</a><span class="pn">Foja 4 de 11</span><a href="#valores" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valores">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">5</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALORES</span><span>Foja 5</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>CINCO VALORES. NO NEGOCIABLES.</h2><div class="dash">——————</div></div>
+<p>Cinco valores. Son lo que somos, no lo que nos gustaría ser. Cada uno tiene su «esto sí» y su «esto no», para que nadie tenga que interpretarlo.</p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:10.0%"><col style="width:32.0%"><col style="width:58.0%"></colgroup>
+<thead><tr><th>#</th><th>Valor</th><th>En una frase</th></tr></thead><tbody>
+<tr><th>01</th><td>Estándares altos</td><td>La grandeza no es suficiente.</td></tr>
+<tr><th>02</th><td>Todo o nada</td><td>Ir con todo o ir a casa.</td></tr>
+<tr><th>03</th><td>El cliente primero</td><td>Obsesión por los resultados del cliente.</td></tr>
+<tr><th>04</th><td>La velocidad es rey</td><td>Causa-efecto con velocidad.</td></tr>
+<tr><th>05</th><td>Aprendizaje continuo</td><td>Nunca te acomodes. Nunca pares de crecer.</td></tr>
+</tbody></table></div>
+<footer class="foot"><a href="#principios" class="up">← Anterior</a><span class="pn">Foja 5 de 11</span><a href="#valor-1" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valor-1">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">6</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALOR 1</span><span>Foja 6</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>ESTÁNDARES ALTOS</h2><div class="dash">——————</div></div>
+<p><em>La grandeza no es suficiente.</em></p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Esto sí</th><th>Esto no</th></tr></thead><tbody>
+<tr><th>Entregas al cliente más de lo prometido, siempre</th><td>Entregas algo «aceptable» porque cumple con lo básico</td></tr>
+<tr><th>Revisas tu trabajo antes de entregarlo, aunque nadie lo pida</th><td>Asumes que «está bien así» sin preguntarte si puede mejorar</td></tr>
+<tr><th>Buscas la excelencia aunque el mínimo sería suficiente</th><td>Escalas una decisión antes de pensar una solución</td></tr>
+<tr><th></th><td>Necesitas que alguien te diga todo el tiempo lo que tienes que hacer</td></tr>
+</tbody></table></div>
+<div class="box">
+<p><em>«El estándar es el estándar, no hay negociación.»</em></p>
+</div>
+<footer class="foot"><a href="#valores" class="up">← Anterior</a><span class="pn">Foja 6 de 11</span><a href="#valor-2" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valor-2">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">7</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALOR 2</span><span>Foja 7</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>TODO O NADA</h2><div class="dash">——————</div></div>
+<p><em>Ir con todo o ir a casa.</em></p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Esto sí</th><th>Esto no</th></tr></thead><tbody>
+<tr><th><a class="term" href="diccionario.html#t-metricas-comerciales">Métricas</a> rellenadas en tiempo real, cada día, sin excepción</th><td>Rellenas las métricas al final de la semana o cuando puedes</td></tr>
+<tr><th>Llegas a las reuniones preparado y con energía</th><td>Apareces a las reuniones recién levantado o sin preparación</td></tr>
+<tr><th>Haces el trabajo al 100% aunque nadie te esté mirando</th><td>Das el 70% cuando el día está flojo</td></tr>
+<tr><th>En tu vida personal buscas el crecimiento continuo</th><td>No te cuidas en tu día a día</td></tr>
+<tr><th>Te cuidas personalmente</th><td>Priorizas la gratificación instantánea antes que la disciplina</td></tr>
+</tbody></table></div>
+<div class="box">
+<p><em>«Si estás dentro, estás dentro del todo.»</em></p>
+</div>
+<footer class="foot"><a href="#valor-1" class="up">← Anterior</a><span class="pn">Foja 7 de 11</span><a href="#valor-3" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valor-3">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">8</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALOR 3</span><span>Foja 8</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>EL CLIENTE PRIMERO</h2><div class="dash">——————</div></div>
+<p><em>Obsesión por los resultados del cliente.</em></p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Esto sí</th><th>Esto no</th></tr></thead><tbody>
+<tr><th>Piensas en el impacto real del cliente antes de cada decisión</th><td>Priorizas lo que es cómodo para ti sobre lo que necesita el cliente</td></tr>
+<tr><th>Haces <a class="term" href="diccionario.html#t-nutricion">seguimiento</a> proactivo sin que nadie te lo pida</th><td>Esperas a que el cliente pida ayuda en lugar de anticiparte</td></tr>
+<tr><th>Te preguntas siempre: ¿esto le sirve realmente al cliente?</th><td>Le entregas las tareas sin revisión</td></tr>
+<tr><th>Respondes al momento a sus dudas</th><td>Te conectas a las llamadas sin energía y sin preparación</td></tr>
+<tr><th>Nunca hablas mal de un cliente</th><td></td></tr>
+</tbody></table></div>
+<div class="box">
+<p><em>«Nuestro éxito depende directamente del éxito de nuestros clientes.»</em></p>
+</div>
+<footer class="foot"><a href="#valor-2" class="up">← Anterior</a><span class="pn">Foja 8 de 11</span><a href="#valor-4" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valor-4">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">9</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALOR 4</span><span>Foja 9</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>LA VELOCIDAD ES REY</h2><div class="dash">——————</div></div>
+<p><em>Causa-efecto con velocidad.</em></p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Esto sí</th><th>Esto no</th></tr></thead><tbody>
+<tr><th>Registras cada <a class="term" href="diccionario.html#t-cita-de-captacion">cita</a> o tarea en el momento en que ocurre</th><td>Dejas tareas «para luego» que luego se acumulan</td></tr>
+<tr><th>Respondes y actúas hoy, no mañana</th><td>Tardas 48 horas en responder algo que requiere 10 minutos</td></tr>
+<tr><th>Ejecutas rápido y ajustas sobre la marcha</th><td></td></tr>
+<tr><th>Actúas con urgencia en tu día a día</th><td></td></tr>
+</tbody></table></div>
+<div class="box">
+<p><em>«La velocidad de ejecución es ventaja competitiva.»</em></p>
+</div>
+<footer class="foot"><a href="#valor-3" class="up">← Anterior</a><span class="pn">Foja 9 de 11</span><a href="#valor-5" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="valor-5">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">10</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>VALOR 5</span><span>Foja 10</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>APRENDIZAJE CONTINUO</h2><div class="dash">——————</div></div>
+<p><em>Nunca te acomodes. Nunca pares de crecer.</em></p>
+<div class="tablewrap"><table class="">
+<colgroup><col style="width:50.0%"><col style="width:50.0%"></colgroup>
+<thead><tr><th>Esto sí</th><th>Esto no</th></tr></thead><tbody>
+<tr><th>Escuchas grabaciones y buscas mejorar por iniciativa propia</th><td>Llevas meses haciendo exactamente lo mismo sin cuestionarlo</td></tr>
+<tr><th>Cada semana tienes algo nuevo que aplicar de lo que has aprendido</th><td>Esperas a que te digan lo que tienes que mejorar</td></tr>
+<tr><th>Aportas mejoras y propuestas, no solo problemas</th><td>No aportas al equipo nuevos conocimientos o perspectivas</td></tr>
+<tr><th>Propones libros, formaciones o vídeos para el crecimiento del equipo</th><td></td></tr>
+</tbody></table></div>
+<div class="box">
+<p><em>«El que deja de aprender, deja de ser útil.»</em></p>
+</div>
+<div class="frases">
+<div class="boxlabel">Las tres frases</div>
+<ol><li>Estándares altos. Todo o nada. El cliente primero.</li><li>La velocidad es rey. Aprendizaje continuo.</li><li>Cada valor tiene su «esto sí» y su «esto no». No hay que interpretar nada.</li></ol>
+</div>
+<footer class="foot"><a href="#valor-4" class="up">← Anterior</a><span class="pn">Foja 10 de 11</span><a href="#minimos" class="up">Siguiente →</a></footer>
+</section>
+<section class="sheet" id="minimos">
+<header class="head"><div class="logo"><a href="index.html" class="logolink"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><span class="tag">Formación interna · España</span></div><div class="fojas"><span class="k">FOJA</span><span class="v">11</span></div></header>
+<div class="rule" aria-hidden="true"></div>
+<div class="reg"><span>MÍNIMOS</span><span>Foja 11</span></div>
+<div class="rule" aria-hidden="true"></div>
+<div class="deedtitle small"><h2>COMPORTAMIENTOS NO NEGOCIABLES</h2><div class="dash">——————</div></div>
+<p>Si estás en este equipo, esto no es opcional. Es el mínimo.</p>
+<ul>
+<li><strong><a class="term" href="diccionario.html#t-metricas-comerciales">Métricas</a> rellenadas en tiempo real.</strong> Cada llamada, cada <a class="term" href="diccionario.html#t-cita-de-captacion">cita</a>, en el momento. No al final de la semana.</li>
+<li><strong>Reuniones con presencia real.</strong> Preparado, activo, sin cámara apagada ni recién levantado.</li>
+<li><strong>Grabaciones siempre activadas.</strong> Sin excepción.</li>
+<li><strong>Estudiar activamente.</strong> Escuchar grabaciones, aplicar mejoras, proponer soluciones.</li>
+<li><strong>Comunicación honesta.</strong> Si hay un problema, se dice. No se esconde.</li>
+</ul>
+<div class="frases">
+<div class="boxlabel">Las tres frases</div>
+<ol><li>Métricas en tiempo real. Grabaciones siempre. Presencia real en las reuniones.</li><li>Estudiar activamente y proponer, no solo señalar problemas.</li><li>Si hay un problema, se dice. No se esconde.</li></ol>
+</div>
+<footer class="foot"><a href="#valor-5" class="up">← Anterior</a><span class="pn">Foja 11 de 11</span><a href="index.html" class="up">Programa</a></footer>
+</section>
+</body>
+</html>
