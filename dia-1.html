@@ -71,6 +71,9 @@ p.ejemplo{font-style:italic;color:#555;margin:0 0 1.2em 18px;padding-left:14px;b
 .programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
 .programa .st.done{color:var(--gold);font-weight:700}
 .programa a{text-decoration:none}
+.programa .t a::after{content:" →";color:var(--gold);font-weight:700}
+.programa .t a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.cover .programa .t a::after{content:none}
 .programa li.next .t{font-weight:700}
 .programa li.next .n::after{content:" ←";color:var(--gold)}
 .cover .programa .t{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:1px}

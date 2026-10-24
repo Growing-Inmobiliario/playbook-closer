@@ -71,6 +71,9 @@ p.ejemplo{font-style:italic;color:#555;margin:0 0 1.2em 18px;padding-left:14px;b
 .programa .st{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;flex:0 0 auto;text-align:right}
 .programa .st.done{color:var(--gold);font-weight:700}
 .programa a{text-decoration:none}
+.programa .t a::after{content:" →";color:var(--gold);font-weight:700}
+.programa .t a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.cover .programa .t a::after{content:none}
 .programa li.next .t{font-weight:700}
 .programa li.next .n::after{content:" ←";color:var(--gold)}
 .cover .programa .t{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:1px}
@@ -217,7 +220,9 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
 <div class="deedtitle small"><h2>El programa</h2><div class="dash">——————</div></div>
 <p><strong>Día 1:</strong> el diccionario y el Playbook 1, cómo se monta una inmobiliaria que rueda. Y las llamadas reales de Pol y de David, con el playbook al lado. <strong>Día 2:</strong> el Playbook 2, cómo son de verdad y qué pasa por la cabeza del dueño. Cada día termina con su examen: un juego de diez preguntas con reloj que se repite las veces que haga falta. <strong>Semana 2:</strong> refuerzo y examen final. Tu progreso se guarda en este navegador.</p>
 <ol class="programa"><li class="pbloque">Día 1 · Entender cómo se monta</li><li><span class="n">Lee</span><span class="t"><a href="diccionario.html">El diccionario</a><small>Todas las palabras del sector · se consulta</small></span><span class="st"></span></li><li data-day="1" data-n="10"><span class="n">Día 1</span><span class="t"><a href="dia-1.html">Playbook 1 · La inmobiliaria perfecta</a><small>Los números y las seis estaciones · lectura + examen</small></span><span class="st">Pendiente</span></li><li class="pbloque">Día 2 · Entender a quién le vendes</li><li data-day="2" data-n="10"><span class="n">Día 2</span><span class="t"><a href="dia-2.html">Playbook 2 · La realidad</a><small>Las estaciones de verdad, la cabeza de Rubén y tu diagnóstico · lectura + examen</small></span><span class="st">Pendiente</span></li><li data-final><span class="n">Final</span><span class="t"><a href="dia-2.html#final">Examen final: todo junto</a><small>20 preguntas · 17 para entrar en llamadas · semana 2</small></span><span class="st">Pendiente</span></li></ol>
-<p class="note">Cómo se lee: lo del día, en orden, y nada más. Las palabras en color llevan al diccionario. Cada etapa termina con tres frases que hay que saber de memoria. El examen se hace el mismo día, después de leer.</p>
+<p class="note">Cómo se lee: lo del día, en orden, y nada más. Pincha en cada línea para abrirla. Las palabras en color llevan al diccionario. Cada etapa termina con tres frases que hay que saber de memoria. El examen se hace el mismo día, después de leer.</p>
+<a class="bar" href="diccionario.html">Empezar: abrir el diccionario</a>
+<a class="bar ghost" href="dia-1.html">Ir al día 1: la inmobiliaria perfecta</a>
 <footer class="foot"><a href="diccionario.html" class="up">Diccionario</a><span class="pn"></span><a href="dia-1.html" class="up">Día 1 →</a></footer>
 </section>
 <script>
