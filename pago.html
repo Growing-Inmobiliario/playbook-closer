@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pago Growing Inmobiliario</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap">
+<style>
+/* Lámina de plano para el closer: dos mensajes de WhatsApp listos para copiar y debajo la escalera de opciones de pago */
+:root{
+  --ink:#1b2c47;--ink2:#3c5478;--paper:#f8f7f2;--ground:#e3e7ec;--grid:rgba(27,44,71,.055);--grid2:rgba(27,44,71,.10);
+  --accent:#a2432b;--muted:#5d6b80;--field:#fff;--bubble:#e7f3df;--ok:#2f6b4f;
+  --cond:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--sans:"Barlow","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#dfe8f5;--ink2:#9fb4d3;--paper:#14243d;--ground:#0c1729;--grid:rgba(223,232,245,.05);--grid2:rgba(223,232,245,.10);
+  --accent:#e0805f;--muted:#93a3ba;--field:#0f1d33;--bubble:#1d3a2e;--ok:#7fc4a0;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#dfe8f5;--ink2:#9fb4d3;--paper:#14243d;--ground:#0c1729;--grid:rgba(223,232,245,.05);--grid2:rgba(223,232,245,.10);
+  --accent:#e0805f;--muted:#93a3ba;--field:#0f1d33;--bubble:#1d3a2e;--ok:#7fc4a0;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.plano{max-width:880px;margin:0 auto;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px;border:2px solid var(--ink);padding:12px;box-shadow:0 18px 40px rgba(12,23,41,.16)}
+.marco{border:1px solid var(--ink);padding:32px clamp(16px,4.5vw,44px) 0;position:relative}
+.marco::before,.marco::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--ink)}
+.marco::before{top:-8px;left:-8px;border-right:0;border-bottom:0}
+.marco::after{bottom:-8px;right:-8px;border-left:0;border-top:0}
+
+.ph{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo .g{font-family:"Outfit","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:28px;letter-spacing:-1px}
+.logo .i{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:500;font-size:26px;margin-top:2px}
+.code{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:right;line-height:1.6;color:var(--ink2)}
+.code b{display:block;font-family:var(--cond);font-size:30px;font-weight:700;letter-spacing:1px;line-height:1;color:var(--ink)}
+
+h1{font-family:var(--cond);font-weight:700;font-size:clamp(38px,8vw,54px);line-height:.95;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px;text-wrap:balance}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 32px}
+
+.sec{font-family:var(--mono);font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ink2);display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.sec::after{content:"";flex:1;border-top:1px dashed var(--ink2)}
+
+/* mensajes */
+.msgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:40px}
+.msg{border:1.5px solid var(--ink);background:var(--field);display:flex;flex-direction:column;min-width:0}
+.msg header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--ink)}
+.msg h2{font-family:var(--cond);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.5px;line-height:1.1;margin:0}
+.msg h2 small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:2px;color:var(--ink2);font-weight:400}
+.cuando{padding:10px 14px 0;font-size:14px;color:var(--muted);margin:0}
+.bubble{margin:12px 14px 14px;background:var(--bubble);border-radius:0 10px 10px 10px;padding:12px 14px;font-size:15px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;flex:1}
+.bubble a{color:inherit}
+.copy{appearance:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;cursor:pointer;white-space:nowrap}
+.copy:hover{background:transparent;color:var(--ink)}
+.copy.ok{background:transparent;border-color:var(--ok);color:var(--ok)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* regla */
+.regla{border:1.5px solid var(--accent);padding:14px 16px;margin-bottom:22px;display:grid;gap:4px}
+.regla b{font-family:var(--cond);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent)}
+.regla p{margin:0;font-size:15.5px}
+
+/* escalera de opciones */
+.opciones{list-style:none;margin:0 0 40px;padding:0;border-top:1px dashed var(--ink2)}
+.opciones li{display:grid;grid-template-columns:48px minmax(0,1fr) 120px 110px;gap:14px;align-items:center;padding:13px 0;border-bottom:1px dashed var(--ink2)}
+.opciones li.cab{padding:6px 0;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2)}
+.cash{font-family:var(--cond);font-weight:700;font-size:21px;line-height:1.1;font-variant-numeric:tabular-nums}
+.opciones .cash{text-align:right}
+.opciones li.cab span:nth-child(3){text-align:right}
+
+/* seQura */
+.sequra{border:1.5px solid var(--ink);background:var(--field);padding:18px 20px;margin-bottom:40px;display:grid;gap:12px}
+.sequra p{margin:0;font-size:15.5px;max-width:64ch}
+.neto{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px dashed var(--ink2)}
+.neto small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2)}
+.neto strong{font-family:var(--cond);font-weight:700;font-size:clamp(38px,8vw,52px);line-height:.95;font-variant-numeric:tabular-nums}
+.neto .acc{color:var(--accent)}
+.neto svg{color:var(--ink2)}
+.tabla{overflow-x:auto}
+.tabla table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15.5px}
+.tabla th{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2);font-weight:400;text-align:left;padding:8px 10px;border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.tabla td{padding:10px;border-bottom:1px dashed var(--ink2);white-space:nowrap}
+.tabla td:last-child{font-family:var(--cond);font-weight:700;font-size:19px}
+.tabla em{font-family:var(--mono);font-style:normal;font-weight:400;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ok);border:1px solid var(--ok);padding:2px 6px;margin-left:6px;vertical-align:middle}
+.tabla tr.top td{background:var(--bubble)}
+.mini{font-size:13.5px!important;color:var(--muted)}
+body{margin:0}
+.letra{font-family:var(--cond);font-weight:700;font-size:30px;line-height:1;color:var(--accent);text-align:center;border:1.5px solid var(--accent);height:42px;display:grid;place-items:center}
+.opciones .txt{font-size:16.5px;font-weight:500;font-variant-numeric:tabular-nums}
+.opciones .txt span{display:block;font-size:13.5px;font-weight:400;color:var(--muted)}
+.gar{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 8px;border:1px solid var(--ink2);color:var(--ink2);white-space:nowrap}
+.gar.si{border-color:var(--ok);color:var(--ok)}
+
+/* cajetín */
+.cajetin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink);margin:0 calc(-1 * clamp(16px,4.5vw,44px))}
+.cajetin div{padding:10px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2);line-height:1.5}
+.cajetin div+div{border-left:1px solid var(--ink)}
+.cajetin b{display:block;font-family:var(--sans);font-size:13.5px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:600}
+
+@media (max-width:480px){
+  .msgs{grid-template-columns:1fr}
+  .opciones li{grid-template-columns:40px minmax(0,1fr);row-gap:6px}
+  .opciones li.cab{display:none}
+  .opciones .cash,.opciones .gar{grid-column:2;justify-self:start;text-align:left}
+  .cajetin{grid-template-columns:1fr}
+  .cajetin div+div{border-left:0;border-top:1px solid var(--ink)}
+}
+</style>
+</head><body>
+
+<main class="plano">
+<div class="marco">
+  <header class="ph">
+    <div class="logo"><span class="g">Growing</span><span class="i">Inmobiliario</span></div>
+    <div class="code">Lámina<b>C-07</b>Cierre · Pago</div>
+  </header>
+
+  <div class="sec">Para el closer</div>
+  <h1>Mensajes de pago</h1>
+  <p class="lead">Cuando el prospecto dice que sí, copia el mensaje que toque y pégalo en WhatsApp. Las negritas ya van con asteriscos.</p>
+
+  <div class="msgs">
+    <article class="msg">
+      <header>
+        <h2><small>Mensaje 1</small>Pago por transferencia</h2>
+        <button class="copy" data-copy="m-unico" id="c-unico">Copiar</button>
+      </header>
+      <p class="cuando">Cuando paga los 12.000 € de una (opción A).</p>
+      <div class="bubble" id="m-unico">Genial! Pues por aquí te dejo los siguientes pasos:
+
+1. Recibir el comprobante de pago
+2. Formalizar el acuerdo
+3. Empezar proceso de bienvenida
+
+*Los datos bancarios:*
+Beneficiario: Growing Inmobiliario Group SL
+
+Número cuenta: ES7501820765090201965067
+Concepto: [TU NOMBRE COMPLETO]
+
+Importe: 12.000€</div>
+    </article>
+
+    <article class="msg">
+      <header>
+        <h2><small>Mensaje 2</small>Pago con seQura</h2>
+        <button class="copy" data-copy="m-sequra" id="c-sequra">Copiar</button>
+      </header>
+      <p class="cuando">Cuando una parte va con seQura y el resto por transferencia.</p>
+      <div class="bubble" id="m-sequra">Genial! Pues por aquí te dejo los siguientes pasos:
+
+1. Entrar en el enlace: <a href="https://pay.hotmart.com/Y103122223R?off=878u7fx7" target="_blank" rel="noopener">https://pay.hotmart.com/Y103122223R?off=878u7fx7</a>
+2. Seleccionar Sequra
+3. Realizar la compra
+
+También te dejo por aquí los datos de banco para el dinero restante de la transferencia:
+
+*Los datos bancarios:*
+Beneficiario: Growing Inmobiliario Group SL
+
+Número cuenta: ES7501820765090201965067
+
+Concepto: [TU NOMBRE COMPLETO]</div>
+    </article>
+  </div>
+
+  <div class="sec">Opciones de pago</div>
+  <div class="regla">
+    <b>Prioriza el cash collected en el primer pago</b>
+    <p>Si la objeción es económica, no dejes que se vaya de la reunión sin enseñarle los downsells. Es mejor cerrarlo con un downsell que salir sin cerrar.</p>
+  </div>
+  <ol class="opciones">
+    <li class="cab"><span></span><span>Opción</span><span>Cash hoy</span><span>Garantía</span></li>
+    <li><span class="letra">A</span><span class="txt">12.000 € de una</span><span class="cash">12.000 €</span><span class="gar si">Con garantía</span></li>
+    <li><span class="letra">C</span><span class="txt">8.000 € hoy + 4.000 € durante el programa</span><span class="cash">8.000 €</span><span class="gar">Sin garantía</span></li>
+    <li><span class="letra">B</span><span class="txt">6.000 € y 6.000 €</span><span class="cash">6.000 €</span><span class="gar">Sin garantía</span></li>
+    <li><span class="letra">D</span><span class="txt">3.000 € hoy + 5.000 € con seQura + 4.000 € en dos pagos<span>seQura sale a unos 460 € al mes. Mira abajo cómo subir la transferencia.</span></span><span class="cash">7.004 €</span><span class="gar">Sin garantía</span></li>
+    <li><span class="letra">E</span><span class="txt">seQura + pagos restantes diferidos durante el programa</span><span class="cash">4.004 € + lo que transfiera</span><span class="gar">Sin garantía</span></li>
+    <li><span class="letra">F</span><span class="txt">2.000 € cada mes</span><span class="cash">2.000 €</span><span class="gar">Sin garantía</span></li>
+  </ol>
+
+  <div class="sec">Cómo jugar con seQura</div>
+  <div class="sequra">
+    <div class="neto">
+      <div><small>El prospecto paga con seQura</small><strong>5.000 €</strong></div>
+      <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 10h28M23 3l7 7-7 7"/></svg>
+      <div><small>A nosotros nos llegan</small><strong class="acc">4.004 €</strong></div>
+    </div>
+    <p>Eso es lo que cuenta como cash collected. seQura se queda la diferencia.</p>
+    <p>La opción D no tiene por qué ir con 3.000 € de transferencia. Cuanto más transfiera hoy, más cobramos de inicio. Con 4.000 € o 5.000 € de transferencia ya cobramos más que con la opción C.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Transferencia hoy</th><th>seQura</th><th>Resto en pagos</th><th>Cash hoy</th></tr></thead>
+        <tbody>
+          <tr><td>3.000 €</td><td>5.000 €</td><td>4.000 €</td><td>7.004 €</td></tr>
+          <tr><td>4.000 €</td><td>5.000 €</td><td>3.000 €</td><td>8.004 € <em>supera a C</em></td></tr>
+          <tr class="top"><td>5.000 €</td><td>5.000 €</td><td>2.000 €</td><td>9.004 € <em>supera a C</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mini">Cash hoy = transferencia + 4.004 € de seQura. Opción C = 8.000 € hoy. Total del programa en todos los casos: 12.000 €.</p>
+  </div>
+
+  <footer class="cajetin">
+    <div>Proyecto<b>Playbook Closer</b></div>
+    <div>Uso<b>Interno, no enviar</b></div>
+    <div>Fase<b>Cierre y pago</b></div>
+  </footer>
+</div>
+</main>
+
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.copy);
+  const text=el.innerText.trim();
+  const done=()=>{b.textContent='Copiado';b.classList.add('ok');setTimeout(()=>{b.textContent='Copiar';b.classList.remove('ok')},1800)};
+  const select=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+  try{navigator.clipboard.writeText(text).then(done,select)}catch(e){select()}
+}));
+</script>
+</body></html>
