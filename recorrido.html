@@ -49,7 +49,7 @@ strong{font-weight:600}
 .hint{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:-8px 0 10px}
 .flujo{position:relative;display:grid;
  grid-template-columns:118px repeat(17,112px) 210px;column-gap:24px;
- grid-template-rows:auto auto repeat(4,132px) 74px auto;width:max-content}
+ grid-template-rows:auto auto 168px repeat(3,132px) 74px auto;width:max-content}
 .flujo svg.lineas{position:absolute;left:0;top:0;pointer-events:none;z-index:1;overflow:visible}
 /* fases y cotas */
 .fase{grid-row:1;border-left:1.5px solid var(--ink);padding:0 0 8px 12px;position:relative;z-index:2}
@@ -74,6 +74,8 @@ strong{font-weight:600}
 .paso .num{font-family:var(--cond);font-weight:700;font-size:22px;line-height:1;color:var(--red)}
 .paso .tit{font-family:var(--cond);font-weight:600;font-size:17px;line-height:1.08;text-transform:uppercase;letter-spacing:.3px;margin:3px 0 4px}
 .paso .m{font-family:var(--mono);font-size:10px;line-height:1.35;color:var(--ink2)}
+.paso .ver{position:relative;z-index:1;display:inline-block;margin-top:6px;font-family:var(--mono);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid var(--red);line-height:1.3}
+.paso .ver:hover{background:var(--red);color:var(--paper)}
 .paso.auto{background:rgba(248,247,242,.96);border-style:dashed}
 .paso.auto::before{display:none}
 .paso.closer{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -203,6 +205,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
   <span><i class="exc"></i>Si no avanza</span>
   <span><i class="sq" style="border-style:dashed"></i>Automático</span>
   <span><i class="sq" style="background:var(--ink)"></i>Closer</span>
+  <span style="color:var(--red)">↗ Abre la página real</span>
  </div>
 </div>
 <div class="hint">Desliza o arrastra en horizontal →</div>
@@ -235,19 +238,19 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
  <div class="etq" style="grid-row:5"><b>Setter</b><span>Equipo de setting</span></div>
  <div class="etq" style="grid-row:6"><b>Closer</b><span>Tú</span></div>
 
- <!-- fase 1 -->
+ <!-- fase 1 · los pasos con «Abrir ↗» enlazan a la página real que ve el lead -->
  <div class="paso" id="p1" style="grid-column:2;grid-row:3"><div class="num">01</div><div class="tit">Ve el anuncio</div><div class="m">Facebook o Instagram</div></div>
  <div class="paso" id="p2" style="grid-column:3;grid-row:3"><div class="num">02</div><div class="tit">Se registra</div><div class="m">Facturación, negocio y zona</div></div>
- <div class="paso" id="p3" style="grid-column:4;grid-row:3"><div class="num">03</div><div class="tit">Ve el VSL</div><div class="m">Landing · 10 min</div></div>
- <div class="paso" id="p4" style="grid-column:5;grid-row:3"><div class="num">04</div><div class="tit">Agenda su reunión</div><div class="m">Calendario bajo el vídeo</div></div>
+ <div class="paso" id="p3" style="grid-column:4;grid-row:3"><div class="num">03</div><div class="tit">Ve el VSL</div><div class="m">Landing · 10 min</div><a class="ver" href="https://aplica.growinginmobiliario.com/agenda" target="_blank" rel="noopener">Abrir ↗</a></div>
+ <div class="paso" id="p4" style="grid-column:5;grid-row:3"><div class="num">04</div><div class="tit">Agenda su reunión</div><div class="m">Calendario bajo el vídeo</div><a class="ver" href="https://aplica.growinginmobiliario.com/agenda" target="_blank" rel="noopener">Abrir ↗</a></div>
  <div class="paso ancho" id="p4b" style="grid-column:4/6;grid-row:5"><span class="tag rojo">Nace la cita · rojo</span><div class="num">04-bis</div><div class="tit">Llamada del setter</div><div class="m">Al registrarse. Si ya agendó, confirma y cualifica. Si no, le agenda por teléfono.</div></div>
 
  <!-- fase 2 -->
  <div class="paso auto" id="p5" style="grid-column:6;grid-row:4"><div class="num">05</div><div class="tit">Vídeo de 60 s</div><div class="m">WhatsApp · al agendar</div></div>
  <div class="paso" id="p6" style="grid-column:7;grid-row:3"><div class="num">06</div><div class="tit">Contesta 👍 o «visto»</div><div class="m">La puerta</div></div>
  <div class="paso auto" id="p7" style="grid-column:8;grid-row:4"><div class="num">07</div><div class="tit">Enlace al formulario</div><div class="m">WhatsApp · al recibir el 👍</div></div>
- <div class="paso" id="p8" style="grid-column:9;grid-row:3"><span class="tag ambar">Pasa a amarillo</span><div class="num">08</div><div class="tit">Formulario de confirmación</div><div class="m">6 cláusulas · 2 min</div></div>
- <div class="paso" id="p9" style="grid-column:10;grid-row:3"><div class="num">09</div><div class="tit">Página de gracias</div><div class="m">Vídeo, preguntas y casos</div></div>
+ <div class="paso" id="p8" style="grid-column:9;grid-row:3"><span class="tag ambar">Pasa a amarillo</span><div class="num">08</div><div class="tit">Formulario de confirmación</div><div class="m">6 cláusulas · 2 min</div><a class="ver" href="https://aplica.growinginmobiliario.com/formulario" target="_blank" rel="noopener">Abrir ↗</a></div>
+ <div class="paso" id="p9" style="grid-column:10;grid-row:3"><div class="num">09</div><div class="tit">Página de gracias</div><div class="m">Vídeo, preguntas y casos</div><a class="ver" href="https://aplica.growinginmobiliario.com/gracias" target="_blank" rel="noopener">Abrir ↗</a></div>
 
  <!-- fase 3 -->
  <div class="paso" id="p10" style="grid-column:11;grid-row:5"><div class="num">10</div><div class="tit">Mensaje 24 h antes</div><div class="m">A mano · el caso de éxito más parecido</div></div>
