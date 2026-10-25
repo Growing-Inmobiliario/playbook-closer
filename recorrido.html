@@ -96,6 +96,13 @@ strong{font-weight:600}
 .etq.exc{grid-row:8;color:var(--gris);border-right:1.5px dashed var(--gris)}
 .etq.exc b{color:var(--gris)}
 .exc-c{grid-row:8;z-index:2;margin-top:34px;border:1.5px dashed var(--gris);background:rgba(248,247,242,.96);padding:8px 10px;color:#5f6876;font-size:13px;line-height:1.3;align-self:start}
+.exc-c.vuelta{grid-row:5;margin:0;align-self:center}
+/* frontera de responsabilidad */
+.frontera{grid-column:12/17;grid-row:6;z-index:2;align-self:center;justify-self:end;text-align:right;margin-right:4px}
+.frontera b{display:block;font-family:var(--cond);font-weight:700;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--red)}
+.frontera span{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2)}
+.lineas .front{stroke:var(--red);stroke-width:3}
+.lineas .ft{font-family:var(--mono);font-size:10px;letter-spacing:2px;fill:var(--red);paint-order:stroke;stroke:var(--paper);stroke-width:5px}
 .exc-c b{display:block;font-family:var(--cond);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.4px;line-height:1.1;margin-bottom:3px;color:#4f5866}
 /* svg */
 .lineas .main{fill:none;stroke:var(--ink);stroke-width:1.6}
@@ -119,6 +126,12 @@ strong{font-weight:600}
 .box dd{margin:2px 0 0}
 .box.rojo{border-top:8px solid var(--rojo)}.box.ambar{border-top:8px solid var(--ambar)}.box.verde{border-top:8px solid var(--verde)}
 .box.rojo .lbl{color:var(--rojo)}.box.ambar .lbl{color:#94681a}.box.verde .lbl{color:var(--verde)}
+.cols.dos{grid-template-columns:1fr 1fr}
+.box.resp{border-left:8px solid var(--ink)}
+.box.resp .lbl{color:var(--red)}
+.box.resp.closer{background:var(--ink);color:var(--paper)}
+.box.resp.closer::before{border-color:rgba(248,247,242,.35)}
+.box.resp.closer .lbl{color:#e7b3a3}
 .nota{font-family:var(--cond);font-weight:600;font-size:22px;line-height:1.2;text-transform:uppercase;letter-spacing:.4px;border-left:4px solid var(--red);padding:4px 0 4px 14px;margin:0 0 30px}
 .titulo-cita{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:14px;border:1.5px solid var(--ink);padding:6px 12px;background:var(--paper);margin:4px 0 10px}
 .titulo-cita i{width:12px;height:12px;border-radius:50%;background:var(--ambar);display:inline-block}
@@ -156,6 +169,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 .cajetin b{font-family:var(--cond);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.5px}
 @media (max-width:1100px){.cols{grid-template-columns:1fr 1fr}.tira{grid-template-columns:repeat(3,1fr);row-gap:22px}.tira::before{display:none}}
 @media (max-width:760px){
+ .cols.dos{grid-template-columns:1fr}
  body{padding:10px 6px 40px;font-size:16px}
  .plano{padding:8px}
  .marco{padding:26px 18px 0}
@@ -212,7 +226,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
  <div class="cota" style="grid-column:19/20"><span>Después</span></div>
 
  <!-- carriles -->
- <div class="carril r3" style="grid-row:3"></div>
+ <div class="carril r3" id="c3" style="grid-row:3"></div>
  <div class="carril" style="grid-row:4"></div>
  <div class="carril" style="grid-row:5"></div>
  <div class="carril r6" style="grid-row:6"></div>
@@ -244,16 +258,18 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
  <div class="paso" id="p13" style="grid-column:14;grid-row:5"><span class="tag verde">Pasa a verde</span><div class="num">13</div><div class="tit">Protocolo de confirmación</div><div class="m">9:00–10:30 · 2 min · te presenta</div></div>
  <div class="paso auto" id="p14" style="grid-column:15;grid-row:4"><div class="num">14</div><div class="tit">Mensaje 3 h antes</div><div class="m">Aviso del enlace</div></div>
  <div class="paso auto" id="p15" style="grid-column:16;grid-row:4"><div class="num">15</div><div class="tit">Mensaje 10 min antes</div><div class="m">Enlace y prueba de cámara</div></div>
- <div class="paso closer" id="p16" style="grid-column:17;grid-row:6"><div class="num">16</div><div class="tit">La reunión</div><div class="m">1 hora · con la ficha delante</div></div>
+ <div class="frontera"><b>Hasta aquí, la cita es del setter</b><span>Que se presente es cosa suya →</span></div>
+ <div class="paso closer" id="p16" style="grid-column:17;grid-row:6"><span class="tag rojo">Desde aquí, tuya</span><div class="num">16</div><div class="tit">La reunión</div><div class="m">1 hora · con la ficha delante</div></div>
  <div class="paso closer" id="p17" style="grid-column:18;grid-row:6"><div class="num">17</div><div class="tit">Resultado</div><div class="m">Formulario el mismo día</div></div>
+ <div class="exc-c vuelta" id="e4" style="grid-column:17/19"><b>No-show o cancelada</b>Lo marcas en el resultado y le llega al setter. Él la reagenda.</div>
 
  <!-- fase 5 -->
  <div class="salidas" id="salidas">
   <div class="h">Salida</div>
   <div class="o"><b>Presentada</b><span>Sigue tu proceso de venta</span></div>
-  <div class="o"><b>No-show</b><span>A los 15 min. El setter lo recupera una vez</span></div>
-  <div class="o"><b>Reagendada</b><span>Una vez, misma semana. Secuencia de cero, sin vídeo</span></div>
-  <div class="o"><b>Cancelada</b><span>Motivo literal. Es dato</span></div>
+  <div class="o"><b>No-show</b><span>Lo marcas tú a los 15 min. Lo recupera el setter</span></div>
+  <div class="o"><b>Reagendada</b><span>La mueve el setter. Una vez, misma semana</span></div>
+  <div class="o"><b>Cancelada</b><span>Motivo literal. Le llega al setter para reagendar</span></div>
  </div>
 
  <!-- semáforo -->
@@ -264,7 +280,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
  <div class="etq exc"><b>Si no avanza</b><span>Sale y vuelve</span></div>
  <div class="exc-c" id="e1" style="grid-column:8/10"><b>24 h sin formulario</b>Pasó el 👍 pero no lo rellena. El setter le escribe a mano. Un mensaje, uno solo.</div>
  <div class="exc-c" id="e2" style="grid-column:11/13"><b>Víspera sin formulario</b>El setter le llama. Sigue en rojo y su hueco es doblable.</div>
- <div class="exc-c" id="e3" style="grid-column:16/18"><b>15 min sin entrar</b>Se marca no-show y pasas al siguiente.</div>
+ <div class="exc-c" id="e3" style="grid-column:16/18"><b>15 min sin entrar</b>Marcas no-show y pasas al siguiente. Recuperarlo es del setter.</div>
 </div>
 </div>
 
@@ -276,6 +292,16 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 <div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>R-02</b>Leyenda</div></div>
 <div class="sec">Leyenda</div>
 <h2 class="t">Cómo llega la cita a tus manos</h2>
+
+<h3>Quién responde de qué</h3>
+<div class="cols dos">
+ <div class="box resp"><div class="lbl">Setter · hasta que entra en la reunión</div>
+  <div class="big">Conseguir que el lead se presente es responsabilidad del setter. Siempre.</div>
+  <p style="font-size:15px;margin-bottom:6px">Confirmar, mover, reagendar y recuperar. Si el closer marca una cita como no-show o cancelada, al setter le llega el aviso y es él quien la reagenda.</p></div>
+ <div class="box resp closer"><div class="lbl">Closer · desde que el prospecto está dentro</div>
+  <div class="big">La reunión es tuya. Y el resultado, el mismo día.</div>
+  <p style="font-size:15px;margin-bottom:6px">No persigues a nadie para que aparezca. Si no entra a los 15 minutos, lo marcas como no-show en el formulario de resultado y pasas al siguiente: lo demás lo hace el setter.</p></div>
+</div>
 
 <div class="cols">
  <div class="box rojo"><div class="lbl"><i style="background:var(--rojo);border-color:var(--rojo)"></i>Rojo</div>
@@ -301,7 +327,7 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
    <li><strong>La ficha.</strong> Problema, números, zona, equipo y lo que anotó el setter.</li>
    <li><strong>Las tres líneas del setter.</strong> Lo que confirmó en el protocolo de la mañana.</li>
    <li><strong>Un lead que ya te conoce.</strong> El setter le ha dicho quién eres, qué has hecho con un caso como el suyo y por qué le toca contigo.</li>
-   <li><strong>Tú no llamas a nadie.</strong> Entras, haces la reunión y rellenas el resultado el mismo día.</li>
+   <li><strong>Tú no llamas a nadie.</strong> Entras, haces la reunión y rellenas el resultado el mismo día. Si no hubo reunión, el setter se entera por ese formulario.</li>
   </ul></div>
 </div>
 
@@ -324,9 +350,9 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 <div class="tablewrap"><table>
 <thead><tr><th>Salida</th><th>Qué pasa</th></tr></thead><tbody>
 <tr><th>Presentada</th><td>Sigue el proceso de venta del closer.</td></tr>
-<tr><th>No-show</th><td>Se marca a los 15 minutos. El setter lo recupera una sola vez.</td></tr>
-<tr><th>Reagendada</th><td>Se mueve una sola vez y dentro de la misma semana. La secuencia arranca de cero, pero sin el vídeo de bienvenida.</td></tr>
-<tr><th>Cancelada</th><td>Se apunta el motivo literal. Es dato.</td></tr>
+<tr><th>No-show</th><td>La marca el closer en el formulario de resultado a los 15 minutos. Al setter le llega el aviso y lo recupera una sola vez.</td></tr>
+<tr><th>Reagendada</th><td>La mueve el setter, una sola vez y dentro de la misma semana. La secuencia arranca de cero, pero sin el vídeo de bienvenida.</td></tr>
+<tr><th>Cancelada</th><td>Se apunta el motivo literal: es dato. Al setter le llega el aviso para reagendarla.</td></tr>
 </tbody></table></div>
 
 <div class="nav"><a href="#recorrido">← Anterior</a><a href="index.html">Programa →</a></div>
@@ -387,6 +413,15 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
       var t=el('text',{x:m[0]+9,y:y+h+14,'class':'pin'});t.textContent=m[1];
       el('line',{x1:m[0],y1:y+h,x2:m[0],y2:y+h+16,stroke:'#1b2c47','stroke-width':1});
     });
+
+    // frontera de responsabilidad: antes de la reunión responde el setter, desde la reunión el closer
+    var xf=box('p16').l-gap/2, yTop=box('c3').t, ft;
+    el('line',{x1:xf,y1:yTop-26,x2:xf,y2:B.b,'class':'front'});
+    ft=el('text',{x:xf-8,y:yTop-14,'class':'ft','text-anchor':'end'});ft.textContent='SETTER ←';
+    ft=el('text',{x:xf+8,y:yTop-14,'class':'ft'});ft.textContent='→ CLOSER';
+    // no-show o cancelada: el resultado vuelve al setter
+    var r17=box('p17'), e4=box('e4');
+    el('path',{d:'M'+r17.cx+' '+r17.t+' V'+(e4.b+1),'class':'ex','marker-end':'url(#fx)'});
 
     // excepciones: salen del paso y vuelven al mismo sitio
     [['p8','e1'],['p11','e2'],['p16','e3']].forEach(function(p){
