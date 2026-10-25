@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salto y Renovación · Growing Inmobiliario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b2c47;--ink2:#3c5478;--paper:#f8f7f2;--ground:#e3e7ec;--grid:rgba(27,44,71,.055);--grid2:rgba(27,44,71,.10);--red:#a2432b;--muted:#5d6b80;
+ --cond:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--sans:"Barlow","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono",Menlo,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+a{color:inherit}
+.plano{position:relative;max-width:1760px;margin:0 auto 36px;background-color:var(--paper);
+ background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+ background-size:100px 100px,100px 100px,20px 20px,20px 20px;border:2px solid var(--ink);padding:14px;box-shadow:0 18px 40px rgba(27,44,71,.14)}
+.marco{border:1px solid var(--ink);padding:36px 48px 0;position:relative}
+.marco::before,.marco::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--ink)}
+.marco::before{top:-8px;left:-8px;border-right:0;border-bottom:0}
+.marco::after{bottom:-8px;right:-8px;border-left:0;border-top:0}
+.ph{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo .g{font-family:"Outfit","Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:32px;letter-spacing:-1px;line-height:1}
+.logo .g sup{font-size:10px;vertical-align:top;position:relative;top:3px;letter-spacing:0}
+.logo .i{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:500;font-size:30px;line-height:1;margin-top:2px}
+.code{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;text-align:right;line-height:1.6}
+.code b{display:block;font-family:var(--cond);font-size:34px;font-weight:700;letter-spacing:1px;line-height:1}
+.sec{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ink2);display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.sec::after{content:"";flex:1;border-top:1px dashed var(--ink2)}
+h1{font-family:var(--cond);font-weight:700;font-size:96px;line-height:.88;text-transform:uppercase;letter-spacing:1px;margin:6px 0 12px}
+h1 em{font-style:normal;color:var(--red)}
+h2.t{font-family:var(--cond);font-weight:700;font-size:56px;line-height:.95;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px}
+.sub{font-style:italic;font-size:22px;color:var(--ink2);margin:0 0 26px}
+h3{font-family:var(--cond);font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px;display:flex;align-items:baseline;gap:10px}
+h3::before{content:"◆";font-size:12px;color:var(--red);transform:translateY(-3px)}
+p{margin:0 0 1em}
+strong{font-weight:600}
+.lead{font-size:20px;color:var(--ink2);max-width:860px;margin-bottom:18px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase}
+/* cajas */
+.box{border:1.5px solid var(--ink);background:rgba(248,247,242,.92);padding:16px 20px 12px;position:relative}
+.box::before{content:"";position:absolute;inset:5px;border:1px dashed rgba(27,44,71,.35);pointer-events:none}
+.box .lbl{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.box .big{font-family:var(--cond);font-size:26px;line-height:1.12;font-weight:600;margin-bottom:10px}
+.box.oscura{background:var(--ink);color:var(--paper)}
+.box.oscura::before{border-color:rgba(248,247,242,.35)}
+.box.oscura .lbl{color:#e7b3a3}
+.box.alerta{border-color:var(--red);border-left:8px solid var(--red)}
+.fila{display:grid;gap:22px;margin-bottom:26px}
+/* portada: el corte */
+.alzado{display:block;width:100%;height:auto;margin:6px 0 4px}
+.alzado .ln{fill:rgba(248,247,242,.9);stroke:var(--ink);stroke-width:1.6}
+.alzado .ln2{fill:none;stroke:var(--ink);stroke-width:1.6}
+.alzado .fine{fill:none;stroke:var(--ink2);stroke-width:.9}
+.alzado .dsh{fill:rgba(248,247,242,.9);stroke:var(--ink);stroke-width:1.6;stroke-dasharray:6 4}
+.alzado .win{fill:none;stroke:var(--ink2);stroke-width:1}
+.alzado .hl{stroke:var(--ink2);stroke-width:1}
+.alzado .corte{stroke:var(--red);stroke-width:3;stroke-dasharray:22 6 4 6}
+.alzado text{font-family:var(--mono);fill:var(--ink);letter-spacing:2px}
+.alzado .t1{font-family:var(--cond);font-weight:700;font-size:28px;letter-spacing:1px}
+.alzado .t2{font-size:11px}
+.alzado .t3{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:1px}
+.alzado .rd{fill:var(--red)}
+.alzado .pp{fill:var(--paper)}
+.alzado .md{fill:var(--ink2)}
+.dos{display:grid;grid-template-columns:35% 65%;gap:0;margin:8px 0 26px;border:1.5px solid var(--ink)}
+.dos > div{padding:22px 26px 14px;background:rgba(248,247,242,.92)}
+.dos > div + div{border-left:3px dashed var(--red)}
+.dos .k{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink2)}
+.dos .n{font-family:var(--cond);font-weight:700;font-size:44px;line-height:1;text-transform:uppercase;margin:4px 0 2px}
+.dos .p{font-family:var(--cond);font-weight:600;font-size:22px;color:var(--red);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.dos p{font-size:17px}
+.dos .verbos{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 12px}
+.dos .verbos span{font-family:var(--cond);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.8px;border:1.5px solid var(--ink);padding:2px 10px}
+.indice{border:1.5px solid var(--ink);background:rgba(248,247,242,.92);margin:0 0 10px}
+.indice .h{font-family:var(--mono);font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;padding:10px 14px;border-bottom:1.5px solid var(--ink);background:rgba(27,44,71,.05)}
+.indice a{display:grid;grid-template-columns:70px 200px 1fr 20px;gap:10px;padding:10px 14px;border-bottom:1px dashed rgba(27,44,71,.35);text-decoration:none;align-items:baseline}
+.indice a:last-child{border-bottom:0}
+.indice a:hover{background:rgba(27,44,71,.06)}
+.indice .c{font-family:var(--mono);font-size:12px}
+.indice .s{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2)}
+.indice .nm{font-family:var(--cond);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.indice .a{color:var(--red);font-weight:700}
+/* salto: diagrama de gantt */
+.scroller{overflow-x:auto;padding-bottom:6px;margin-bottom:22px}
+.gantt{min-width:1280px;border:1.5px solid var(--ink);background:rgba(248,247,242,.92)}
+.g-row{display:grid;grid-template-columns:230px 1.15fr .8fr 560px;border-bottom:1px dashed rgba(27,44,71,.35)}
+.g-row:last-child{border-bottom:0}
+.g-row > div{padding:10px 14px;font-size:14.5px;line-height:1.38}
+.g-row > div + div{border-left:1px solid rgba(27,44,71,.25)}
+.g-head{background:rgba(27,44,71,.05);border-bottom:1.5px solid var(--ink)}
+.g-head > div{font-family:var(--mono);font-size:11px !important;letter-spacing:2.5px;text-transform:uppercase}
+.g-row .it{font-family:var(--cond);font-weight:600;font-size:19px;text-transform:uppercase;letter-spacing:.4px;line-height:1.1}
+.g-row .cl{color:var(--ink2)}
+.tl{position:relative;padding:0 !important}
+.tl .meses{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr)}
+.tl .meses i{border-left:1px dotted rgba(27,44,71,.3)}
+.tl .meses i:first-child{border-left:0}
+.g-head .tl .meses i{display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:2px}
+.bar{position:absolute;top:50%;transform:translateY(-50%);height:22px;left:0;display:flex;align-items:center;padding:0 8px;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.bar.s{background:var(--ink);color:var(--paper)}
+.bar.c{border:1.5px solid var(--ink);background:repeating-linear-gradient(45deg,rgba(27,44,71,.2) 0 1px,transparent 1px 7px);color:var(--ink)}
+.bar.w{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px calc(100%/26));color:transparent}
+.bar.r{background:var(--red);color:var(--paper)}
+.bar .etq{position:absolute;left:calc(100% + 8px);color:var(--ink);background:var(--paper);padding:0 4px}
+.bar.w .etq{left:auto;right:0;top:-18px}
+/* renovación: base + añadidos */
+.obra{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:18px;margin-bottom:24px;align-items:stretch}
+.pieza{border:1.5px solid var(--ink);background:rgba(248,247,242,.94);display:flex;flex-direction:column;position:relative}
+.pieza.add{border-style:dashed}
+.pieza .cab{padding:12px 16px 10px;border-bottom:1.5px solid var(--ink);background:rgba(27,44,71,.05)}
+.pieza.base .cab{background:var(--ink);color:var(--paper)}
+.pieza .cab .mono{color:var(--red)}
+.pieza.base .cab .mono{color:#e7b3a3}
+.pieza .cab b{display:block;font-family:var(--cond);font-weight:700;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 4px}
+.pieza .cab .pr{font-family:var(--cond);font-weight:600;font-size:24px;letter-spacing:.5px}
+.pieza .cab .q{font-style:italic;font-size:15px;line-height:1.3;opacity:.85}
+.pieza .cuerpo{padding:6px 16px 12px;flex:1}
+.pieza .area{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin:10px 0 2px}
+.pieza ul{list-style:none;padding:0;margin:0}
+.pieza li{padding:7px 0;border-bottom:1px dashed rgba(27,44,71,.3);font-size:14.5px;line-height:1.35}
+.pieza li:last-child{border-bottom:0}
+.pieza li b{display:block;font-family:var(--cond);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.3px}
+.pieza .pie{border-top:1px solid rgba(27,44,71,.3);padding:8px 16px;font-size:13.5px;color:var(--ink2);font-style:italic}
+.plus{position:absolute;left:-17px;top:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:700;font-size:30px;color:var(--red);background:var(--paper);line-height:1;padding:2px 0}
+.opc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 4px}
+.opc div{border:1px solid var(--ink);padding:8px 10px;text-align:center}
+.opc b{display:block;font-family:var(--cond);font-weight:700;font-size:26px;line-height:1}
+.opc span{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2)}
+/* niveles */
+.niveles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px}
+.nivel{border:1.5px solid var(--ink);background:rgba(248,247,242,.94);display:flex;flex-direction:column}
+.nivel.top{box-shadow:0 0 0 3px var(--paper),0 0 0 4.5px var(--red)}
+.nivel svg{display:block;width:100%;height:auto;border-bottom:1.5px solid var(--ink)}
+.nivel .tx{padding:12px 16px;flex:1}
+.nivel .nm{font-family:var(--cond);font-weight:700;font-size:34px;line-height:1;text-transform:uppercase;letter-spacing:.5px}
+.nivel .ll{font-size:14.5px;color:var(--ink2);line-height:1.35;margin:6px 0 0}
+.nivel .precios{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--ink)}
+.nivel .precios div{padding:10px 14px}
+.nivel .precios div + div{border-left:1px solid var(--ink)}
+.nivel .precios span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.nivel .precios b{font-family:var(--cond);font-weight:700;font-size:32px;line-height:1.05}
+.nivel .precios div:first-child b{color:var(--red)}
+.mini .ln{fill:rgba(248,247,242,.9);stroke:var(--ink);stroke-width:1.5}
+.mini .bs{fill:var(--ink);stroke:var(--ink);stroke-width:1.5}
+.mini .dsh{fill:rgba(248,247,242,.9);stroke:var(--ink);stroke-width:1.5;stroke-dasharray:5 3}
+.mini .win{fill:none;stroke:var(--paper);stroke-width:1}
+.mini .win2{fill:none;stroke:var(--ink2);stroke-width:1}
+.mini .hl{stroke:var(--ink2);stroke-width:1}
+.mini text{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;fill:var(--ink)}
+.mini .pp{fill:var(--paper)}
+/* comparativa */
+.tablewrap{overflow-x:auto;margin:0 0 20px}
+table{width:100%;border-collapse:collapse;background:rgba(248,247,242,.94);border:1.5px solid var(--ink);font-size:15px;line-height:1.4;min-width:1000px}
+th,td{padding:9px 14px;text-align:left;vertical-align:middle;border-bottom:1px dashed rgba(27,44,71,.35)}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;border-bottom:1.5px solid var(--ink);background:rgba(27,44,71,.05);vertical-align:bottom}
+thead th.salto{background:var(--ink);color:var(--paper)}
+tbody th{font-family:var(--cond);font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;width:290px}
+td+td,th+td,th+th{border-left:1px solid rgba(27,44,71,.25)}
+td{text-align:center;width:13%}
+td.si{font-weight:600}
+td.no{color:var(--red);font-family:var(--cond);font-weight:700;font-size:18px;text-transform:uppercase;background:rgba(162,67,43,.07)}
+td.vuelve{font-weight:600;background:rgba(27,44,71,.07)}
+tr.grupo th{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--paper);background:var(--ink2);padding:6px 14px}
+tr.grupo.rojo th{background:var(--red)}
+tr.grupo.verde th{background:#3f6b4a}
+.check{font-size:18px}
+/* cajetín */
+.nav{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;margin:30px 0 10px}
+.nav a{text-decoration:none;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--ink)}
+.cajetin{display:grid;grid-template-columns:1.4fr 2fr .7fr .8fr .7fr;border-top:1.5px solid var(--ink);margin:0 -48px;background:rgba(248,247,242,.96)}
+.cajetin div{padding:8px 12px;border-right:1px solid var(--ink)}
+.cajetin div:last-child{border-right:0}
+.cajetin span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.cajetin b{font-family:var(--cond);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.5px}
+@media (max-width:1200px){.obra{grid-template-columns:1fr 1fr}.niveles{grid-template-columns:1fr 1fr}.plus{display:none}}
+@media (max-width:760px){
+ body{padding:10px 6px 40px;font-size:16px}
+ .plano{padding:8px}
+ .marco{padding:26px 18px 0}
+ .marco::before,.marco::after{display:none}
+ .ph{flex-direction:column}
+ .code{text-align:left}
+ h1{font-size:56px}
+ h2.t{font-size:40px}
+ .dos{grid-template-columns:1fr}
+ .dos > div + div{border-left:0;border-top:3px dashed var(--red)}
+ .obra,.niveles,.fila{grid-template-columns:1fr !important}
+ .indice a{grid-template-columns:52px 1fr 14px}
+ .indice .s{display:none}
+ .cajetin{grid-template-columns:1fr 1fr;margin:0 -18px}
+ .cajetin div{border-bottom:1px solid var(--ink)}
+ .cajetin div:nth-child(2n){border-right:0}
+}
+@page{size:A3 landscape;margin:8mm}
+@media print{body{background:#fff;padding:0}.plano{box-shadow:none;page-break-after:always;margin:0;max-width:none}.nav{display:none}}
+</style></head>
+<body>
+
+<!-- ===================== PORTADA: la sección A-A separa los dos programas ===================== -->
+<section class="plano" id="portada"><div class="marco">
+<div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>P-00</b>Sección A-A</div></div>
+<div class="sec">Lo que vendes</div>
+<h1>Salto <em>/</em> Renovación</h1>
+<p class="lead">Dos programas, dos obras distintas. El Salto construye el motor de captación. La Renovación lo mantiene en marcha sin nosotros encima y, si el cliente quiere, le levanta plantas nuevas encima.</p>
+
+<svg class="alzado" viewBox="0 0 1600 470" role="img" aria-label="Sección: a la izquierda, el Salto como obra nueva con andamios y grúa durante 6 meses; a la derecha, la Renovación como el mismo edificio con plantas añadidas durante 12 meses">
+<defs>
+ <pattern id="rayado" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" class="hl"/></pattern>
+</defs>
+ <!-- ===== SALTO: obra nueva ===== -->
+ <!-- edificio -->
+ <rect x="190" y="200" width="250" height="140" class="ln"/>
+ <g class="win">
+  <rect x="210" y="218" width="34" height="40"/><rect x="262" y="218" width="34" height="40"/><rect x="314" y="218" width="34" height="40"/><rect x="366" y="218" width="34" height="40"/>
+  <rect x="210" y="280" width="34" height="40"/><rect x="262" y="280" width="34" height="40"/><rect x="366" y="280" width="34" height="40"/>
+ </g>
+ <rect x="316" y="280" width="30" height="60" class="ln"/>
+ <line x1="190" y1="270" x2="440" y2="270" class="fine"/>
+ <!-- andamios -->
+ <g class="fine">
+  <line x1="172" y1="150" x2="172" y2="340"/><line x1="458" y1="150" x2="458" y2="340"/>
+  <line x1="172" y1="150" x2="458" y2="150"/><line x1="172" y1="200" x2="458" y2="200"/><line x1="172" y1="270" x2="190" y2="270"/><line x1="440" y1="270" x2="458" y2="270"/>
+  <line x1="172" y1="150" x2="190" y2="200"/><line x1="458" y1="150" x2="440" y2="200"/>
+  <line x1="190" y1="150" x2="190" y2="200"/><line x1="440" y1="150" x2="440" y2="200"/>
+  <line x1="172" y1="200" x2="190" y2="270"/><line x1="458" y1="200" x2="440" y2="270"/>
+  <line x1="172" y1="270" x2="190" y2="340"/><line x1="458" y1="270" x2="440" y2="340"/>
+ </g>
+ <!-- grúa -->
+ <rect x="94" y="70" width="16" height="270" class="ln"/>
+ <g class="fine"><line x1="94" y1="80" x2="110" y2="100"/><line x1="110" y1="100" x2="94" y2="120"/><line x1="94" y1="120" x2="110" y2="140"/><line x1="110" y1="140" x2="94" y2="160"/><line x1="94" y1="160" x2="110" y2="180"/><line x1="110" y1="180" x2="94" y2="200"/><line x1="94" y1="200" x2="110" y2="220"/><line x1="110" y1="220" x2="94" y2="240"/><line x1="94" y1="240" x2="110" y2="260"/><line x1="110" y1="260" x2="94" y2="280"/><line x1="94" y1="280" x2="110" y2="300"/><line x1="110" y1="300" x2="94" y2="320"/></g>
+ <rect x="50" y="58" width="420" height="12" class="ln"/>
+ <line x1="102" y1="58" x2="102" y2="30" class="ln2"/><line x1="102" y1="30" x2="50" y2="58" class="fine"/><line x1="102" y1="30" x2="470" y2="58" class="fine"/>
+ <rect x="50" y="70" width="26" height="22" fill="url(#rayado)" class="ln"/>
+ <line x1="380" y1="70" x2="380" y2="118" class="fine"/>
+ <rect x="362" y="118" width="36" height="20" class="ln"/>
+ <text x="380" y="132" text-anchor="middle" class="t2" style="font-size:8px;letter-spacing:1px">CRM</text>
+ <!-- etiquetas Salto -->
+ <text x="315" y="112" text-anchor="middle" class="t2 md">OBRA NUEVA</text>
+
+ <!-- ===== LÍNEA DE CORTE ===== -->
+ <line x1="560" y1="18" x2="560" y2="420" class="corte"/>
+ <circle cx="560" cy="26" r="17" fill="#f8f7f2" stroke="#a2432b" stroke-width="2"/><text x="560" y="31" text-anchor="middle" class="t3 rd">A</text>
+ <path d="M577 26 l14 -8 v16 z" fill="#a2432b"/>
+ <rect x="574" y="56" width="222" height="42" fill="#a2432b"/>
+ <text x="586" y="73" class="t2 pp">MES 6</text>
+ <text x="586" y="88" class="t2 pp">AQUÍ ACABA EL SALTO</text>
+
+ <!-- ===== RENOVACIÓN: el mismo edificio, ampliado ===== -->
+ <!-- base: el mismo edificio, ya terminado -->
+ <rect x="930" y="200" width="250" height="140" class="ln"/>
+ <g class="win">
+  <rect x="950" y="218" width="34" height="40"/><rect x="1002" y="218" width="34" height="40"/><rect x="1054" y="218" width="34" height="40"/><rect x="1106" y="218" width="34" height="40"/>
+  <rect x="950" y="280" width="34" height="40"/><rect x="1002" y="280" width="34" height="40"/><rect x="1106" y="280" width="34" height="40"/>
+ </g>
+ <rect x="1056" y="280" width="30" height="60" class="ln"/>
+ <line x1="930" y1="270" x2="1180" y2="270" class="fine"/>
+ <!-- plantas añadidas (a elegir) -->
+ <rect x="930" y="140" width="250" height="60" class="dsh"/>
+ <text x="1055" y="176" text-anchor="middle" class="t3">PACK CAPTACIÓN</text>
+ <rect x="930" y="80" width="250" height="60" class="dsh"/>
+ <text x="1055" y="116" text-anchor="middle" class="t3">PACK CONTROL</text>
+ <polygon points="918,80 1055,46 1192,80" class="ln"/>
+ <!-- ascensor: el consultor -->
+ <rect x="1180" y="80" width="34" height="260" class="dsh"/>
+ <line x1="1197" y1="92" x2="1197" y2="330" class="fine"/>
+ <text transform="translate(1201 210) rotate(-90)" text-anchor="middle" class="t2" style="font-size:9.5px">CONSULTOR 1:1</text>
+ <!-- cotas laterales de la renovación -->
+ <g class="fine"><line x1="1250" y1="200" x2="1250" y2="340"/><line x1="1244" y1="200" x2="1256" y2="200"/><line x1="1244" y1="340" x2="1256" y2="340"/>
+ <line x1="1250" y1="80" x2="1250" y2="198"/><line x1="1244" y1="80" x2="1256" y2="80"/></g>
+ <text x="1264" y="266" class="t2">BASE · OBLIGATORIA</text>
+ <text x="1264" y="282" class="t2 md">«SEGUIR OPERANDO»</text>
+ <text x="1264" y="136" class="t2">AÑADIDOS · A ELEGIR</text>
+ <text x="1264" y="152" class="t2 md">SEGÚN EL DIAGNÓSTICO</text>
+ <text x="1055" y="34" text-anchor="middle" class="t2 md">REFORMA Y AMPLIACIÓN</text>
+
+ <!-- suelo -->
+ <line x1="30" y1="340" x2="1570" y2="340" class="ln2" style="stroke-width:2.5"/>
+ <rect x="30" y="340" width="1540" height="14" fill="url(#rayado)"/>
+
+ <!-- ===== LÍNEA DE TIEMPO ===== -->
+ <line x1="80" y1="396" x2="1520" y2="396" class="ln2"/>
+ <g class="fine">
+  <line x1="80" y1="390" x2="80" y2="402"/><line x1="160" y1="392" x2="160" y2="400"/><line x1="240" y1="392" x2="240" y2="400"/><line x1="320" y1="392" x2="320" y2="400"/><line x1="400" y1="392" x2="400" y2="400"/><line x1="480" y1="392" x2="480" y2="400"/>
+  <line x1="640" y1="392" x2="640" y2="400"/><line x1="720" y1="392" x2="720" y2="400"/><line x1="800" y1="392" x2="800" y2="400"/><line x1="880" y1="392" x2="880" y2="400"/><line x1="960" y1="392" x2="960" y2="400"/><line x1="1040" y1="392" x2="1040" y2="400"/><line x1="1120" y1="392" x2="1120" y2="400"/><line x1="1200" y1="392" x2="1200" y2="400"/><line x1="1280" y1="392" x2="1280" y2="400"/><line x1="1360" y1="392" x2="1360" y2="400"/><line x1="1440" y1="392" x2="1440" y2="400"/><line x1="1520" y1="390" x2="1520" y2="402"/>
+ </g>
+ <text x="80" y="384" text-anchor="middle" class="t2 md">0</text><text x="550" y="384" text-anchor="end" class="t2 rd">MES 6</text><text x="1040" y="384" text-anchor="middle" class="t2 md">12</text><text x="1520" y="384" text-anchor="middle" class="t2 md">18 MESES</text>
+ <rect x="80" y="408" width="480" height="30" fill="#1b2c47"/>
+ <text x="96" y="428" class="t2 pp">SALTO · 6 MESES · 12.000 €</text>
+ <rect x="560" y="408" width="960" height="30" fill="url(#rayado)" stroke="#1b2c47" stroke-width="1.6"/>
+ <rect x="574" y="414" width="340" height="18" fill="#f8f7f2"/>
+ <text x="580" y="428" class="t2">RENOVACIÓN · 12 MESES · DESDE 12.000 €</text>
+ <circle cx="560" cy="452" r="17" fill="#f8f7f2" stroke="#a2432b" stroke-width="2"/><text x="560" y="457" text-anchor="middle" class="t3 rd">A</text>
+</svg>
+
+<div class="dos">
+ <div>
+  <div class="k">Programa 1 · Obra nueva</div>
+  <div class="n">Salto Inmobiliario</div>
+  <div class="p">6 meses · 12.000 €</div>
+  <div class="verbos"><span>Montamos</span><span>Enseñamos</span><span>Acompañamos</span></div>
+  <p>Hecho para una sola cosa: <strong>que la agencia meta producto en exclusividad.</strong> Nosotros montamos el motor de captación, enseñamos a usarlo y acompañamos cada semana.</p>
+ </div>
+ <div>
+  <div class="k">Programa 2 · Reforma y ampliación</div>
+  <div class="n">Renovación</div>
+  <div class="p">12 meses · desde 12.000 €</div>
+  <div class="verbos"><span>Mantener</span><span>Crecer</span><span>Controlar</span></div>
+  <p>Hecha para que <strong>lo montado siga funcionando sin nosotros encima</strong> y, con los packs, para pasar de captar a controlar la empresa: más ticket por operación, números claros y equipo que produce.</p>
+ </div>
+</div>
+
+<div class="indice"><div class="h">Índice de planos</div>
+ <a href="#salto"><span class="c">S-01</span><span class="s">Obra nueva</span><span class="nm">Salto Inmobiliario · qué incluye</span><span class="a">→</span></a>
+ <a href="#renovacion"><span class="c">R-01</span><span class="s">Reforma</span><span class="nm">Renovación · la base y los tres añadidos</span><span class="a">→</span></a>
+ <a href="#niveles"><span class="c">R-02</span><span class="s">Alzados</span><span class="nm">Los cuatro niveles, ya sumados</span><span class="a">→</span></a>
+ <a href="#comparativa"><span class="c">C-01</span><span class="s">Superposición</span><span class="nm">Qué se mantiene, qué desaparece, qué se añade</span><span class="a">→</span></a>
+</div>
+<div class="nav"><a href="index.html">← Programa</a><a href="#salto">Empezar →</a></div>
+<div class="cajetin"><div><span>Proyecto</span><b>Growing Inmobiliario</b></div><div><span>Plano</span><b>P-00 · Sección A-A</b></div><div><span>Escala</span><b>1:1</b></div><div><span>Fecha</span><b>10 · 2026</b></div><div><span>Hoja</span><b>1 / 5</b></div></div>
+</div></section>
+
+<!-- ===================== SALTO ===================== -->
+<section class="plano" id="salto"><div class="marco">
+<div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>S-01</b>Obra nueva</div></div>
+<div class="sec">Programa 1 · 6 meses · 12.000 €</div>
+<h2 class="t">Salto Inmobiliario</h2>
+<p class="sub">Objetivo: citas de captación y encargos en exclusiva.</p>
+
+<div class="scroller"><div class="gantt">
+ <div class="g-row g-head"><div>Qué incluye</div><div>Qué hacemos nosotros</div><div>Qué hace el cliente</div><div class="tl"><div class="meses"><i>Mes 1</i><i>Mes 2</i><i>Mes 3</i><i>Mes 4</i><i>Mes 5</i><i>Mes 6</i></div></div></div>
+ <div class="g-row"><div class="it">Campañas montadas</div><div>Montamos las campañas de captación en su cuenta publicitaria</div><div class="cl">Pone la inversión publicitaria</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar r" style="width:7.7%"><span class="etq">Primeros 14 días</span></div></div></div>
+ <div class="g-row"><div class="it">Automatizaciones</div><div>Montamos la secuencia completa para trabajar su base de contactos y sus referidos: CRM, WhatsApps, pipelines, formularios diarios, IA sobre la base de datos</div><div class="cl">Alimenta el CRM y responde a los contactos</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar r" style="width:7.7%"><span class="etq">Primeros 14 días</span></div></div></div>
+ <div class="g-row"><div class="it">Gestión de campañas</div><div>Llevamos las campañas durante todo el programa</div><div class="cl">Revisa resultados con nosotros</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar s" style="width:100%">Los 6 meses</div></div></div>
+ <div class="g-row"><div class="it">Formación de captación</div><div>Cómo montar anuncios, prospección en frío, a base de contactos y a cartera, cómo cerrar una visita en exclusiva y cómo trabajar las citas de captación</div><div class="cl">Hace la formación y la aplica</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar s" style="width:100%">Desde el día 1</div></div></div>
+ <div class="g-row"><div class="it">6 reuniones grupales por semana</div><div>2 de anuncios · 1 de ventas con Pol · 1 de automatizaciones · 2 de soporte CRM</div><div class="cl">Asiste a las que necesita</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar w" style="width:100%"><span class="etq">Cada semana</span></div></div></div>
+ <div class="g-row"><div class="it">Consultor 1:1 semanal</div><div>Un consultor asignado con reunión cada semana y canal directo</div><div class="cl">Llega con sus números y ejecuta lo acordado</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar w" style="width:100%"><span class="etq">Cada semana</span></div></div></div>
+ <div class="g-row"><div class="it">Revisión de citas de captación y llamadas</div><div>Revisamos sus citas de captación y sus llamadas grabadas y le decimos qué cambiar</div><div class="cl">Graba y sube las citas y las llamadas</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar s" style="width:100%">Los 6 meses</div></div></div>
+ <div class="g-row"><div class="it">Plataforma y comunidad</div><div>Módulos, guiones, llamadas grabadas, comunidad</div><div class="cl">Consulta y participa</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar c" style="width:100%">Siempre</div></div></div>
+ <div class="g-row"><div class="it">Panel de métricas</div><div>Dashboard comercial, de cartera y de Meta Ads</div><div class="cl">Reporta los datos semanales</div><div class="tl"><div class="meses"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bar c" style="width:100%">Siempre</div></div></div>
+</div></div>
+
+<div class="fila" style="grid-template-columns:1fr 1fr">
+ <div class="box oscura"><div class="lbl">La idea en una línea</div><div class="big">En 14 días el motor está montado. Los otros cinco meses y medio, le enseñamos a conducirlo y vamos a su lado cada semana.</div></div>
+ <div class="box alerta"><div class="lbl">No incluye</div><div class="big">Inversión publicitaria, nada de finanzas, nada de equipo, nada de comprador.</div></div>
+</div>
+
+<div class="nav"><a href="#portada">← Portada</a><a href="#renovacion">Siguiente →</a></div>
+<div class="cajetin"><div><span>Proyecto</span><b>Growing Inmobiliario</b></div><div><span>Plano</span><b>S-01 · Salto Inmobiliario</b></div><div><span>Escala</span><b>1:1</b></div><div><span>Fecha</span><b>10 · 2026</b></div><div><span>Hoja</span><b>2 / 5</b></div></div>
+</div></section>
+
+<!-- ===================== RENOVACIÓN ===================== -->
+<section class="plano" id="renovacion"><div class="marco">
+<div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>R-01</b>Reforma</div></div>
+<div class="sec">Programa 2 · 12 meses</div>
+<h2 class="t">Renovación</h2>
+<p class="sub">Una base obligatoria y tres añadidos. El cliente elige los añadidos según el diagnóstico.</p>
+
+<div class="obra">
+ <div class="pieza base">
+  <div class="cab"><div class="mono">Base · obligatoria</div><b>Seguir operando</b><div class="pr">12.000 €</div><div class="q">Lo que ya tiene, sigue funcionando.</div></div>
+  <div class="cuerpo"><ul>
+   <li><b>Plataforma formativa</b>Módulos, guiones, llamadas grabadas, comunidad, sistema de Meta Ads</li>
+   <li><b>6 reuniones grupales por semana</b>2 de anuncios · 3 de CRM y soporte · 1 de ventas y captación</li>
+   <li><b>CRM y automatizaciones</b>CRM, WhatsApps, IA sobre la base de datos, pipelines, formularios diarios, soporte</li>
+   <li><b>Dashboards</b>Comercial, cartera y Meta Ads</li>
+  </ul></div>
+ </div>
+ <div class="pieza add"><span class="plus">+</span>
+  <div class="cab"><div class="mono">Añadido</div><b>Consultor 1:1</b><div class="q">Es quien ejecuta con el cliente todo lo de los packs: revisa visitas, hace la auditoría, acompaña entrevistas.</div></div>
+  <div class="cuerpo">
+   <div class="opc"><div><span>Quincenal</span><b>6.000 €</b><span>24 reuniones/año</span></div><div><span>Semanal</span><b>9.000 €</b><span>48 reuniones/año</span></div></div>
+   <ul><li>Consultor asignado y canal directo en las dos opciones.</li></ul>
+  </div>
+ </div>
+ <div class="pieza add"><span class="plus">+</span>
+  <div class="cab"><div class="mono">Añadido · Marketing + Comercial</div><b>Pack Captación</b><div class="pr">14.000 €</div><div class="q">Para que entren más clientes y cada operación deje más dinero.</div></div>
+  <div class="cuerpo">
+   <div class="area">Marketing</div>
+   <ul><li><b>Gestión de campañas</b>Llevamos sus campañas todo el año</li><li><b>Anuncios con actores</b>Uno por trimestre</li><li><b>Embudo VSL</b>Su embudo de vídeo completo, listo para funcionar</li></ul>
+   <div class="area">Comercial</div>
+   <ul><li><b>Revisión extra de visitas y llamadas</b>Como en el Salto, y más a fondo</li><li><b>Cobrar al comprador</b>El método para cobrar honorarios al comprador y revisión de citas para subir el ticket</li><li><b>Gestión de equipo</b>Módulo para dirigir a sus comerciales con números</li></ul>
+  </div>
+ </div>
+ <div class="pieza add"><span class="plus">+</span>
+  <div class="cab"><div class="mono">Añadido · Finanzas + Contratación</div><b>Pack Control</b><div class="pr">7.000 €</div><div class="q">Para que sepa lo que gana y deje de hacerlo todo él.</div></div>
+  <div class="cuerpo">
+   <div class="area">Finanzas</div>
+   <ul><li><b>Auditoría de gastos y margen</b>Plan de objetivo para estar por encima del 40 % de beneficio</li><li><b>Dashboard de finanzas</b>Conectado a su cuenta del banco</li><li><b>Módulos de formación</b>Formación financiera para dueños de agencia</li></ul>
+   <div class="area">Contratación</div>
+   <ul><li><b>Estructura mínima</b>La diseñamos y le acompañamos en perfiles y entrevistas</li><li><b>Comisiones y pagos</b>Cómo paga a su equipo, a medida</li></ul>
+  </div>
+ </div>
+</div>
+
+<div class="fila" style="grid-template-columns:1.6fr 1fr">
+ <div class="box alerta"><div class="lbl">Lo que la base ya no incluye respecto al Salto</div>
+  <div class="big">El consultor 1:1, la revisión de sus citas y llamadas, y que le llevemos las campañas.</div>
+  <p style="font-size:15.5px">Tiene el sistema montado, su cuenta publicitaria y las dos reuniones de anuncios semanales para llevarlas él. Si quiere que se las sigamos llevando, está en el Pack Captación.</p></div>
+ <div class="box oscura"><div class="lbl">Bono fundador</div>
+  <div class="big">3.000 € de descuento por cada pack, hasta 6.000 €.</div>
+  <p style="font-size:15.5px">Solo con pago completo y con el pack entero.</p></div>
+</div>
+
+<div class="nav"><a href="#salto">← Anterior</a><a href="#niveles">Siguiente →</a></div>
+<div class="cajetin"><div><span>Proyecto</span><b>Growing Inmobiliario</b></div><div><span>Plano</span><b>R-01 · Renovación</b></div><div><span>Escala</span><b>1:1</b></div><div><span>Fecha</span><b>10 · 2026</b></div><div><span>Hoja</span><b>3 / 5</b></div></div>
+</div></section>
+
+<!-- ===================== NIVELES ===================== -->
+<section class="plano" id="niveles"><div class="marco">
+<div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>R-02</b>Alzados</div></div>
+<div class="sec">Renovación · los cuatro niveles</div>
+<h2 class="t">Los niveles, ya sumados</h2>
+<p class="sub">Cada nivel es el mismo edificio con más plantas encima.</p>
+
+<div class="niveles">
+ <div class="nivel">
+  <svg class="mini" viewBox="0 0 300 220" aria-hidden="true">
+   <rect x="80" y="130" width="130" height="70" class="bs"/>
+   <g class="win"><rect x="92" y="142" width="18" height="20"/><rect x="120" y="142" width="18" height="20"/><rect x="152" y="142" width="18" height="20"/><rect x="180" y="142" width="18" height="20"/></g>
+   <polygon points="72,130 145,108 218,130" class="ln"/>
+   <text x="145" y="190" text-anchor="middle" class="pp">BASE</text>
+   <line x1="20" y1="200" x2="280" y2="200" stroke="#1b2c47" stroke-width="2"/>
+  </svg>
+  <div class="tx"><div class="nm">Mantener</div><p class="ll">Base</p></div>
+  <div class="precios"><div><span>Pago completo</span><b>12.000</b></div><div><span>En cuotas</span><b>12.000</b></div></div>
+ </div>
+ <div class="nivel">
+  <svg class="mini" viewBox="0 0 300 220" aria-hidden="true">
+   <rect x="80" y="130" width="130" height="70" class="bs"/>
+   <g class="win"><rect x="92" y="142" width="18" height="20"/><rect x="120" y="142" width="18" height="20"/><rect x="152" y="142" width="18" height="20"/><rect x="180" y="142" width="18" height="20"/></g>
+   <rect x="80" y="92" width="130" height="38" class="dsh"/><text x="145" y="115" text-anchor="middle">CAPTACIÓN</text>
+   <polygon points="72,92 145,70 218,92" class="ln"/>
+   <rect x="210" y="92" width="18" height="108" class="dsh"/><line x1="219" y1="100" x2="219" y2="192" class="hl" stroke-dasharray="3 3"/>
+   <text x="145" y="190" text-anchor="middle" class="pp">BASE</text>
+   <text x="236" y="150" style="font-size:8.5px">1:1</text><text x="236" y="162" style="font-size:8.5px">QUINCENAL</text>
+   <line x1="20" y1="200" x2="280" y2="200" stroke="#1b2c47" stroke-width="2"/>
+  </svg>
+  <div class="tx"><div class="nm">Crecer</div><p class="ll">Base + Consultor quincenal + Pack Captación, bono 3.000</p></div>
+  <div class="precios"><div><span>Pago completo</span><b>29.000</b></div><div><span>En cuotas</span><b>32.000</b></div></div>
+ </div>
+ <div class="nivel top">
+  <svg class="mini" viewBox="0 0 300 220" aria-hidden="true">
+   <rect x="80" y="130" width="130" height="70" class="bs"/>
+   <g class="win"><rect x="92" y="142" width="18" height="20"/><rect x="120" y="142" width="18" height="20"/><rect x="152" y="142" width="18" height="20"/><rect x="180" y="142" width="18" height="20"/></g>
+   <rect x="80" y="92" width="130" height="38" class="dsh"/><text x="145" y="115" text-anchor="middle">CAPTACIÓN</text>
+   <rect x="80" y="54" width="130" height="38" class="dsh"/><text x="145" y="77" text-anchor="middle">CONTROL</text>
+   <polygon points="72,54 145,32 218,54" class="ln"/>
+   <rect x="210" y="54" width="18" height="146" class="dsh"/><line x1="219" y1="62" x2="219" y2="192" class="hl" stroke-dasharray="3 3"/>
+   <text x="145" y="190" text-anchor="middle" class="pp">BASE</text>
+   <text x="236" y="130" style="font-size:8.5px">1:1</text><text x="236" y="142" style="font-size:8.5px">QUINCENAL</text>
+   <line x1="20" y1="200" x2="280" y2="200" stroke="#1b2c47" stroke-width="2"/>
+  </svg>
+  <div class="tx"><div class="nm">CEO</div><p class="ll">Base + Consultor quincenal + Captación + Control, bono 6.000</p></div>
+  <div class="precios"><div><span>Pago completo</span><b>31.000</b></div><div><span>En cuotas</span><b>37.000</b></div></div>
+ </div>
+ <div class="nivel">
+  <svg class="mini" viewBox="0 0 300 220" aria-hidden="true">
+   <rect x="80" y="130" width="130" height="70" class="bs"/>
+   <g class="win"><rect x="92" y="142" width="18" height="20"/><rect x="120" y="142" width="18" height="20"/><rect x="152" y="142" width="18" height="20"/><rect x="180" y="142" width="18" height="20"/></g>
+   <rect x="80" y="92" width="130" height="38" class="dsh"/><text x="145" y="115" text-anchor="middle">CAPTACIÓN</text>
+   <rect x="80" y="54" width="130" height="38" class="dsh"/><text x="145" y="77" text-anchor="middle">CONTROL</text>
+   <polygon points="72,54 145,32 218,54" class="ln"/>
+   <rect x="210" y="54" width="18" height="146" class="bs"/><line x1="219" y1="62" x2="219" y2="192" stroke="#f8f7f2" stroke-width="1"/>
+   <text x="145" y="190" text-anchor="middle" class="pp">BASE</text>
+   <text x="236" y="130" style="font-size:8.5px">1:1</text><text x="236" y="142" style="font-size:8.5px">SEMANAL</text>
+   <line x1="20" y1="200" x2="280" y2="200" stroke="#1b2c47" stroke-width="2"/>
+  </svg>
+  <div class="tx"><div class="nm">CEO Intensivo</div><p class="ll">Igual que CEO, con consultor semanal</p></div>
+  <div class="precios"><div><span>Pago completo</span><b>34.000</b></div><div><span>En cuotas</span><b>40.000</b></div></div>
+ </div>
+</div>
+
+<div class="box"><div class="lbl">Cómo leer los precios</div><p style="font-size:16px;margin:0">En euros. El pago completo lleva aplicado el bono fundador; en cuotas, el bono no aplica.</p></div>
+
+<div class="nav"><a href="#renovacion">← Anterior</a><a href="#comparativa">Siguiente →</a></div>
+<div class="cajetin"><div><span>Proyecto</span><b>Growing Inmobiliario</b></div><div><span>Plano</span><b>R-02 · Niveles</b></div><div><span>Escala</span><b>1:1</b></div><div><span>Fecha</span><b>10 · 2026</b></div><div><span>Hoja</span><b>4 / 5</b></div></div>
+</div></section>
+
+<!-- ===================== COMPARATIVA ===================== -->
+<section class="plano" id="comparativa"><div class="marco">
+<div class="ph"><a class="logo" href="index.html"><span class="g">growing<sup>®</sup></span><span class="i">inmobiliario</span></a><div class="code">Plano<b>C-01</b>Superposición</div></div>
+<div class="sec">Salto frente a Renovación</div>
+<h2 class="t">Qué se mantiene, qué desaparece, qué se añade</h2>
+<p class="sub">Los dos planos, uno encima del otro.</p>
+
+<div class="tablewrap"><table>
+<thead><tr><th></th><th class="salto">Salto · 6 meses</th><th>Base renovación</th><th>+ Pack Captación</th><th>+ Pack Control</th><th>+ Consultor</th></tr></thead>
+<tbody>
+<tr class="grupo"><th colspan="6">Se mantiene</th></tr>
+<tr><th>Plataforma, comunidad, módulos</th><td class="si check">✓</td><td class="si check">✓</td><td></td><td></td><td></td></tr>
+<tr><th>CRM y automatizaciones</th><td class="si">Lo montamos</td><td class="si">Sigue funcionando, con soporte</td><td></td><td></td><td></td></tr>
+<tr><th>Dashboards comercial, cartera, ads</th><td class="si check">✓</td><td class="si check">✓</td><td></td><td></td><td></td></tr>
+<tr><th>Reuniones grupales semanales</th><td class="si">6</td><td class="si">6</td><td></td><td></td><td></td></tr>
+<tr><th>Campañas montadas</th><td class="si">✓ en 14 días</td><td class="si">Ya montadas</td><td></td><td></td><td></td></tr>
+<tr class="grupo rojo"><th colspan="6">Desaparece en la base · vuelve con un añadido</th></tr>
+<tr><th>Gestión de campañas</th><td class="si">✓ 6 meses</td><td class="no">No</td><td class="vuelve">✓ todo el año</td><td></td><td></td></tr>
+<tr><th>Consultor 1:1</th><td class="si">Semanal</td><td class="no">No</td><td></td><td></td><td class="vuelve">Quincenal o semanal</td></tr>
+<tr><th>Revisión de citas de captación y llamadas</th><td class="si check">✓</td><td class="no">No</td><td class="vuelve">✓ extra</td><td></td><td></td></tr>
+<tr class="grupo verde"><th colspan="6">Se añade · no estaba en el Salto</th></tr>
+<tr><th>Anuncios con actores</th><td></td><td></td><td class="si">✓ 1 por trimestre</td><td></td><td></td></tr>
+<tr><th>Embudo VSL montado</th><td></td><td></td><td class="si check">✓</td><td></td><td></td></tr>
+<tr><th>Cobrar al comprador y subir ticket</th><td></td><td></td><td class="si check">✓</td><td></td><td></td></tr>
+<tr><th>Sistema de gestión de equipo</th><td></td><td></td><td class="si check">✓</td><td></td><td></td></tr>
+<tr><th>Auditoría de gastos y plan +40 %</th><td></td><td></td><td></td><td class="si check">✓</td><td></td></tr>
+<tr><th>Dashboard finanzas con banco</th><td></td><td></td><td></td><td class="si check">✓</td><td></td></tr>
+<tr><th>Formación financiera</th><td></td><td></td><td></td><td class="si check">✓</td><td></td></tr>
+<tr><th>Estructura mínima y entrevistas</th><td></td><td></td><td></td><td class="si check">✓</td><td></td></tr>
+<tr><th>Comisiones y pagos a medida</th><td></td><td></td><td></td><td class="si check">✓</td><td></td></tr>
+</tbody></table></div>
+
+<div class="box alerta"><div class="lbl">Lo que nunca incluye ninguno</div><div class="big" style="margin:0 0 6px">La inversión publicitaria. Siempre la pone el cliente.</div></div>
+
+<div class="nav"><a href="#niveles">← Anterior</a><a href="index.html">Programa →</a></div>
+<div class="cajetin"><div><span>Proyecto</span><b>Growing Inmobiliario</b></div><div><span>Plano</span><b>C-01 · Comparativa</b></div><div><span>Escala</span><b>1:1</b></div><div><span>Fecha</span><b>10 · 2026</b></div><div><span>Hoja</span><b>5 / 5</b></div></div>
+</div></section>
+</body></html>
