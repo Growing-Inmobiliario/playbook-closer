@@ -42,6 +42,9 @@ svg.enlace path{fill:none;stroke:var(--ink2);stroke-width:3;stroke-dasharray:10 
 /* etiquetas de tramo */
 .tramo{position:absolute;top:16px;height:30px;display:flex;align-items:center;padding:0 14px;font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;background:var(--ink);color:var(--paper);white-space:nowrap;z-index:2}
 .tramo.claro{background:var(--paper);color:var(--ink);border:1.5px dashed var(--ink)}
+.tramo.sello{top:6px;height:auto;padding:0;background:transparent;color:var(--ink);display:flex;align-items:center;gap:12px;letter-spacing:0;text-transform:none}
+.tramo.sello b{display:block;font-family:var(--cond);font-weight:700;font-size:30px;line-height:.95;text-transform:uppercase;letter-spacing:.5px}
+.tramo.sello span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--ink2);margin-top:3px}
 
 /* estación superior: imagen 50→370, nodo en 400, texto 430→630 */
 .est{position:absolute;top:50px;height:720px;display:flex;flex-direction:column;align-items:center}
@@ -207,14 +210,14 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== TU PARTE ===== -->
- <div class="tramo claro" style="left:624px">No se instala · se construye juntos</div>
+ <div class="tramo sello" style="left:13620px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="41" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#a2432b">CC</text></svg><div><b>El Montaje</b><span>No se instala · se construye juntos</span></div></div>
  <!-- ===== MOTOR 1 · CONSEGUIR CITAS ===== -->
- <div class="tramo" style="left:2782px">Pieza 2 · El anuncio y la respuesta · diseñado para la precisión · Hogarea, del 3 al 8 de octubre</div>
+ <div class="tramo sello" style="left:2782px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="33" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="8" letter-spacing="1.5" fill="#5d6b80">PIEZA</text><text x="36" y="48" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="20" fill="#a2432b">2</text></svg><div><b>La Señal</b><span>El anuncio y la respuesta · diseñado para la precisión · Hogarea, del 3 al 8 de octubre</span></div></div>
 
  <div class="est" style="left:2782px;width:1300px" data-g="anuncio">
   <div class="arriba"><div class="lado">
-   <div class="pieza"><div class="cab">Hogarea Barcelona · el primero <span><a href="https://www.facebook.com/ads/library/?id=3007375916280198" target="_blank" rel="noopener">Ver en Meta ↗</a></span></div><img src="img/motor/r/anuncio.jpg" width="488" height="360" alt="Anuncio de Hogarea Barcelona: el agente en la puerta de su oficina, texto para propietarios de Sant Cugat"></div>
-   <div class="pieza"><div class="cab">Hogarea Málaga · activo desde el 7 oct <span><a href="https://www.facebook.com/ads/library/?id=1097377953035994" target="_blank" rel="noopener">Ver en Meta ↗</a></span></div><img src="img/motor/r/anuncio-malaga.jpg" width="490" height="360" alt="Anuncio de Hogarea Málaga: mismo texto, otro agente, otra ciudad; activo en la biblioteca de anuncios de Meta"></div>
+   <div class="pieza"><div class="cab">Hogarea Barcelona · el primero <span><a href="https://www.facebook.com/ads/library/?id=3007375916280198" target="_blank" rel="noopener">Ver en Meta ↗</a></span></div><img src="img/motor/r/anuncio.jpg" width="447" height="330" alt="Anuncio de Hogarea Barcelona: el agente en la puerta de su oficina, texto para propietarios de Sant Cugat"></div>
+   <div class="pieza"><div class="cab">Hogarea Málaga · activo desde el 7 oct <span><a href="https://www.facebook.com/ads/library/?id=1097377953035994" target="_blank" rel="noopener">Ver en Meta ↗</a></span></div><img src="img/motor/r/anuncio-malaga.jpg" width="449" height="330" alt="Anuncio de Hogarea Málaga: mismo texto, otro agente, otra ciudad; activo en la biblioteca de anuncios de Meta"></div>
   </div></div>
   <div class="nodo">2</div>
   <div class="abajo"><h2 class="nom">Habla a un único propietario</h2><p class="que">El que quiere vender en tu zona. Veinte mil personas en un solo anuncio, y cada uno que entra se suma a tu base. Barcelona primero, Málaga después, los dos activos hoy.</p><div class="res">Solo tu código postal<small>tu cara, tu calle · el guion te lo damos nosotros</small></div></div>
@@ -248,7 +251,7 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== FORMAMOS A TU EQUIPO EN LA CITA ===== -->
- <div class="tramo claro" style="left:6978px">Pieza 3 · La cita · estructurada para convertirse en exclusiva</div>
+ <div class="tramo sello" style="left:8176px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="33" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="8" letter-spacing="1.5" fill="#5d6b80">PIEZA</text><text x="36" y="48" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="20" fill="#a2432b">3</text></svg><div><b>El Sello</b><span>La cita · estructurada para convertirse en exclusiva</span></div></div>
 
  <div class="est" style="left:8176px;width:1300px" data-g="visita">
   <div class="arriba"><div class="lado">
@@ -279,7 +282,7 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== MÉTRICAS ===== -->
- <div class="tramo" style="left:11440px">Pieza 4 · La medida · probado contra la única métrica que no miente</div>
+ <div class="tramo sello" style="left:12062px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="33" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="8" letter-spacing="1.5" fill="#5d6b80">PIEZA</text><text x="36" y="48" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="20" fill="#a2432b">4</text></svg><div><b>El Calibre</b><span>La medida · probado contra la única métrica que no miente</span></div></div>
  <div class="est" style="left:12062px;width:1488px" data-g="panel">
   <div class="arriba"><div class="pieza"><div class="cab">Panel · Chiappini · octubre 2026 <span>3 personas · 4 semanas dentro</span></div><img src="img/motor/r/panel.jpg" width="1200" height="242" alt="Panel real: 179 conversaciones, 11 citas de 21, 11 visitas, 6 exclusivas, 0 ventas"></div></div>
   <div class="nodo">10</div>
@@ -287,7 +290,7 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== MOTOR 2 · TU BASE ===== -->
- <div class="tramo claro" style="left:12062px">Pieza 1 · Tu base de contactos · empieza por lo que ya tienes</div>
+ <div class="tramo sello" style="left:624px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="33" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="8" letter-spacing="1.5" fill="#5d6b80">PIEZA</text><text x="36" y="48" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="20" fill="#a2432b">1</text></svg><div><b>La Reserva</b><span>Tu base de contactos · empieza por lo que ya tienes</span></div></div>
  <div class="est" style="left:13620px;width:768px" data-g="tu">
   <div class="arriba"><div class="tareas">
    <div class="tarea"><b>Grabar los anuncios</b><span>Semana 1 · una tarde</span></div>
@@ -302,7 +305,7 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== UN MES REAL: CLAUDIA ===== -->
- <div class="tramo" style="left:13620px">El laboratorio vivo · Claudia · Costa Brava · del 6 al 26 de octubre</div>
+ <div class="tramo sello" style="left:14458px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="41" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#a2432b">CC</text></svg><div><b>El Laboratorio</b><span>Claudia · Costa Brava · del 6 al 26 de octubre</span></div></div>
  <div class="est" style="left:14458px;width:4320px" data-g="claudia">
   <div class="arriba"><div class="lado">
    <div class="pieza"><div class="cab">6 de octubre · 17:32 <span>paga y entra</span></div><img src="img/motor/r/cl-pago.jpg" width="284" height="280" alt="WhatsApp de Claudia al pagar: uff, bueno ya está, estoy cagada, pero listo"></div>
@@ -310,14 +313,14 @@ body.notas .guion{display:block}
    <div class="pieza"><div class="cab">9 de octubre · 09:07 <span>sube su base y el sistema llama</span></div><img src="img/motor/r/cl-contactos.jpg" width="532" height="240" alt="Claudia: ya estoy aquí metida; ayer me llamó Aytor al momento que le escribí, 10/10"></div>
    <div class="pieza"><div class="cab">20 de octubre <span>Giacomo, su hermano, semana 2</span></div><img src="img/motor/r/cl-giacomo.jpg" width="532" height="91" alt="Giacomo: primera exclusiva firmada, dos semanas trabajando con mi hermana"></div>
    <div class="pieza"><div class="cab">24 de octubre <span>Trustpilot, sin pedirla · una de 88</span></div><img src="img/motor/r/cl-trustpilot.jpg" width="440" height="193" alt="Reseña de Claudia: tenía una consulta un sábado, me ha llamado al segundo, 10/10"></div>
-   <div class="pieza"><div class="cab">26 de octubre <span>su panel entero, hoy · los tres con sus números</span></div><img src="img/motor/r/cl-panel.jpg" width="610" height="360" alt="Panel completo de Claudia: 179 conversaciones, 11 citas, 6 exclusivas; Claudia, Giacomo y Alessandro con 2 exclusivas cada uno"></div>
+   <div class="pieza"><div class="cab">26 de octubre <span>su panel entero, hoy · los tres con sus números</span></div><img src="img/motor/r/cl-panel.jpg" width="559" height="330" alt="Panel completo de Claudia: 179 conversaciones, 11 citas, 6 exclusivas; Claudia, Giacomo y Alessandro con 2 exclusivas cada uno"></div>
   </div></div>
   <div class="nodo">12</div>
   <div class="abajo"><h2 class="nom">De «estoy cagada» a 6 exclusivas</h2><p class="que">Sola dos años, sin oficina, 80.000 € este año, tres captando «a los que no sé enseñar», organización cero. Había mandado a la mierda a un montón de consultores.</p><div class="res">20 días · 6 exclusivas · empezó sola<small>2 de Claudia, 2 de Giacomo, 2 de Alessandro · a 8.000 € de media, 48.000 € de honorarios en cartera · su año entero fueron 80.000</small></div></div>
  </div>
 
  <!-- ===== TRANSFORMACIONES ===== -->
- <div class="tramo" style="left:14458px">La nueva generación · del pueblo más pequeño a la oficina más grande · con nombre, búscalas</div>
+ <div class="tramo sello" style="left:18848px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="41" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#a2432b">CC</text></svg><div><b>La Nueva Generación</b><span>Del pueblo más pequeño a la oficina más grande · con nombre, búscalas</span></div></div>
  <div class="est" style="left:18848px;width:5190px" data-g="agencias">
   <div class="arriba"><div class="casos">
    <div class="caso"><video src="img/motor/videos/jjs-homes.mp4#t=0.5" controls playsinline preload="metadata"></video><div class="pie"><b>JJS Homes</b><span>Madrid · 9 personas · 6 captadores</span><em>40.000 → 80.000 € / mes</em><i>36 ventas a mitad de año: las de todo el año anterior</i></div></div>
@@ -335,7 +338,7 @@ body.notas .guion{display:block}
  </div>
 
  <!-- ===== EL CIERRE ===== -->
- <div class="tramo" style="left:18848px">La decisión</div>
+ <div class="tramo sello" style="left:24108px"><svg viewBox="0 0 72 72" width="72" height="72" aria-hidden="true"><circle cx="36" cy="36" r="32" fill="#f8f7f2" stroke="#1b2c47" stroke-width="5"/><circle cx="36" cy="36" r="24" fill="none" stroke="#a2432b" stroke-width="1" stroke-dasharray="3 3"/><text x="36" y="41" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#a2432b">CC</text></svg><div><b>La Decisión</b><span>Esperar a que suene, o hacer que suene</span></div></div>
  <div class="est" style="left:24108px;width:1500px" data-g="cierre">
   <div class="arriba"><div class="lado" style="align-items:stretch;height:300px">
    <div class="pieza" style="width:330px"><div class="cab">Trustpilot <span>88 opiniones · 4,9</span></div><img src="img/motor/r/trustpilot.jpg" width="330" height="53" alt="Growing Inmobiliario en Trustpilot: 88 opiniones, 4,9 excelente"><img src="img/motor/r/trustpilot-score.jpg" width="330" height="132" alt="TrustScore 4,9 excelente, 88 opiniones, casi todas de 5 estrellas" style="border-top:1px solid rgba(27,44,71,.3)"><div class="pie" style="flex:1;display:flex;align-items:center;font-size:14px">Con nombre y oficina de cada cliente. Búscalas.</div></div>
