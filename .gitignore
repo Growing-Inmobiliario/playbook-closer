@@ -9,3 +9,12 @@
 !programas.html
 !pago.html
 !seguimiento.html
+!presentacion.html
+!img/
+img/*
+!img/motor/
+img/motor/*
+!img/motor/r/
+!img/motor/r/**
+!img/motor/videos/
+!img/motor/videos/**
