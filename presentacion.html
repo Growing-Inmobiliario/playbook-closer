@@ -33,7 +33,7 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
 body.general .visor{overflow:hidden;display:flex;align-items:center}
 
 /* líneas */
-.linea{position:absolute;left:540px;right:60px;top:520px;border-top:4px solid var(--ink)}
+.linea{position:absolute;left:540px;right:60px;top:565px;border-top:4px solid var(--ink)}
 .linea::after{content:"";position:absolute;right:-6px;top:-11px;border:9px solid transparent;border-left:16px solid var(--ink)}
 .umbral{position:absolute;left:460px;top:0;z-index:2}
 svg.enlace{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
@@ -42,12 +42,12 @@ svg.enlace path{fill:none;stroke:var(--ink2);stroke-width:3;stroke-dasharray:10 
 /* etiquetas de tramo */
 .tramo{position:absolute;top:16px;height:30px;display:flex;align-items:center;padding:0 14px;font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;background:var(--ink);color:var(--paper);white-space:nowrap;z-index:2}
 .tramo.claro{background:var(--paper);color:var(--ink);border:1.5px dashed var(--ink)}
-.tramo.sello{top:6px;height:auto;padding:0;background:transparent;color:var(--ink);display:flex;align-items:center;gap:12px;letter-spacing:0;text-transform:none}
+.tramo.sello{top:10px;height:auto;padding:0;background:transparent;color:var(--ink);display:flex;align-items:center;gap:12px;letter-spacing:0;text-transform:none}
 .tramo.sello b{display:block;font-family:var(--cond);font-weight:700;font-size:30px;line-height:.95;text-transform:uppercase;letter-spacing:.5px}
 .tramo.sello span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--ink2);margin-top:3px}
 
 /* estación superior: imagen 50→370, nodo en 400, texto 430→630 */
-.est{position:absolute;top:50px;height:720px;display:flex;flex-direction:column;align-items:center}
+.est{position:absolute;top:95px;height:720px;display:flex;flex-direction:column;align-items:center}
 .est .arriba{flex:none;height:440px;width:100%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px}
 .nodo{flex:none;width:58px;height:58px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--cond);font-weight:700;font-size:26px;border:4px solid var(--paper);outline:2px solid var(--ink);position:relative;z-index:2;margin:1px 0}
 .nodo.rojo{background:var(--red);outline-color:var(--red)}
@@ -190,14 +190,14 @@ body.notas .guion{display:block}
 
  <!-- ===== EL UMBRAL: aquí empieza el Circuito Cerrado ===== -->
  <svg class="umbral" viewBox="0 0 160 1000" width="160" height="1000" aria-label="A partir de aquí, el Circuito Cerrado">
-  <line x1="80" y1="50" x2="80" y2="455" stroke="#1b2c47" stroke-width="1.5" stroke-dasharray="4 6"/>
-  <line x1="80" y1="585" x2="80" y2="965" stroke="#1b2c47" stroke-width="1.5" stroke-dasharray="4 6"/>
-  <text x="80" y="432" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="9.5" letter-spacing="2.5" fill="#a2432b">A PARTIR DE AQUÍ</text>
-  <circle cx="80" cy="520" r="58" fill="#f8f7f2" stroke="#1b2c47" stroke-width="7"/>
-  <circle cx="80" cy="520" r="44" fill="none" stroke="#a2432b" stroke-width="1.2" stroke-dasharray="3 3"/>
-  <text x="80" y="516" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#1b2c47">CIRCUITO</text>
-  <text x="80" y="533" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#a2432b">CERRADO</text>
-  <text x="80" y="612" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="9" letter-spacing="2" fill="#5d6b80">SELLADO · SIN FUGAS</text>
+  <line x1="80" y1="50" x2="80" y2="500" stroke="#1b2c47" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <line x1="80" y1="630" x2="80" y2="965" stroke="#1b2c47" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <text x="80" y="477" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="9.5" letter-spacing="2.5" fill="#a2432b">A PARTIR DE AQUÍ</text>
+  <circle cx="80" cy="565" r="58" fill="#f8f7f2" stroke="#1b2c47" stroke-width="7"/>
+  <circle cx="80" cy="565" r="44" fill="none" stroke="#a2432b" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="80" y="561" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#1b2c47">CIRCUITO</text>
+  <text x="80" y="578" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#a2432b">CERRADO</text>
+  <text x="80" y="657" text-anchor="middle" font-family="IBM Plex Mono,Menlo,monospace" font-size="9" letter-spacing="2" fill="#5d6b80">SELLADO · SIN FUGAS</text>
  </svg>
  <div class="est" style="left:624px;width:2088px" data-g="base">
   <div class="arriba"><div class="lado">
