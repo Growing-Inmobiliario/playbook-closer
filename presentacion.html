@@ -24,13 +24,19 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
 .mandos button.on{background:var(--ink);color:var(--paper)}
 .mandos .flecha{font-family:var(--cond);font-size:18px;font-weight:700;padding:2px 12px;letter-spacing:0}
 
-/* visor: el lienzo tiene tamaño fijo y se escala entero */
-.visor{height:calc(100% - var(--bar));overflow-x:auto;overflow-y:hidden;position:relative;padding:14px 18px}
-.zoom{position:relative;width:calc(var(--W) * 1px * var(--s));height:calc(var(--H) * 1px * var(--s))}
-.lienzo{position:absolute;left:0;top:0;width:calc(var(--W) * 1px);height:calc(var(--H) * 1px);transform:scale(var(--s));transform-origin:0 0;background-color:var(--paper);
+/* visor: tablero. El lienzo tiene tamaño fijo y se mueve y escala con transform */
+.visor{height:calc(100% - var(--bar));overflow:hidden;position:relative;cursor:grab;touch-action:none;user-select:none}
+.visor.arrastra{cursor:grabbing}
+.visor.arrastra *{pointer-events:none}
+.zoom{position:absolute;left:0;top:0}
+.lienzo{position:absolute;left:0;top:0;width:calc(var(--W) * 1px);height:calc(var(--H) * 1px);transform-origin:0 0;will-change:transform;background-color:var(--paper);
  background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
  background-size:100px 100px,100px 100px,20px 20px,20px 20px;border:2px solid var(--ink);box-shadow:0 18px 40px rgba(27,44,71,.14)}
-body.general .visor{overflow:hidden;display:flex;align-items:center}
+.lienzo.suave{transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+.lienzo a,.lienzo video,.lienzo iframe{cursor:auto}
+.mandos .pct{font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;min-width:46px;text-align:center;color:var(--ink2)}
+.ayuda{position:fixed;left:18px;bottom:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);z-index:4;pointer-events:none}
+body.notas .ayuda{display:none}
 
 /* líneas */
 .linea{position:absolute;left:540px;right:60px;top:565px;border-top:4px solid var(--ink)}
@@ -170,9 +176,12 @@ body.notas .guion{display:block}
   <button class="flecha" id="ant">‹</button><button class="flecha" id="sig">›</button>
   <button id="bNotas" title="Tecla N">Guion</button>
   <button id="bGeneral" title="Tecla G">Plano entero</button>
+  <button id="bMenos" title="Tecla −">−</button><span class="pct" id="pct">100%</span><button id="bMas" title="Tecla +">+</button>
+  <button id="bAjustar" title="Tecla 0">Ajustar</button>
  </div>
 </header>
 
+<div class="ayuda">Arrastra para moverte · rueda o pellizco con Ctrl para el zoom · ← → saltan de pieza · N guion · G plano entero</div>
 <main class="visor" id="visor"><div class="zoom" id="zoom"><div class="lienzo" id="lienzo">
  <div class="linea"></div>
 
@@ -404,41 +413,97 @@ const G={
  cierre:"<b>La decisión · y a la sección 5</b>Es el final del VSL, dicho a una sola persona. Baja la voz. <i>«Hay inmobiliarias que esperan a que suene el teléfono. Y hay inmobiliarias que hacen que suene. Todas las que acabas de ver pasaron por esta misma reunión. Con el mismo miedo que tienes tú ahora, la misma incertidumbre, y la misma sensación de tener que soltar la confianza en alguien a quien acababan de conocer. Claudia me lo escribió el día que pagó: “estoy cagada, pero listo”. Es real. Y lo hicieron todos. Tomaron exactamente la misma decisión que tienes tú delante ahora: hacerlo con nosotros o seguir por tu cuenta. No es para todos; no es para quien quiere seguir haciendo lo mismo. Así que te lo pregunto: ¿quieres ser el siguiente?»</i> Y silencio. No lo rellenes tú. Lo que diga, es el principio de la sección 5.",
 };
 const W=26396,H=1000;
-const visor=document.getElementById('visor'),lienzo=document.getElementById('lienzo'),guion=document.getElementById('guion'),root=document.documentElement;
+const visor=document.getElementById('visor'),lienzo=document.getElementById('lienzo'),guion=document.getElementById('guion'),root=document.documentElement,pct=document.getElementById('pct');
 const paradas=[...document.querySelectorAll('[data-g]')].map(e=>({el:e,x:e.offsetLeft,w:e.offsetWidth,g:e.dataset.g}));
 const upper=paradas.filter(p=>!p.el.classList.contains('inv'));
-let s=1;
-function escala(){
- const g=document.body.classList.contains('general');
- s=g?Math.min((visor.clientWidth-36)/W,(visor.clientHeight-28)/H):(visor.clientHeight-28)/H;
- root.style.setProperty('--s',s);
+let s=1,tx=0,ty=0,sMin=.05;
+const vw=()=>visor.clientWidth,vh=()=>visor.clientHeight;
+const TOP=14,BOT=38; // margen: abajo queda sitio para la línea de ayuda
+const sAlto=()=>Math.max(60,vh()-TOP-BOT)/H, sTodo=()=>Math.min(Math.max(60,vw()-36)/W,Math.max(60,vh()-TOP-BOT)/H);
+let rel=1; // zoom relativo a «ajustar a lo alto», para conservarlo si cambia la ventana
+function limita(){
+ const m=120, cw=W*s, ch=H*s;
+ tx = cw<=vw()-36 ? (vw()-cw)/2 : Math.min(18, Math.max(vw()-18-cw, tx));
+ ty = ch<=vh()-TOP-BOT ? TOP+(vh()-TOP-BOT-ch)/2 : Math.min(TOP, Math.max(vh()-BOT-ch, ty));
 }
-function centro(){return (visor.scrollLeft+visor.clientWidth/2-18)/s}
+function aplicar(suave){
+ limita();
+ lienzo.classList.toggle('suave',!!suave);
+ lienzo.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;
+ root.style.setProperty('--s',s);rel=s/sAlto();
+ pct.textContent=Math.round(rel*100)+'%';
+ document.getElementById('bGeneral').classList.toggle('on',s<=sTodo()*1.01);
+ if(document.body.classList.contains('notas'))pinta();
+}
+function zoomEn(factor,cx,cy){ // cx,cy: punto fijo en píxeles del visor
+ const n=Math.min(sAlto()*2.5,Math.max(sMin,s*factor)); if(n===s)return;
+ tx=cx-(cx-tx)*n/s; ty=cy-(cy-ty)*n/s; s=n; aplicar(false);
+}
+function centro(){return (vw()/2-tx)/s}
 function actual(){const c=centro();let m=paradas[0],d=1e9;paradas.forEach(p=>{const dd=Math.abs(p.x+p.w/2-c);if(dd<d){d=dd;m=p}});return m}
 function pinta(){guion.innerHTML=G[actual().g]||''}
-visor.addEventListener('scroll',()=>{if(document.body.classList.contains('notas'))pinta()},{passive:true});
-function ir(p){visor.scrollTo({left:Math.max(0,(p.x+p.w/2)*s-visor.clientWidth/2+18),behavior:'smooth'})}
+function ir(p){ if(s<sAlto()*.6){s=sAlto()} tx=vw()/2-(p.x+p.w/2)*s; ty=TOP+(vh()-TOP-BOT-H*s)/2; aplicar(true)}
 function salto(d){const c=centro();let k;
  if(d>0){k=upper.findIndex(p=>p.x+p.w/2>c+10);if(k<0)k=upper.length-1}
  else{k=upper.findIndex(p=>p.x+p.w/2>=c-10)-1;if(k<0)k=0}
  ir(upper[k])}
+function ajustar(){s=sAlto();tx=18;ty=TOP+(vh()-TOP-BOT-H*s)/2;aplicar(true)}
+function general(){ if(s<=sTodo()*1.01){s=sAlto();tx=18;ty=TOP+(vh()-TOP-BOT-H*s)/2}else{s=sTodo();tx=(vw()-W*s)/2;ty=TOP+(vh()-TOP-BOT-H*s)/2} aplicar(true)}
 document.getElementById('sig').onclick=()=>salto(1);
 document.getElementById('ant').onclick=()=>salto(-1);
+document.getElementById('bMas').onclick=()=>zoomEn(1.25,vw()/2,vh()/2);
+document.getElementById('bMenos').onclick=()=>zoomEn(.8,vw()/2,vh()/2);
+document.getElementById('bAjustar').onclick=ajustar;
 const bN=document.getElementById('bNotas'),bG=document.getElementById('bGeneral');
 function notas(){document.body.classList.toggle('notas');bN.classList.toggle('on');pinta()}
-function general(){const on=document.body.classList.toggle('general');bG.classList.toggle('on',on);escala();if(on)visor.scrollLeft=0}
 bN.onclick=notas;bG.onclick=general;
-lienzo.addEventListener('click',e=>{if(!document.body.classList.contains('general'))return;const r=lienzo.getBoundingClientRect();const x=(e.clientX-r.left)/s;general();visor.scrollLeft=x*s-visor.clientWidth/2});
-visor.addEventListener('wheel',e=>{if(document.body.classList.contains('general'))return;if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();visor.scrollLeft+=e.deltaY}},{passive:false});
+
+/* rueda: con Ctrl/⌘ (o pellizco en trackpad) hace zoom en el cursor; si no, mueve el tablero */
+visor.addEventListener('wheel',e=>{
+ e.preventDefault();
+ const r=visor.getBoundingClientRect(),cx=e.clientX-r.left,cy=e.clientY-r.top;
+ if(e.ctrlKey||e.metaKey){zoomEn(Math.exp(-e.deltaY*.01),cx,cy);return}
+ let dx=e.deltaX,dy=e.deltaY; if(e.shiftKey&&!dx){dx=dy;dy=0}
+ if(H*s<=vh()-28&&Math.abs(dy)>Math.abs(dx)){dx=dy;dy=0} // si el plano cabe a lo alto, la rueda vertical recorre el plano
+ tx-=dx;ty-=dy;aplicar(false);
+},{passive:false});
+
+/* arrastrar con el ratón o el dedo; dos dedos = pellizco */
+const dedos=new Map();let arr=null,pinza=null;
+visor.addEventListener('pointerdown',e=>{
+ if(e.button!==0&&e.pointerType==='mouse')return;
+ dedos.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(dedos.size===1){arr={x:e.clientX,y:e.clientY,tx,ty,movio:false,target:e.target}}
+ else if(dedos.size===2){const [a,b]=[...dedos.values()];pinza={d:Math.hypot(a.x-b.x,a.y-b.y),s};arr=null}
+});
+visor.addEventListener('pointermove',e=>{
+ if(!dedos.has(e.pointerId))return;
+ dedos.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pinza&&dedos.size===2){const [a,b]=[...dedos.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);const r=visor.getBoundingClientRect();
+  const cx=(a.x+b.x)/2-r.left,cy=(a.y+b.y)/2-r.top;zoomEn(pinza.s*d/pinza.d/s,cx,cy);return}
+ if(!arr)return;
+ const dx=e.clientX-arr.x,dy=e.clientY-arr.y;
+ if(!arr.movio&&Math.hypot(dx,dy)>5){arr.movio=true;visor.classList.add('arrastra');visor.setPointerCapture(e.pointerId)}
+ if(arr.movio){tx=arr.tx+dx;ty=arr.ty+dy;aplicar(false)}
+});
+function suelta(e){dedos.delete(e.pointerId);if(dedos.size<2)pinza=null;if(dedos.size===0){arr=null;visor.classList.remove('arrastra')}}
+visor.addEventListener('pointerup',suelta);visor.addEventListener('pointercancel',suelta);
+/* doble clic: acerca ahí */
+visor.addEventListener('dblclick',e=>{if(e.target.closest('a,video,iframe,button'))return;const r=visor.getBoundingClientRect();zoomEn(1.6,e.clientX-r.left,e.clientY-r.top)});
+
 addEventListener('keydown',e=>{
  if(e.target.matches('input'))return;
  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();salto(1)}
  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();salto(-1)}
  else if(e.key==='n'||e.key==='N')notas();
- else if(e.key==='g'||e.key==='G'||(e.key==='Escape'&&document.body.classList.contains('general')))general();
- else if(e.key==='Home')visor.scrollLeft=0;else if(e.key==='End')visor.scrollLeft=1e6;
+ else if(e.key==='g'||e.key==='G')general();
+ else if(e.key==='+'||e.key==='=')zoomEn(1.25,vw()/2,vh()/2);
+ else if(e.key==='-'||e.key==='_')zoomEn(.8,vw()/2,vh()/2);
+ else if(e.key==='0'||e.key==='Escape')ajustar();
+ else if(e.key==='Home')ir(upper[0]);else if(e.key==='End')ir(upper[upper.length-1]);
 });
-addEventListener('resize',escala);escala();
+addEventListener('resize',()=>{sMin=sTodo()*.8;const c=centro();s=rel*sAlto();tx=vw()/2-c*s;ty=TOP+(vh()-TOP-BOT-H*s)/2;aplicar(false)});
+sMin=sTodo()*.8;s=sAlto();tx=18;ty=TOP+(vh()-TOP-BOT-H*s)/2;aplicar(false);
 })();
 </script>
 </body></html>
