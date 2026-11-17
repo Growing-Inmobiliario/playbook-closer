@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#080808">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Objeciones que se firman · Pol Morado">
+<meta property="og:description" content="El método de Pol Morado para resolver las objeciones en la visita de captación y con compradores, con las conversaciones reales paso a paso.">
+<meta property="og:image" content="https://growing-inmobiliario.github.io/playbook-closer/objeciones/img/pol-escenario.jpg">
+<meta property="og:url" content="https://growing-inmobiliario.github.io/playbook-closer/objeciones/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Objeciones que se firman</title>
+<meta name="description" content="El método de Pol Morado para resolver las objeciones en la visita de captación y con compradores, con las conversaciones reales paso a paso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Solo oscuro, a propósito: negro profundo y dorado. Layout: dossier de una agencia de lujo. Portada con la ficha de la visita; método en un sello de seis numerales; catálogo de objeciones con el guion a la izquierda y el salón ilustrado fijo a la derecha. */
+:root{
+  --bg:#080808; --surface:#111111; --surface2:#1a1a19; --line:rgba(208,176,122,.30); --line2:rgba(255,255,255,.09);
+  --fg:#f5f1e8; --mute:#bdb6a8; --gold:#d4b47c; --gold-soft:rgba(212,180,124,.09); --gold-ink:#0d0b07;
+  --fig:#ece5d6; --chair:#2a2927; --no:#e4a28a; --no-soft:rgba(228,162,138,.10); --yes:#b3d0a5; --yes-soft:rgba(179,208,165,.10);
+  --paper:#f7f4ee; --paper-ink:#1d2420; --paper-mute:#6f6a60;
+  --f-display:"Cormorant Garamond","Times New Roman",serif; --f-body:"Jost","Helvetica Neue",Arial,sans-serif;
+  --tabs-h:58px;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;margin:0;letter-spacing:-.005em;text-wrap:balance}
+i.s,em{font-style:italic}
+p{margin:0}
+b,strong{font-weight:500;color:var(--fg)}
+.label{font-family:var(--f-body);font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.lead{color:var(--mute);font-size:18px;max-width:60ch}
+.rule{height:1px;background:var(--line)}
+section{padding-block:110px}
+a{color:var(--gold)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.btn{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;font:400 12px/1 var(--f-body);letter-spacing:.24em;text-transform:uppercase;padding:18px 26px;text-decoration:none;transition:background .25s,color .25s}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-gold:hover{background:var(--fg);color:var(--bg)}
+.btn-line{color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--gold);color:var(--gold)}
+.btn .ar{font-family:var(--f-display);font-size:18px;letter-spacing:0;text-transform:none}
+
+/* ---------- CABECERA ---------- */
+.topbar{border-bottom:1px solid var(--line2)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:22px;gap:16px}
+.mono{display:flex;align-items:center;gap:14px}
+.mono .crest{width:38px;height:38px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--f-display);font-size:20px;color:var(--gold);font-style:italic}
+.mono .nm{font-size:11px;letter-spacing:.3em;text-transform:uppercase;line-height:1.5}
+.mono .nm span{display:block;color:var(--mute);letter-spacing:.22em}
+.topbar nav{display:flex;gap:28px}
+.topbar nav a{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);text-decoration:none}
+.topbar nav a:hover{color:var(--gold)}
+
+/* ---------- HERO ---------- */
+.hero{padding-block:72px 96px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(46px,6.6vw,92px);line-height:.98;font-weight:400;margin-top:26px}
+.hero h1 em{color:var(--gold)}
+.hero .lead{margin-top:28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.specs{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:40px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line2)}
+.specs div{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.specs b{display:block;font-family:var(--f-display);font-size:40px;line-height:1;letter-spacing:0;color:var(--fg);font-weight:400;margin-bottom:8px;font-variant-numeric:lining-nums tabular-nums}
+
+/* ficha de visita */
+.sheet{border:1px solid var(--line);background:var(--surface);position:relative}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line2);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.sheet-h b{color:var(--gold);font-weight:400}
+.sheet-f{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line2)}
+.sheet-f div{padding:14px 16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.sheet-f div+div{border-left:1px solid var(--line2)}
+.sheet-f b{display:block;font-family:var(--f-display);font-size:19px;letter-spacing:0;text-transform:none;color:var(--fg);font-weight:500;margin-top:2px}
+
+/* ---------- ESCENA DEL SALÓN ---------- */
+.room{position:relative;background:linear-gradient(180deg,var(--surface2),var(--surface) 78%)}
+.room svg{display:block;width:100%;height:auto}
+.room .fig{fill:var(--fig);transition:opacity .4s}
+.room .fig .limb{stroke:var(--fig);fill:none;stroke-width:8;stroke-linecap:round}
+.room .fig.dim{opacity:.38}
+.room .halo{fill:none;stroke:var(--gold);stroke-width:1;opacity:0}
+.room .talking .halo{animation:halo 1.4s ease-out infinite}
+.room .talking .head{animation:nod 1.1s ease-in-out infinite}
+.room .head{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes halo{0%{opacity:.9;r:14}100%{opacity:0;r:30}}
+@keyframes nod{0%,100%{transform:rotate(0)}40%{transform:rotate(-4deg)}70%{transform:rotate(2deg)}}
+.room .gold-l{stroke:var(--gold);fill:none;stroke-width:1}
+.room .soft{fill:var(--gold-soft)}
+.room .chair{fill:var(--chair)}
+.room .ln2{stroke:var(--line);stroke-width:1;fill:none}
+.room .nm{font-family:var(--f-body);font-size:8px;letter-spacing:2.4px;text-transform:uppercase;fill:var(--mute)}
+.room .paperc{fill:var(--paper)}
+.caption{min-height:104px;padding:18px 22px 20px;border-top:1px solid var(--line2);transition:opacity .3s}
+.caption .who{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.caption p{font-family:var(--f-display);font-size:22px;line-height:1.3;margin-top:6px}
+.caption.o p{font-style:italic}
+.caption.fade{opacity:0}
+
+/* ---------- QUIÉN ---------- */
+.who{padding-top:24px}
+.who img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.05) brightness(.92)}
+.who-hero{margin:0;position:relative;aspect-ratio:16/8;max-width:100%;overflow:hidden;border:1px solid var(--line2)}
+.who-hero img{object-position:50% 35%}
+.duo{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:80px}
+.duo figure{margin:0;position:relative;overflow:hidden;aspect-ratio:3/2}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(180deg,transparent,rgba(8,8,8,.8));color:#f5f1e8;font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+.duo figure:last-child img{object-position:50% 40%}
+.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:190px;gap:10px;margin-top:80px}
+.mosaic figure{margin:0;position:relative;overflow:hidden}
+.mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(180deg,transparent,rgba(8,8,8,.8));color:#f5f1e8;font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+.m-grupo{grid-column:1/5;grid-row:span 2}
+.m-premio{grid-column:5/7;grid-row:span 2}
+.m-vert{grid-column:1/3;grid-row:span 2}
+.m-vert img{object-position:50% 30%}
+.m-net{grid-column:3/5;grid-row:span 2}
+.m-p1{grid-column:5/7}
+.m-p2{grid-column:5/7}
+.m-eq{grid-column:1/4;grid-row:span 2}
+.m-asis{grid-column:4/7;grid-row:span 2}
+.who-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,8,8,.88))}
+.who-hero figcaption{position:absolute;left:28px;right:28px;bottom:24px;z-index:1;display:flex;flex-direction:column;gap:6px;color:#f5f1e8;font-family:var(--f-display);font-size:24px;font-style:italic;line-height:1.25}
+.who-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:center;margin-top:80px}
+.who-photos{display:grid;max-width:420px}
+.who-photos img{aspect-ratio:4/5;object-position:34% 30%}
+.proof{display:grid;grid-template-columns:1fr 1fr;margin-top:36px;border-top:1px solid var(--line)}
+.proof div{padding:20px 0;border-bottom:1px solid var(--line2);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+.proof div:nth-child(odd){padding-right:20px;border-right:1px solid var(--line2)}
+.proof div:nth-child(even){padding-left:20px}
+.proof b{display:block;font-family:var(--f-display);font-size:38px;line-height:1.05;letter-spacing:0;text-transform:none;color:var(--gold);font-weight:400;margin-bottom:6px;font-variant-numeric:lining-nums}
+@media (max-width: 980px){
+  .who-grid{grid-template-columns:1fr;gap:44px;margin-top:48px}
+  .who-hero figcaption{font-size:19px;left:18px;right:18px;bottom:16px}
+  .who-hero{aspect-ratio:4/5}
+  .duo{grid-template-columns:1fr;margin-top:48px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:150px;margin-top:48px}
+  .mosaic figure{grid-column:span 1!important;grid-row:span 1!important}
+  .mosaic .m-grupo,.mosaic .m-eq{grid-column:1/3!important;grid-row:span 2!important}
+  .mosaic .m-vert,.mosaic .m-premio{grid-row:span 2!important}
+}
+@media (max-width: 560px){
+  .proof{grid-template-columns:1fr}
+  .proof div:nth-child(odd),.proof div:nth-child(even){padding:18px 0;border-right:0}
+}
+
+/* ---------- PARTE DE VISITA ---------- */
+.why .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.why h2,.cycle h2,.obj h2,.contract h2,.gold h2,.quiz h2,.cta h2{font-size:clamp(36px,4.6vw,60px);line-height:1.02;font-weight:400}
+h2 em{color:var(--gold)}
+.report{margin-top:36px;border:1px solid var(--line)}
+.report .rh{display:flex;justify-content:space-between;padding:12px 18px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line2)}
+.report .row{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line2);font-size:16px}
+.report .row:last-child{border-bottom:0}
+.report .t{font-size:12px;letter-spacing:.12em;color:var(--mute);padding-top:3px;font-variant-numeric:tabular-nums}
+.report .row q{font-family:var(--f-display);font-size:20px;font-style:italic;quotes:"«" "»"}
+.report .row.bad{background:var(--no-soft)}
+.report .row.bad b{color:var(--no)}
+.fam{display:grid;grid-template-columns:1fr 1fr;margin-top:30px;border-top:1px solid var(--line)}
+.fam button{all:unset;box-sizing:border-box;cursor:pointer;padding:22px 4px 22px 0;border-bottom:1px solid var(--line2);transition:background .2s}
+.fam button:hover b{color:var(--gold)}
+.fam button:focus-visible{outline:1px solid var(--gold)}
+.fam button:nth-child(odd){padding-right:20px;border-right:1px solid var(--line2)}
+.fam button:nth-child(even){padding-left:20px}
+.tab .cmp{display:inline-block;font-size:8.5px;letter-spacing:.2em;border:1px solid var(--line);padding:3px 5px;margin-right:8px;color:var(--gold);vertical-align:1px}
+.fam .k{font-size:10px;letter-spacing:.26em;color:var(--gold)}
+.fam b{display:block;font-family:var(--f-display);font-size:26px;font-weight:500;margin-top:4px}
+.fam span{font-size:15px;color:var(--mute)}
+.phr{margin-top:34px;padding:28px 0 0;border-top:1px solid var(--line)}
+.phr p{font-family:var(--f-display);font-style:italic;font-size:30px;line-height:1.2}
+.phr p+p{margin-top:8px}
+.phr .label{display:block;margin-bottom:14px}
+
+/* ---------- CICLO (sello) ---------- */
+.cycle .head{max-width:760px}
+.cycle .head .lead,.obj .head .lead{margin-top:20px}
+.cycle-grid{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:72px;align-items:center;margin-top:56px}
+.ring{position:relative;width:100%;max-width:460px;aspect-ratio:1;margin:0 auto}
+.ring svg.track{position:absolute;inset:0;width:100%;height:100%}
+.ring .center{position:absolute;inset:27%;display:grid;place-items:center;text-align:center}
+.ring .center b{display:block;font-family:var(--f-display);font-size:clamp(54px,9vw,88px);line-height:1;font-weight:400;color:var(--gold)}
+.ring .center span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.node{position:absolute;width:19%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;display:grid;place-items:center;padding:4px;text-align:center;transition:background .3s,color .3s,border-color .3s}
+.node span{font-family:var(--f-display);font-size:clamp(17px,2.4vw,22px);line-height:1}
+.node small{display:block;font-family:var(--f-body);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.node:hover{border-color:var(--gold)}
+.node.on{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.node.on small{color:var(--gold-ink)}
+.cycle-detail{min-height:300px}
+.cycle-detail h3{font-size:44px;margin-top:10px;font-weight:400}
+.cycle-detail .say{margin-top:24px;padding:4px 0 4px 24px;border-left:1px solid var(--gold);font-family:var(--f-display);font-style:italic;font-size:28px;line-height:1.25}
+.cycle-detail .why2{margin-top:22px;color:var(--mute);max-width:58ch}
+.first-note{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.first-note p{margin-top:10px;color:var(--mute);max-width:58ch}
+.cycle-hint{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:26px}
+
+/* ---------- CATÁLOGO DE OBJECIONES ---------- */
+/* Una sola columna de lectura. A la izquierda, solo un índice discreto de los pasos. */
+.obj{padding-bottom:40px}
+.obj .head{max-width:820px}
+.note{display:flex;gap:16px;align-items:flex-start;margin-top:30px;max-width:760px;padding:18px 22px;border:1px solid var(--line);font-size:15px;color:var(--mute)}
+.note .label{white-space:nowrap;padding-top:3px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-block:1px solid var(--line2);margin-top:48px}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;align-items:stretch}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tabs .grp{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);white-space:nowrap;display:flex;align-items:center;padding-right:14px}
+.tabs .grp:not(:first-child){margin-left:16px;padding-left:22px;border-left:1px solid var(--line)}
+.tab{white-space:nowrap;border:0;border-bottom:1px solid transparent;background:none;color:var(--mute);font:400 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;padding:22px 12px 21px;cursor:pointer;transition:color .2s,border-color .2s}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--gold);border-bottom-color:var(--gold)}
+
+.panel-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:56px;align-items:center;padding-block:64px 56px;border-bottom:1px solid var(--line2)}
+.panel-head .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.panel-head .meta b{color:var(--gold);font-weight:400}
+.panel-head h3{font-size:clamp(36px,5vw,64px);line-height:1.02;font-style:italic;font-weight:400;margin-top:18px}
+.panel-head .insight{margin-top:20px;color:var(--mute);font-size:18px;max-width:58ch}
+.panel-head .thumb{border:1px solid var(--line2);background:var(--surface)}
+.panel-head .thumb .room{background:linear-gradient(180deg,var(--surface2),var(--surface) 80%)}
+.panel-head .thumb .cap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:12px 16px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);border-top:1px solid var(--line2)}
+.panel-head .thumb .cap b{color:var(--gold);font-weight:400}
+
+.story{display:grid;grid-template-columns:200px minmax(0,740px);gap:72px;justify-content:center;align-items:start;padding-top:24px}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--tabs-h) + 40px);display:grid;gap:2px}
+.rail .rt{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.rail button{all:unset;cursor:pointer;display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:9px 0 9px 14px;border-left:1px solid var(--line2);color:var(--mute);font-size:13px;letter-spacing:.04em;transition:color .25s,border-color .25s}
+.rail button span{font-family:var(--f-display);font-size:18px}
+.rail button:hover{color:var(--fg)}
+.rail button.on{color:var(--fg);border-left-color:var(--gold)}
+.rail button.on span{color:var(--gold)}
+.rail button:focus-visible{outline:1px solid var(--gold)}
+
+.step{padding-block:64px;border-bottom:1px solid var(--line2);scroll-margin-top:calc(var(--tabs-h) + 20px)}
+.step:first-child{padding-top:40px}
+.step .lab{display:flex;align-items:baseline;gap:14px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.step .lab .n{font-family:var(--f-display);font-size:30px;letter-spacing:0;line-height:1}
+.step h4{font-size:clamp(30px,3.4vw,42px);line-height:1.1;margin-top:12px;font-weight:500}
+
+.dialog{margin-top:30px;display:grid;gap:22px}
+.ln{display:grid;grid-template-columns:112px 1fr;gap:20px;align-items:baseline}
+.ln .sp{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.ln .tx{font-size:20px;line-height:1.5}
+.ln.c .sp{color:var(--gold)}
+.ln.c .tx{color:var(--fg);font-weight:400}
+.ln.o .tx{font-family:var(--f-display);font-style:italic;font-size:23px;line-height:1.35;color:var(--mute)}
+
+.why-step{margin-top:34px;padding-top:22px;border-top:1px solid var(--line2);display:grid;grid-template-columns:112px 1fr;gap:20px}
+.why-step .k{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);padding-top:4px}
+.why-step .body{color:var(--mute);font-size:16.5px;max-width:58ch}
+.why-step .body b{color:var(--fg)}
+.box{margin-top:16px;font-size:15.5px;max-width:58ch;color:var(--mute)}
+.box .bt{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:4px}
+.box.no .bt{color:var(--no)}
+.box.no q{font-family:var(--f-display);font-style:italic;font-size:19px;color:var(--fg);text-decoration:line-through;text-decoration-color:var(--no);text-decoration-thickness:1px;quotes:"«" "»"}
+.box.mind .bt{color:var(--gold)}
+.box .bx{display:block;margin-top:2px}
+
+.next-obj{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:40px 0 20px}
+.next-obj span{color:var(--mute);font-size:15px}
+.next-obj span b{font-family:var(--f-display);font-size:24px;font-style:italic;font-weight:500}
+
+/* escena (se usa en portada y en la miniatura) */
+/* ---------- CONTRATO ---------- */
+.contract .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start}
+.contract .lead{margin-top:20px}
+.tips{margin-top:34px;border-top:1px solid var(--line)}
+.tip{padding:22px 0;border-bottom:1px solid var(--line2);display:grid;grid-template-columns:40px 1fr;gap:12px}
+.tip .n{font-family:var(--f-display);font-size:24px;color:var(--gold);line-height:1.2}
+.tip b{display:block;font-family:var(--f-display);font-size:24px;font-weight:500;line-height:1.2}
+.tip p{color:var(--mute);font-size:15.5px;margin-top:6px}
+.paper{background:var(--paper);color:var(--paper-ink);padding:46px 42px 40px;box-shadow:0 40px 80px rgba(0,0,0,.28);position:relative;font-size:15px}
+.paper::before{content:"";position:absolute;inset:10px;border:1px solid rgba(134,103,44,.35);pointer-events:none}
+.paper .ph{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--paper-mute)}
+.paper h4{font-family:var(--f-display);font-weight:500;font-size:36px;margin:30px 0 4px;text-align:center}
+.paper .sub{text-align:center;color:var(--paper-mute);font-size:13px;letter-spacing:.06em}
+.clause{border-top:1px solid #ddd6c8}
+.clause:first-of-type{margin-top:28px}
+.clause:last-of-type{border-bottom:1px solid #ddd6c8}
+.clause button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 2px;cursor:pointer}
+.clause button:focus-visible{outline:1px solid #86672c}
+.clause .cn{font-family:var(--f-display);font-size:22px;color:#86672c}
+.clause .ct{font-family:var(--f-display);font-size:21px;font-weight:600;line-height:1.2}
+.clause .ct small{display:block;font-family:var(--f-body);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a5482f;margin-top:4px}
+.clause .pl{color:#86672c;font-size:20px;transition:transform .25s}
+.clause.open .pl{transform:rotate(45deg)}
+.clause .cb{padding:0 2px 20px 40px;color:#3b413d;line-height:1.6}
+.sign{display:flex;justify-content:space-between;gap:24px;margin-top:40px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-mute)}
+.sign div{flex:1;border-top:1px solid #b9b2a2;padding-top:8px}
+.seal{position:absolute;right:30px;bottom:86px;width:92px;height:92px}
+
+/* ---------- FRASES ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:52px;border-top:1px solid var(--line)}
+.quote{padding:34px 28px 34px 0;border-bottom:1px solid var(--line2)}
+.quote:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--line2)}
+.quote p{font-family:var(--f-display);font-style:italic;font-size:26px;line-height:1.22}
+.quote span{display:block;margin-top:14px;font-size:14px;color:var(--mute)}
+.quote.hl p{color:var(--gold)}
+
+/* ---------- TEST ---------- */
+.quiz .grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+.quiz .lead{margin-top:20px}
+.qcard{padding:36px;border:1px solid var(--line);background:var(--surface)}
+.qprog{display:flex;gap:6px;margin-bottom:26px}
+.qprog i{flex:1;height:1px;background:var(--line)}
+.qprog i.done{background:var(--yes);height:2px}
+.qprog i.miss{background:var(--no);height:2px}
+.qsit{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.qsay{margin-top:12px;font-family:var(--f-display);font-style:italic;font-size:30px;line-height:1.2}
+.qask{margin-top:18px;color:var(--mute);font-size:14px;letter-spacing:.06em}
+.opts{display:grid;gap:10px;margin-top:14px}
+.opt{all:unset;box-sizing:border-box;padding:16px 18px;border:1px solid var(--line2);background:var(--bg);cursor:pointer;font-size:16px;line-height:1.5;transition:border-color .2s}
+.opt:hover{border-color:var(--gold)}
+.opt:focus-visible{outline:1px solid var(--gold)}
+.opt.right{border-color:var(--yes);background:var(--yes-soft)}
+.opt.wrong{border-color:var(--no);background:var(--no-soft)}
+.opt[disabled]{cursor:default}
+.fb{margin-top:16px;padding:4px 0 4px 18px;border-left:1px solid;font-size:15.5px}
+.fb.ok{border-color:var(--yes)} .fb.ko{border-color:var(--no)}
+.fb b{display:block;font-family:var(--f-display);font-size:22px;font-weight:500}
+.qnav{display:flex;justify-content:flex-end;margin-top:22px}
+.qend{text-align:center;padding:12px 0}
+.qend b{display:block;font-family:var(--f-display);font-size:96px;line-height:1;font-weight:400;color:var(--gold)}
+.qend p{margin-top:14px;color:var(--mute)}
+
+/* ---------- CTA ---------- */
+.cta{padding-block:40px 120px}
+.cta .box2{border:1px solid var(--line);padding:48px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:center;position:relative}
+.cta-photo{margin:0;aspect-ratio:4/5;overflow:hidden;position:relative;z-index:1}
+.cta-photo img{width:100%;height:100%;object-fit:cover;object-position:45% 30%;display:block;filter:saturate(.72) contrast(1.05) brightness(.92)}
+.cta .act2{margin-top:32px}
+.cta .box2::before{content:"";position:absolute;inset:8px;border:1px solid var(--line2);pointer-events:none}
+.cta p{color:var(--mute);margin-top:18px;max-width:54ch}
+.cta .act2{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.when{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line2)}
+.when div{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.when b{display:block;font-family:var(--f-display);font-size:30px;letter-spacing:0;text-transform:none;color:var(--fg);font-weight:400;margin-bottom:4px}
+.cta .alt{font-size:13px;color:var(--mute);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;margin-top:6px}
+.cta .alt:hover{color:var(--gold)}
+.cta .handle{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+footer{border-top:1px solid var(--line2);padding-block:30px;color:var(--mute);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px){
+  .hero .wrap,.why .grid,.cycle-grid,.contract .grid,.quiz .grid,.cta .box2{grid-template-columns:1fr}
+  .topbar nav{display:none}
+  .story{grid-template-columns:1fr;gap:0}
+  .rail{display:none}
+  .step{padding-block:44px}
+  .panel-head{grid-template-columns:1fr;gap:28px;padding-block:44px 36px}
+  .panel-head .thumb{max-width:420px}
+  .quotes{grid-template-columns:1fr}
+  .quote,.quote:not(:nth-child(3n+1)){padding:28px 0;border-left:0}
+  section{padding-block:76px}
+  .cta .box2{padding:36px 26px}
+  .cta-photo{aspect-ratio:4/3}
+}
+@media (max-width: 560px){
+  body{font-size:16px}
+  .fam{grid-template-columns:1fr}
+  .fam button:nth-child(odd),.fam button:nth-child(even){padding:18px 0;border-right:0}
+  .specs{gap:22px}
+  .specs b{font-size:32px}
+  .sheet-f{grid-template-columns:1fr 1fr}
+  .sheet-f div:nth-child(3){border-left:0}
+  .sheet-f div:nth-child(n+3){border-top:1px solid var(--line2)}
+  .ln,.why-step{grid-template-columns:1fr;gap:4px}
+  .ln .tx{font-size:18px}
+  .ln.o .tx{font-size:21px}
+  .paper{padding:36px 22px 30px}
+  .clause .cb{padding-left:2px}
+  .seal{width:70px;height:70px;right:18px;bottom:80px}
+  .qcard{padding:24px}
+  .qsay{font-size:25px}
+  .report .row{grid-template-columns:62px 1fr}
+  .node small{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="mono"><div class="crest">PM</div><div class="nm">Pol Morado<span>Growing Inmobiliario</span></div></div>
+  <nav aria-label="Secciones"><a href="#metodo">El método</a><a href="#objeciones">Objeciones</a><a href="#exclusiva-contrato">La exclusiva</a><a href="#entrena">Entrénalo</a><a href="#directo">Directo semanal</a></nav>
+</div></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <div class="label">Guía privada · Captación y compradores</div>
+      <h1>La objeción no se rebate. <em>Se aísla.</em></h1>
+      <p class="lead">Así convierte mi equipo un «me lo tengo que pensar» en una exclusiva firmada antes de levantarse del sofá. Las conversaciones reales de mis entrenamientos, paso a paso y frase a frase.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#objeciones">Ver las objeciones <span class="ar">→</span></a>
+        <a class="btn btn-line" href="#metodo">El método</a>
+      </div>
+      <div class="specs">
+        <div><b>VI</b>Pasos del ciclo</div>
+        <div><b id="statObj">15</b>Objeciones</div>
+        <div><b>1</b>Visita para firmar</div>
+      </div>
+    </div>
+    <div class="sheet" id="heroSheet">
+      <div class="sheet-h"><span>Visita de captación</span><b>Salón · 19:42</b></div>
+      <div class="room" data-other="o"></div>
+      <div class="caption o" id="heroCap"><div class="who">Propietario</div><p>Me ha gustado mucho, pero me lo tengo que pensar.</p></div>
+      <div class="sheet-f"><div>Fase<b>Cierre</b></div><div>Encargo<b>Sobre la mesa</b></div><div>Objeción<b>Pantalla de humo</b></div><div>Objetivo<b>Firmar hoy</b></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ QUIÉN ============ -->
+<section class="who" id="quien">
+  <div class="wrap">
+    <figure class="who-hero">
+      <img src="img/pol-escenario.jpg" alt="Pol Morado en el escenario, con los brazos abiertos hablando a la sala en el encuentro presencial de Growing Inmobiliario" width="2000" height="1330">
+      <figcaption><span class="label">Encuentro presencial · Las Palmas</span><span>Agentes y dueños de inmobiliaria de toda España, entrenando en directo.</span></figcaption>
+    </figure>
+    <div class="who-grid">
+      <div class="who-photos">
+        <img src="img/premio-exclusivas.jpg" alt="Pol Morado sonriendo junto a un cliente que recibe el premio Mr. Exclusivas" loading="lazy">
+      </div>
+      <div class="who-text">
+        <div class="label">Quién te lo enseña</div>
+        <h2 style="margin-top:20px">Pol Morado. <em>Dueño de inmobiliaria antes que formador.</em></h2>
+        <p class="lead">Todo lo que vas a ver lo he probado primero en mi propia agencia, Atrio, en Mallorca. Grabábamos cada visita de captación y la repasábamos a primera hora, frase por frase, hasta que la exclusiva dejó de depender de la suerte.</p>
+        <p class="lead" style="margin-top:16px">Hoy, con Growing Inmobiliario, enseño ese mismo sistema a agentes y agencias de toda España: cómo captar, cómo llevar la visita y cómo resolver las objeciones sin bajar el precio ni los honorarios. Cada semana lo entrenamos en directo.</p>
+        <div class="proof">
+          <div><b>129.087 €</b>De honorarios en un mes en Atrio</div>
+          <div><b>8</b>Exclusivas al mes en Atrio</div>
+          <div><b>+800</b>Reuniones de auditoría con inmobiliarias</div>
+          <div><b>4,9</b>En Trustpilot · 88 opiniones</div>
+        </div>
+      </div>
+    </div>
+    <div class="duo">
+      <figure><img src="img/grupo.jpg" alt="Foto de grupo de todos los asistentes al encuentro presencial" loading="lazy"><figcaption>Todos los asistentes del encuentro</figcaption></figure>
+      <figure><img src="img/photocall.jpg" alt="Pol Morado con una asistente en el photocall de Growing Inmobiliario" loading="lazy"><figcaption>En el photocall</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="why" id="porque">
+  <div class="wrap grid">
+    <div>
+      <div class="label">Dónde se pierde la firma</div>
+      <h2 style="margin-top:20px">No te dicen que no. <em>Te dicen «mañana».</em></h2>
+      <p class="lead" style="margin-top:20px">En casi todas las visitas de captación que reviso pasa lo mismo: el agente fluye en el cierre, no aísla cada objeción y deja la decisión en el aire. Y lo que queda en el aire no se firma.</p>
+      <div class="report">
+        <div class="rh"><span>Parte de visita</span><span>Ref. 2611</span></div>
+        <div class="row"><span class="t">19:42</span><q>¿Habría algún problema para dejarlo firmado ahora?</q></div>
+        <div class="row"><span class="t">19:42</span><q>Me parece todo bien, déjame darle una vuelta.</q></div>
+        <div class="row"><span class="t">19:43</span><q>Claro, sin problema. ¿Hablamos mañana?</q></div>
+        <div class="row bad"><span class="t">+3 días</span><span><b>Firmado con otra agencia.</b> Nadie aisló la objeción real.</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="label">Las cuatro familias</div>
+      <p class="lead" style="margin-top:20px">Todas las objeciones caen en uno de estos cuatro grupos, y el ciclo para resolverlas es siempre el mismo. Toca un grupo para ir a sus objeciones.</p>
+      <div class="fam">
+        <button data-fam="dinero"><span class="k">I</span><b>Dinero</b><span>El precio de salida y tus honorarios. Es el mismo grupo.</span></button>
+        <button data-fam="socio"><span class="k">II</span><b>Pareja y socio</b><span>La pareja, los hermanos de la herencia, «lo tengo que hablar».</span></button>
+        <button data-fam="tiempo"><span class="k">III</span><b>Logística y tiempo</b><span>Las fechas, «para otro momento», cómo lo hacéis y vuestros servicios.</span></button>
+        <button data-fam="confianza"><span class="k">IV</span><b>Confianza y miedos</b><span>La exclusiva, quedarse atado, no fiarse de que se lo consigas.</span></button>
+      </div>
+      <div class="phr">
+        <span class="label">Las dos frases que tienen que estar en tu vocabulario</span>
+        <p>«Entiendo que me lances esta objeción.»</p>
+        <p>«¿Es la única que tenemos o hay alguna más?»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ============ CICLO ============ -->
+<section class="cycle" id="metodo">
+  <div class="wrap">
+    <div class="head">
+      <div class="label">El método</div>
+      <h2 style="margin-top:20px">Seis pasos. <em>Para todas.</em></h2>
+      <p class="lead">Da igual que sea la exclusiva, los honorarios o el precio. Cada objeción se trata igual: valido, aíslo, descubro qué hay detrás, precierro con un condicional, lo hago ver con una historia y cierro. Si sale otra, vuelta a empezar hasta que esté hermético.</p>
+    </div>
+    <div class="cycle-grid">
+      <div class="ring" id="ring">
+        <svg class="track" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="var(--line)" stroke-width=".35"></circle>
+          <circle cx="50" cy="50" r="22" fill="none" stroke="var(--line2)" stroke-width=".3"></circle>
+          <circle id="ringArc" cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width=".7" stroke-dasharray="0 239" transform="rotate(-90 50 50)" style="transition:stroke-dasharray .6s"></circle>
+        </svg>
+        <div class="center"><div><b id="ringNum">I</b><span id="ringLab">Validar</span></div></div>
+      </div>
+      <div class="cycle-detail" aria-live="polite">
+        <div class="label" id="cyK">Paso I de VI</div>
+        <h3 id="cyT">Validar</h3>
+        <div class="say" id="cyS"></div>
+        <p class="why2" id="cyW"></p>
+        <p class="cycle-hint">Toca cada numeral para ver la frase exacta</p>
+        <div class="first-note"><span class="label">Antes del ciclo</span><p>Con la primera objeción, sea cual sea, no resuelvas nada todavía. Primero llévale al resultado: «¿Sientes que puedo conseguirte el resultado que buscas?». Si dice que sí, «¿por qué?». Y cuando ya habla bien de ti: «Entonces, ¿qué nos impide dejarlo firmado ahora?». Ahí sale la objeción real, y con esa empieza el ciclo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OBJECIONES ============ -->
+<section class="obj" id="objeciones">
+  <div class="wrap">
+    <div class="head">
+      <div class="label">Catálogo de objeciones</div>
+      <h2 style="margin-top:20px">Elige la objeción. <em>Baja y escucha la visita.</em></h2>
+      <p class="lead">A la izquierda, lo que hago y por qué. A la derecha, el salón y el guion de la conversación tal cual, sacados de los entrenamientos en directo con agentes y agencias.</p>
+    </div>
+    <div class="note"><span class="label">Nota</span><span>Todo esto pasa en la propia visita, sentados en el salón con el encargo encima de la mesa. Si la objeción te llega después por teléfono o por WhatsApp, el ciclo es exactamente el mismo y se firma de la misma forma.</span></div>
+  </div>
+  <nav class="tabs" aria-label="Objeciones"><div class="wrap" id="tabs" role="tablist"></div></nav>
+  <div class="wrap" id="panel"></div>
+</section>
+
+<!-- ============ CONTRATO ============ -->
+<section class="contract" id="exclusiva-contrato">
+  <div class="wrap grid">
+    <div>
+      <div class="label">Formato de exclusiva</div>
+      <h2 style="margin-top:20px">El encargo que <em>responde antes de que pregunten.</em></h2>
+      <p class="lead">La gente no huye de la exclusiva. Huye de sentirse atada. Las objeciones son siempre tres, y si las tienes resueltas por escrito el propietario no tiene nada que «pensarse». Abre cada cláusula.</p>
+      <div class="tips">
+        <div class="tip"><span class="n">i</span><div><b>Graba tus visitas</b><p>Pásale a la IA las transcripciones de tus captaciones y tu contrato y pídele que meta en el encargo las objeciones de exclusiva que más te salen. Vas diez pasos por delante de tu competencia.</p></div></div>
+        <div class="tip"><span class="n">ii</span><div><b>Una oferta que no te deje dormir</b><p>La oferta más fuerte del mercado quita el riesgo al propietario. Un ejemplo agresivo: «si en tres meses no la vendo, te la compro». Las condiciones del contrato dicen qué tiene que pasar para que se cumpla.</p></div></div>
+        <div class="tip"><span class="n">iii</span><div><b>Si todos cobran el 3 %, cobra el 5 %</b><p>El precio es percepción de valor. Y si bajas honorarios, que sea solo a cambio de firmar ahora.</p></div></div>
+      </div>
+    </div>
+    <div class="paper" id="paper">
+      <div class="ph"><span>Nota de encargo</span><span>Condiciones particulares</span></div>
+      <h4>Encargo de venta en exclusiva</h4>
+      <p class="sub">Las tres cosas que siempre teme el propietario, resueltas antes de firmar</p>
+      <div id="clauses"></div>
+      <div class="sign"><div>El propietario</div><div>La agencia</div></div>
+      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="sealp" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#86672c" stroke-width="1"/>
+        <circle cx="50" cy="50" r="27" fill="none" stroke="#86672c" stroke-width=".6"/>
+        <text font-family="Jost,Arial,sans-serif" font-size="7.4" letter-spacing="2.6" fill="#86672c"><textPath href="#sealp">EXCLUSIVA SIN ATADURAS · FIRMADA EN VISITA ·</textPath></text>
+        <text x="50" y="58" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="24" fill="#86672c">PM</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ============ FRASES ============ -->
+<section class="gold" id="frases">
+  <div class="wrap">
+    <div class="label">Para tenerlas presentes</div>
+    <h2 style="margin-top:20px">Frases <em>de oro</em></h2>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- ============ TEST ============ -->
+<section class="quiz" id="entrena">
+  <div class="wrap grid">
+    <div>
+      <div class="label">Entrénalo</div>
+      <h2 style="margin-top:20px">¿Qué le dirías <em>tú?</em></h2>
+      <p class="lead">Cinco situaciones reales de visita. Elige la respuesta que darías sentado en ese salón y mira por qué funciona o por qué no.</p>
+    </div>
+    <div class="qcard" id="quiz"></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="directo">
+  <div class="wrap">
+    <div class="box2">
+      <figure class="cta-photo"><img src="img/pol-directo.jpg" alt="Pol Morado sonriendo en el escenario con el trofeo Mr. Exclusivas en la mano" loading="lazy"></figure>
+      <div>
+        <div class="label">El siguiente paso</div>
+        <h2 style="margin-top:18px">Esto se entrena. <em>Cada miércoles, en directo.</em></h2>
+        <p>Lo que has leído aquí lo entreno cada semana en un directo gratuito con agentes y dueños de inmobiliaria: objeciones reales, roleplays y preguntas en directo. No tienes que volver a registrarte. Entra en el grupo de WhatsApp y el mismo miércoles te paso ahí el enlace de la sala.</p>
+        <div class="when">
+          <div><b>Miércoles</b>Cada semana</div>
+          <div><b>19:00</b>Hora peninsular</div>
+          <div><b>Gratis</b>En directo por Zoom</div>
+        </div>
+        <div class="act2">
+        <a class="btn btn-gold" href="https://chat.whatsapp.com/FVit5DfYb9iICyPx8OwClr" target="_blank" rel="noopener">Unirme al grupo de WhatsApp <span class="ar">→</span></a>
+        <span class="handle">Un clic. Sin formularios.</span>
+        <a class="alt" href="https://us06web.zoom.us/webinar/register/WN_K55FWusURnOLn_Qcn6xNnA" target="_blank" rel="noopener">¿Prefieres el recordatorio por correo? Regístrate aquí</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>Pol Morado · Growing Inmobiliario</span><span>Guía de objeciones</span></div></footer>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const ROMAN=['I','II','III','IV','V','VI','VII','VIII','IX','X'];
+
+/* ================= EL SALÓN (SVG) ================= */
+function figure(kind){
+  // figura sentada mirando a la derecha; el agente se refleja
+  const extra = kind==='b' ? '<circle cx="86" cy="101" r="6"/>' : '';
+  return `<circle class="halo" cx="94" cy="112" r="14"/>
+    <g class="head">${extra}<circle cx="94" cy="112" r="12"/></g>
+    <path d="M90 123 h8 v6 h-8z"/>
+    <path d="M78 130 Q92 122 108 130 L111 176 L80 176 Z"/>
+    <path d="M82 166 H140 Q147 166 147 174 Q147 182 140 182 H82 Z"/>
+    <path d="M134 176 L147 176 L151 209 L140 209 Z"/>
+    <path d="M139 207 H158 Q162 213 155 214 H139 Z"/>
+    <path class="limb" d="M102 136 L118 160 L132 162"/>`;
+}
+function chair(){
+  return `<g class="chair"><path d="M50 116 Q50 108 58 108 H64 Q72 108 72 116 V198 H50 Z"/><rect x="50" y="174" width="88" height="20" rx="7"/></g>
+    <path class="ln2" d="M58 194 L55 214 M130 194 L133 214"/>`;
+}
+function roomSVG(otherKind){
+  const oName = otherKind==='b'?'Comprador':'Propietario';
+  return `<svg viewBox="0 0 420 236" role="img" aria-label="Agente y ${oName.toLowerCase()} sentados en el salón">
+    <path class="gold-l" d="M160 176 V74 A50 50 0 0 1 260 74 V176 Z"/>
+    <path class="soft" d="M160 176 V74 A50 50 0 0 1 260 74 V176 Z"/>
+    <path class="gold-l" d="M210 24 V176 M160 112 H260" opacity=".7"/>
+    <path class="ln2" d="M0 214 H420"/>
+    <ellipse class="soft" cx="210" cy="221" rx="170" ry="9"/>
+    <g class="gold-l"><path d="M384 84 V214 M374 214 H394"/><path d="M370 84 H398 L391 62 H377 Z"/></g>
+    <g class="gold-l"><path d="M20 214 H40 L37 192 H23 Z"/><path d="M30 192 C24 172 16 166 12 160 M30 192 C32 170 30 158 34 146 M30 192 C38 176 46 172 50 166"/></g>
+    <rect class="chair" x="168" y="176" width="84" height="5" rx="2"/>
+    <path class="ln2" d="M176 181 V214 M244 181 V214"/>
+    <rect class="paperc" x="184" y="170" width="30" height="6" rx="1"/>
+    <path class="gold-l" d="M188 173 H206"/>
+    <circle class="gold-l" cx="232" cy="172" r="3.6"/><path class="gold-l" d="M235 172 H244 M241 172 V175"/>
+    <g>${chair()}</g>
+    <g transform="translate(420 0) scale(-1 1)">${chair()}</g>
+    <g class="fig" data-who="o">${figure(otherKind)}</g>
+    <g transform="translate(420 0) scale(-1 1)"><g class="fig" data-who="c">${figure('c')}</g></g>
+    <text class="nm" x="96" y="230" text-anchor="middle">${oName}</text>
+    <text class="nm" x="324" y="230" text-anchor="middle">Agente</text>
+  </svg>`;
+}
+function setSpeaker(room,w){
+  room.querySelectorAll('.fig').forEach(f=>{const me=f.dataset.who===w;f.classList.toggle('talking',me&&!reduce);f.classList.toggle('dim',!me)});
+}
+function quiet(room){room.querySelectorAll('.fig').forEach(f=>f.classList.remove('talking'))}
+function trim(t){return t.length>150?t.slice(0,t.lastIndexOf(' ',145))+'…':t}
+
+/* ================= PORTADA ================= */
+(function(){
+  const room=document.querySelector('#heroSheet .room'); room.innerHTML=roomSVG('o');
+  const cap=document.getElementById('heroCap');
+  const lines=[
+    ['o','Me ha gustado mucho, pero me lo tengo que pensar.'],
+    ['c','Entiendo que quieras pensarlo. Dejando eso a un lado, ¿sientes que podemos conseguirte el resultado?'],
+    ['o','Sí, la verdad es que sí.'],
+    ['c','¿Por qué lo sientes?'],
+    ['o','Me habéis traído una valoración seria y conocéis la zona.'],
+    ['c','Entonces, ¿cuál es la preocupación real para no dejarlo firmado ahora?'],
+    ['o','Es la exclusiva. No quiero quedarme atado.']
+  ];
+  let i=0;
+  function show(){
+    const [w,t]=lines[i];
+    cap.classList.add('fade');
+    setTimeout(()=>{
+      cap.className='caption '+w;
+      cap.innerHTML=`<div class="who">${w==='c'?'Agente':'Propietario'}</div><p>${esc(t)}</p>`;
+      setSpeaker(room,w);
+      setTimeout(()=>quiet(room),Math.min(2800,t.length*45));
+    },reduce?0:300);
+    i=(i+1)%lines.length;
+  }
+  show(); if(!reduce) setInterval(show,4000);
+})();
+
+/* ================= CICLO ================= */
+const CYCLE=[
+  {t:'Validar',s:'«Lo entiendo 100 %. Es lo más normal del mundo.»',w:'Te alineas con él y bajas la velocidad al hablar. No discutes ni defiendes. Sin ego: lo que diga no va contra ti. Si es una pantalla de humo («me lo tengo que pensar»), antes ata el valor: «¿Sientes que somos la opción correcta para conseguirte ese resultado? ¿Por qué?».'},
+  {t:'Aislar',s:'«¿Esto es lo único o hay algo más?»',w:'Coges la objeción, la metes en una caja y la guardas en un cajón. Cada vez que te confirma que «es únicamente esto» se activa el principio de coherencia de Cialdini: se va alineando con firmar.'},
+  {t:'Descubrir',s:'«¿Qué es lo que ves de negativo? ¿Por qué esa cifra en concreto?»',w:'Diagnostica con preguntas sobre sus propias palabras, nunca con argumentos. Y no supongas la objeción: si la supones, la sacas tú. Una objeción siempre es una creencia.'},
+  {t:'Precerrar',s:'«Si dejamos esta caja cerrada y resuelta, ¿lo firmamos?»',w:'El condicional siempre empieza por «si». Toda concesión, sea de honorarios, de precio o un periodo de prueba, va atada a una condición pedida antes.'},
+  {t:'Historia o analogía',s:'«¿Has escuchado lo de encontrar una aguja en un pajar?»',w:'Una imagen convence más que diez argumentos: la aguja en el pajar, los kilometrajes de un coche, el que defiende tu precio. La gente firma por emoción y lo justifica con lógica.'},
+  {t:'Cierre',s:'«¿Lo dejamos ya cerrado o habría algún problema por dejarlo cerrado ahora?»',w:'Pregunta configurada para el no. Y si aparece otra objeción, vuelves al paso 1 hasta que esté hermético. La clave para cerrar es pedir el cierre muchas veces.'}
+];
+(function(){
+  const ring=document.getElementById('ring');
+  let cur=0,auto=true,timer;
+  CYCLE.forEach((c,i)=>{
+    const a=(-90+i*60)*Math.PI/180, x=50+38*Math.cos(a), y=50+38*Math.sin(a);
+    const b=document.createElement('button');
+    b.className='node'; b.style.left=x+'%'; b.style.top=y+'%';
+    b.innerHTML=`<div><span>${ROMAN[i]}</span><small>${c.t.split(' ')[0]}</small></div>`;
+    b.setAttribute('aria-label',`Paso ${i+1}: ${c.t}`);
+    b.onclick=()=>{auto=false;clearInterval(timer);set(i)};
+    ring.appendChild(b);
+  });
+  const nodes=ring.querySelectorAll('.node');
+  function set(i){
+    cur=i; const c=CYCLE[i];
+    nodes.forEach((n,j)=>n.classList.toggle('on',j===i));
+    document.getElementById('ringNum').textContent=ROMAN[i];
+    document.getElementById('ringLab').textContent=c.t;
+    document.getElementById('cyK').textContent=`Paso ${ROMAN[i]} de VI`;
+    document.getElementById('cyT').textContent=c.t;
+    document.getElementById('cyS').textContent=c.s;
+    document.getElementById('cyW').textContent=c.w;
+    const len=2*Math.PI*38; document.getElementById('ringArc').setAttribute('stroke-dasharray',`${len*(i+1)/6} ${len}`);
+  }
+  set(0);
+  if(!reduce) timer=setInterval(()=>{ if(auto) set((cur+1)%6) },4600);
+})();
+
+/* ================= OBJECIONES (datos) =================
+   l: líneas de la conversación [quién, texto, etiqueta opcional]  c = agente, o = propietario o comprador
+*/
+const OBJ=[
+/* ===== SIEMPRE PRIMERO ===== */
+{id:'pensar',g:'prop',special:true,tab:'La primera objeción',
+ q:'«Me ha gustado, pero me lo tengo que pensar»',
+ insight:'Sea cual sea la primera objeción, no la resuelvas todavía. Primero llévale al resultado: si siente que tú se lo puedes conseguir, que te diga por qué. Cuando ya habla bien de ti, le preguntas qué impide firmar ahora y sale la objeción real.',
+ steps:[
+  {k:'Validar',h:'Entiendo que me lances esto.',b:'Has lanzado la pregunta de cierre y te frena. No la discutas ni la resuelvas: <b>te alineas con él</b> y bajas la velocidad.',
+   l:[['c','Como ya hemos visto todo, también el contrato, ¿habría algún problema para dejarlo firmado ahora?'],['o','Me ha gustado mucho, pero me lo tengo que pensar.'],['c','OK, entiendo que me lances esto. Es lo más normal del mundo.']]},
+  {k:'Atar al resultado',h:'Primero, el resultado.',b:'Dejas la objeción a un lado y le llevas a lo que quiere conseguir. <b>Que confirme que tú se lo puedes conseguir</b> y que no quiere seguir como está.',
+   l:[['c','Dejando eso a un lado, primero de todo quiero confirmar una cosa contigo: ¿tú sientes de verdad que yo puedo conseguirte el resultado que buscas, vender por lo que necesitas y comprar la siguiente casa, y no seguir en la situación en la que estás?'],['o','Sí, yo creo que sí.']],
+   mind:'Si te dice que sí, ya tienes la incoherencia: si siente que se lo puedes conseguir, ¿por qué no firmarlo ya? Si te dice que no, la objeción es la confianza: ve a «No lo tengo claro».'},
+  {k:'Por qué',h:'Que hable bien de ti.',b:'Cuando dice que sí, le preguntas por qué. <b>Empieza a hablar de ti en positivo</b> y la confianza se construye en su cabeza, no en tu discurso.',
+   l:[['c','¿Por qué lo sientes?'],['o','Me habéis traído una valoración seria, conocéis la zona y he visto casos vuestros por aquí.']]},
+  {k:'La objeción real',h:'Entonces, ¿por qué no ahora?',b:'Con sus argumentos encima de la mesa, le preguntas qué impide firmar. Ahora sale <b>la objeción de verdad</b>: dinero, pareja, tiempo o miedo. Ve a su pestaña y aplica el ciclo.',
+   l:[['c','Entonces, si sientes que te puedo conseguir ese resultado, ¿qué nos impide dejarlo firmado ahora?'],['o','Es la exclusiva. No quiero quedarme atado.']],
+   no:{q:'Vale, piénsalo y te llamo mañana.',w:'Te vas sin decisión. Si no lo firma en el momento, las posibilidades caen al 50, al 40, incluso al 30 %.'}},
+  {k:'Si sigue en el aire',h:'¿Qué cambia de hoy a mañana?',b:'Si contesta con algo que no es concreto («tengo que hacer números»), <b>bájalo a tierra</b>. Y si aun así no firma, nunca sin fecha.',
+   l:[['o','Ya, pero tengo que hacer números.'],['c','Siendo claros y directos: ¿a qué te refieres concretamente? Detállame los números.'],['o','Déjame verlo esta noche y te digo algo mañana.'],['c','¿Qué cambia de hoy a mañana? ¿Dónde vas a decidir con más claridad: con toda la información encima de la mesa o con falta de información?']],
+   mind:'Si aun así no firma: «¿Qué criterio tienes para tomar la decisión?» y «¿Para qué fecha exacta vas a tener una decisión?». Siempre deberes y fecha.'}
+ ]},
+{id:'comp-pensar',g:'comp',special:true,tab:'La primera del comprador',
+ q:'«Déjame ver los números y le doy una vuelta»',
+ insight:'Mismo principio, otro lado de la mesa. Al acabar la visita no resuelves nada todavía: tres preguntas que llevan a una decisión. Si todo encaja, pensarlo es una excusa y sale la objeción real.',
+ steps:[
+  {k:'Validar',h:'Lo más normal del mundo.',b:'Te alineas con él y <b>pides permiso para tres preguntas</b>.',
+   l:[['o','Me ha gustado. Déjame ver los números y le doy una vuelta.'],['c','Lo entiendo 100 %, es lo más normal del mundo. Para ayudarte mejor, ¿te puedo hacer tres preguntas?'],['o','Claro.']]},
+  {k:'Tres preguntas',h:'Precio, zona, inmueble.',b:'Tres síes seguidos. <b>Cada sí le acerca a la decisión.</b>',
+   l:[['c','En cuestión de precio, ¿te encaja al 100 %?'],['o','Sí.'],['c','¿La zona te encaja?'],['o','Sí.'],['c','¿Y el inmueble: el espacio, la luz, la distribución?'],['o','También.']]},
+  {k:'La objeción real',h:'¿Qué te preocupa?',b:'Si todo encaja, le preguntas qué le preocupa para no decidir. Y <b>sale su protección: la objeción real</b>.',
+   l:[['c','Si las tres te encajan y es una buena oportunidad, ¿qué es lo que te preocupa para no tomar la decisión ahora y no perderla?'],['o','Es que no sé si podría ofrecer algo menos.']],
+   mind:'Un cierre de captación es el mismo cierre que con compradores. A partir de aquí, el ciclo: ve a «Quiero ofrecer menos» o «Me da miedo equivocarme».'}
+ ]},
+
+/* ===== DINERO ===== */
+{id:'honorarios',g:'prop',tab:'Otra agencia me cobra menos',
+ q:'«Si otro me cobra menos, me da igual quién la venda»',
+ insight:'No se discute el porcentaje. Te alineas sin ego, lo aíslas, descubres para qué necesita el dinero y, si bajas, solo a cambio de firmar ahora.',
+ steps:[
+  {k:'Validar',h:'No te lo tomes como algo personal.',b:'Acaba de decirte que le da igual quién la venda. <b>Ni te enfadas ni defiendes tu comisión.</b> Te alineas con lo que quiere de verdad.',
+   l:[['o','Al final, si alguien me la vende y me cobra menos que tú, me da igual quién la venda.'],['c','Te entiendo perfectamente. Supongo que lo que quieres es sacar el máximo dinero, no perder ni un euro por el camino y ahorrarte en honorarios todo lo posible, ¿correcto?'],['o','Obvio.']]},
+  {k:'Aislar',h:'¿Es solo eso?',b:'Antes de entrar en números, <b>que confirme que los honorarios son lo único</b>.',
+   l:[['c','Entonces, si dejáramos resuelto lo de los honorarios, ¿habría algo más que nos impidiera dejarlo firmado ahora?'],['o','No, sería solo eso.']],
+   mind:'Cada «es solo eso» activa el principio de coherencia de Cialdini: se va alineando con firmar.'},
+  {k:'Descubrir',h:'¿Para qué necesita ese dinero?',b:'El número que pide siempre tiene una historia detrás. <b>Esa historia es tu palanca</b>, no el porcentaje.',
+   l:[['o','Es que yo necesito 700.000 limpios. Si me la valoras en 720 y me quitas la comisión, no me cuadran los números.'],['c','¿Y por qué esa cifra en concreto, los 700.000?'],['o','Necesito unos 550.000 para un proyecto que quiero montar en Bali, un hotel.'],['c','¿Y con el resto?'],['o','Los impuestos y vivir mientras se construye.']],
+   mind:'Esto tendría que haber salido en el descubrimiento. Si te sale al final, es que el descubrimiento no estaba bien hecho.'},
+  {k:'Precerrar',h:'Si te cuadra, ¿lo firmamos?',b:'Le pones encima de la mesa el dinero que <b>necesita</b>, no el que desea, y le pides la condición antes de moverte.',
+   l:[['c','Si te pongo encima de la mesa el dinero que necesitas para lo de Bali, no el ideal sino el que necesitas, ¿lo dejaríamos firmado hoy?'],['o','Si me cuadra, sí.']]},
+  {k:'Historia',h:'¿Qué pasa cuando recortas?',b:'Le hablas desde su propio mundo de lo que cuesta ahorrar en la agencia. <b>Si eres empresa grande, juegas contra el autónomo; si eres autónomo, contra la empresa grande.</b>',
+   l:[['c','En tu hotel, si empiezas a recortar en estructura y en personal, ¿crees que puedes tener problemas después?'],['o','Seguro que sí.'],['c','Pues una agencia que te cobra menos normalmente es por lo que puede ofrecerte. Y lo que ahorras en agencia lo acabas perdiendo en la venta: cuanto más tiempo está una casa en el mercado, menos se saca por ella.']],
+   mind:'Empresa grande: «¿Un agente autónomo tendrá nuestra capacidad de inversión para vender un inmueble de 700.000?». Autónomo: «Las grandes recortan todo lo posible para que cobren el dueño y los agentes. ¿Con quién prefieres trabajar?».'},
+  {k:'Cierre',h:'La bajada, a cambio de la firma.',b:'Si te mueves en honorarios, que sea <b>solo con la condición de firmar ahora</b>.',
+   l:[['c','Entonces vamos a ajustarnos para que te cuadre. Si consigo ajustarme en honorarios para que tengas ese dinero, lo dejamos firmado ahora y empezamos a trabajar. ¿Te parece bien?'],['o','Venga, vamos.']],
+   no:{q:'Vale, te lo dejo al 3 % para no perderte.',w:'Bajar sin condición es regalar margen. Por honorarios nunca se te debería caer una visita, pero la bajada siempre se cambia por la firma.'}}
+ ]},
+{id:'cinco',g:'prop',tab:'El 5 % es mucho',
+ q:'«Un 5 % me parece muchísimo»',
+ insight:'Primero diagnostica: ¿no le ve el valor al servicio o es que con el 5 % no le llega para su objetivo? Son dos objeciones distintas. Y nunca bajes honorarios del tirón.',
+ steps:[
+  {k:'Validar',h:'Sin defenderte.',b:'Te alineas. <b>Nada de «pero»</b>: di «déjame que te pregunte».',
+   l:[['o','Me parece muy bien todo, pero un 5 % es muchísimo.'],['c','Te entiendo perfectamente, es una cifra importante y quieres asegurarte de que merece la pena. Déjame que te pregunte una cosa.']],
+   no:{q:'Sí, pero es que nosotros hacemos fotos, vídeo, reportes…',w:'Defenderte con tu trabajo te pone a la defensiva y te compara en precio.'}},
+  {k:'Aislar',h:'Quitando los honorarios, ¿trabajarías conmigo?',b:'Separas el servicio del precio. <b>Si el servicio le encaja, la conversación es solo de números.</b>',
+   l:[['c','Si quitáramos los honorarios de la ecuación, ¿tú querrías trabajar con nosotros?'],['o','Sí, el servicio me encaja.'],['c','Entonces, si dejamos resuelto lo de los honorarios, ¿no habría nada más que nos impidiera avanzar?'],['o','No, sería solo eso.']]},
+  {k:'Descubrir',h:'¿Valor o necesidad?',b:'La pregunta que decide el camino. <b>Nunca supongas la objeción</b>: si la supones, la sacas tú.',
+   l:[['c','¿Es más por el valor del servicio o sientes que, si cobramos el 5 %, no te va a llegar para conseguir lo que buscas?'],['o','Es que con lo que me queda no sé si me llega para la otra casa.'],['c','Vamos a hacer el cálculo juntos. ¿Cuánto necesitas que te quede limpio?']],
+   mind:'Si es valor, argumento de valor. Si es necesidad, el cálculo del neto con él: «¿Ese dinero neto te encajaría o no?».'},
+  {k:'Precerrar',h:'Si me muevo, ¿firmamos ahora?',b:'Nunca bajes sin una condición pedida antes. <b>Primero la condición, luego el número.</b>',
+   l:[['c','Si yo hiciera un movimiento en los honorarios, ¿habría algún problema por dejarlo cerrado ahora mismo?'],['o','No, ninguno.']]},
+  {k:'Historia',h:'¿Quién va a defender tu precio?',b:'Una imagen convence más que diez argumentos.',
+   l:[['c','Piensa una cosa: si lo primero que yo rebajo son mis honorarios, ¿crees que cuando un comprador te haga una oferta a la baja voy a saber defender el precio de tu casa? ¿A qué tipo de persona querrías a tu lado?'],['o','A alguien que lo defienda.'],['c','Y solo cobramos cuando la operación se realiza. La inversión por adelantado la ponemos nosotros, y el último sí siempre lo tienes tú.']],
+   mind:'Para viviendas caras: «¿Es lo mismo vender una propiedad de 150.000 que una de 1.500.000? ¿Has escuchado lo de encontrar una aguja en un pajar?».'},
+  {k:'Cierre',h:'Su número, subido, y firmado hoy.',b:'Le preguntas cuánto pagaría, <b>subes lo que te propone</b> y lo confirmas con la firma.',
+   l:[['c','¿Cuánto te imaginas que serían unos honorarios que estarías dispuesto a pagar?'],['o','No sé, un 3 %.'],['c','Si hoy lo dejamos firmado, lo dejamos en un 4 %. ¿Lo firmamos?'],['o','Hecho.']],
+   no:{q:'Venga, te lo dejo al 3 % y listo.',w:'Nunca bajéis honorarios del tirón. Nunca. Y nunca negociéis sin una condición pedida antes.'}}
+ ]},
+{id:'precio',g:'prop',tab:'Quiero sacar más precio',
+ q:'«El vecino lo vendió por 400.000 y el suyo está peor»',
+ insight:'Si discutes el precio con argumentos, pierdes. Te alineas, lo aíslas, le preguntas lo que no sabe y dejas que el mercado hable. Si se enroca, vuelves a su dolor o a su deseo.',
+ steps:[
+  {k:'Validar',h:'Claro que no quieres malvenderla.',b:'Es lógico lo que siente. <b>Estás en su mismo lado de la mesa.</b>',
+   l:[['o','Siento que podemos sacar más por la vivienda. Por eso quiero darle una vuelta, para no malvenderla.'],['c','Te entiendo totalmente. Es tu casa y lo último que quieres es dejar dinero encima de la mesa.']]},
+  {k:'Aislar',h:'Sin aislar, llega el «te digo algo mañana».',b:'Si no lo aíslas ahora, te pedirá 24 horas. <b>Aislar es dejar clara la condición de firmar ahora.</b>',
+   l:[['c','Entonces lo único que nos impide avanzar ahora es tener la claridad de que no estás malvendiendo la casa, ¿cierto? ¿O habría algo más?'],['o','Es únicamente eso.']],
+   no:{q:'Podemos probar una semana al precio que tú quieres y, si no sale, volvemos a hablar.',w:'Has cedido el marco antes de entender por qué cree que la malvende. Primero descubre.'}},
+  {k:'Descubrir',h:'Que descubra él lo que no sabe.',b:'Saca de dónde viene su número y <b>pregunta, no afirmes</b>. Si se lo dices, duda de si fiarse; si se lo preguntas, lo descubre él.',
+   l:[['c','¿Qué te hace pensar que la estarías vendiendo barata?'],['o','El vecino me dijo que vendió por 400.000, y su piso es peor. Había pensado en ponerla en 420.'],['c','¿Has podido ver lo que se ha vendido de verdad en tu zona, lo que sale en el notariado? ¿Cuántas casas se venden al precio de salida y cuántas por debajo?'],['o','No, eso no lo he mirado.']],
+   no:{q:'Tu vecino seguro que no vendió a ese precio.',w:'Aunque sea verdad, se lo estás diciendo tú. Crea la duda de si fiarse de ti.'}},
+  {k:'Precerrar',h:'Datos, no intuición.',b:'Le pides el acuerdo de cómo vais a decidir <b>antes</b> de hablar de la cifra.',
+   l:[['c','Si salimos y nos basamos solo en lo que diga el mercado, nada de «creo» ni «espero», y lo revisamos juntos con datos, ¿lo dejaríamos firmado hoy?'],['o','Si es con datos, sí.']]},
+  {k:'Historia',h:'Que el mercado hable.',b:'Los primeros días son los de más tracción. <b>Que te diga él qué haría</b> si en ese tiempo no llama nadie.',
+   l:[['c','Si saliéramos en 420.000 y en 7 o 14 días, que es cuando la gente lo siente como una oportunidad, no llama nadie, ¿qué nos estaría diciendo el mercado?'],['o','Que estamos fuera.'],['c','¿Y qué te dice el instinto que deberíamos hacer?'],['o','Ajustar el precio.']]},
+  {k:'Cierre',h:'Ni para ti ni para mí.',b:'Refuerzas lo que piensa y cierras con <b>una reunión de revisión ya pactada</b>.',
+   l:[['c','Me encanta cómo piensas. Salimos cerca de los 400.000, interpretamos el mercado y decidimos con datos. Si no hay interacción, nos sentamos tú y yo y te enseño todo lo que he hecho. ¿Lo dejamos firmado?'],['o','Sí, vamos.']]},
+  {k:'Si se enroca',h:'Deja de hablar de precio.',b:'La gente firma por emoción y lo justifica con lógica. <b>Vuelve a por qué vende.</b>',
+   l:[['o','Ya, pero yo quiero probarlo en 420.000.'],['c','Si salimos ahí y el mercado no reacciona, ¿estás dispuesto a hacer las bajadas necesarias?'],['o','Sí, lo que quiero es venderla.'],['c','¿Y qué tienes pensado hacer con el dinero?'],['o','Cancelar parte de mi hipoteca.'],['c','¿Y cómo te sentirías llegando más desahogado a final de mes? Pues vamos a ponernos a trabajar para conseguirlo.']],
+   mind:'Con una persona mayor que ya no puede con las escaleras: «Si seguimos igual otros seis meses, ¿podemos aguantarlo? ¿Y cada año que pase?». Eso es llevarle al dolor.'}
+ ]},
+{id:'vendoyo',g:'prop',tab:'Lo vendo yo',
+ q:'«Para ese precio, la vendo yo»',
+ insight:'Si la pudiera vender solo, ya lo habría hecho. Te alineas, lo aíslas, la pregunta de por qué saca las razones reales, y los números de su propia experiencia hacen el resto.',
+ steps:[
+  {k:'Validar',h:'Es una opción totalmente válida.',b:'Ni le discutes ni le quitas la idea. <b>Le das permiso</b> y eso le baja la guardia.',
+   l:[['o','Vale, de acuerdo con los 670.000. Pero para ese precio la podría vender yo mismo.'],['c','Claro, es una opción totalmente válida. Yo aquí vengo a asesorarte; si lo prefieres, te animo a hacerlo.']]},
+  {k:'Aislar',h:'¿Es lo único?',b:'Que confirme que <b>poder venderla él</b> es lo único que le frena.',
+   l:[['c','Entonces, ¿lo único que nos impide avanzar es poder venderla tú por tu cuenta, o hay algo más?'],['o','Es eso, básicamente.']]},
+  {k:'Descubrir',h:'¿Por qué no lo has hecho hasta ahora?',b:'Una pregunta y <b>los números los dice él</b>. Salen desconocimiento, falta de tiempo o que no se quiere encargar.',
+   l:[['c','¿Y por qué no lo has hecho hasta ahora?'],['o','Porque quería sacar 700.000 limpios.'],['c','¿Cuántos meses llevas a la venta?'],['o','Unos seis.'],['c','¿Cuántas visitas has tenido? ¿Y cuántas ofertas por tu precio?'],['o','Cinco visitas. Ninguna oferta.']]},
+  {k:'Precerrar',h:'Lo que necesitas, no lo que deseas.',b:'Le pones el dinero que necesita encima de la mesa y pides la condición.',
+   l:[['c','Si te pongo encima de la mesa el dinero que necesitas, ¿habría algún otro impedimento para decirme: vamos con todo?'],['o','No, la verdad que no.']]},
+  {k:'Historia',h:'Mi único trabajo.',b:'No discutes si se puede o no. Te pones donde tienes autoridad: <b>leer cómo reacciona el mercado</b>.',
+   l:[['c','Mi único trabajo es ser un interpretador de mercado. Aquí la media es venderse en 24 o 34 días y tú llevas seis meses sin una oferta. ¿Qué crees que siente un comprador viendo una casa de 700.000 estancada un año?'],['o','Que algo le pasa.']]},
+  {k:'Cierre',h:'Y si encuentras comprador, también.',b:'Cierras quitándole el miedo: <b>puede seguir vendiéndola él</b>, con tu ayuda.',
+   l:[['c','Hacemos una cosa: si encuentras tú al comprador, la vendes tú; solo la publicamos nosotros y te llevamos los papeles y las arras, al 50 %. ¿Lo dejamos firmado?'],['o','Así sí.']],
+   mind:'«¿Quién crees que va a poner un mejor anuncio, tú o nosotros?». Con esa condición casi nadie acaba vendiéndola por su cuenta.'}
+ ]},
+{id:'comp-oferta',g:'comp',tab:'Quiero ofrecer menos',
+ q:'«Me parece mucho. ¿Ofrecemos 230?»',
+ insight:'El error típico: el comprador dice «me parece mucho» y el agente ya propone ofrecer menos. Así le enseñas que se puede bajar. Primero el ciclo, y la compra siempre va con presión de venta.',
+ steps:[
+  {k:'Validar',h:'A nadie le gusta pagar de más.',b:'Te alineas con él <b>sin proponer ninguna cifra</b>.',
+   l:[['o','Me encanta, pero me parece mucho. Habría que ofrecer menos.'],['c','Te entiendo, a nadie le gusta pagar ni un euro de más.']],
+   no:{q:'Podríamos hacer una oferta en 230 y a ver qué dice.',w:'Cedes antes de descubrir. El comprador aprende que el precio se puede bajar.'}},
+  {k:'Aislar',h:'¿El precio es lo único?',b:'Que el precio quede como <b>lo único</b>.',
+   l:[['c','¿El precio es lo único o habría algo más?'],['o','Solo el precio.']]},
+  {k:'Descubrir',h:'¿Liquidez o encaje?',b:'Averigua por qué quiere bajar y <b>cuánto le ha costado encontrar esta casa</b>.',
+   l:[['c','¿Es más por liquidez, que no llegas, o porque no le ves el valor?'],['o','Me llega, pero me gustaría pagar algo menos.'],['c','¿Cuánto tiempo llevas buscando? ¿Y esta te encaja de verdad?'],['o','Casi un año. Es la que más.'],['c','¿Cuánto es lo máximo que podrías poner?'],['o','Hasta 250.']]},
+  {k:'Precerrar',h:'Si lo consigo, ¿la reservamos?',b:'La condición antes de ir a negociar con el propietario.',
+   l:[['c','Si consigo que te la dejen en 250, ¿la reservamos hoy?'],['o','Sí.']]},
+  {k:'Historia',h:'Las buenas no esperan.',b:'La compra siempre va con presión de venta.',
+   l:[['c','Una casa así, en esta zona y a este precio, no va a durar. Las que de verdad encajan son las que se van primero.']]},
+  {k:'Cierre',h:'Ahora, no mañana.',b:'Cierras la propuesta <b>en el momento</b>, con una señal.',
+   l:[['c','Voy a negociarte 250. Hacemos la propuesta ahora mismo, ponemos 2.000 euros para reservarla y avanzamos.'],['o','Vale, vamos.']]}
+ ]},
+
+/* ===== PAREJA Y SOCIO ===== */
+{id:'pareja',g:'prop',special:true,tab:'Prevenirlo antes',
+ q:'«Lo tengo que hablar con mi mujer»',
+ insight:'Esta se previene en el descubrimiento, antes de presentar nada. Si decide más de una persona, la reunión se hace con todas.',
+ steps:[
+  {k:'Prevenir',h:'Pregúntalo antes de presentar nada.',b:'Una pregunta en el descubrimiento te ahorra la objeción entera.',
+   l:[['c','Además de ti, ¿hay alguien más que tenga que tomar la decisión?'],['o','Sí, mi mujer. La casa es de los dos.']]},
+  {k:'Agendar con los dos',h:'Entre dos opciones, no entre sí o no.',b:'No presentas la propuesta a medias. <b>Agendas la reunión con los dos</b>.',
+   l:[['c','Lo mejor es que hagamos la reunión estando los dos, así tenéis toda la información a la vez. ¿Os viene mejor por la mañana o por la tarde?'],['o','Por la tarde, a partir de las seis.']]}
+ ]},
+{id:'pareja-cierre',g:'prop',tab:'Lo consulto con mi pareja',
+ q:'«Me encaja, pero lo tengo que consultar con mi mujer»',
+ insight:'Sale al final cuando no se previno. Te alineas, aíslas si él lo ve claro, descubres qué va a preguntar la otra persona y no te vas sin la reunión con los dos o una fecha exacta.',
+ steps:[
+  {k:'Validar',h:'Es una decisión de los dos.',b:'Totalmente lógico. <b>Te alineas</b> con él.',
+   l:[['o','Me encaja todo, pero esto lo tengo que consultar con mi mujer.'],['c','Lo entiendo 100 %, es una decisión de los dos y tiene que estar igual de tranquila que tú.']]},
+  {k:'Aislar',h:'¿Tú lo ves claro?',b:'Separa <b>su</b> decisión de la de su pareja. Si él no lo ve claro, la objeción real no es la pareja.',
+   l:[['c','Déjame que te pregunte: si dependiera solo de ti, ¿lo dejaríamos firmado hoy?'],['o','Yo sí, lo veo claro.'],['c','Entonces lo único que nos impide avanzar es que ella lo vea igual de claro que tú, ¿correcto? ¿O hay algo más?'],['o','No, es solo eso.']]},
+  {k:'Descubrir',h:'¿Qué te va a preguntar?',b:'Él la conoce mejor que nadie. Que te diga <b>qué dudas va a tener ella</b> y las resuelves ahora.',
+   l:[['c','Tú la conoces mejor que nadie. Cuando se lo cuentes esta noche, ¿qué crees que te va a preguntar?'],['o','Seguro que lo de la exclusiva y cuánto nos queda limpio.']],
+   mind:'Si no lo resuelves tú, se lo va a explicar él, sin tu información ni tu convicción. Y ahí la objeción crece.'},
+  {k:'Precerrar',h:'Si eso está resuelto…',b:'Condición antes de cerrar.',
+   l:[['c','Si dejamos esas dos cosas resueltas y por escrito, y ella lo ve igual de claro que tú, ¿lo dejaríamos firmado?'],['o','Sí, claro.']]},
+  {k:'Cierre',h:'Llamada ahora o fecha exacta.',b:'No te vas con un «ya te diré»: <b>la incluyes ahora o agendas con los dos</b>.',
+   l:[['c','¿Te parece si la llamamos ahora cinco minutos y se lo explico yo? Así no tienes que hacer de intermediario.'],['o','Ahora está trabajando.'],['c','Entonces nos vemos los tres. ¿Os viene mejor mañana por la mañana o por la tarde?'],['o','Mañana a las siete.']],
+   no:{q:'Vale, coméntaselo y ya me dices algo.',w:'Sin fecha exacta, la decisión se queda en el aire. Siempre deberes y fecha.'}}
+ ]},
+{id:'herencia',g:'prop',tab:'Mis hermanos no lo ven',
+ q:'«Somos tres hermanos y no todos lo vemos igual»',
+ insight:'En una herencia decide más de una persona y cada una tiene su motivo. Se trabaja con todos, no a través de uno.',
+ steps:[
+  {k:'Validar',h:'Cada uno tiene su momento.',b:'Es normal que no estén igual. <b>Te alineas</b> sin tomar partido.',
+   l:[['o','Somos tres hermanos y no todos lo vemos igual.'],['c','Es lo más normal del mundo. Era la casa de vuestros padres y cada uno la vive a su manera.']]},
+  {k:'Aislar',h:'¿Tú lo ves claro?',b:'Que confirme que <b>lo único</b> es que sus hermanos lo vean igual.',
+   l:[['c','Y tú, ¿lo ves claro? ¿Lo único que nos frena es que tus hermanos estén de acuerdo, o hay algo más?'],['o','Yo lo veo claro. Es solo eso.']]},
+  {k:'Descubrir',h:'Cada hermano, su porqué.',b:'Lo que frena a uno no es lo que frena a otro. <b>Descubre qué quiere cada uno.</b>',
+   l:[['c','¿Qué es lo que hace dudar a cada uno?'],['o','Mi hermano tiene prisa. Mi hermana dice que le da pena y que cree que vale más.'],['c','Tiene todo el sentido. ¿Y qué cambiaría para ella tener su parte del dinero?']]},
+  {k:'Precerrar',h:'Si lo ven igual que tú…',b:'Condición antes de reunirlos.',
+   l:[['c','Si tus hermanos lo ven igual de claro que tú, ¿lo dejaríamos firmado?'],['o','Sí.']]},
+  {k:'Cierre',h:'Reunión con todos.',b:'No dejes que un hermano le venda tu servicio a los demás. <b>Reunión con los tres</b>, en persona o por videollamada.',
+   l:[['c','Lo mejor es que nos sentemos los cuatro, aunque sea por videollamada. ¿Os va mejor entre semana por la tarde o el sábado por la mañana?'],['o','El sábado por la mañana podemos los tres.']]}
+ ]},
+
+/* ===== LOGÍSTICA Y TIEMPO ===== */
+{id:'navidad',g:'prop',tab:'Mejor después de Navidades',
+ q:'«Lo sacamos después de Navidades»',
+ insight:'Te alineas, aíslas el motivo y le preguntas qué pasa con esas fechas. Mejor aún: prevenlo antes de que salga, sobre todo en agosto y en diciembre.',
+ steps:[
+  {k:'Validar',h:'Son fechas especiales.',b:'Es comprensible. <b>Te alineas</b> antes de nada.',
+   l:[['o','Me parece bien, pero mejor lo sacamos después de Navidades.'],['c','Tiene sentido, son fechas en las que uno quiere estar tranquilo.']]},
+  {k:'Aislar',h:'¿Eso es lo único?',b:'Que confirme que <b>la fecha es lo único</b>.',
+   l:[['c','Entonces lo único que te impide cerrarlo ahora son las Navidades, ¿correcto? ¿O hay algo más?'],['o','Solo eso.']]},
+  {k:'Descubrir',h:'¿Qué ocurre con las Navidades?',b:'Que te explique él <b>qué cree que pasa</b> en esas fechas.',
+   l:[['c','¿Qué ocurre con las Navidades?'],['o','Que la gente no está pensando en comprar casa.']]},
+  {k:'Precerrar',h:'Si hay más compradores…',b:'La condición antes de darle el dato.',
+   l:[['c','Si en esas fechas hubiera más compradores mirando que en cualquier otro momento, ¿lo dejaríamos firmado hoy?'],['o','Hombre, si es así, sí.']]},
+  {k:'Historia',h:'Que el dato lo diga él.',b:'Le preguntas por su propio comportamiento en esas fechas.',
+   l:[['c','En Navidades todo el mundo tiene más tiempo libre y está más en el móvil. Tú, ¿cuándo miras más cosas por internet: un martes de octubre o el 27 de diciembre?'],['o','En Navidades, claro.']]},
+  {k:'Cierre',h:'Llegar con todo preparado.',b:'Cierras con la ventaja de adelantarse.',
+   l:[['c','Entonces esperar sería un error. Si lo dejamos firmado hoy, llegamos a las fiestas con fotos, anuncio y base de compradores preparados. ¿Lo cerramos?'],['o','Vale.']]}
+ ]},
+{id:'comprarantes',g:'prop',tab:'Primero quiero comprar',
+ q:'«Antes de vender quiero encontrar la otra casa»',
+ insight:'Hay que sacarlo pronto y muy directo. Lo que quieres que salga es: «no tengo dinero para comprar la otra sin vender esta».',
+ steps:[
+  {k:'Validar',h:'Nadie quiere quedarse sin casa.',b:'Su miedo tiene sentido. <b>Te alineas</b> con él.',
+   l:[['o','Prefiero encontrar primero la casa que quiero y luego ya vender esta.'],['c','Es totalmente lógico. Nadie quiere vender y quedarse sin sitio donde vivir.']]},
+  {k:'Aislar',h:'¿Es lo único?',b:'Que confirme que <b>tener la otra asegurada</b> es lo único.',
+   l:[['c','Entonces lo único que nos frena es tener la otra casa asegurada antes de vender esta, ¿correcto?'],['o','Sí, eso es.']]},
+  {k:'Descubrir',h:'Las buenas oportunidades vuelan.',b:'No le contradigas. <b>Pregúntale</b> cómo funcionan las buenas oportunidades y si tiene capital para entrar sin vender.',
+   l:[['c','Supongo que te gustan las buenas oportunidades. ¿Suelen desaparecer rápido o están mucho tiempo en el mercado?'],['o','Desaparecen rápido.'],['c','¿Y ahora mismo tienes el capital para entrar en una sin vender esta?'],['o','No, necesito vender primero.']]},
+  {k:'Precerrar',h:'Si no aceptas ninguna oferta hasta tener la otra…',b:'Le quitas el miedo con una condición.',
+   l:[['c','Si salimos ya, pero tú no aceptas ninguna oferta hasta que tengamos la casa que de verdad te gusta, ¿lo dejaríamos firmado hoy?'],['o','Así sí.']]},
+  {k:'Cierre',h:'Salimos ya, con el control en tu mano.',b:'Cierras <b>en el momento</b>.',
+   l:[['c','Si salimos al mercado justo cuando aparece la buena oportunidad, la vas a perder. Así que lo firmamos hoy y empezamos a la vez a buscar la tuya. ¿Te parece bien?'],['o','Perfecto.']]}
+ ]},
+
+/* ===== CONFIANZA Y MIEDOS ===== */
+{id:'exclusiva',g:'prop',tab:'La exclusiva',
+ q:'«Me han dicho que no firme con una sola agencia»',
+ insight:'La gente no huye de la exclusiva, huye de sentirse atada. Las objeciones son siempre tres: venderla ellos, trabajar con varias agencias y quedarse atados mucho tiempo. Que te las diga él.',
+ steps:[
+  {k:'Validar',h:'Lo entiendo perfectamente.',b:'Le das la razón en el miedo. <b>Nombras la emoción</b> para que se sienta entendido.',
+   l:[['o','Me ha encantado la reunión, pero la exclusiva no me acaba. Me han recomendado no dejarlo con una sola agencia.'],['c','Te entiendo perfectamente. Supongo que lo que no quieres es sentirte atado y que te vuelva a pasar algo que no te gustó.']]},
+  {k:'Aislar',h:'¿Es lo único?',b:'Antes de descubrir, <b>aísla</b>.',
+   l:[['c','¿La exclusiva es lo único por lo que no lo firmaríamos hoy, o hay algo más?'],['o','Es lo único. Habéis sido muy profesionales.']]},
+  {k:'Descubrir',h:'¿Qué ves de negativo?',b:'Investiga antes de ofrecer. <b>Que te diga él sus miedos.</b>',
+   l:[['c','¿Qué es lo que sientes de negativo en una exclusiva?'],['o','Que quizá la venda yo, que con varias agencias tengo más opciones y que no quiero quedarme atado meses.']],
+   no:{q:'Dame la oportunidad y verás cómo trabajamos.',w:'Si pides la oportunidad, pierdes el marco. Tú no entras en una operación si no estás alineado con el propietario.'}},
+  {k:'Precerrar',h:'Si el encargo lo resolviera…',b:'Con sus tres miedos sobre la mesa, se los resuelves <b>en condicional</b>.',
+   l:[['c','Si tuviéramos un encargo donde pudieras venderla tú, donde colaboráramos con las agencias que quieras y donde nos pudieras despedir si no cumplimos, ¿habría algún otro problema para dejarlo firmado hoy?'],['o','Así no, así lo vería bien.']]},
+  {k:'Cierre',h:'Con convicción: 14 días.',b:'Aquí no se pregunta y se espera. Se lanza con <b>la convicción que tienes en tu trabajo</b>.',
+   l:[['c','Te lo digo sencillo. Probamos 14 días: fotos profesionales, lo presentamos a toda nuestra base de compradores y te hago un reporte. Si después sientes que no somos la opción correcta, rompemos el encargo. Pero te garantizo que no va a pasar. Lo dejamos firmado y empezamos.'],['o','Me parece justo.']]}
+ ]},
+{id:'confianza',g:'prop',tab:'No lo tengo claro',
+ q:'«No sé si me lo vais a conseguir»',
+ insight:'La más importante de todas. Si te comparan precios o quieren mirar otra agencia, la objeción real suele ser esta: no se fían de que les consigas el resultado.',
+ steps:[
+  {k:'Validar',h:'Todavía no nos has visto trabajar.',b:'Cuando a «¿sientes que puedo conseguírtelo?» te dice que no, <b>no te defiendes</b>.',
+   l:[['c','¿Sientes que yo puedo conseguirte el resultado que buscas?'],['o','No lo tengo del todo claro.'],['c','Te entiendo, es normal: todavía no nos has visto trabajar.']]},
+  {k:'Aislar',h:'¿Es solo la confianza?',b:'<b>Hermético</b>: que la confianza sea lo único.',
+   l:[['c','Entonces lo único que nos impide avanzar es tener esa confianza en cómo trabajamos, ¿correcto? ¿O hay algo más?'],['o','Sí, es eso.']]},
+  {k:'Descubrir',h:'¿Qué ves que falla?',b:'Después de toda la reunión, que te diga <b>qué echa en falta</b>. Te dirá exactamente lo que tienes que resolver.',
+   l:[['c','Para entenderlo bien: después de toda la reunión, ¿qué ves que falla para no tener la certeza de que te conseguimos ese resultado?'],['o','No sé cómo vais a conseguir compradores para una casa así.']]},
+  {k:'Precerrar',h:'Si te lo enseño…',b:'La condición antes de enseñarle nada.',
+   l:[['c','Si te enseño cómo lo hemos hecho con casas parecidas en tu zona y cómo vamos a presentar la tuya, ¿habría algún otro impedimento para dejarlo firmado ahora?'],['o','Si lo veo claro, no.']]},
+  {k:'Historia',h:'Casos como el suyo.',b:'Le cuentas una casa parecida, con plazo y precio. <b>La prueba es lo que te diferencia.</b>',
+   l:[['c','Hace dos meses vendimos una casa como la tuya, a dos calles, en cinco semanas y al precio que pactamos. Te enseño cómo la presentamos y quién la compró.'],['o','Vale, eso me da tranquilidad.']],
+   mind:'Usa siempre un caso tuyo y real: una casa parecida, en su zona, con el plazo y el precio. La prueba es lo único que te diferencia de las demás agencias.'},
+  {k:'Cierre',h:'¿Lo dejamos firmado?',b:'Pregunta configurada para el no.',
+   l:[['c','Entonces, ¿habría algún problema por dejarlo firmado ahora?'],['o','No, vamos.']]}
+ ]},
+{id:'agencias',g:'prop',tab:'Lo miro con otras agencias',
+ q:'«Quiero mirarlo con otras agencias»',
+ insight:'Si quiere seguir mirando, algo no le encaja: el precio de los honorarios o el miedo a la exclusiva. El ciclo sirve para descubrir cuál.',
+ steps:[
+  {k:'Validar',h:'Quieres tomar la mejor decisión.',b:'Es lógico querer comparar. <b>Te alineas.</b>',
+   l:[['o','Me ha gustado, pero vienen unas cuantas agencias más y quiero compararlo bien.'],['c','Te entiendo 100 %, quieres tomar la decisión correcta y analizarlo bien, ¿cierto?'],['o','Sí.']]},
+  {k:'Aislar',h:'¿Es eso lo único?',b:'Que confirme que <b>comparar</b> es lo único que le frena.',
+   l:[['c','Entonces lo único que nos impide cerrarlo ahora es ver cómo trabajan otras agencias, ¿correcto? ¿Hay algo más?'],['o','No, por comparar, más que nada.']]},
+  {k:'Descubrir',h:'¿Qué buscas exactamente?',b:'Que te diga qué tendría que ver para decir <b>«con esta, seguro»</b>.',
+   l:[['c','Me genera curiosidad: ¿qué buscas en una agencia para decir «esta es con la que quiero trabajar»?'],['o','Pues que me la venda. Que lo haga bien.']]},
+  {k:'Precerrar',h:'Lo que busca ya lo tiene delante.',b:'Hace un momento te dijo que sí se la puedes vender. <b>Le marcas la incoherencia</b> con calma.',
+   l:[['c','Hace un momento me has dicho que sientes que nosotros sí la podemos vender. Si eso es lo que buscas, ¿qué necesidad hay de seguir mirando? ¿Es por los honorarios, por el precio o por la exclusiva?'],['o','Si alguien me la vende y me cobra menos, me da igual quién la venda.']],
+   mind:'Ha salido la de verdad: honorarios. Sigue en la pestaña «Otra agencia me cobra menos», con el mismo ciclo.'},
+  {k:'Cierre',h:'Para qué perder el tiempo.',b:'Si le encajas, mirar más es más esfuerzo para él.',
+   l:[['c','Si resolvemos eso y te encajo, ¿para qué vas a perder el tiempo con más agencias? Lo dejamos firmado y empezamos.'],['o','Visto así, tiene sentido.']]}
+ ]},
+{id:'comp-miedo',g:'comp',tab:'Me da miedo equivocarme',
+ q:'«¿Y si luego sale algo mejor?»',
+ insight:'Cuando aparece una emoción, vas directo a ella con sus mismas palabras. Ni lógica ni otros pisos. Tu trabajo es que salga de la visita con calma absoluta y una decisión clara.',
+ steps:[
+  {k:'Validar',h:'Con sus mismas palabras.',b:'Ha dicho «preocupación». <b>Usas su palabra</b> y bajas la velocidad.',
+   l:[['o','Es que me preocupa equivocarme. ¿Y si luego sale algo mejor?'],['c','Te entiendo. Es mucho dinero y es donde vas a vivir; es normal sentir esa preocupación.']]},
+  {k:'Aislar',h:'¿Es lo único?',b:'Que el miedo quede como <b>lo único</b>.',
+   l:[['c','¿Esa preocupación es lo único que te frena, o hay algo más de la casa que no te encaje?'],['o','No, la casa me encanta. Es solo eso.']]},
+  {k:'Descubrir',h:'¿Por qué esa preocupación?',b:'<b>Abres la caja</b> con sus palabras.',
+   l:[['c','Me has comentado preocupación. ¿Por qué tienes una preocupación sobre esto?'],['o','Porque es mucho dinero y no quiero arrepentirme dentro de dos años.']]},
+  {k:'Precerrar',h:'Si te quitas ese miedo…',b:'La condición antes de la historia.',
+   l:[['c','Si viéramos que, aunque algún día no te encaje, no pierdes nada, ¿la reservaríamos hoy?'],['o','Si es así, sí.']]},
+  {k:'Historia',h:'El peor escenario.',b:'Le pintas el peor caso y le enseñas que <b>incluso así gana</b>.',
+   l:[['c','Compras esta, vives unos años y, por lo que sea, deja de encajarte. Nos llamas, la ponemos a la venta, buscamos otra y encima tendrás más capacidad económica. Ganas en todos los sentidos. ¿Cómo te sientes teniendo esto en cuenta?'],['o','Más tranquilo, la verdad.']]},
+  {k:'Cierre',h:'Que se vaya decidido.',b:'Si sale con el miedo, en casa crece. <b>Que salga con la decisión tomada.</b>',
+   l:[['c','Entonces, ¿lo dejamos cerrado o habría algún problema por dejarlo cerrado ahora?'],['o','Lo dejamos cerrado.']]}
+ ]}
+];
+
+/* ================= OBJECIONES (render) ================= */
+const tabsEl=document.getElementById('tabs'), panelEl=document.getElementById('panel');
+/* Los cuatro grupos, en este orden. Las de comprador van dentro de su grupo, marcadas. */
+const GROUPS=[
+  {id:'primero',n:'Siempre primero',full:'La primera objeción',ids:['pensar','comp-pensar']},
+  {id:'dinero',n:'Dinero',full:'Dinero · precio y honorarios',ids:['honorarios','cinco','precio','vendoyo','comp-oferta']},
+  {id:'socio',n:'Pareja y socio',full:'Pareja y socio',ids:['pareja','pareja-cierre','herencia']},
+  {id:'tiempo',n:'Logística y tiempo',full:'Logística y tiempo',ids:['navidad','comprarantes']},
+  {id:'confianza',n:'Confianza y miedos',full:'Confianza y miedos',ids:['exclusiva','confianza','agencias','comp-miedo']}
+];
+const CANON=['Validar','Aislar','Descubrir','Precerrar','Historia','Cierre'];
+const num=(o,s,i)=>{ if(o.special) return ROMAN[i]; const k=CANON.indexOf(s.k); return k>=0?ROMAN[k]:'+'; };
+const byId=Object.fromEntries(OBJ.map(o=>[o.id,o]));
+OBJ.length=0;
+GROUPS.forEach(g=>g.ids.forEach(id=>{const o=byId[id]; if(!o) return; o.fam=g; o.chip=g.full+(o.g==='comp'?' · comprador':''); OBJ.push(o)}));
+document.getElementById('statObj').textContent=OBJ.length;
+let tabsHTML='';
+GROUPS.forEach(g=>{
+  tabsHTML+=`<span class="grp" id="grp-${g.id}">${esc(g.n)}</span>`;
+  OBJ.filter(o=>o.fam===g).forEach(o=>{
+    tabsHTML+=`<button class="tab" role="tab" id="tab-${o.id}" aria-selected="false" aria-controls="panel" data-id="${o.id}">${o.g==='comp'?'<span class="cmp">Comprador</span>':''}${esc(o.tab)}</button>`;
+  });
+});
+tabsEl.innerHTML=tabsHTML;
+tabsEl.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;select(b.dataset.id,true)});
+document.querySelectorAll('[data-fam]').forEach(el=>el.addEventListener('click',()=>{const g=GROUPS.find(x=>x.id===el.dataset.fam); select(g.ids[0],true)}));
+
+const whoName=(o,w)=>w==='c'?'Tú, agente':(o.g==='comp'?'Comprador':'Propietario');
+function lineHTML(o,line){
+  const [w,t]=line;
+  return `<div class="ln ${w==='c'?'c':'o'}"><span class="sp">${whoName(o,w)}</span><span class="tx">${esc(t)}</span></div>`;
+}
+const where=o=>o.g==='comp'?'En la visita, antes de salir':'En el salón, con el encargo en la mesa';
+
+let cur=null, active=-1, listening=false, rafPending=false;
+function select(id,scroll){
+  const o=OBJ.find(x=>x.id===id)||OBJ[0];
+  cur=o; active=-1;
+  tabsEl.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.id===o.id));
+  const tb=document.getElementById('tab-'+o.id); tb&&tb.scrollIntoView({block:'nearest',inline:'center',behavior:reduce?'auto':'smooth'});
+  const idx=OBJ.indexOf(o), next=OBJ[(idx+1)%OBJ.length], ref=String(idx+1).padStart(2,'0');
+  panelEl.innerHTML=`
+    <div class="panel-head">
+      <div>
+        <div class="meta"><span><b>Ref. ${ref}</b></span><span><b>${esc(o.chip)}</b></span><span>${o.special?'Antes del ciclo':'Validar · aislar · descubrir · precerrar · cierre'}</span></div>
+        <h3>${esc(o.q)}</h3>
+        <p class="insight">${esc(o.insight)}</p>
+      </div>
+      <div class="thumb" aria-hidden="true"><div class="room"></div><div class="cap"><span>${where(o)}</span><b>${o.g==='comp'?'Compra':'Captación'}</b></div></div>
+    </div>
+    <div class="story">
+      <nav class="rail" aria-label="Pasos">
+        <div class="rt">${o.special?'Antes del ciclo':'El ciclo'}</div>
+        ${o.steps.map((s,i)=>`<button data-go="${i}"><span>${num(o,s,i)}</span>${esc(s.k)}</button>`).join('')}
+      </nav>
+      <div class="steps">
+        ${o.steps.map((s,i)=>`
+          <article class="step" id="paso-${i}" data-i="${i}">
+            <div class="lab"><span class="n">${num(o,s,i)}</span>${esc(s.k)}</div>
+            <h4>${esc(s.h)}</h4>
+            <div class="dialog">${s.l.map(l=>lineHTML(o,l)).join('')}</div>
+            <div class="why-step"><span class="k">Por qué</span><div>
+              <p class="body">${s.b}</p>
+              ${s.no?`<div class="box no"><span class="bt">Lo que no se dice</span><q>${esc(s.no.q)}</q><span class="bx">${esc(s.no.w)}</span></div>`:''}
+              ${s.mind?`<div class="box mind"><span class="bt">Cómo lo pienso yo</span>${esc(s.mind)}</div>`:''}
+            </div></div>
+          </article>`).join('')}
+        <div class="next-obj"><span>Siguiente · <b>${esc(next.q)}</b></span><button class="btn btn-line" data-next="${next.id}">Ver la siguiente <span class="ar">→</span></button></div>
+      </div>
+    </div>`;
+  panelEl.querySelector('.room').innerHTML=roomSVG(o.g==='comp'?'b':'o');
+  panelEl.querySelector('[data-next]').onclick=()=>select(next.id,true);
+  panelEl.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>document.getElementById('paso-'+b.dataset.go).scrollIntoView({behavior:reduce?'auto':'smooth'}));
+  try{ history.replaceState(null,'','#'+o.id) }catch(e){}
+  listen(); pickStep();
+  if(scroll) document.querySelector('#objeciones .tabs').scrollIntoView({behavior:reduce?'auto':'smooth'});
+}
+/* El paso activo del índice es el último cuyo título ya ha pasado la línea de lectura (40 % de la pantalla). */
+function pickStep(){
+  rafPending=false;
+  if(!cur) return;
+  const line=innerHeight*0.4; let a=0;
+  panelEl.querySelectorAll('.step').forEach(s=>{ if(s.querySelector('.lab').getBoundingClientRect().top<=line) a=+s.dataset.i });
+  if(a===active) return; active=a;
+  panelEl.querySelectorAll('.rail [data-go]').forEach(b=>b.classList.toggle('on',+b.dataset.go===a));
+}
+function listen(){
+  if(listening) return; listening=true;
+  addEventListener('scroll',()=>{ if(!rafPending){rafPending=true;requestAnimationFrame(pickStep)} },{passive:true});
+  addEventListener('resize',pickStep);
+}
+
+/* ================= CONTRATO ================= */
+const CLAUSES=[
+  {t:'Puedes venderla tú',s:'Objeción: «a lo mejor la vendo yo»',b:'Si encuentras tú al comprador, puedes venderla. Solo la publicamos nosotros, te ayudamos con toda la parte burocrática y en ese caso los honorarios son el 50 %.'},
+  {t:'Colaboramos con las agencias que quieras',s:'Objeción: «con varias agencias tengo más opciones»',b:'Pásanos cualquier agencia, familiar o vecino que la esté moviendo. La contactamos, trabaja a través de nosotros y compartimos con ella la comisión.'},
+  {t:'Sin plazo que te ate',s:'Objeción: «no quiero quedarme atado meses»',b:'Ni seis meses, ni tres, ni uno. Lo que hay son condiciones de trabajo: si no cumplimos lo que te hemos dicho, nos puedes despedir. Por levantarte con el pie izquierdo, no; por no cumplir, sí.'}
+];
+document.getElementById('clauses').innerHTML=CLAUSES.map((c,i)=>`
+  <div class="clause ${i===0?'open':''}">
+    <button aria-expanded="${i===0}" aria-controls="cl${i}"><span class="cn">${ROMAN[i]}.</span><span class="ct">${esc(c.t)}<small>${esc(c.s)}</small></span><span class="pl">+</span></button>
+    <div class="cb" id="cl${i}" ${i===0?'':'hidden'}>${esc(c.b)}</div>
+  </div>`).join('');
+document.getElementById('clauses').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const c=b.parentElement, open=!c.classList.contains('open');
+  c.classList.toggle('open',open); b.setAttribute('aria-expanded',open); c.querySelector('.cb').hidden=!open;
+});
+
+/* ================= FRASES ================= */
+const QUOTES=[
+  {p:'Entiendo que me lances esta objeción. ¿Es la única o hay alguna más?',s:'Las dos frases que tienen que estar en tu vocabulario.',hl:true},
+  {p:'Mi único trabajo es ser un interpretador de mercado.',s:'Para cuando el propietario quiere un precio fuera de mercado.'},
+  {p:'Ni para ti ni para mí. Salimos, vemos cómo reacciona el mercado y decidimos con datos.',s:'El punto de encuentro en el precio de salida.'},
+  {p:'La gente firma por la parte emocional y luego lo justifica con la lógica.',s:'Si solo hablas de precio, no estás vendiendo.'},
+  {p:'No pienses en cerrarle. Piensa en educarle.',s:'Preguntas hasta que tenga tu mismo paradigma. Ahí se cierra.'},
+  {p:'Si dices «dame la oportunidad», pierdes el marco.',s:'Tú no entras en una operación si no estás alineado con el propietario.'},
+  {p:'Si se lo dices, duda de si fiarse. Si se lo preguntas, lo descubre él.',s:'Educar con preguntas, no con afirmaciones.'},
+  {p:'¿Qué cambia de hoy a mañana?',s:'Para el «te digo algo mañana».'},
+  {p:'La gente no huye de la exclusiva. Huye de sentirse atada.',s:'Por eso el contrato resuelve las tres cosas que teme.'},
+  {p:'Nunca bajéis honorarios del tirón. Nunca.',s:'Y nunca negociéis sin una condición pedida antes.'},
+  {p:'Tu trabajo es que salga de ahí con calma absoluta y una decisión clara.',s:'Con compradores: si se va con el miedo, el miedo crece.'},
+  {p:'Por honorarios nunca se te debería caer una visita.',s:'Y cualquier bajada, a cambio de firmar ahora.'},
+  {p:'Las objeciones se previenen en el descubrimiento.',s:'Si te salen todas al final, el descubrimiento no estaba bien hecho.'}
+];
+document.getElementById('quotes').innerHTML=QUOTES.map(q=>`<div class="quote ${q.hl?'hl':''}"><p>«${esc(q.p)}»</p><span>${esc(q.s)}</span></div>`).join('');
+
+/* ================= TEST ================= */
+const QUIZ=[
+  {sit:'Propietario · al final de la cita',say:'«Me ha encantado todo, pero déjame darle una vuelta y te digo algo.»',
+   o:['«Claro, sin problema. ¿Te llamo mañana?»','«Entiendo que quieras pensarlo. Dejando eso a un lado, ¿sientes que nosotros podemos conseguirte el resultado que buscas?»','«¿Qué es lo que no te ha gustado?»'],a:1,
+   w:['Te vas sin decisión. Lo que queda en el aire no se firma.','Validas y atas al resultado. Si te dice que sí, ya tienes la incoherencia para preguntar por la preocupación real.','Das por hecho algo negativo y le pones a la defensiva. Primero valida.']},
+  {sit:'Propietario · precio de salida',say:'«El vecino vendió por 400.000 y su piso está peor que el mío.»',
+   o:['«Tu vecino seguro que no vendió a ese precio.»','«Vale, probamos una semana a tu precio y vemos.»','«¿Has podido ver lo que se ha vendido de verdad en tu zona, en el notariado?»'],a:2,
+   w:['Aunque sea verdad, se lo dices tú. Le creas la duda de si fiarse de ti.','Cedes el marco sin haber descubierto ni aislado nada.','Pregunta, no afirmación. Descubre él solo que no tiene el dato.']},
+  {sit:'Propietario · exclusiva',say:'«Me han recomendado no firmar en exclusiva con una sola agencia.»',
+   o:['«Dame la oportunidad y verás cómo trabajamos.»','«¿Qué es lo que sientes de negativo en una exclusiva?»','«Sin exclusiva no trabajamos, lo siento.»'],a:1,
+   w:['Pedir la oportunidad te quita el marco. Tú eliges con quién trabajas.','Investigas antes de ofrecer. Te dirá sus miedos y los resuelves con un condicional.','Cierras la puerta antes de saber qué le preocupa.']},
+  {sit:'Propietario · honorarios',say:'«Otra agencia me cobra el 3 %. Si me igualas, firmo.»',
+   o:['«Si consigo ajustarme en honorarios para que tengas el dinero que necesitas, ¿habría algún otro motivo para no dejarlo firmado ahora?»','«Vale, te lo dejo al 3 %.»','«Mis honorarios no se tocan.»'],a:0,
+   w:['Condicional con condición: la bajada solo existe si firma ahora. Y antes, aísla que sea lo único.','Regalas margen sin pedir nada a cambio, y ni siquiera has aislado.','Por honorarios nunca se te debería caer una visita.']},
+  {sit:'Comprador · al acabar la visita',say:'«Me ha gustado. Déjame ver los números y le doy una vuelta.»',
+   o:['«Perfecto, te paso la información por WhatsApp.»','«Es que hay más gente interesada, yo no esperaría.»','«¿El precio te encaja? ¿La zona? ¿Las condiciones? Si las tres encajan, ¿cuál sería el motivo de no dejarlo cerrado ya?»'],a:2,
+   w:['Se enfría y la oportunidad se va.','Presión sin descubrir nada. Le activa la protección.','Tres síes y una pregunta de decisión. Ahí sale su objeción real.']}
+];
+(function(){
+  const el=document.getElementById('quiz'); let i=0,res=[];
+  function draw(){
+    if(i>=QUIZ.length){
+      const ok=res.filter(Boolean).length;
+      el.innerHTML=`<div class="qprog">${res.map(r=>`<i class="${r?'done':'miss'}"></i>`).join('')}</div>
+        <div class="qend"><b>${ok}/${QUIZ.length}</b><p>${ok===QUIZ.length?'Lo tienes. Ahora toca entrenarlo en voz alta hasta que te salga sin pensar.':ok>=3?'Vas bien. Repasa las objeciones donde has fallado y vuelve a intentarlo.':'Vuelve a los seis pasos y repasa las conversaciones. Esto se entrena.'}</p>
+        <div class="qnav" style="justify-content:center"><button class="btn btn-line" id="qr">Volver a empezar</button></div></div>`;
+      document.getElementById('qr').onclick=()=>{i=0;res=[];draw()};
+      return;
+    }
+    const q=QUIZ[i];
+    el.innerHTML=`<div class="qprog">${QUIZ.map((_,j)=>`<i class="${j<res.length?(res[j]?'done':'miss'):''}"></i>`).join('')}</div>
+      <div class="qsit">${esc(q.sit)} · ${ROMAN[i]} de ${ROMAN[QUIZ.length-1]}</div>
+      <div class="qsay">${esc(q.say)}</div>
+      <p class="qask">¿Qué le contestas?</p>
+      <div class="opts">${q.o.map((t,j)=>`<button class="opt" data-j="${j}">${esc(t)}</button>`).join('')}</div>
+      <div id="qfb"></div>`;
+    el.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      const j=+b.dataset.j, ok=j===q.a; res.push(ok);
+      el.querySelectorAll('.opt').forEach((x,k)=>{x.disabled=true; if(k===q.a)x.classList.add('right'); else if(k===j)x.classList.add('wrong')});
+      document.getElementById('qfb').innerHTML=`<div class="fb ${ok?'ok':'ko'}"><b>${ok?'Así es.':'No del todo.'}</b>${esc(q.w[j])}${ok?'':' '+esc(q.w[q.a])}</div>
+        <div class="qnav"><button class="btn btn-gold" id="qn">${i+1<QUIZ.length?'Siguiente situación':'Ver resultado'} <span class="ar">→</span></button></div>`;
+      document.getElementById('qn').onclick=()=>{i++;draw()};
+    });
+  }
+  draw();
+})();
+
+/* ================= ARRANQUE + ENLACES DIRECTOS (#exclusiva, #precio…) ================= */
+function fromHash(){ const h=location.hash.slice(1); return OBJ.find(o=>o.id===h) }
+const first=fromHash();
+select(first?first.id:OBJ[0].id,false);
+if(first) setTimeout(()=>document.getElementById('objeciones').scrollIntoView(),60);
+addEventListener('hashchange',()=>{const o=fromHash(); if(o&&o!==cur) select(o.id,true)});
+</script>
+
+</body>
+</html>
